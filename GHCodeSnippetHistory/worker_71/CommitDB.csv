@@ -1,0 +1,1471 @@
+Hash,AuthorDate,CommiterDate,AuthorEmail,AuthorName,CommiterEmail,CommiterName,Message,ChangeType,ParentCommit,AddedLinesInCommit,RemovedLinesInCommit,AddedLinesInContext,RemovedLinesInContext,Repo,RepoName,FileId,FileExt,PostId,PostTypeId,SOUrl
+0f7c0a36a2c14e5f2ceae754bb326e77107a81dd,2014-10-18 09:31:04+00:00,2014-10-18 09:31:04+00:00,18814,18814,18814,18814,Install bootstrap and jquery,ModificationType.ADD,,8521,0,8521,0,jacques/base-application,base-application,4b6676d8aa00805a291094df9a644c3c857cbbef,.js,3561493,1,https://stackoverflow.com/q/3561493
+40e82aa8595dc4c568fdce8155fb74d4af6b58d2,2016-02-18 04:51:57-08:00,2016-02-18 04:51:57-08:00,18815,18815,18815,18815,Initial Commit Failed so let's try again this is the bootstrap kittenkaboodle,ModificationType.ADD,,2220,0,2220,0,janauhrich/building-responsive-websites,building-responsive-websites,aefdac787c24084cb4fb212bcb45605be46ae9ce,.py,1189781,1,https://stackoverflow.com/q/1189781
+40e82aa8595dc4c568fdce8155fb74d4af6b58d2,2016-02-18 04:51:57-08:00,2016-02-18 04:51:57-08:00,18815,18815,18815,18815,Initial Commit Failed so let's try again this is the bootstrap kittenkaboodle,ModificationType.ADD,,528,0,528,0,janauhrich/building-responsive-websites,building-responsive-websites,5e4618cb5c44b67fcbf4ffafe40eda5231431a0c,.js,1068308,2,https://stackoverflow.com/a/1068308
+423682f9ee4ece102deae5a23737c37ec31eefdf,2014-01-14 16:33:56-05:00,2014-01-14 16:33:56-05:00,8354,8354,8354,8354,"First version where submission is stored.  Soon it will be time to
+break for a beer with Paul.",ModificationType.MODIFY,,14,0,14,0,JANQLIANGTSAI/tsugi,tsugi,524b032be053e2a1a198349a925c7f5a79a38d5e,.php,2840755,1,https://stackoverflow.com/q/2840755
+a498d294703cbf2043234127c6ccb0334fa9490e,2014-02-09 11:14:19-05:00,2014-02-09 11:14:19-05:00,8354,8354,8354,8354,Initial cut at analytics with custom variables.,ModificationType.MODIFY,423682f9ee4ece102deae5a23737c37ec31eefdf,15,9,0,3,JANQLIANGTSAI/tsugi,tsugi,524b032be053e2a1a198349a925c7f5a79a38d5e,.php,2840755,1,https://stackoverflow.com/q/2840755
+c4fb5826f47aaae42745ff6c15d98cffbc542724,2014-05-07 12:25:35-05:00,2014-05-07 12:25:35-05:00,8354,8354,8354,8354,"Change the naming convention of library ruotines to match Moodle's
+style guide.",ModificationType.MODIFY,a498d294703cbf2043234127c6ccb0334fa9490e,107,107,1,1,JANQLIANGTSAI/tsugi,tsugi,524b032be053e2a1a198349a925c7f5a79a38d5e,.php,2840755,1,https://stackoverflow.com/q/2840755
+b69faa7b72c4bf5ef5198454b94fd8f7b104df7d,2014-06-08 19:46:14-04:00,2014-06-08 19:46:14-04:00,8354,8354,8354,8354,Big commit to switch back to camel case,ModificationType.MODIFY,c4fb5826f47aaae42745ff6c15d98cffbc542724,133,133,3,3,JANQLIANGTSAI/tsugi,tsugi,524b032be053e2a1a198349a925c7f5a79a38d5e,.php,2840755,1,https://stackoverflow.com/q/2840755
+cb2e73521e260d1340b6b7ae4d89297c5ae96c9b,2016-09-27 10:42:06+03:00,2016-09-27 10:42:06+03:00,18816,18816,18816,18816,added the node_module package manager,ModificationType.ADD,,740,0,740,0,janta-devs/janta,janta,5e4618cb5c44b67fcbf4ffafe40eda5231431a0c,.js,1068308,2,https://stackoverflow.com/a/1068308
+1d86db66fb2bb4a22cb8a02504de277f883efcca,2015-11-24 15:14:11+08:00,2015-11-24 15:18:28+08:00,18817,18817,18817,18817,"node_modules added, to ensure fully functional boilerplate to start.",ModificationType.ADD,,1,0,1,0,jannrocas/first-todoList,first-todoList,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+39951ca99a35122b68545d221cae0f36faaeee60,2014-11-11 14:43:10-06:00,2014-11-11 14:43:10-06:00,746,746,746,746,"refactor(): navigation improvements, Angular 1.3
+
+#### Refactor:
+
+* **Navigation:** Refactored navigation for improved performance,
+reduce DOM manipulations, increase transition FPS, cached views,
+smoother transitions, platform specific transitions with added
+configurable controls for transition animation and direction.
+* **Cached Views:** Previously as a user navigated an app, each leaving
+view’s element and scope would be destroyed. If the same view was
+accessed again then the app would have to recreate the element. Views
+can now be cached to improve performance. When a view is navigated away
+from, its element is left in the DOM, and its scope is disconnected
+from the cycle. When navigating to a view which is already cached, its
+scope is reconnected, and the existing element which was left in the
+DOM becomes the active view. This also allows for scroll position of
+previous views to be maintained (without skippy jumps). Config
+variables can be used to disable view caching (set to 0), or change the
+maximum number of views to cache.
+* **Angular v1.3:** Upgraded Ionic’s to work with Angular v1.3. In
+general Ionic just works with the upgrade, but the required change was
+that animations in v1.3 uses promise, whereas in v1.2 animations used
+callbacks.
+
+#### Features:
+
+* **Platform Specific Transitions:** Transitions between views now
+default to the transition style appropriate for each platform. For
+example, iOS will move forward by transitioning the entering view from
+right to center, and the leaving view from center to left. However,
+Android will transition with the entering view going from bottom to
+center, covering the previous view, which remains stationary. Platform
+transitions are automatically applied by default, but config variables
+and custom CSS allows these defaults to be easily overridden.
+* **Override Transition Type and Direction:** As a user navigates the
+app, Ionic automatically applies the appropriate transition type for
+the platform, and the direction the user is navigating. However, both
+can be overridden in numerous ways: config variable, view attribute,
+stateProvider property, or attribute on the button/link that initiated
+the transition.
+* **enable-menu-with-back-views:** The `enable-menu-with-back-views`
+attribute determines if the side menu is enabled when the back button
+is showing. When set to `false`, any buttons/links with the
+`menuToggle` directive will be hidden, and the user cannot swipe to
+open the menu. When going back to the root page of the side menu (the
+page without a back button visible), then any menuToggle buttons will
+show again, and menus will be enabled again.
+* **menuClose:** Closes a side menu which is currently opened.
+Additionally, the menuClose directive will now cause transitions to not
+animate between views while the menu is being closed.
+* **ionNavBackButton:** The back button icon and text will
+automatically update to platform config defaults, such as adjusting to
+the platform back icon. To take advantage of this, the
+`ionNavBackButton` directive now should be empty, such as
+`<ion-nav-back-button></ion-nav-back-button>`. The back button can
+still be fully customized like it could before, but without any inner
+content it knows to style using platform configs.
+* **navBar button primary/secondary sides:** Primary and secondary
+sides are now the recommended values for the `side` attribute, such as
+`<ion-nav-buttons side=""primary"">`. Primary buttons generally map to
+the left side of the header, and secondary buttons are generally on the
+right side. However, their exact locations are platform specific. For
+example, in iOS the primary buttons are on the far left of the header,
+and secondary buttons are on the far right, with the header title
+centered between them. For Android however, both groups of buttons are
+on the far right of the header, with the header title aligned left.
+Recommendation is to always use `primary` and `secondary` so buttons
+correctly map to the side familiar to users of a platform. However, in
+cases where buttons should always be on an exact side, both `left` and
+`right` sides are still available.
+* **navDirection:** An attribute directive that sets the direction
+which the nav view transition should animate.
+* **navTransition:** An attribute directive that sets the transition
+type which the nav view transition should use when it animates. Using
+`none` will disable an animation.
+
+#### Breaking Changes:
+
+* **Animation CSS:** The CSS for view transitions have changed. This is
+a breaking change only if Ionic apps had customized Ionic’s animation
+CSS.
+* **$ionicPlatformDefaults:** Platform config variables are no longer
+in the $ionicPlatformDefaults constant, but within `$ionicConfig`.
+* **$ionicViewService:** In the navigation refactoring,
+$ionicViewService was split up into two factories, `$ionicViewSwitcher`
+and `$ionicHistory`. The `$ionicHistory` is largely what
+`$ionicViewService`, but between the two factories there is a better
+separation of concerns for improved testing.
+* **navClear:** The navClear directive was created to do what the new
+side menu `enable-menu-with-back-views` attribute accomplishes.
+Additionally, the new `navTransition` and `navDirection` directives are
+more useful and granular than the navClear directive.
+* **scrollView.rememberScrollPosition:** This method has been removed
+since it is no longer needed with cached views.
+
+#### Deprecated:
+
+* **ionView.title:** The `ionView` directive used the `title`
+attribute, but this can cause the tooltip to show up on desktop
+browsers. The `title` attribute will still work for backwards
+compatibility, but we now recommend using `view-title`, such as
+`<ion-view view-title=”My Title”>`.
+* **ionNavView animation attribute removed:** The animation attribute
+is no longer used for nav views. Instead use `$ionicConfig`.
+* **ionNavBar animation attribute removed:** The animation attribute is
+no longer used for nav bars. Instead use `$ionicConfig`.",ModificationType.MODIFY,,7106,3408,7106,3408,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+908cc6122c868419daeb00ecd90447a27bf190d0,2014-11-18 21:31:25-06:00,2014-11-18 21:31:25-06:00,746,746,746,746,chore(update): angular v1.3.3,ModificationType.MODIFY,39951ca99a35122b68545d221cae0f36faaeee60,292,263,99,103,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+5bc7c023aba7a9e27832238bb1ca9ecf6d00a314,2014-11-25 16:25:20-06:00,2014-11-25 16:25:22-06:00,746,746,746,746,chore(update): angular v1.3.4,ModificationType.MODIFY,908cc6122c868419daeb00ecd90447a27bf190d0,354,190,127,90,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+533dcabeb587c3902f7754818ecdbebe206209ca,2014-12-02 23:56:48-06:00,2014-12-02 23:56:48-06:00,746,746,746,746,chore(update): angular v1.3.5,ModificationType.MODIFY,5bc7c023aba7a9e27832238bb1ca9ecf6d00a314,39,37,16,27,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+57cafc600548540b6fb8fa6afc94e32ae250b048,2014-12-11 08:07:58-06:00,2014-12-11 08:07:58-06:00,746,746,746,746,chore(update): upgrade to Angular v1.3.6,ModificationType.MODIFY,533dcabeb587c3902f7754818ecdbebe206209ca,280,197,29,73,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+e5135929042362b8f334fc9b7273265960c683e3,2015-02-02 21:36:22-06:00,2015-02-02 21:36:22-06:00,746,746,746,746,chore(upgrade): upgrade to angular v1.3.11,ModificationType.MODIFY,57cafc600548540b6fb8fa6afc94e32ae250b048,3650,3534,2857,2931,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+c0b0d78884517519af7eda8d91664ff9de078034,2015-02-11 15:45:59-06:00,2015-02-11 15:45:59-06:00,746,746,746,746,chore(angular): upgrade to angular v1.3.13,ModificationType.MODIFY,e5135929042362b8f334fc9b7273265960c683e3,34,20,7,9,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+1f2d900e3c3e0845a6a7a03db9e5652a29dea7bd,2015-02-12 22:05:27-06:00,2015-02-12 22:05:27-06:00,746,746,746,746,fix(angular): `.finally` syntax error in Android 2.3,ModificationType.MODIFY,c0b0d78884517519af7eda8d91664ff9de078034,2,2,0,1,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+7bd9487ba990076a2dc42c4956942af3dfc94eb0,2015-04-26 19:56:23+03:00,2015-04-26 19:56:23+03:00,18818,18818,18818,18818,update,ModificationType.MODIFY,1f2d900e3c3e0845a6a7a03db9e5652a29dea7bd,3693,3563,2721,2906,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+7bd9487ba990076a2dc42c4956942af3dfc94eb0,2015-04-26 19:56:23+03:00,2015-04-26 19:56:23+03:00,18818,18818,18818,18818,update,ModificationType.MODIFY,7bd9487ba990076a2dc42c4956942af3dfc94eb0,3693,3563,2669,2780,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+355bf6a9912e6a0ee17eaf6cb25b643687767579,2015-07-24 09:50:56-04:00,2015-07-24 09:50:56-04:00,747,747,747,747,feat(angular): Upgrade to Angular 1.4,ModificationType.MODIFY,7bd9487ba990076a2dc42c4956942af3dfc94eb0,6597,4363,3308,2869,janij/ionic,ionic,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+fc0064052e9027769445a1cd7c70d93b0e7855c1,2012-06-07 16:43:57-04:00,2012-06-07 16:43:57-04:00,9555,9555,9555,9555,Factor out gzip decompressor from SimpleAsyncHTTPClient into util.GzipDecompressor,ModificationType.MODIFY,,12,0,12,0,jampp/tornado,tornado,ea4da8763310bbc54ca5f292929cd47a6e15f4bd,.py,1838699,1,https://stackoverflow.com/q/1838699
+7a2779e958cb5bbb1d95a1a1f9f764c3e1f7dc01,2012-06-08 11:11:28-07:00,2012-06-08 11:11:28-07:00,395,395,395,395,Add flush method to GzipDecompressor interface and use it.,ModificationType.MODIFY,fc0064052e9027769445a1cd7c70d93b0e7855c1,21,1,7,1,jampp/tornado,tornado,ea4da8763310bbc54ca5f292929cd47a6e15f4bd,.py,1838699,1,https://stackoverflow.com/q/1838699
+6bf30d08e18c044f6e611c9e7cdc189e90829e92,2013-03-16 18:52:07-04:00,2013-03-16 18:52:07-04:00,395,395,395,395,"Add/update docs for twisted, caresresolver, and util modules",ModificationType.MODIFY,7a2779e958cb5bbb1d95a1a1f9f764c3e1f7dc01,22,12,0,1,jampp/tornado,tornado,ea4da8763310bbc54ca5f292929cd47a6e15f4bd,.py,1838699,1,https://stackoverflow.com/q/1838699
+800d1dcec43f979fa3eb8c316ce5606431d23fff,2014-03-29 16:22:55+00:00,2014-03-29 16:32:21+00:00,395,395,395,395,"Add a chunk_size limitation to HTTP1Connection.
+
+HTTPMessageDelegate will no longer receive more than chunk_size bytes
+in a single call.",ModificationType.MODIFY,6bf30d08e18c044f6e611c9e7cdc189e90829e92,13,3,2,2,jampp/tornado,tornado,ea4da8763310bbc54ca5f292929cd47a6e15f4bd,.py,1838699,1,https://stackoverflow.com/q/1838699
+2b2d276a80495034d8780c581de79677ae55e944,2016-02-02 00:03:45-05:00,2016-02-02 00:03:45-05:00,18819,18819,18819,18819,forzado casi final,ModificationType.ADD,,7768,0,7768,0,japeto/CES,CES,0a0d0ee52f2414b5d74ada8f23b5163e1e7e7059,.js,3561493,1,https://stackoverflow.com/q/3561493
+53ec5c5654ea8febc997edec88e6841c578bff5e,2016-11-20 00:24:07+07:00,2016-11-20 00:24:07+07:00,18820,18820,18820,18820,A0001,ModificationType.ADD,,1576,0,1576,0,janitraalmalik/A0001,A0001,3a0e464e74157042547a4f9f8f786d1ee7efa796,.js,10454518,1,https://stackoverflow.com/q/10454518
+28198b2ff0f7429671ed679ecb705e2811bafab5,2013-10-26 21:34:11+02:00,2013-10-27 22:49:42+01:00,378,378,378,378,"Add attributes extracted from an attribute.
+
+Allows to add attributes to element of an attribute which contains
+the attribute pattern.",ModificationType.MODIFY,,45,23,45,23,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+7aa93af0caa032acf05d7c89be47aed04e99ad33,2013-10-26 22:33:43+02:00,2013-10-27 22:49:43+01:00,378,378,378,378,"Cleanup code, remove console log debugs.",ModificationType.MODIFY,28198b2ff0f7429671ed679ecb705e2811bafab5,11,18,8,15,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+a87ce957943c309457452aeb6959b907f6341941,2013-10-27 00:27:44+02:00,2013-10-27 22:49:43+01:00,378,378,378,378,"Add 'data-element-attributes' attr. to 'section'.
+
+By default '{\\\.\s*?([^}]+?)}'.",ModificationType.MODIFY,7aa93af0caa032acf05d7c89be47aed04e99ad33,10,8,9,8,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+d844195be137d6e67fd7eace5ad4d5f1310e7401,2013-10-28 09:06:43-04:00,2013-10-28 09:06:43-04:00,379,379,379,379,"format tweaks markdown.js, remove extra image asset",ModificationType.MODIFY,a87ce957943c309457452aeb6959b907f6341941,17,13,11,10,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+dd9fa3e22bd57fa7c5d16eeff4d84abf60f35fd6,2013-11-24 21:27:30+01:00,2013-11-30 23:12:38+01:00,378,378,378,378,First refactoring,ModificationType.MODIFY,d844195be137d6e67fd7eace5ad4d5f1310e7401,32,11,30,10,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+3330c2a7648767f0ef8298c152ae4f2dd2c38ba0,2013-11-25 22:05:23+01:00,2013-11-30 23:12:38+01:00,378,378,378,378,Remove section attribute implementation.,ModificationType.MODIFY,dd9fa3e22bd57fa7c5d16eeff4d84abf60f35fd6,11,43,1,3,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+8ad633e4f3cdc576601e9b9aa5cd85c1f08e427e,2013-11-27 22:48:01+01:00,2013-11-30 23:12:39+01:00,378,378,378,378,"Fix element attributes, except for multi-line.",ModificationType.MODIFY,3330c2a7648767f0ef8298c152ae4f2dd2c38ba0,21,17,18,15,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+d52eb599d1f732876540f2a22fa406b7293502e5,2013-11-28 22:10:23+01:00,2013-11-30 23:12:39+01:00,378,378,378,378,Fix previous element selection.,ModificationType.MODIFY,8ad633e4f3cdc576601e9b9aa5cd85c1f08e427e,13,5,13,5,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+13da34cc6bf3b75cec3d4c2fd4f96b3f686fd8a9,2013-11-28 22:12:22+01:00,2013-11-30 23:12:40+01:00,378,378,378,378,Removes console.log calls.,ModificationType.MODIFY,d52eb599d1f732876540f2a22fa406b7293502e5,2,21,2,18,jamiis/q-deep-eye-presentation,q-deep-eye-presentation,9afee065f86101b6802db47d1a9d171df30dcde5,.js,5690269,1,https://stackoverflow.com/q/5690269
+949644005b2e6138dfac4af7e8a82af101bb8132,2016-05-19 10:29:30+02:00,2016-05-19 10:29:30+02:00,18821,18821,18821,18821,Simple java signal viewer,ModificationType.ADD,,120,0,120,0,jadref/buffer_bci,buffer_bci,bdb33123f16544e58426d1143fbed51e58d3063a,.java,19028908,1,https://stackoverflow.com/q/19028908
+88b047ea5f7f6ac5129993ec580189bf135ecab0,2012-06-22 21:43:23+02:00,2012-06-22 21:43:23+02:00,4618,4618,4618,4618,Issue 62: Support streaming mode in the REST API for item/widget status changes,ModificationType.ADD,,1741,0,1741,0,Jakey69/openhab,openhab,38635befc1717e942efce9d994f51adcdb2edcf9,.js,6453779,1,https://stackoverflow.com/q/6453779
+8b91d08cbedb18963c52dda3bfe3f0d11e039f7e,2016-01-31 15:01:56-08:00,2016-01-31 15:01:56-08:00,18822,18822,18822,18822,First commit...,ModificationType.ADD,,1,0,1,0,jakey-wan-kenobi/angular-sass-uirouter-browsersync-seed,angular-sass-uirouter-browsersync-seed,ce6369f1cbac700012e50bf621e26e94f3ec41a6,.js,16459606,2,https://stackoverflow.com/a/16459606
+194e4f6c5413fa2a7c23137f5fd3678df28777f1,2016-01-28 12:11:59-08:00,2016-01-28 12:11:59-08:00,18823,18823,18823,18823,node.js lab,ModificationType.ADD,,67,0,67,0,jamesjed/lab4,lab4,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+b4d2af50880ed3b2ed295986d68772319270f98e,2015-04-21 00:06:58-06:00,2015-04-21 00:06:58-06:00,11851,11851,11851,11851,Ionic Material (alpha) release v0.0.1,ModificationType.ADD,,26309,0,26309,0,Jandersolutions/Ionic-Material,Ionic-Material,e488352b2f5262f454214cbf8e336d11f7874f5f,.js,472729,2,https://stackoverflow.com/a/472729
+b6c4fb77dcbb3f07273a5e23192a8cc32a23244a,2014-12-31 16:38:00-05:00,2014-12-31 16:38:00-05:00,5754,5754,5754,5754,Finish adding header extractor and header handling plus tests for finish,ModificationType.MODIFY,,25,8,25,8,janusnic/pyresttest,pyresttest,201e9faf1e4090d906685df5c6ed817f6f050a0a,.py,5955949,2,https://stackoverflow.com/a/5955949
+92cdacc266bbe8ff1839cca2266db1cf1522e95b,2015-07-18 17:06:46+02:00,2015-07-19 11:31:48+02:00,7337,7337,7337,7337,use proper print() and except syntax to support python 3,ModificationType.MODIFY,b6c4fb77dcbb3f07273a5e23192a8cc32a23244a,19,19,1,1,janusnic/pyresttest,pyresttest,201e9faf1e4090d906685df5c6ed817f6f050a0a,.py,5955949,2,https://stackoverflow.com/a/5955949
+1daf7f58af8f12e7398acea2a7ae23ed508e66ee,2015-07-19 11:29:14+02:00,2015-07-19 11:31:54+02:00,7337,7337,7337,7337,use email instead of mimetools to parse headers,ModificationType.MODIFY,92cdacc266bbe8ff1839cca2266db1cf1522e95b,2,2,1,1,janusnic/pyresttest,pyresttest,201e9faf1e4090d906685df5c6ed817f6f050a0a,.py,5955949,2,https://stackoverflow.com/a/5955949
+4fb0e30f5749dcb2f93611fa8ea6bc8bbaeec087,2015-07-19 12:05:21+02:00,2015-07-19 12:05:21+02:00,7337,7337,7337,7337,Fix last remaining issues,ModificationType.MODIFY,1daf7f58af8f12e7398acea2a7ae23ed508e66ee,3,2,3,2,janusnic/pyresttest,pyresttest,201e9faf1e4090d906685df5c6ed817f6f050a0a,.py,5955949,2,https://stackoverflow.com/a/5955949
+4334ba428bc2b87bfa4810a88b3c0bc667b8c53b,2015-08-23 12:19:22-04:00,2015-08-23 12:19:22-04:00,5754,5754,5754,5754,Fix headers not being handled in a case-insensitive fashion with Python 3 compatibility,ModificationType.MODIFY,4fb0e30f5749dcb2f93611fa8ea6bc8bbaeec087,2,1,2,1,janusnic/pyresttest,pyresttest,201e9faf1e4090d906685df5c6ed817f6f050a0a,.py,5955949,2,https://stackoverflow.com/a/5955949
+ca3c329e924b65c8de99e7e8d49fb0d7cca81780,2017-06-06 11:56:35+01:00,2017-06-06 11:56:35+01:00,18824,18824,18824,18824,Initial commit - files copied from live version,ModificationType.ADD,,26093,0,26093,0,JamieDenman/FXPlusVuFind,FXPlusVuFind,aebeef165225c337ae31ebefcf6dc6d88e7d5440,.js,3143070,1,https://stackoverflow.com/q/3143070
+05e6838e28165be162373c15b0a331a7e584cb67,2013-09-09 09:17:35-05:00,2013-09-09 09:17:35-05:00,18825,18825,18825,18825,"First Commit
+
+First commit uploading WordPress and local development files.",ModificationType.ADD,,447,0,447,0,jamiebrwr/St-Joe-Market,St-Joe-Market,6520c118c5bf4fbea92b47273099cc80ad5d08db,.js,2855865,1,https://stackoverflow.com/q/2855865
+7473b9c2a9fcd5f8c0b79f308ce968a889602df3,2017-08-14 10:16:10-05:00,2017-08-14 10:16:10-05:00,18826,18826,37,37,Uploading progress.,ModificationType.ADD,,121,0,121,0,jakspacek/tableHIFU,tableHIFU,1d33909ffad112f4e041eb1b118716d05d3438b8,.py,1336640,2,https://stackoverflow.com/a/1336640
+ed3c7bd1c6edb2f28d6955ff70f29fed36c843fd,2017-08-23 16:38:00-04:00,2017-08-23 16:38:00-04:00,18826,18826,18826,18826,"hardware overhaul!
+Still grinding away.",ModificationType.RENAME,7473b9c2a9fcd5f8c0b79f308ce968a889602df3,120,120,120,119,jakspacek/tableHIFU,tableHIFU,1d33909ffad112f4e041eb1b118716d05d3438b8,.py,1336640,2,https://stackoverflow.com/a/1336640
+a8c8e085204ae2b348a3e9dc2d67e65157ff6db9,2016-02-25 11:19:33+02:00,2016-02-25 11:19:33+02:00,18827,18827,18827,18827,"major client refactoring
+
+- get rid of AngularJs
+- get rid of the realtime subscription chart, it just doesn't work
+- split the scripts into logical units
+
+Closes #7",ModificationType.MODIFY,,15814,50975,15814,50975,Jalle19/tvheadend-status-manager,tvheadend-status-manager,fcd9a950bab7a1a3f602977e634ae891850d1ba6,.js,19345563,2,https://stackoverflow.com/a/19345563
+e2676de8e52a52ab8926d2e16b60981dfd8f7b58,2017-10-21 15:31:06-02:00,2017-10-21 15:31:06-02:00,18828,18828,18828,18828,first commit,ModificationType.ADD,,912,0,912,0,jairoiglesias/hacka-intervalor,hacka-intervalor,7b3b922251428a6f19cb367de5fc58ec0956089b,.js,359788,1,https://stackoverflow.com/q/359788
+edcc524c18db9142ba967e8880e9e53ac35efd9a,2017-01-15 13:42:01-06:00,2017-01-15 13:42:01-06:00,18829,18829,18829,18829,added,ModificationType.ADD,,947,0,947,0,Janyousif0/janyousif0.github.io,janyousif0.github.io,b9ee80c3d9705589abd2c76e9bdccf46e9b80b1d,.js,111102,1,https://stackoverflow.com/q/111102
+e6fcd9b51c6a009d81515b6dfc63b84547134d42,2015-05-25 22:12:04-04:00,2015-05-25 22:12:04-04:00,18830,18830,18830,18830,Add QWOT to complement physical thickness. Let one update when the other is changed.,ModificationType.MODIFY,,13195,5791,13195,5791,jamarks1/tf-sim,tf-sim,991da70a8aa96332366e8f9f0967a7667428a5c6,.js,3629183,1,https://stackoverflow.com/q/3629183
+30edcca1fbf15909ea9b5a096f93f353feea7d9f,2017-05-02 10:36:01+02:00,2017-05-19 18:26:02+02:00,18831,18831,18831,18831,"docs: Generate Doxygen directives for API documentation
+
+This is to resolve issue reported in https://github.com/espressif/esp-idf/issues/130.",ModificationType.MODIFY,,10,4,10,4,jaracil/esp-idf,esp-idf,f15ddaf6e78a62db07355f40fec0d127cf74200d,.py,12772927,1,https://stackoverflow.com/q/12772927
+ea3ccccb9a2f316574ceb629e2a96ea190fdafa3,2017-07-07 10:12:38-03:00,2017-07-07 10:12:38-03:00,18833,18833,18832,18832,"Tk612 (#643)
+
+* Adiciona o botão pra o top no artigo
+
+* Adiciona o botão pra o top no artigo
+
+* Adicionar a data e hora do dia no site
+
+* Adicionando o moment.js
+
+* Corrigindo os teste
+
+* Correções dos testes",ModificationType.ADD,,13700,0,13700,0,jamilatta/opac,opac,aebfa54979c7aaf6b4d255ec182e26336c0cdc07,.js,3561493,1,https://stackoverflow.com/q/3561493
+37123cd2858b4e318ed8109af745312df4848577,2013-08-13 15:30:52-07:00,2013-08-15 13:23:18-07:00,549,549,549,549,"feat(minerr): log minerr doc url in development
+
+Closes #3566",ModificationType.MODIFY,,47,0,47,0,jagdeesh109/angular.js,angular.js,9599b2dcbfed698e6c4c1d3b12aa6749a65edfa6,.js,3446170,1,https://stackoverflow.com/q/3446170
+07272608d8ae39a5dd220cdb5637b1439342d5c3,2013-10-10 09:11:21+01:00,2013-10-10 11:58:15-07:00,389,389,550,550,"fix(modules): stop leaking global variables in tests
+
+The routeUtils.js file was declaring a number of functions that were
+leaking into other modules such as ngMocks causing tests to pass
+incorrectly.
+
+Closes #4360",ModificationType.MODIFY,37123cd2858b4e318ed8109af745312df4848577,6,6,3,3,jagdeesh109/angular.js,angular.js,9599b2dcbfed698e6c4c1d3b12aa6749a65edfa6,.js,3446170,1,https://stackoverflow.com/q/3446170
+accb22d64455bc73f5a417f56a12d35e9207fde0,2014-10-17 19:45:20-04:00,2014-10-18 10:15:40-04:00,552,552,551,551,"style(*): enforce spaces after keywords, add spaces
+
+Closes #9677",ModificationType.MODIFY,07272608d8ae39a5dd220cdb5637b1439342d5c3,1,1,1,1,jagdeesh109/angular.js,angular.js,9599b2dcbfed698e6c4c1d3b12aa6749a65edfa6,.js,3446170,1,https://stackoverflow.com/q/3446170
+d3b1f502e3099d91042a1827a006ad112ea67d36,2014-10-22 17:31:27-04:00,2014-10-23 15:59:26-04:00,552,552,551,551,"style(*): add rule disallowSpacesInAnonymousFunctionExpression beforeOpeningRoundBrace, including i18n generator",ModificationType.MODIFY,accb22d64455bc73f5a417f56a12d35e9207fde0,3,3,2,2,jagdeesh109/angular.js,angular.js,9599b2dcbfed698e6c4c1d3b12aa6749a65edfa6,.js,3446170,1,https://stackoverflow.com/q/3446170
+a4b3ae1f1fac85a4933b0e31e76c7c140a71d3e6,2010-04-24 17:03:38+05:27,2010-06-17 10:26:39+02:00,3702,3702,9666,9666,"1794: fast divisors (Tim Peters) and divisor_count
+
+A less naive generator of divisors is included. I can take
+credit only in making it sympy compatible and updating the
+code a bit. Tim's amazing. ;-)
+
+Since changes were made to make divisor enumeration faster,
+a function divisor_count() was added which gives the number
+of divisors e.g. 4 for n=6 (viz. 1, 2, 3, 6). One needs only
+the factorization for this. Ref is included.
+
+The factors in primefactors were being sorted twice so that
+was changed and some tidying was done.
+
+The limit is now included when factoring a number; that way if
+someone wants to include everything up through a certain prime
+they don't have to remember to add a 1 to that value.
+
+The docstring for multiproduct was annotated a bit to make
+it clear what is happening.
+
+The built-in bisect replaces existing code.
+
+Signed-off-by: Vinzent Steinberg <Vinzent.Steinberg@gmail.com>",ModificationType.MODIFY,,78,26,78,26,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+273f450e368f0753d7976b28a6a4b97e9c7920a3,2010-09-27 01:54:52+05:27,2010-11-23 11:56:50+05:27,3702,3702,3702,3702,"2003 changes to factoring integers
+
+=== numbers.py
+
+    Removed Memoizer which is no longer used -- the routine it was
+    applied to was removed.
+
+    unwrapped lines so they show up in the coverage report
+
+    * def factor_trial_division(n):
+
+        This routine now exists in factor_.py as the helper to factorint
+        and is named _factorint_small.
+
+    * def factors(self):
+
+        This is a wrapper to factorint and now has limit and verbose
+        flags
+
+    * def _eval_power(b, e):
+
+        Integer will now factor arguments of roots that are larger than
+        2**32. so large numbers with small factors can be simplified
+        (e.g. sqrt(13!) is greater than 2**32 but the sqrt(13!) can be
+        simplified to 1440*3003**(1/2). By setting the limit to 2**15 any
+        integer will be fully factorized. This is an arbitrary limit.
+
+        A test for a perfect power in numbers.py is now performed in
+        addition to the integer_nthroot test since it is possible to have
+        a perfect power that is not the exact nth root of a number. e.g.
+
+        >>> a = 4294967311
+        >>> sqrt(a**4) # perfect sq root
+        18446744202558570721
+        >>> sqrt(a**3) # not a perfect sq root
+        79228163344367823809576701231**(1/2)
+        >>> sqrt(a**4) # perfect sq root
+        18446744202558570721
+        >>> sqrt(a**3) # not a perfect sq root
+        79228163344367823809576701231**(1/2)
+
+        After this commit the last result becomes
+        4294967311*4294967311**(1/2)
+
+        removed references to b.p in eval_power since b is an integer
+
+    * def integer_nthroot(y, n):
+
+        make argument integers
+
+=== ntheory/__init__.py
+
+    import primorial
+
+=== factor_.py
+
+    When the integer routines uses sympy's abs this generates an
+    Integer rather than an int and this causes problems to routines
+    that are expecting ints. So abs was imported from pythons
+    operators.
+
+    added smoothness and smoothness_p functions to give the
+    smoothness of a number or the smoothness of the factors+/-m.
+
+    * def trailing(n):
+
+        makes its arg an int
+
+        for any number n that has an integer bitcount, checking for
+        equality between n and 1 << (bitcount(n) - 1) is a quick  test of
+        a perfect power of 2 rather than going through the whole
+        determination of the number of trailing zeroes with the more
+        general code that follows.
+
+    * def multiplicity(p, n):
+
+        makes its arg integers
+
+    * def perfect_power(n, candidates=None, big=True, factor=True):
+
+        the recursive keyword was changed to big to reflect that the
+        biggest power is being sought.
+
+        a 'factor' flag was added to perfect_power to allow simultaneous
+        factorization of the base to be attempted since this can quickly
+        identify what the power must be, e.g. if a factor of 2**16 is
+        detected then the overall power must be a factor of 16.
+
+        2 is removed from the candidates if n ends in 2, 3, 7, or 8.
+
+        a warning that the candidates need to be sorted was added to the
+        docstring.
+
+        pep8 edit of ""abs(int(a+0.5)-a) > 0.01:""
+
+        return an integer
+
+    * def pollard_rho(n, a=1, s=2, retries=5, max_steps=None, seed=1234,
+      F=None):
+
+        docstring was edited and explanatory material was added.
+
+        pollard_rho now permits changing the initial value and additive
+        value of the default function (x**2 + a) and even a totally
+        different function, F, to be iterated.
+
+    * def pollard_pm1(n, B=10, a=2, retries=0, seed=1234):
+
+        docstring edited with the ability to change 'a' if desired. Also,
+        the ability to have the routine run more than once (as in
+        pollard_rho) was added.
+
+        the random value assigned to 'a' after the first attempt with a=2
+        limits the range to [2, n-2] rather than [2, n-1] for reasons
+        documented in the inline comments
+
+    * def _trial(factors, n, candidates, verbose=False):
+
+        Since nothing is returned if no candidates are given the candidates
+        are now a required argument. Unlike perfect_power, they aren't
+        supplied by default.
+
+        the unused 'force_finalize' flag was removed
+
+        the 'found_something' flag was removed and a comparison of the
+        length of the factors dictionary before and after the routine is
+        made instead.
+
+    * def _check_termination(factors, n, verbose=False):
+
+        added a confirmation about an assumption being made while
+        updating factors
+
+	the throughput seems better if the prime test is done after
+	the perfect power test
+
+	All the methods and limits in use in factorint are now
+	maintained during the check.
+
+	Note: the n == 1 exit never occurs at present because the
+	presence of a prime or perfect power occurs first; the only
+	place that n would be reduced to 1 is at the end of
+	_factorint_small (and termination is checked before _check_
+	terminate is called) or in _trial, but before trial is called
+	a check for prime or perfect powers is made and then the
+	check occurs after each factor is found...so n is never 1. But
+	it's left here in case any of those other tests are removed so
+	the routine will exit if ever n == 1 is true.
+
+    * modified some of the messages that are printed with the verbose
+      option
+
+    * def _factorint_small(factors, n, limit, fail_max):
+
+      This is much of what used to be in numbers.py A hybrid approach is
+      used, however to determine the exponent of a factor: up to an
+      exponent of 20, trial division is used and then after that (assuming
+      that it might be much larger) a call to multiplicity is used.
+
+      trading length of code for speed, values of 6j+/-1 are used rather
+      than all odd numbers
+
+      in addition, if more than fail_max divisors in a row do not divide
+      n then the routine terminates so more advanced methods can be tried
+
+    * def factorint(n, ...)
+
+        the general approach is the same but now before starting the main
+        loop over trial division and pollard methods, the following is
+        done:
+
+            - removal of small factors up through 2**15
+            - test for perfect powers
+            - test for Fermat factors (the large factor equivalent
+              of checking for divisibility   by 2, 3, 5.
+
+        if a number to be factored is larger than 50 digits then the first
+        and last 5 digits are shown with the number of unshown digits
+        cited, e.g. factorial(200) shows up as 78865..(365 other
+        digits)..00000; this only applies to the verbose option
+
+        rather than use an arbitrary 1e1000 as the limit in factorint if
+        the calculation of the square root failed, a call to
+        integer_nthroot was made
+
+        a smoothness bound was being calculated but not used; now it is
+        used so B != high_; it is also calculated with integer_nthroot to
+        avoid overflow problems
+
+        try make all keys of a factor dictionary ints
+
+	allow a call to factorint with the output dictionary return
+	the visual ouput so factorint becomes its own translator of
+	the visual output, toggling between unevaluated Mul <-> dict
+
+	no assumption is made about the state of factoring when toggling
+	between forms, so this can be used to send numbers in partially
+	factored states to factorint e.g. factorint({4: 1})->2**2;
+	because of the toggling nature, sending a dictionary requires
+	a double call to factorint to return the dictionary form again.
+
+	the visual expression is now sorted by factor's base
+
+        ** If any modification of this is done, like refactoring or
+           changing loop structure or adding a sqrt(n) rather than
+           checking that d*d > dd, etc..., it should be confirmed that
+           the change results in a faster routine. This work was
+           directed by checking the number of factorizations starting
+           from n, stepping by 1, that could be done in 10 seconds,
+           the results being:
+
+            log(n, 2) in 2003 in master
+
+             |         |       |
+              1      229071  110654
+             15      215032  103926
+             20      110087   37342
+             30       10194   10112
+             40        2707    2912
+             50         803     542
+
+        Of course these are relative numbers but by checking a before and
+        after speed one will get an idea of the impact of modifications.
+
+=== generate.py
+
+    edited docstrings of prime and primepi
+
+    nextprime and prevprime were modified to search 6*j+/-1 rather
+    than all integers; this means searching for near primes of large
+    numbers will be about 3X faster; the comment about using the
+    sieve was removed since this tested to be slower
+
+    nextprime can now return the ith prime after n
+
+    * def primerange(a, b):
+
+        added some extra material to the primerange function
+
+    * def primorial(n, nth=True):
+
+        Added a primorial function that can return either the product of
+        all primes up through n or the product of the first n primes.
+
+    * def cycle_length(f, x0, nmax=None, values=False)
+
+        Added a function to report on the cycle characteristics of
+        iterated functions. Brent's method is used for the detection.
+
+=== primetest.py
+
+    removed factor_pow2 and wrote it inline to the routine that uses
+    it
+
+    in primetest, clarifying comments were made in _mr_safe and the
+    helper function was modified to use factorint
+
+    * def isprime(n):
+
+        removed calls to _tiny_prime and just made a lookup for n <=23001
+        to handle small primes. This many primes was about the break-even
+        point for doing a list lookup vs a call to mr_safe and is faster
+        than the calls to *_tiny_*.
+
+=== utilities/iterables
+
+    a ""capture"" function was added to capture printed output. Output that
+    would have gone to stdout is captured so it can be inspected. This is
+    used in the tests of ntheory.
+
+=== core/mul.py
+
+    as_powers_dict() was not tested and did not work as it did not
+    iterate over self's arguments. Now it does and also works in
+    case self is an unevaluted Mul which can have duplicate ""bases""
+    appearing in the arguments, e.g. 2**3*2**4 -> {2: 7} not {2: 4}
+    where the 2nd occurance would replace the first occurance. The
+    same applies for symbolic quantities as well.
+
+=== statistics/test_statistics
+
+   The problem that arose above with abs was likely the same
+   problem that arose in statistics, so the #XXX was removed
+   and operator's abs used throughout statistics.",ModificationType.MODIFY,a4b3ae1f1fac85a4933b0e31e76c7c140a71d3e6,814,156,3,13,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+ca0918c514ffb2bebcc87ba1cc3f79108c29dc64,2011-09-15 20:00:19+05:27,2011-09-15 20:02:08+05:27,3702,3702,3702,3702,"divisor count given a modulus option
+
+    The number of divisors of n that are divisible by m is just
+    the divisor count of n/m if m divides n, else 0. This is given
+    by using the new `modulus` option for divisor_count.",ModificationType.MODIFY,273f450e368f0753d7976b28a6a4b97e9c7920a3,9,3,9,3,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+f7bf5b875b9e1dc84f5405fa4a6255596c386600,2011-12-10 16:53:39+01:00,2011-12-11 22:49:22+01:00,5704,5704,5704,5704,Imported ntheory documentation,ModificationType.MODIFY,ca0918c514ffb2bebcc87ba1cc3f79108c29dc64,44,48,13,6,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+e85b4e2bbebde53fb1954acda9eec876df1e0d2d,2011-12-11 23:05:40+01:00,2011-12-11 23:05:40+01:00,5704,5704,5704,5704,Fixed trailing whitespaces in docstring table,ModificationType.MODIFY,f7bf5b875b9e1dc84f5405fa4a6255596c386600,7,7,7,7,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+7c5ffc810865a0901b495d853bf7f03355ff75ee,2011-12-11 23:11:53+01:00,2011-12-11 23:11:53+01:00,5704,5704,5704,5704,Consistent headers,ModificationType.MODIFY,e85b4e2bbebde53fb1954acda9eec876df1e0d2d,5,3,5,3,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+7c1df784816e16ae9a4741ed8a52f015490f1b60,2011-12-18 16:09:10+05:27,2011-12-18 16:20:42+05:27,3702,3702,3702,3702,normalize See Also tags by removing space after the ========,ModificationType.MODIFY,7c5ffc810865a0901b495d853bf7f03355ff75ee,11,18,11,11,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+c48466dcd9ef22ad58a4585b1967b3b409118b81,2011-12-20 01:37:47+05:27,2011-12-20 07:59:49+05:27,3702,3702,3702,3702,redo tables in factor_.py,ModificationType.MODIFY,7c1df784816e16ae9a4741ed8a52f015490f1b60,21,20,11,11,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+43f445ab25432b98f31b5abb5698abacefbf05fc,2011-12-19 18:05:15+00:00,2011-12-22 15:38:34+00:00,9667,9667,9667,9667,"Fixed most of the docscrape.py warnings.
+
+(Properly, this time)
+Also fixed some new warnings created by fixed files.
+
+Rebased",ModificationType.MODIFY,c48466dcd9ef22ad58a4585b1967b3b409118b81,86,82,3,2,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+b3151454dd10176a39c94dfdaa9648a882c94676,2012-10-18 14:42:48+05:27,2012-10-19 21:14:30+05:27,3702,3702,3702,3702,pep8 E203,ModificationType.MODIFY,43f445ab25432b98f31b5abb5698abacefbf05fc,2,2,2,2,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+8f7be8c4fd0de3d3c635004a78b13e7a8a917d6d,2012-10-18 14:52:41+05:27,2012-10-19 21:33:03+05:27,3702,3702,3702,3702,pep8 E251,ModificationType.MODIFY,b3151454dd10176a39c94dfdaa9648a882c94676,1,1,1,1,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+1e993dc45d39f3ae74a5a20ad76b3f02f88ab7a2,2012-10-19 23:56:41+05:27,2012-10-19 23:56:41+05:27,3702,3702,3702,3702,pep8 E225,ModificationType.MODIFY,8f7be8c4fd0de3d3c635004a78b13e7a8a917d6d,5,5,1,1,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+c4e52b890e5d1be95ce3cdf3d1605c14b73e618c,2012-10-20 01:04:43+05:27,2012-10-20 01:04:43+05:27,3702,3702,3702,3702,1456: eliminating unused variables,ModificationType.MODIFY,1e993dc45d39f3ae74a5a20ad76b3f02f88ab7a2,0,1,0,1,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+8ade3a0c47d0e412eae8484b0f0b8a955bf26df9,2012-10-20 02:50:01+05:27,2012-10-20 03:09:34+05:27,3702,3702,3702,3702,don't break line in ``-strings; fix factor_ table; matrices index,ModificationType.MODIFY,c4e52b890e5d1be95ce3cdf3d1605c14b73e618c,1,1,1,1,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+384dfed7940c55335edbadc0613c90e47210125b,2013-07-17 21:55:31+08:00,2013-07-17 21:55:31+08:00,9668,9668,9668,9668,Few modification of ntheory,ModificationType.MODIFY,8ade3a0c47d0e412eae8484b0f0b8a955bf26df9,9,11,6,6,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+c86aa77c4df2430692a01ff882310ca81f08c7d5,2013-07-21 20:20:16-05:00,2013-07-24 20:12:40-05:00,5709,5709,5709,5709,"Single Python 2 and 3 compatible codebase
+
+Refactor the codebase to be both Python 2 and 3 compatable. Main changes
+include:
+
+- Absolute imports with leading `.`.
+
+- Python 3 print function rather than print statement.
+
+- String in Python 3 are always unicode, so unicode related functions
+  have been removed.
+
+- Integers in Python 3 are always ""long"", `long` methods and suffixing
+  long numbers with `L` are not supported
+
+- `map`, `filter`, and `range` return iterables rather than lists, where
+  needed, wrap these calls in `list()`. As such, the Python 2 iterable
+  forms of these, such as `xrange` and `ifilter`, have been removed.
+
+- `exec` is a function rather than a statement.
+
+- Iterators in Python 3 do not have `.next()` methods. Instead, `next()`
+  can be used (Python >=2.6).
+
+Changes related to Python 2 and 3 compatibility are in
+sympy.core.compatibility.",ModificationType.MODIFY,384dfed7940c55335edbadc0613c90e47210125b,31,30,1,1,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+a701cfc13618d5d7c03a1ae5fbeecf76ee542c2b,2013-07-29 16:46:47+04:00,2013-07-29 18:53:29+04:00,5710,5710,5710,5710,Revert back xrange's after merge of PR #2318,ModificationType.MODIFY,c86aa77c4df2430692a01ff882310ca81f08c7d5,1,1,1,1,jamesblunt/sympy,sympy,fe9e74645cac26fe0fa99488d5571affc32c2783,.py,1010381,1,https://stackoverflow.com/q/1010381
+6e1412b2ad5ba1edf9e1f02addbad5f255dfd52a,2015-10-02 10:36:38+02:00,2015-10-02 10:36:38+02:00,18834,18834,18834,18834,Add presentation and edit readme to include usefull links.,ModificationType.ADD,,393,0,393,0,JanKlopper/Lantap_workshop,Lantap_workshop,15e3b40b33532ca81046d6a7f6588f1cd17c2f05,.js,5690269,1,https://stackoverflow.com/q/5690269
+82b288905ea7bf4ecf3bc68ae7556cec6114177b,2013-04-07 08:33:23-05:00,2013-04-07 08:34:18-05:00,18835,18835,18835,18835,"New ASP.NET MVC 4 projects from Update 1.
+
+Generated with Visual Studio 2012 Update 1.",ModificationType.ADD,,3577,0,3577,0,JamesSkemp/AspNetMvcVersions,AspNetMvcVersions,61c2a0e22df037ed7ed2cf9dc277655d16d43fbc,.js,5908494,1,https://stackoverflow.com/q/5908494
+0b298bc9561e53329c833e305d1135e0c7446d48,2015-06-08 15:00:35+02:00,2015-06-08 15:00:35+02:00,18836,18836,18836,18836,initial,ModificationType.ADD,,275,0,275,0,jamesbeat/styler,styler,b3101e0450283dbd8cc0f14fc018fdfbf7fd5c7f,.js,2261705,1,https://stackoverflow.com/q/2261705
+1c8f1e441acab56b26ea2a17b980b143ceba4040,2017-05-09 15:07:42+08:00,2017-05-09 15:07:42+08:00,18837,18837,18837,18837,study demos,ModificationType.ADD,,4418,0,4418,0,jameswu525/javastudy,javastudy,964e1d72b722ac2dd0a377b2d2940fb94a9b6974,.js,13216903,1,https://stackoverflow.com/q/13216903
+8501bae266019f35a4fee5515c5937663165240b,2015-07-08 08:31:05+02:00,2015-07-08 08:31:05+02:00,18838,18838,18838,18838,Generado con express - Cargadas dependencias - Index -  favicon,ModificationType.ADD,,147,0,147,0,jalejandrocasas/quiz,quiz,ce6369f1cbac700012e50bf621e26e94f3ec41a6,.js,398120,2,https://stackoverflow.com/a/398120
+a488afd1cc0280c89c88da83e07de78adb8268a4,2015-07-08 09:35:53+02:00,2015-07-08 09:35:53+02:00,18838,18838,18838,18838,remove files,ModificationType.DELETE,8501bae266019f35a4fee5515c5937663165240b,0,147,0,147,jalejandrocasas/quiz,quiz,ce6369f1cbac700012e50bf621e26e94f3ec41a6,.js,398120,2,https://stackoverflow.com/a/398120
+3c38a973292a078a981e304ebc1841578f7b0a8b,2014-09-07 11:03:23-04:00,2014-09-07 11:03:23-04:00,18839,18839,18839,18839,initial commit of base system ready for code,ModificationType.ADD,,21954,0,21954,0,james-huston/enterprise-angular-directives-demo,enterprise-angular-directives-demo,59f7a967686aa4a59cd362026534a7f5504ce475,.js,472729,2,https://stackoverflow.com/a/472729
+eee4e9c0052b07e43ebde5151e9065cc408f5c18,2015-04-19 16:31:52-04:00,2015-04-19 16:31:52-04:00,1158,1158,1158,1158,"Fixing the overall class dependency approach, lots of internal cleanup, WIP",ModificationType.ADD,,75,0,75,0,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+eee4e9c0052b07e43ebde5151e9065cc408f5c18,2015-04-19 16:31:52-04:00,2015-04-19 16:31:52-04:00,1158,1158,1158,1158,"Fixing the overall class dependency approach, lots of internal cleanup, WIP",ModificationType.RENAME,eee4e9c0052b07e43ebde5151e9065cc408f5c18,7,26,0,6,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+eee4e9c0052b07e43ebde5151e9065cc408f5c18,2015-04-19 16:31:52-04:00,2015-04-19 16:31:52-04:00,1158,1158,1158,1158,"Fixing the overall class dependency approach, lots of internal cleanup, WIP",ModificationType.MODIFY,eee4e9c0052b07e43ebde5151e9065cc408f5c18,381,373,0,9,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+f9aab9dc76f4504143a3dba51127a2f3c7165829,2015-04-22 10:34:14-04:00,2015-04-22 10:34:14-04:00,1158,1158,1158,1158,"Major internal refactor
+
+Beefed up transaction implementation, still needs tests
+and cleanup of nested transaction queues.
+
+Left todo:
+- Fix commented out tests
+- Fix oracle driver's transactions",ModificationType.MODIFY,eee4e9c0052b07e43ebde5151e9065cc408f5c18,4,4,4,4,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+f9aab9dc76f4504143a3dba51127a2f3c7165829,2015-04-22 10:34:14-04:00,2015-04-22 10:34:14-04:00,1158,1158,1158,1158,"Major internal refactor
+
+Beefed up transaction implementation, still needs tests
+and cleanup of nested transaction queues.
+
+Left todo:
+- Fix commented out tests
+- Fix oracle driver's transactions",ModificationType.RENAME,f9aab9dc76f4504143a3dba51127a2f3c7165829,5,10,0,1,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+e570c167c144b9ee2b420733a9a52c401c06a3af,2015-04-22 15:39:29-04:00,2015-04-22 15:39:29-04:00,1158,1158,1158,1158,JSHint and formatting,ModificationType.MODIFY,f9aab9dc76f4504143a3dba51127a2f3c7165829,0,1,0,1,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+7e884cb325ac3edeb30794f8307a58a167d2dbda,2015-05-09 13:58:18-04:00,2015-05-09 13:58:18-04:00,1158,1158,1158,1158,"Babel src -> lib, remove gulp",ModificationType.MODIFY,e570c167c144b9ee2b420733a9a52c401c06a3af,23,28,23,28,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+7e884cb325ac3edeb30794f8307a58a167d2dbda,2015-05-09 13:58:18-04:00,2015-05-09 13:58:18-04:00,1158,1158,1158,1158,"Babel src -> lib, remove gulp",ModificationType.MODIFY,7e884cb325ac3edeb30794f8307a58a167d2dbda,58,62,0,1,jamesanthonyferguson/knex,knex,184a32f06a10c7c361254ed0d6f3999e1393f1d2,.js,255517,1,https://stackoverflow.com/q/255517
+b58ddb32bae180dfad240ded5d247cab9a1f2215,2014-04-07 22:48:13+02:00,2014-04-07 22:48:13+02:00,3181,3181,3181,3181,[utils] Completely rewrite Windows output (Fixes #2672),ModificationType.MODIFY,,60,0,60,0,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+89938c719e2ef5afea7a292b72c6e9f95c1974e2,2014-04-07 23:23:48+02:00,2014-04-07 23:23:48+02:00,3181,3181,3181,3181,Fix Windows output for non-BMP unicode characters,ModificationType.MODIFY,b58ddb32bae180dfad240ded5d247cab9a1f2215,5,2,2,2,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+d1b9c912a42de3b99ae73553d38fbfa50b8ebc52,2014-04-21 04:59:44+02:00,2014-04-21 04:59:46+02:00,3181,3181,3181,3181,"[utils] Fix _windows_write_string (Fixes #2779)
+
+It turns out that the function did not work for outputs longer than 1024 UCS-2 tokens.
+Write non-BMP characters one by one to ensure that we count correctly.",ModificationType.MODIFY,89938c719e2ef5afea7a292b72c6e9f95c1974e2,16,7,16,5,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+a383a98af617265803cbfa38f540d5f412899c3c,2014-04-30 10:07:32+02:00,2014-04-30 10:07:32+02:00,3181,3181,3181,3181,[utils/_windows_write_string] Be defensive about fileno (Fixes #2820),ModificationType.MODIFY,d1b9c912a42de3b99ae73553d38fbfa50b8ebc52,5,1,5,1,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+4e408e479b722f63953051bbc90fad561083f583,2014-08-27 19:11:45+02:00,2014-08-27 19:11:45+02:00,3181,3181,3181,3181,[utils] Modernize tests,ModificationType.MODIFY,a383a98af617265803cbfa38f540d5f412899c3c,22,26,0,5,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+12ea2f30cfcc381eb46cc99a0a4c3d468fe732d1,2014-11-04 23:20:39+01:00,2014-11-04 23:20:39+01:00,3181,3181,3181,3181,[utils] Remove unused get_meta_content function,ModificationType.MODIFY,4e408e479b722f63953051bbc90fad561083f583,2,10,0,1,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+3828505646a58d5e19f0ffe77821650e25d72b3a,2014-11-04 23:33:43+01:00,2014-11-04 23:33:43+01:00,3181,3181,3181,3181,[utils] Use a regexp instead of HTMLParser for get_element_by_attribute,ModificationType.MODIFY,12ea2f30cfcc381eb46cc99a0a4c3d468fe732d1,16,105,0,10,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+6ac4e8065a506f92db919ff063cf4d2f00bc81f0,2014-12-06 20:15:41+07:00,2014-12-06 20:15:41+07:00,16520,16520,16520,16520,"Fix utils.py for PyPy on Windows
+
+The line
+```python
+from __future__ import unicode_literals
+```
+introduced in commit [ecc0c5ee01f0e5bdd6af0c32cb5b4adcb2a2f78c](https://github.com/rg3/youtube-dl/commit/ecc0c5ee01f0e5bdd6af0c32cb5b4adcb2a2f78c) broke youtube-dl for PyPy on Windows, making it unable to locate WinAPI functions.
+Error: ""TypeError: function name must be a string or integer""
+
+Adding ""b"" prefix to strings with WinAPI function names fixes it.",ModificationType.MODIFY,3828505646a58d5e19f0ffe77821650e25d72b3a,4,4,4,4,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+16040f46d64bad8dcc5f948288ef469dd787d3d3,2014-12-12 04:01:08+01:00,2014-12-12 04:01:08+01:00,3181,3181,3181,3181,[utils] Work around PyPy stupidity with Windows DLLs (Fixes #4392),ModificationType.MODIFY,6ac4e8065a506f92db919ff063cf4d2f00bc81f0,5,4,3,3,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+e2f89ec7aada2a58ca658a77401762b764adc112,2014-12-12 11:33:55+01:00,2014-12-12 11:33:55+01:00,3181,3181,3181,3181,"Revert ""[utils] Work around PyPy stupidity with Windows DLLs (Fixes #4392)""
+
+This reverts commit 16040f46d64bad8dcc5f948288ef469dd787d3d3.",ModificationType.MODIFY,16040f46d64bad8dcc5f948288ef469dd787d3d3,4,5,3,3,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+293f0f39ce955b9aa8284d461a0444e27491c392,2014-12-12 23:43:25+01:00,2014-12-12 23:43:25+01:00,16521,16521,16521,16521,"[utils] make_HTTPS_handler: Remove try/except block that would always raise an exception
+
+This code is only run for Python < 3.4, where context.load_default_certs doesn't exist",ModificationType.MODIFY,e2f89ec7aada2a58ca658a77401762b764adc112,0,4,0,1,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+8fb3ac3649ca7df6f328971f58afa84dd9d05cc6,2015-02-21 14:55:13+01:00,2015-02-21 14:55:13+01:00,3181,3181,3181,3181,PEP8: W503,ModificationType.MODIFY,293f0f39ce955b9aa8284d461a0444e27491c392,2,2,2,2,jaimeMF/youtube-dl,youtube-dl,da4ec7f209a4d0dfbad84254ee51914c3fadc270,.py,3259271,2,https://stackoverflow.com/a/3259271
+93099345d0d8ccd53338538fc87e575d9ea60790,2015-08-26 12:54:01+01:00,2015-08-26 12:54:01+01:00,18840,18840,18840,18840,Adding site,ModificationType.ADD,,193,0,193,0,jamielaff/als_projects,als_projects,0395f371d75e381d885951bfeab6917384e2e902,.js,1740700,1,https://stackoverflow.com/q/1740700
+e571a3a508eb6cb9d227547e49bee832fd78147e,2017-04-10 17:54:40-07:00,2017-04-10 17:54:40-07:00,18841,18841,18841,18841,modal.js still broken,ModificationType.ADD,,47,0,47,0,jamslatt/node_barcode,node_barcode,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+357b7aa3c7d4ff5980c4e959d1032d26f35b53e5,2015-03-09 09:53:39+01:00,2015-03-09 09:53:39+01:00,18842,18842,18842,18842,Färdigt wp och ngtheme.,ModificationType.ADD,,26059,0,26059,0,Jallnnn/wu14-sellforce,wu14-sellforce,67fcccda65c66100cc9d25af803f428ff3e3606a,.js,472729,2,https://stackoverflow.com/a/472729
+e595e206c441dc2abd0ef8ab08a6e21c73ba8499,2014-06-17 12:06:11+10:00,2014-06-17 12:06:11+10:00,16873,16873,16873,16873,move velocity into libs/transitions,ModificationType.ADD,,2843,0,2843,0,janko33bd/hive-js,hive-js,272a3959789aec5d5532634ec3d2349f10c3865a,.js,10417962,2,https://stackoverflow.com/a/10417962
+fddff35d464b5095f8b159ed8a651f32f67b4ca2,2013-07-19 16:24:06+02:00,2013-07-19 16:24:06+02:00,530,530,530,530,android: download and unzip at the same time,ModificationType.ADD,,145,0,145,0,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+218036b96096ac316e079f84b5176afcfbbfc58b,2013-07-23 17:34:43+02:00,2013-07-23 17:34:43+02:00,530,530,530,530,always use correct userAgent,ModificationType.MODIFY,fddff35d464b5095f8b159ed8a651f32f67b4ca2,7,8,7,8,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+c34a842f3c57eaec8a17df536237eaccaf13268f,2013-11-13 09:33:40+01:00,2013-11-13 09:33:40+01:00,530,530,530,530,format source,ModificationType.MODIFY,218036b96096ac316e079f84b5176afcfbbfc58b,1,1,1,1,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+842bbc8bc22e0ba7f05537d71b47a0b3a608ac63,2013-12-23 10:57:09+01:00,2013-12-23 10:57:09+01:00,530,530,530,530,code formatting,ModificationType.MODIFY,c34a842f3c57eaec8a17df536237eaccaf13268f,19,36,19,36,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+0738d1ddfc8e293656e153ea676cc40a9ab199b2,2014-03-27 14:20:51+01:00,2014-03-27 14:28:11+01:00,530,530,530,530,merged dim3 into master,ModificationType.MODIFY,842bbc8bc22e0ba7f05537d71b47a0b3a608ac63,57,18,57,18,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+c1c0498a9173217bce34cbc6f01327954f2bfbb3,2014-03-28 21:05:16+01:00,2014-03-28 21:19:20+01:00,530,530,530,530,"fixing #127, android 4.4 cannot download/fetch data",ModificationType.MODIFY,0738d1ddfc8e293656e153ea676cc40a9ab199b2,1,1,1,1,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+9d05b02d3ea97cd99596280483dd610529c69731,2014-03-29 12:44:40+01:00,2014-03-29 12:44:40+01:00,10836,10836,10836,10836,use GET in Downloader.java instead of POST requests,ModificationType.MODIFY,c1c0498a9173217bce34cbc6f01327954f2bfbb3,1,1,1,1,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+affa17e5e1f444f0ee00e678196efa446f8cc850,2014-12-13 16:56:49+01:00,2014-12-13 16:56:49+01:00,530,530,530,530,made readString public available in Helper,ModificationType.MODIFY,9d05b02d3ea97cd99596280483dd610529c69731,3,24,2,24,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+bf2b6872c9d422a5bd0cd95a32f0e55f2fa1d4a3,2015-05-28 16:07:55+02:00,2015-05-28 16:22:58+02:00,530,530,530,530,"cleaner error handling, breaking change for API but only in error JSON format, fixes #426",ModificationType.MODIFY,affa17e5e1f444f0ee00e678196efa446f8cc850,18,6,4,6,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+df63a5d23d0b0a7d5466a4645548221e60f3f015,2015-05-29 11:26:16+02:00,2015-05-29 11:26:16+02:00,530,530,530,530,remove dead code in Downloader,ModificationType.MODIFY,bf2b6872c9d422a5bd0cd95a32f0e55f2fa1d4a3,0,2,0,2,jansoe/graphhopper,graphhopper,8ab82251e927cae252691ffd170274f9c8593e73,.java,3932117,1,https://stackoverflow.com/q/3932117
+0b75468d627a2df6ee5a98b83db0824f6d8734e2,2015-04-24 00:37:25+02:00,2015-04-24 00:37:25+02:00,5447,5447,5447,5447,initial,ModificationType.ADD,,27598,0,27598,0,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+a4b8e8cae5aff48a59f57dbc8ef8cfae883bc07c,2015-12-17 15:00:37+01:00,2015-12-17 15:00:37+01:00,5447,5447,5447,5447,better error rendering in browser console,ModificationType.MODIFY,0b75468d627a2df6ee5a98b83db0824f6d8734e2,1,1,1,1,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+450ef4c3d43e30583038eacbee272b2a8a2f529d,2016-02-11 09:53:15+01:00,2016-02-11 09:53:15+01:00,5447,5447,5447,5447,builder,ModificationType.MODIFY,a4b8e8cae5aff48a59f57dbc8ef8cfae883bc07c,1,1,1,1,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+42914b0e1ba84cb73763c4733dfd6f0877e85ab3,2016-03-15 18:05:32+01:00,2016-03-15 18:05:32+01:00,5447,5447,5447,5447,"upgrade alpaca version to 1.5.17
+fix ckeditor
+fix number field
+fix for editor culture",ModificationType.RENAME,450ef4c3d43e30583038eacbee272b2a8a2f529d,10375,6400,7264,5753,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+42914b0e1ba84cb73763c4733dfd6f0877e85ab3,2016-03-15 18:05:32+01:00,2016-03-15 18:05:32+01:00,5447,5447,5447,5447,"upgrade alpaca version to 1.5.17
+fix ckeditor
+fix number field
+fix for editor culture",ModificationType.RENAME,42914b0e1ba84cb73763c4733dfd6f0877e85ab3,9811,6764,4383,3134,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+42914b0e1ba84cb73763c4733dfd6f0877e85ab3,2016-03-15 18:05:32+01:00,2016-03-15 18:05:32+01:00,5447,5447,5447,5447,"upgrade alpaca version to 1.5.17
+fix ckeditor
+fix number field
+fix for editor culture",ModificationType.DELETE,42914b0e1ba84cb73763c4733dfd6f0877e85ab3,0,26794,0,22871,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+42914b0e1ba84cb73763c4733dfd6f0877e85ab3,2016-03-15 18:05:32+01:00,2016-03-15 18:05:32+01:00,5447,5447,5447,5447,"upgrade alpaca version to 1.5.17
+fix ckeditor
+fix number field
+fix for editor culture",ModificationType.DELETE,42914b0e1ba84cb73763c4733dfd6f0877e85ab3,0,26604,0,2220,janjonas/OpenContent,OpenContent,33787e34eb27bb185a816531e8b364be4bd84fa3,.js,11584061,1,https://stackoverflow.com/q/11584061
+e359de5828854b90bbb85886661f210347409e7e,2015-10-12 17:04:42+11:00,2015-10-12 17:04:42+11:00,18843,18843,18843,18843,Add Umbraco 7.3,ModificationType.ADD,,9156,0,9156,0,JamesGreenAU/UmbracoServiceBroker,UmbracoServiceBroker,23d06ef355110dff6ae8340ca54fa9a5b40e330b,.js,181348,1,https://stackoverflow.com/q/181348
+6b0f6f895741f9943d89ec0b3f06a02ad224e2dd,2015-09-24 15:26:38-05:00,2015-09-24 15:26:38-05:00,18844,18844,18844,18844,A more reasonable commit message goes here,ModificationType.ADD,,124,0,124,0,jamestwhedbee/diogenes,diogenes,a691a15dff008af822f476afab37252e5127c405,.py,4219717,1,https://stackoverflow.com/q/4219717
+af007ba4f7e37302f57589d2fb0bf2d2c82e0ade,2015-10-19 12:57:26-05:00,2015-10-19 12:57:26-05:00,18845,18845,18845,18845,attempting to make utils_for_tests.array_equal better,ModificationType.MODIFY,6b0f6f895741f9943d89ec0b3f06a02ad224e2dd,28,5,18,5,jamestwhedbee/diogenes,diogenes,a691a15dff008af822f476afab37252e5127c405,.py,4219717,1,https://stackoverflow.com/q/4219717
+8137f40a072fa148316393eb824e5ae61c870675,2015-10-19 14:04:54-05:00,2015-10-19 14:04:54-05:00,18845,18845,18845,18845,my array equal is like the best now,ModificationType.MODIFY,af007ba4f7e37302f57589d2fb0bf2d2c82e0ade,23,7,9,1,jamestwhedbee/diogenes,diogenes,a691a15dff008af822f476afab37252e5127c405,.py,4219717,1,https://stackoverflow.com/q/4219717
+99112527e04d79d3bdcdb5e16e8cb8a9d120cf30,2014-02-22 20:28:46+01:00,2014-02-22 20:28:46+01:00,18846,18846,18846,18846,First commit,ModificationType.ADD,,4225,0,4225,0,jalvarez54/NorthWind54,NorthWind54,b61cf5c4c780ff951d5a72cf00665a983543bb6f,.js,5908494,1,https://stackoverflow.com/q/5908494
+75d2bc7ece978055dd9b1e307d3bd0f84341f7d1,2017-01-17 12:49:55-05:00,2017-01-17 12:49:55-05:00,18847,18847,18847,18847,Original Files,ModificationType.ADD,,8201,0,8201,0,JamesRaub/researchit,researchit,d5175e14e4abbd33195ddbfb95e5ae57ae0bee32,.js,16459606,2,https://stackoverflow.com/a/16459606
+75d2bc7ece978055dd9b1e307d3bd0f84341f7d1,2017-01-17 12:49:55-05:00,2017-01-17 12:49:55-05:00,18847,18847,18847,18847,Original Files,ModificationType.ADD,,168,0,168,0,JamesRaub/researchit,researchit,016189a7b711f2480e92ff027b7d77ce12a21b4c,.js,16459606,2,https://stackoverflow.com/a/16459606
+0a7d86208b0fa037adb5ac2e0fde7f526462c7e5,2016-09-08 19:41:25+02:00,2016-09-08 19:41:25+02:00,18848,18848,37,37,Version Inicial,ModificationType.ADD,,10073,0,10073,0,jadiez/Valdezorras,Valdezorras,7ae95897a016afe6110f7f70e1c3ff9524cffed1,.js,28210364,2,https://stackoverflow.com/a/28210364
+70774916fba20d15178a18d081ab80675dc38436,2017-05-08 15:59:30-04:00,2017-05-08 16:10:06-04:00,18849,18849,18849,18849,Added pnpm tests,ModificationType.ADD,,8023,0,8023,0,JamieMason/npm-cache-benchmark,npm-cache-benchmark,b624d136778b74b9747df5d4afe04ed5f1199b87,.js,201323,1,https://stackoverflow.com/q/201323
+1885230085e0e265ba302ff7d38ff6580c527b80,2015-09-19 10:46:21+02:00,2015-09-19 10:46:21+02:00,18850,18850,18850,18850,subido,ModificationType.ADD,,65,0,65,0,jalonsob/Informes,Informes,43e5d0f1a610d7e1223981e42fcfcb777b0c00ca,.py,492483,1,https://stackoverflow.com/q/492483
+33da49a7528976594211c8d724c0ae8aafd63f26,2014-12-10 20:06:06-05:00,2014-12-10 20:06:06-05:00,18851,18851,18851,18851,Known Issues same session seeing events,ModificationType.ADD,,47,0,47,0,jahilliard/SocialMap-deploy,SocialMap-deploy,096b012f78b7e7c2902619a04c4003a5d6ee4eee,.py,13436167,2,https://stackoverflow.com/a/13436167
+97a3995703c8644a809666433b2f38d82e8cf2be,2015-08-18 18:50:38+01:00,2015-08-18 18:50:47+01:00,18852,18852,18852,18852,starting to config and theme upload,ModificationType.ADD,,3043,0,3043,0,jajisk/projectist,projectist,c635ec0b356079d988d10ecba7db39ad4559dd97,.js,3561493,1,https://stackoverflow.com/q/3561493
+b6d31c1ddb168e1e1a8895aedb436b05437c0455,2015-07-01 19:45:27-04:00,2015-07-01 19:45:27-04:00,747,747,747,747,"feature(): add select and icons for ionRadio
+Closes #13, Closes #9",ModificationType.ADD,,2330,0,2330,0,jamesvsshark/angular-formly-templates-ionic,angular-formly-templates-ionic,6b6fa890ef112a5af7c3bea09f21e80eaaf76382,.js,10965203,2,https://stackoverflow.com/a/10965203
+e276faef47d5ed6726de7c1c681f3d559abdf252,2015-03-31 09:01:35+11:00,2015-03-30 20:14:58-04:00,14836,14836,747,747,"Update for ion-radio template
+closes #7
+Use ng-repeat to generate the ionic radio buttons list per this link:
+
+http://ionicframework.com/docs/api/directive/ionRadio/
+
+Example of templateOptions …
+
+templateOptions: { //the radio button list injected into the template
+          list: [
+            { text: ""Backbone"", value: ""bb"" },
+            { text: ""Angular"", value: ""ng"" },
+            { text: ""Ember"", value: ""em"" },
+            { text: ""Knockout"", value: ""ko"" }
+          ]
+        }
+
+add new demo",ModificationType.RENAME,,0,0,0,0,jamesvsshark/angular-formly-templates-ionic,angular-formly-templates-ionic,622afb8d8bd24900188865fdda94d761f1a0a23a,.js,10965203,2,https://stackoverflow.com/a/10965203
+5324614d809cb81cfdda934459f269432e46ef13,2015-03-31 13:14:28+01:00,2015-03-31 13:14:28+01:00,8466,8466,8466,8466,using brjs.conf to configure which plugins are loaded and their ordering,ModificationType.MODIFY,,17,8,17,8,janhancic/brjs,brjs,423ff0f294ffafa5741b04e8f76a1ea5b3d4837e,.java,5205339,1,https://stackoverflow.com/q/5205339
+da6c1a638274e5f3e3ac482d42d3dacc09e846df,2016-10-20 03:11:16+03:00,2016-10-20 03:11:17+03:00,18853,18853,18853,18853,init,ModificationType.ADD,,3167,0,3167,0,Jafte/RTTTM,RTTTM,775ec99d4bcf56b7a9531bdb47b727a6d1f03168,.js,3561493,1,https://stackoverflow.com/q/3561493
+fa998dbf8635f9eb6fcca387503c01f2deed0e10,2015-03-12 05:39:19+05:18,2015-05-10 15:18:32+05:18,11075,11075,11075,11075,Workaround to use str.format in log messages,ModificationType.ADD,,49,0,49,0,janusnic/edge,edge,caefa18f4f0c672da0fde1d7879f7e491e12ed7a,.py,26003573,2,https://stackoverflow.com/a/26003573
+6176aa4d7f39e07e3e27af9ad2d098df83ed0e69,2016-05-25 10:31:11+08:00,2016-05-25 10:31:11+08:00,18854,18854,18854,18854,ja mui init,ModificationType.ADD,,333,0,333,0,jamui/ja.mui,ja.mui,910c5a941d978e8eb11aece5a5ab87ee9cf94450,.js,23757345,1,https://stackoverflow.com/q/23757345
+23c744c7addcf0b3b90932756d73709e7adbccb8,2014-08-03 12:24:10-05:00,2014-08-03 12:24:10-05:00,2138,2138,2138,2138,Getting started,ModificationType.ADD,,2,0,2,0,jagthedrummer/ember_supercharge,ember_supercharge,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+7cbd69caa638bb308c72eafe590b9c00cedfd21d,2017-07-11 16:14:06-05:00,2017-07-11 23:14:06+02:00,18856,18856,18855,18855,"[MRG] Egimff (#4017)
+
+* Create read_egi_mff
+
+I need to understand from where part of the _BaseRaw  class __init__() the _read_segment_file are called to execution, because the data from Sheraz reads the data and only adapting it is enough for a first test.
+
+* The egimff.py was added with the read_raw_egi_mff function. To import use from mne.io import read_raw_egi_mff
+
+* Correction of some PEP8 errors and delete the folder mff bad added
+
+* Raw reader.
+
+* preload=False
+
+* Cleaning.
+
+* Fixes to event reading.
+
+* Fixes.
+
+* Fixes.
+
+* cleaning useless functions
+
+* Cleaning.
+
+* Reading of meta data at the end.
+
+* Update tests. Cleaning.
+
+* Cleaning. Correct number of samples.
+
+* More cleaning.
+
+* Cleaning.
+
+* Update testing dataset.
+
+* Update test.
+
+* Fix.
+
+* Test fix.
+
+* Fixes.
+
+* Docs. Switched back to running number events.
+
+* Gains. Fix to events.
+
+* Cleaning. Apply gains.
+
+* Fixes.
+
+* Fixes.
+
+* Read coordinates. Cleaning.
+
+* Using _combine_triggers to create STI 014 and event_id attribute
+
+* Refactoring.
+
+* Fix.",ModificationType.ADD,,162,0,162,0,jaeilepp/mne-python,mne-python,67037f643dfc57aa371b4b25cb1917bb2b3f01f4,.py,2148119,1,https://stackoverflow.com/q/2148119
+5be5741ac34c90803a87d64bea611df09630249d,2016-05-10 16:18:35+02:00,2016-05-10 16:18:35+02:00,18857,18857,18857,18857,Possible fix for #181,ModificationType.ADD,,12061,0,12061,0,jamessalvatore/MagicMirror,MagicMirror,77c8c300163224fc61eff8e5c99c5bd1c60b8f8a,.js,3561493,1,https://stackoverflow.com/q/3561493
+4649e26b9fd23366a512ea4e00d91fe82f2b0b88,2017-06-12 16:36:54+02:00,2017-06-12 16:36:54+02:00,18858,18858,18858,18858,Initial Commit,ModificationType.ADD,,2190,0,2190,0,janmei/bee-careful,bee-careful,561d300667a5930a6ce167b90ae508d9223b5266,.js,34197653,1,https://stackoverflow.com/q/34197653
+2d0db98cedaf1638473a0992533fe96c3f5b63c3,2017-06-21 11:48:11-06:00,2017-06-21 11:48:11-06:00,18859,18859,18859,18859,Added Neumont events,ModificationType.ADD,,13700,0,13700,0,Jaden-Giordano/Jaden-Giordano.github.io,Jaden-Giordano.github.io,67447c2bfcfc96f1e8680802c00d22023ec674aa,.js,3561493,1,https://stackoverflow.com/q/3561493
+54d8506dfc460248ecf754e996d0e0e65cf43507,2016-02-25 13:45:20+07:00,2016-03-02 10:28:16+07:00,18860,18860,18860,18860,"Add Project
+
+Add Project",ModificationType.ADD,,14975,0,14975,0,Jajara/FairyGroup,FairyGroup,acccf91e01a80df8e9afbc8d31bc6ecadcf21e81,.js,4361826,1,https://stackoverflow.com/q/4361826
+0a07a75ce63c2336572a449690eb3d2c78c963cc,2015-08-21 18:18:40-07:00,2015-08-21 18:18:42-07:00,18861,18861,18861,18861,Track all bower dependencies and remove postinstall script,ModificationType.ADD,,3111,0,3111,0,jadedsurfer/creativechallenge,creativechallenge,275a3c3249d09b805fee83d8ed188f6337a163f2,.js,3561493,1,https://stackoverflow.com/q/3561493
+2be63b20418c1e2e2feade2c50cd31c9cd95dc0f,2014-10-02 20:17:45+01:00,2014-10-02 20:17:45+01:00,6946,6946,6946,6946,Added an option to rediscover a device from the web page,ModificationType.MODIFY,,140,0,140,0,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+b5136b444cb7771a48089cd8c3fab255b86da400,2014-10-25 09:16:07+10:00,2014-10-25 09:16:07+10:00,9225,9225,9225,9225,Remove unused function; make it clearer that _json_format is not used in PHP 5.4 & later,ModificationType.MODIFY,2be63b20418c1e2e2feade2c50cd31c9cd95dc0f,4,9,4,9,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+23f2825d1f698f424aca366a7ee2e90026e121aa,2015-05-20 13:22:58+01:00,2015-05-20 13:22:58+01:00,6946,6946,6946,6946,Removed code that performs hostname check,ModificationType.MODIFY,b5136b444cb7771a48089cd8c3fab255b86da400,0,7,0,2,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+77b9adabc21e794e48733386fb5c625d43885c81,2015-06-09 09:54:49+01:00,2015-06-09 14:30:19+01:00,6946,6946,6946,6946,More updates to bgp polling/disco and webui,ModificationType.MODIFY,23f2825d1f698f424aca366a7ee2e90026e121aa,0,14,0,4,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+a2baae3ccfdd3eb9fa08c7d3593087baad6fd5e2,2015-06-13 22:50:37+10:00,2015-06-16 08:27:57+10:00,9225,9225,9225,9225,"Move convenience functions into common; d_echo no longer adds ""\n"" automatically",ModificationType.MODIFY,77b9adabc21e794e48733386fb5c625d43885c81,0,34,0,9,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+361653aa81fcd685e5f07dca9b3ffbd48eaa6857,2015-07-13 20:10:26+02:00,2015-07-14 17:41:54+02:00,8967,8967,8967,8967,Fix coding style part 2,ModificationType.MODIFY,a2baae3ccfdd3eb9fa08c7d3593087baad6fd5e2,956,649,0,15,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+361653aa81fcd685e5f07dca9b3ffbd48eaa6857,2015-07-13 20:10:26+02:00,2015-07-14 17:41:54+02:00,8967,8967,8967,8967,Fix coding style part 2,ModificationType.MODIFY,361653aa81fcd685e5f07dca9b3ffbd48eaa6857,851,888,6,41,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+ba90b85f9f83ed227a2ab24e70c58a58b6ea151a,2015-07-15 08:09:10+00:00,2015-07-15 08:09:10+00:00,8968,8968,8968,8968,"Revert ""Fix coding style old files (part 2)""",ModificationType.MODIFY,361653aa81fcd685e5f07dca9b3ffbd48eaa6857,649,956,0,11,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+ba90b85f9f83ed227a2ab24e70c58a58b6ea151a,2015-07-15 08:09:10+00:00,2015-07-15 08:09:10+00:00,8968,8968,8968,8968,"Revert ""Fix coding style old files (part 2)""",ModificationType.MODIFY,ba90b85f9f83ed227a2ab24e70c58a58b6ea151a,888,851,73,8,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+d8693f05ae4d9ec884cd2c2d850e7f78ba9dc2ae,2015-07-13 20:10:26+02:00,2015-07-15 11:04:22+02:00,8967,8967,8967,8967,Fix coding style part 2,ModificationType.MODIFY,ba90b85f9f83ed227a2ab24e70c58a58b6ea151a,956,649,0,4,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+d8693f05ae4d9ec884cd2c2d850e7f78ba9dc2ae,2015-07-13 20:10:26+02:00,2015-07-15 11:04:22+02:00,8967,8967,8967,8967,Fix coding style part 2,ModificationType.MODIFY,d8693f05ae4d9ec884cd2c2d850e7f78ba9dc2ae,851,888,27,72,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+17dac9e755a7d4c351cd61a65bcce863859ead1a,2015-08-01 15:54:15+00:00,2015-08-01 15:54:15+00:00,6946,6946,6946,6946,Removed old alerting system code,ModificationType.MODIFY,d8693f05ae4d9ec884cd2c2d850e7f78ba9dc2ae,0,44,0,4,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+4792879ce5d93f5b0b6faf324bb8af91cc1a2a82,2015-08-20 16:06:44+02:00,2015-08-21 16:10:01+02:00,9226,9226,9226,9226,Remove all unneeded if($debug)-statements and replace them with d_echo in the rest of the directories...,ModificationType.MODIFY,17dac9e755a7d4c351cd61a65bcce863859ead1a,9,21,0,2,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+c1354532bbeba7905f48fd75fc768f361d9bfe0f,2015-09-22 21:48:17+02:00,2015-09-22 21:48:17+02:00,9227,9227,9227,9227,Removed duplicate code: Made getImage() use getImageSrc(),ModificationType.MODIFY,4792879ce5d93f5b0b6faf324bb8af91cc1a2a82,1,25,0,1,JamesonFinney/librenms,librenms,e399a10ae5ce0d92fa42dc88f6fa1f9999cac710,.php,2934563,1,https://stackoverflow.com/q/2934563
+c11a2863ebdb0dda426185ec225635eff26fcbd4,2016-09-20 17:36:10+03:00,2016-09-20 17:36:10+03:00,18862,18862,18862,18862,Initial,ModificationType.ADD,,495,0,495,0,jannunen/papp,papp,15142a8ae0629e6c8c06c8a13d6c18a5e8152e28,.js,181348,1,https://stackoverflow.com/q/181348
+160f139f794a65c448f50928e2d8f4cced0ba2af,2018-04-08 11:30:17+10:00,2018-04-08 11:30:17+10:00,18863,18863,18863,18863,updated portfolio,ModificationType.ADD,,190,0,190,0,jadlao/jadlao.github.io,jadlao.github.io,7106924934501fd4035efe78678281020328acc5,.js,16459606,2,https://stackoverflow.com/a/16459606
+9cdc203b7dd57dd498873c8765067470e637168d,2018-04-08 13:33:29+10:00,2018-04-08 13:33:29+10:00,18863,18863,18863,18863,fix,ModificationType.DELETE,160f139f794a65c448f50928e2d8f4cced0ba2af,0,190,0,190,jadlao/jadlao.github.io,jadlao.github.io,7106924934501fd4035efe78678281020328acc5,.js,16459606,2,https://stackoverflow.com/a/16459606
+e2fca2991d5da85c6145c5758a5f112f5654879b,2016-11-21 16:06:24+08:00,2016-11-21 16:06:24+08:00,18864,18864,18864,18864,noteapp,ModificationType.ADD,,1239,0,1239,0,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+ea20bb32ceb887edf3d1c86e5965db9e31a54b37,2016-11-22 11:32:54+08:00,2016-11-22 11:32:54+08:00,18864,18864,18864,18864,功能,ModificationType.MODIFY,e2fca2991d5da85c6145c5758a5f112f5654879b,27,12,27,12,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+f4ac539ec4b61e75698e1fb02bfdfa2e129f5c15,2016-11-22 16:46:33+08:00,2016-11-22 16:46:33+08:00,18864,18864,18864,18864,提示框,ModificationType.MODIFY,ea20bb32ceb887edf3d1c86e5965db9e31a54b37,27,13,27,13,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+185cae0218111586542b49bd7fc8ada753f8543d,2016-11-22 18:18:59+08:00,2016-11-22 18:18:59+08:00,18864,18864,18864,18864,优化,ModificationType.MODIFY,f4ac539ec4b61e75698e1fb02bfdfa2e129f5c15,4,1,1,1,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+ea320021ee28bdf26ed54ced6b8b3b59d22b78ec,2016-11-23 09:46:20+08:00,2016-11-23 09:46:20+08:00,18864,18864,18864,18864,bugfix,ModificationType.MODIFY,185cae0218111586542b49bd7fc8ada753f8543d,26,7,12,7,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+d3c4d9ffc8ecaeff12465a57be8ef9de6ce458eb,2016-11-23 10:17:28+08:00,2016-11-23 10:17:28+08:00,18864,18864,18864,18864,detail,ModificationType.MODIFY,ea320021ee28bdf26ed54ced6b8b3b59d22b78ec,2,7,2,7,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+c3cf965d68c4ebf31e5cd43c3c0713396d4f2c22,2016-11-23 10:30:58+08:00,2016-11-23 10:30:58+08:00,18864,18864,18864,18864,路径修改,ModificationType.RENAME,d3c4d9ffc8ecaeff12465a57be8ef9de6ce458eb,18,18,18,18,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+d12c1f628cb422a43f13fc8af4342e53da87e95b,2016-11-23 10:40:25+08:00,2016-11-23 10:40:25+08:00,18864,18864,18864,18864,bugfix,ModificationType.MODIFY,c3cf965d68c4ebf31e5cd43c3c0713396d4f2c22,5,1,1,1,jaliy/jaliy.github.io,jaliy.github.io,34514caade1433700628bd86d43aae97de53e2b4,.js,26603875,2,https://stackoverflow.com/a/26603875
+c34de2640421f645a5db9c41210a513eb47892f9,2015-01-15 16:30:02+00:00,2015-01-15 16:30:02+00:00,18865,18865,18865,18865,First commit,ModificationType.ADD,,527,0,527,0,jalliance/sticky,sticky,ccb9d968c8b9e2d34509371af74c2c42c2b03698,.php,4069002,1,https://stackoverflow.com/q/4069002
+371468078991254a82b24ea08d5e5e5b4ca4e5f6,2017-02-08 14:55:16-05:00,2017-02-08 14:55:16-05:00,18866,18866,18866,18866,Got rid of server folder.,ModificationType.ADD,,102,0,102,0,jainapatel/travellogger,travellogger,e3c6206d5b38281f958add047a6340dab063eac7,.js,603572,1,https://stackoverflow.com/q/603572
+371468078991254a82b24ea08d5e5e5b4ca4e5f6,2017-02-08 14:55:16-05:00,2017-02-08 14:55:16-05:00,18866,18866,18866,18866,Got rid of server folder.,ModificationType.ADD,,4,0,4,0,jainapatel/travellogger,travellogger,016189a7b711f2480e92ff027b7d77ce12a21b4c,.js,398120,2,https://stackoverflow.com/a/398120
+371468078991254a82b24ea08d5e5e5b4ca4e5f6,2017-02-08 14:55:16-05:00,2017-02-08 14:55:16-05:00,18866,18866,18866,18866,Got rid of server folder.,ModificationType.ADD,,231,0,231,0,jainapatel/travellogger,travellogger,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+539d6e3eb67f0b81e6dfd8a18ab71aa79f3133a0,2015-06-21 23:28:33+12:00,2015-06-21 23:28:33+12:00,18867,18867,18867,18867,Initial Implementation,ModificationType.ADD,,168,0,168,0,jamsch/youtube-sync,youtube-sync,41d957c0fa0ecf5a5f1a7fca4da5e6923480d1e8,.js,16459606,2,https://stackoverflow.com/a/16459606
+7b0a7ea6949266cbd1b6a394c5329b70aa724a37,2014-05-29 10:08:55-04:18,2014-05-29 10:08:55-04:18,18868,18868,18868,18868,Volviendo a agregar phpmailer,ModificationType.ADD,,90,0,90,0,Jamp/DiaUniformeScouts,DiaUniformeScouts,f076895588f8d15523bce67e4b6d48f97e1c1f59,.php,1464355,2,https://stackoverflow.com/a/1464355
+40648c56cdaa52058a4771082f8f44a2d8e5a1ec,2015-06-27 20:24:34-07:00,2015-06-27 20:24:34-07:00,73,73,72,72,"[SPARK-8583] [SPARK-5482] [BUILD] Refactor python/run-tests to integrate with dev/run-tests module system
+
+This patch refactors the `python/run-tests` script:
+
+- It's now written in Python instead of Bash.
+- The descriptions of the tests to run are now stored in `dev/run-tests`'s modules.  This allows the pull request builder to skip Python tests suites that were not affected by the pull request's changes.  For example, we can now skip the PySpark Streaming test cases when only SQL files are changed.
+- `python/run-tests` now supports command-line flags to make it easier to run individual test suites (this addresses SPARK-5482):
+
+  ```
+Usage: run-tests [options]
+
+Options:
+  -h, --help            show this help message and exit
+  --python-executables=PYTHON_EXECUTABLES
+                        A comma-separated list of Python executables to test
+                        against (default: python2.6,python3.4,pypy)
+  --modules=MODULES     A comma-separated list of Python modules to test
+                        (default: pyspark-core,pyspark-ml,pyspark-mllib
+                        ,pyspark-sql,pyspark-streaming)
+   ```
+- `dev/run-tests` has been split into multiple files: the module definitions and test utility functions are now stored inside of a `dev/sparktestsupport` Python module, allowing them to be re-used from the Python test runner script.
+
+Author: Josh Rosen <joshrosen@databricks.com>
+
+Closes #6967 from JoshRosen/run-tests-python-modules and squashes the following commits:
+
+f578d6d [Josh Rosen] Fix print for Python 2.x
+8233d61 [Josh Rosen] Add python/run-tests.py to Python lint checks
+34c98d2 [Josh Rosen] Fix universal_newlines for Python 3
+8f65ed0 [Josh Rosen] Fix handling of  module in python/run-tests
+37aff00 [Josh Rosen] Python 3 fix
+27a389f [Josh Rosen] Skip MLLib tests for PyPy
+c364ccf [Josh Rosen] Use which() to convert PYSPARK_PYTHON to an absolute path before shelling out to run tests
+568a3fd [Josh Rosen] Fix hashbang
+3b852ae [Josh Rosen] Fall back to PYSPARK_PYTHON when sys.executable is None (fixes a test)
+f53db55 [Josh Rosen] Remove python2 flag, since the test runner script also works fine under Python 3
+9c80469 [Josh Rosen] Fix passing of PYSPARK_PYTHON
+d33e525 [Josh Rosen] Merge remote-tracking branch 'origin/master' into run-tests-python-modules
+4f8902c [Josh Rosen] Python lint fixes.
+8f3244c [Josh Rosen] Use universal_newlines to fix dev/run-tests doctest failures on Python 3.
+f542ac5 [Josh Rosen] Fix lint check for Python 3
+fff4d09 [Josh Rosen] Add dev/sparktestsupport to pep8 checks
+2efd594 [Josh Rosen] Update dev/run-tests to use new Python test runner flags
+b2ab027 [Josh Rosen] Add command-line options for running individual suites in python/run-tests
+caeb040 [Josh Rosen] Fixes to PySpark test module definitions
+d6a77d3 [Josh Rosen] Fix the tests of dev/run-tests
+def2d8a [Josh Rosen] Two minor fixes
+aec0b8f [Josh Rosen] Actually get the Kafka stuff to run properly
+04015b9 [Josh Rosen] First attempt at getting PySpark Kafka test to work in new runner script
+4c97136 [Josh Rosen] PYTHONPATH fixes
+dcc9c09 [Josh Rosen] Fix time division
+32660fc [Josh Rosen] Initial cut at Python test runner refactoring
+311c6a9 [Josh Rosen] Move shell utility functions to own module.
+1bdeb87 [Josh Rosen] Move module definitions to separate file.",ModificationType.ADD,,81,0,81,0,janewangfb/spark,spark,05af87189b18d50c050157ec713d561f5c2723ca,.py,377028,2,https://stackoverflow.com/a/377028
+d3180c25d8cf0899a7238e7d24b35c5ae918cc1d,2015-10-18 22:45:14-07:00,2015-10-18 22:45:27-07:00,74,74,73,73,"[SPARK-7018][BUILD] Refactor dev/run-tests-jenkins into Python
+
+This commit refactors the `run-tests-jenkins` script into Python. This refactoring was done by brennonyork in #7401; this PR contains a few minor edits from joshrosen in order to bring it up to date with other recent changes.
+
+From the original PR description (by brennonyork):
+
+Currently a few things are left out that, could and I think should, be smaller JIRA's after this.
+
+1. There are still a few areas where we use environment variables where we don't need to (like `CURRENT_BLOCK`). I might get around to fixing this one in lieu of everything else, but wanted to point that out.
+2. The PR tests are still written in bash. I opted to not change those and just rewrite the runner into Python. This is a great follow-on JIRA IMO.
+3. All of the linting scripts are still in bash as well and would likely do to just add those in as follow-on JIRA's as well.
+
+Closes #7401.
+
+Author: Brennon York <brennon.york@capitalone.com>
+
+Closes #9161 from JoshRosen/run-tests-jenkins-refactoring.",ModificationType.MODIFY,40648c56cdaa52058a4771082f8f44a2d8e5a1ec,35,2,5,2,janewangfb/spark,spark,05af87189b18d50c050157ec713d561f5c2723ca,.py,377028,2,https://stackoverflow.com/a/377028
+acef843f67e770f0a2709fb3fbd1a53c200b2bc5,2016-06-16 14:18:58-07:00,2016-06-16 14:18:58-07:00,73,73,75,75,"[SPARK-15975] Fix improper Popen retcode code handling in dev/run-tests
+
+In the `dev/run-tests.py` script we check a `Popen.retcode` for success using `retcode > 0`, but this is subtlety wrong because Popen's return code will be negative if the child process was terminated by a signal: https://docs.python.org/2/library/subprocess.html#subprocess.Popen.returncode
+
+In order to properly handle signals, we should change this to check `retcode != 0` instead.
+
+Author: Josh Rosen <joshrosen@databricks.com>
+
+Closes #13692 from JoshRosen/dev-run-tests-return-code-handling.",ModificationType.MODIFY,d3180c25d8cf0899a7238e7d24b35c5ae918cc1d,4,1,4,1,janewangfb/spark,spark,05af87189b18d50c050157ec713d561f5c2723ca,.py,377028,2,https://stackoverflow.com/a/377028
+0ba24172b2cf1fc23cc1202e75c3cdaf5e629912,2016-03-12 19:53:27+09:00,2016-04-04 18:31:53+09:00,18869,18869,18869,18869,Initial commit,ModificationType.ADD,,912,0,912,0,japan-language-lovers/japan-language-lovers.github.io,japan-language-lovers.github.io,29cbb083eb8a5244c0d86db8d9d4b7402676c188,.js,359788,1,https://stackoverflow.com/q/359788
+073701cd00cf54b71ba98ee04ef6f6f1057468d9,2015-05-24 17:16:24+03:00,2015-05-24 17:16:24+03:00,532,532,532,532,Updated Bootstrap-wysihtml5 to 0.3.3,ModificationType.ADD,,14975,0,14975,0,janeywong/AdminLTE,AdminLTE,acccf91e01a80df8e9afbc8d31bc6ecadcf21e81,.js,992461,1,https://stackoverflow.com/q/992461
+b6c53a5b67ae90d2ce0f94a791bd23059a06de19,2016-01-28 19:30:01-07:00,2016-01-28 19:30:01-07:00,18870,18870,18870,18870,assets being loaded up,ModificationType.ADD,,402,0,402,0,jamesv28/mizzouVsKansas,mizzouVsKansas,f4035e2e956dc74a133372ffdcdd882cfc00c98e,.js,5690269,1,https://stackoverflow.com/q/5690269
+2b2d276a80495034d8780c581de79677ae55e944,2016-02-02 00:03:45-05:00,2016-02-02 00:03:45-05:00,18819,18819,18819,18819,forzado casi final,ModificationType.ADD,,1761,0,1761,0,japeto/Tahoe-Motores,Tahoe-Motores,90b26f2dfb11e8621b26bdc0b1402ff7b14236c0,.js,3143070,1,https://stackoverflow.com/q/3143070
+6a88df38bbdfdc801d7025682529d49255d26add,2014-04-14 14:12:36-07:00,2014-04-15 11:57:47-07:00,11751,11751,11751,11751,"Co-ordinator GetAll fails for some data
+
+1) Unit tests for GetAll had a bug, which did not fail the tests.
+   The values were compared, but the tests did not fail when the
+   values does not match. created a method assertValueEquals to
+   handle this scenario.
+2) The client deserialization used the getContent method which
+   corrupted the binary data. Now using getRawInputStream. But not
+   sure about the difference between the getInputStream and
+   getRawInputStream.
+3) Wrote 2 new tests to check all possible byte data for co-ordinators
+  ( get, getall )
+4) Refactored some of the unit tests to use a common code path.",ModificationType.MODIFY,,8,1,8,1,jalkjaer/voldemort,voldemort,bfcf240ab1bcd50f49193d2e57921bcbcd4f2dd0,.java,23023583,1,https://stackoverflow.com/q/23023583
+30b0c32a7b7447a8f4bee9c42f6e5fb18b18ccd3,2014-06-19 14:45:18-07:00,2014-06-19 15:46:18-07:00,18871,18871,18871,18871,Wrap mime multipart into a mime message to ensure headers are updated,ModificationType.MODIFY,6a88df38bbdfdc801d7025682529d49255d26add,23,14,19,8,jalkjaer/voldemort,voldemort,bfcf240ab1bcd50f49193d2e57921bcbcd4f2dd0,.java,23023583,1,https://stackoverflow.com/q/23023583
+58bf079929b2487a209a29420899a462b7e5eaf2,2015-08-25 16:48:28+01:00,2015-08-25 16:48:28+01:00,18840,18840,18840,18840,Initial commit of site,ModificationType.ADD,,193,0,193,0,jamielaff/als_resourcing,als_resourcing,0395f371d75e381d885951bfeab6917384e2e902,.js,1740700,1,https://stackoverflow.com/q/1740700
+89d7f6df20011dbe6d96099fbf3fb06ad999c8ff,2016-06-03 00:08:25+08:00,2016-06-03 00:08:25+08:00,179,179,179,179,Update libraries,ModificationType.MODIFY,,10122,9143,10122,9143,jamiis/tessellate-arena,tessellate-arena,ec077f95f4c19f2548ad0d65604dea98aa7521c8,.js,14853974,2,https://stackoverflow.com/a/14853974
+97de21538174e03731d67f26a5516ed0c99de4b4,2013-05-03 00:03:49-07:00,2013-05-03 00:03:49-07:00,5017,5017,5017,5017,Initial commit,ModificationType.ADD,,878,0,878,0,jamesshore/ll11_front_end_unit_testing,ll11_front_end_unit_testing,9e00b14ecbef4454cec05b3defc20a741051245b,.js,6768474,1,https://stackoverflow.com/q/6768474
+85a7f70d4584a5658b59cd7a1cd76ebca94d7114,2018-05-02 10:43:49-07:00,2018-05-02 10:43:49-07:00,18872,18872,18872,18872,v2.1.1 Web SDK,ModificationType.ADD,,18,0,18,0,jamfang/Agora-WebRTC-Live-Broadcasting-Demo,Agora-WebRTC-Live-Broadcasting-Demo,f5149ff5296aa11442834d29fdc8565bb159d0be,.js,16459606,2,https://stackoverflow.com/a/16459606
+86c57f02890dc69383a0b8542fad9a863b31354c,2013-03-07 21:08:23+01:00,2013-03-07 21:08:23+01:00,18873,18873,18873,18873,Initial version,ModificationType.ADD,,173,0,173,0,janv/sprockets-browserify,sprockets-browserify,dc6d1d9c57e876a524f451ed48a75e39270989af,.js,5827612,1,https://stackoverflow.com/q/5827612
+decfbe97718a20ec856c1ce0008423a98f508e84,2016-09-25 22:46:53+07:00,2016-09-25 22:46:53+07:00,18874,18874,18874,18874,"Upload Pertama, 1 minggu setelah deal",ModificationType.ADD,,4313,0,4313,0,jamalapriadi/bjb,bjb,5caa110ddecba4f34695a6831f081b2cb2f2a7aa,.js,4998908,1,https://stackoverflow.com/q/4998908
+7afe157ca0c756823d03894e4f7122bb4ca557cb,2016-10-01 15:58:00+07:00,2016-10-01 15:58:00+07:00,18874,18874,18874,18874,update fix upload image kcp,ModificationType.DELETE,decfbe97718a20ec856c1ce0008423a98f508e84,0,4313,0,4295,jamalapriadi/bjb,bjb,5caa110ddecba4f34695a6831f081b2cb2f2a7aa,.js,4998908,1,https://stackoverflow.com/q/4998908
+1a566b537c2a8f7c57c7826d0af0093e265871b7,2015-11-22 19:35:27-05:00,2015-11-22 19:35:27-05:00,18875,18875,18875,18875,Updated with all of the solutions,ModificationType.ADD,,3443,0,3443,0,jamessdixon/NerdDinner,NerdDinner,79882cec820421afb3a8ebc5d892be1a27a1cd55,.js,5908494,1,https://stackoverflow.com/q/5908494
+a70f730168808ddb9c210a94d8cd5035c91d7064,2014-08-20 20:39:58-05:00,2014-08-20 20:39:58-05:00,2138,2138,2138,2138,Starting with the ember_supercharge slides,ModificationType.ADD,,66,0,66,0,jagthedrummer/ember_mvc,ember_mvc,acbef823bf552e739ebe09ac46c6bcf8edbad90b,.js,4158597,1,https://stackoverflow.com/q/4158597
+4d10b9a1353fe9eea2d6e5a5b287a393cb5554ad,2016-11-07 19:34:40+03:00,2016-11-07 19:34:40+03:00,18876,18876,18876,18876,added some node packages to help in minimizing code,ModificationType.ADD,,18,0,18,0,janta-devs/nyumbani,nyumbani,016189a7b711f2480e92ff027b7d77ce12a21b4c,.js,16459606,2,https://stackoverflow.com/a/16459606
+4d10b9a1353fe9eea2d6e5a5b287a393cb5554ad,2016-11-07 19:34:40+03:00,2016-11-07 19:34:40+03:00,18876,18876,18876,18876,added some node packages to help in minimizing code,ModificationType.ADD,,244,0,244,0,janta-devs/nyumbani,nyumbani,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+0449d08a5ae59d40a313725ae81865dcbd1c23ed,2015-10-28 15:12:08+05:18,2015-10-28 15:16:20+05:18,18877,18877,18877,18877,Added workspace,ModificationType.ADD,,1705,0,1705,0,jamaiyar/extjs-multiapp,extjs-multiapp,a6991b74bfacfc8a3f1c01cdad18cdcd042f03b8,.js,470832,1,https://stackoverflow.com/q/470832
+9a039e93ecb04d50a27a3fe6ca1d6f2f40721ff1,2014-07-21 17:29:43+00:00,2014-07-28 20:49:30+00:00,2696,2696,2696,2696,"Adding auto_publishing to split_draft
+
+Added update_item, create_item, create_child to split_draft.py
+
+Cleaned up TODOs in test_mixed_modulestore.py
+
+Unit test for auto-publish
+
+LMS-11017
+
+Added tests to test_mixed_modulestore.py for has_changes and added black_list to _auto_publish
+
+Moved DIRECT_ONLY_CATEGORIES to draft_and_publish.py
+
+Deleted test_split_draft_modulestore.py
+
+Added _auto_publish to create course
+
+Publish cleanups for update_version, source_version
+
+Changed has_changes to use source_version
+
+Removing mixed test that no longer makes sense in auto_publish world
+
+Addressed TODOs in test_branch_setting",ModificationType.MODIFY,,95,47,95,47,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+af9c9cd573376b2793389f29a15c3d424b3308d9,2014-08-27 10:10:54-04:00,2014-08-27 15:41:14-04:00,1870,1870,1870,1870,LMS-11185 Split implementation of revert_to_published,ModificationType.MODIFY,9a039e93ecb04d50a27a3fe6ca1d6f2f40721ff1,5,5,3,3,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+562f0e3197a72ccb414b008082ed4e64dc279c67,2014-07-31 14:53:02-04:00,2014-08-27 16:29:46-04:00,2697,2697,2697,2697,Add bulk operations to split modulestore,ModificationType.MODIFY,af9c9cd573376b2793389f29a15c3d424b3308d9,621,448,17,21,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+3672c9a2926a77a9c23dd0738f9c50df072a2d97,2014-08-14 09:13:12-04:00,2014-08-27 16:29:47-04:00,2697,2697,2697,2697,Make find_matching_* work during split bulk operations,ModificationType.MODIFY,562f0e3197a72ccb414b008082ed4e64dc279c67,243,100,0,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+0e7e266a5bab40a552ba9133db011d6ff8b3bcd4,2014-08-27 10:21:07-04:00,2014-08-27 16:29:48-04:00,2697,2697,2697,2697,"Push bulk_write_operations up into ModuleStoreRead, and rename to remove reference to writes",ModificationType.MODIFY,3672c9a2926a77a9c23dd0738f9c50df072a2d97,15,15,1,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+7b81dcc3eabbd6327846a81e3134c11e8b9a7621,2014-09-08 14:47:45-04:00,2014-09-11 09:38:13-04:00,2697,2697,2697,2697,"Make split_mongo assert block identity uniqueness only over (block_type, block_id) tuples [LMS-11364]",ModificationType.MODIFY,0e7e266a5bab40a552ba9133db011d6ff8b3bcd4,207,173,12,7,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+f9c78e07a788a1b3bf6960214ba1c28bf74beead,2014-09-16 13:41:01-04:00,2014-09-29 22:35:40-04:00,2697,2697,2697,2697,Turn the course envelope into an actual object that just stores an existing course_key,ModificationType.MODIFY,7b81dcc3eabbd6327846a81e3134c11e8b9a7621,40,50,1,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+1a682dacd1deeb2305f591c26f38cbfdf7b82a7e,2014-09-23 13:18:16-04:00,2014-09-29 22:35:41-04:00,2697,2697,2697,2697,Include caching definitions in split bulk operations,ModificationType.MODIFY,f9c78e07a788a1b3bf6960214ba1c28bf74beead,89,20,2,2,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+1a17b31a8ba4c3aa33b1591b81bcbe114a76a548,2014-09-25 11:17:23-04:00,2014-09-29 22:35:42-04:00,2697,2697,2697,2697,Make definitions and structures truly append-only,ModificationType.MODIFY,1a682dacd1deeb2305f591c26f38cbfdf7b82a7e,98,78,1,3,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+fc83c299ca8393e68e7de0877469f8c17ac7e7ba,2014-11-05 08:40:06-05:00,2014-11-05 16:01:50-05:00,2698,2698,2698,2698,"Generalize assets to any block_type but using
+AssetKey and the metadata store
+PLAT-204",ModificationType.MODIFY,1a17b31a8ba4c3aa33b1591b81bcbe114a76a548,25,44,0,2,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+0ded6699092cbeba2779c408b1e4b34f384f1942,2014-10-28 21:53:57-07:00,2014-12-04 21:39:10+07:00,2700,2700,2699,2699,Split mongo support for libraries and Library XBlock,ModificationType.MODIFY,fc83c299ca8393e68e7de0877469f8c17ac7e7ba,168,90,11,13,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+3857a1c1ee34ca25c4a6f96070df50ffbcc1a2f5,2014-10-29 22:55:17-07:00,2015-01-12 13:41:02+03:00,2700,2700,2699,2699,Support for overriding Scope.settings values when library content is used in a course,ModificationType.MODIFY,0ded6699092cbeba2779c408b1e4b34f384f1942,144,6,0,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+e768fb9a4b18c3b87bdbc3908b3729017b431948,2014-12-18 22:38:07-08:00,2015-01-12 13:41:02+03:00,2700,2700,2699,2699,Fix two split mongo bugs that were causing problems...,ModificationType.MODIFY,3857a1c1ee34ca25c4a6f96070df50ffbcc1a2f5,1,1,1,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+195d5b57bcd9940e145cdf97632b304518a2daa5,2015-01-12 18:09:03+03:00,2015-01-12 09:58:51-08:00,2699,2699,2700,2700,pylint fixes,ModificationType.MODIFY,e768fb9a4b18c3b87bdbc3908b3729017b431948,22,9,2,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+68325f1c2ee988892f64bd627acb0601444e58ea,2015-01-26 14:43:11-05:00,2015-01-27 10:01:55-05:00,2701,2701,2697,2697,"Add BlockData class to wrap all block data loaded from the Split
+modulestore, in order to separate serializable block data from
+out-of-band, non-saved, temporary metadata.
+
+Eliminate the deepcopy causing performance problems with import/export.
+
+https://openedx.atlassian.net/browse/PLAT-416",ModificationType.MODIFY,195d5b57bcd9940e145cdf97632b304518a2daa5,9,9,1,2,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+9388ba5968e27429d4ef3b491d008cfba460b00d,2015-01-27 16:08:01-05:00,2015-02-06 11:28:54-05:00,2701,2701,2701,2701,"Change new BlockData object from a dict to an object with specific
+attributes that are serialized/de-serialized to/from MongoDB.
+
+Change access of attributes from dict keys.
+
+Add EditInfo object to encapsulate editing info for block data.",ModificationType.MODIFY,68325f1c2ee988892f64bd627acb0601444e58ea,119,116,12,18,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+4e7ed93b3ea14b428e48c8e9f1aaa9e432ff996b,2015-02-18 15:29:52-05:00,2015-02-23 10:33:43-05:00,2701,2701,2701,2701,"Rollback eager definition loading.
+Pass 'lazy' parameter down properly into low-level definition caching.
+Adjust mongo call numbers in tests and add missing bulk_op wrapper.
+Avoids the loading of all definitions in a large course when only
+specific, filtered definitions are needed to be loaded for an endpoint.",ModificationType.MODIFY,9388ba5968e27429d4ef3b491d008cfba460b00d,38,40,0,1,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+2ca1d0ef78825673ff8b956d53c3ae68acafabf7,2015-06-12 20:29:49+05:00,2015-06-25 16:19:29-04:00,2702,2702,712,712,"fix the source_version xblock after discard changes
+
+formatting changes",ModificationType.MODIFY,4e7ed93b3ea14b428e48c8e9f1aaa9e432ff996b,10,2,5,2,jamesblunt/edx-platform,edx-platform,6b5164efb9250f4fb978fb7aafd931441edab19e,.py,1857780,1,https://stackoverflow.com/q/1857780
+d97921e6e2938c30b1a1d4698fc0f21e49412a82,2013-08-08 13:45:52-04:00,2013-10-04 13:43:50-04:00,2408,2408,2408,2408,Convert Studio JS to use require.js,ModificationType.MODIFY,,152,2,152,2,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+3257a7baf2fdcaf2e12832d8e4bb2d53e28efb51,2013-10-06 11:58:04-04:00,2013-10-07 09:41:18-04:00,273,273,273,273,"Refactored navigation feature
+
+Fixed grading tests",ModificationType.MODIFY,d97921e6e2938c30b1a1d4698fc0f21e49412a82,46,3,1,1,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+3376eb0f46a7b824112f23c01390fa4904bdbc92,2013-10-10 09:59:54-04:00,2013-10-10 09:59:54-04:00,273,273,273,273,Make wait_for_requirejs more tolerant of errors,ModificationType.MODIFY,3257a7baf2fdcaf2e12832d8e4bb2d53e28efb51,14,6,14,6,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+37933cb5f938e0301333704749acd4bb3e20c667,2013-10-16 08:42:11-04:00,2013-10-16 15:02:49-04:00,1245,1245,1245,1245,refactor studio component creation in acceptance tests,ModificationType.MODIFY,3376eb0f46a7b824112f23c01390fa4904bdbc92,71,40,21,15,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+ecea49ba2d8d61590aba5398b67c85eb681f7ac4,2013-10-18 11:52:00-04:00,2013-10-21 17:14:01-04:00,1245,1245,1245,1245,Refactor wait_for methods in ui_helpers for acceptance tests.,ModificationType.MODIFY,37933cb5f938e0301333704749acd4bb3e20c667,63,60,14,4,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+0fd03cfb020f2cd32afc57f4d7a2441fdbcd3903,2013-11-23 14:19:56-05:00,2013-12-19 09:12:41-05:00,273,273,273,273,"Moved stub servers to terrain
+
+Refactored stub services for style and DRY
+
+Added unit tests for stub implementations
+
+Updated acceptance tests that depend on stubs.
+
+Updated Studio acceptance tests to use YouTube stub server; fixed failing tests in devstack.",ModificationType.MODIFY,ecea49ba2d8d61590aba5398b67c85eb681f7ac4,2,2,1,1,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+e588fb8f05d07c1244b066d97cdd2fb27306ee85,2014-09-24 14:47:55+03:00,2014-09-26 21:28:54+03:00,5338,5338,5338,5338,TNL-272: Fix double loading of cms-modules.js.,ModificationType.MODIFY,0fd03cfb020f2cd32afc57f4d7a2441fdbcd3903,51,21,3,20,jamiefolsom/edx-platform,edx-platform,cdd9e2fbd6021d34ad90bf67f4246cb885f4357a,.py,3148506,2,https://stackoverflow.com/a/3148506
+7e2652b5a8ddaee31594634667293e0fa8967b31,2014-01-16 01:03:46+01:00,2014-01-27 13:47:58-05:00,432,432,431,431,"annotation tools
+
+First set of fixes from the pull request
+
+This does not include some of the testing files. The textannotation and
+videoannotation test files are not ready. waiting for an answer on the
+issue.
+
+Deleted token line in api.py and added test for token generator
+
+Added notes_spec.coffee
+
+remove spec file
+
+fixed minor error with the test
+
+fixes some quality errors
+
+fixed unit test
+
+fixed unit test
+
+added advanced module
+
+Added notes_spec.coffee
+
+remove spec file
+
+Quality and  Testing Coverage
+
+1. in test_textannotation.py I already check for line 75 as it states
+in the diff in line 43, same with test_videoanntotation
+2. Like you said, exceptions cannot be checked for
+firebase_token_generator.py. The version of python that is active on
+the edx server is 2.7 or higher, but the code is there for correctness.
+Error checking works the same way.
+3. I added a test for student/views/.py within tests and deleted the
+unused secret assignment.
+4. test_token_generator.py is now its own file
+
+Added Secret Token data input
+
+fixed token generator
+
+Annotation Tools in Place
+
+The purpose of this pull request is to install two major modules: (1) a
+module to annotate text and (2) a module to annotate video. In either
+case an instructor can declare them in advanced settings under
+advanced_modules and input content (HTML in text, mp4 or YouTube videos
+for video). Students will be able to highlight portions and add their
+comments as well as reply to each other. There needs to be a storage
+server set up per course as well as a secret token to talk with said
+storage.
+
+Changes:
+1. Added test to check for the creation of a token in tests.py (along
+with the rest of the tests for student/view.py)
+2. Removed items in cms pertaining to annotation as this will only be
+possible in the lms
+3. Added more comments to firebase_token_generator.py, the test files,
+students/views.py
+4. Added some internationalization stuff to textannotation.html and
+videoannotation.html. I need some help with doing it in javascript, but
+the html is covered.
+
+incorporated lib for traslate
+
+fixed quality errors
+
+fixed my notes with catch token
+
+Text and Video Annotation Modules - First Iteration
+
+The following code-change is the first iteration of the modules for
+text and video annotation.
+
+Installing Modules:
+1. Under “Advanced Settings”, add “textannotation” and
+“videoannotation” to the list of advanced_modules.
+2. Add link to an external storage for annotations under
+“annotation_storage_url”
+3. Add the secret token for talking with said storage under
+“annotation_token_secret”
+
+Using Modules
+1. When creating  new unit, you can find Text and Video annotation
+modules under “Advanced” component
+2. Make sure you have either Text or Video in one unit, but not both.
+3. Annotations are only allowed on Live/Public version and not Studio.
+
+Added missing templates and fixed more of the quality errors
+
+Fixed annotator not existing issue in cmd and tried to find the get_html() from the annotation module class to the descriptor
+
+Added a space after # in comments
+
+Fixed issue with an empty Module and token links
+
+Added licenses and fixed vis naming scheme and location.",ModificationType.ADD,,6461,0,6461,0,jamiefolsom/edx-platform,edx-platform,45ecd722f74870908812d24cb94b743d528025da,.js,1444562,1,https://stackoverflow.com/q/1444562
+eb207a9480517ab184c120f148e314adb87b94d0,2017-07-02 14:03:19-03:00,2017-07-02 14:03:19-03:00,18878,18878,18878,18878,add backend dir,ModificationType.ADD,,13700,0,13700,0,JairAviles/angular-2017-q1,angular-2017-q1,67447c2bfcfc96f1e8680802c00d22023ec674aa,.js,181348,1,https://stackoverflow.com/q/181348
+dbf3a81f785fe2422738fcd17c99d132eb2f028f,2015-04-13 10:08:47-04:00,2015-04-13 19:20:25-04:00,11643,11643,11643,11643,"[varnish/ci] Add real integration testing
+
+Test on 3.x and 4.x.
+Allows to test the different metrics and ensure non-regression.",ModificationType.ADD,,24,0,24,0,jamesandariese/dd-agent,dd-agent,3b8ae71dfac764f19b9f003efc13989fe91e1e3e,.py,377028,2,https://stackoverflow.com/a/377028
+c78b756069001f766d4324ac6a74c5aa861a0276,2015-02-24 12:08:20-08:00,2015-02-24 12:08:20-08:00,5017,5017,5017,5017,Initial commit (based on automatopia project),ModificationType.ADD,,215,0,215,0,jamesshore/lab16_emberjs,lab16_emberjs,df9d3fdfd685e2e539d94080a4b83aa7c02b453c,.js,14919494,2,https://stackoverflow.com/a/14919494
+dd3233573f9e00908916fc1c9605d048b798598f,2015-03-23 18:03:58-07:00,2015-03-23 18:03:58-07:00,5017,5017,5017,5017,Added domain code (copied from React review),ModificationType.ADD,,91,0,91,0,jamesshore/lab16_emberjs,lab16_emberjs,a409e330e54ca017e3c52459eb3abe4be3cbb6b6,.js,2901298,2,https://stackoverflow.com/a/2901298
+77b5be97f7e0360f701597431f3faa982fd2d65e,2017-06-04 21:29:24-06:00,2017-06-04 21:29:24-06:00,18879,18879,18879,18879,Template added.,ModificationType.ADD,,231,0,231,0,JAMS-ITCR/MyConcert,MyConcert,9549c96fbda2b075c1fea38206a236eb8f1d5b82,.js,1068308,2,https://stackoverflow.com/a/1068308
+77b5be97f7e0360f701597431f3faa982fd2d65e,2017-06-04 21:29:24-06:00,2017-06-04 21:29:24-06:00,18879,18879,18879,18879,Template added.,ModificationType.ADD,,231,0,231,0,JAMS-ITCR/MyConcert,MyConcert,1a04d559b91de8503afb839fad6b1d8ca213c889,.js,1068308,2,https://stackoverflow.com/a/1068308
+77b5be97f7e0360f701597431f3faa982fd2d65e,2017-06-04 21:29:24-06:00,2017-06-04 21:29:24-06:00,18879,18879,18879,18879,Template added.,ModificationType.ADD,,33,0,33,0,JAMS-ITCR/MyConcert,MyConcert,f78fd74ddb1b03d884d6be38c641c9ea6fa39028,.js,596467,1,https://stackoverflow.com/q/596467
+72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,2013-06-21 18:37:14+01:00,2013-06-21 18:37:14+01:00,1468,1468,1468,1468,"Graphics shape fill added
+
+shaders optimised - removed need for 4x4 matrix
+draw elipse added
+any shape can now be filled",ModificationType.MODIFY,,6,5,6,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.MODIFY,72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,5,5,1,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.DELETE,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,0,8395,0,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+5ce7074dc1ed354bc80f11152af6c56b7179c761,2013-06-23 12:09:18+01:00,2013-06-23 12:09:18+01:00,1468,1468,1468,1468,Example 13 updated,ModificationType.MODIFY,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+c6e6f7458e92941daf45cd7a3be5fa47c142f591,2013-06-24 15:32:52+01:00,2013-06-24 15:32:52+01:00,1468,1468,1468,1468,WebGL Render Bug Fix,ModificationType.MODIFY,5ce7074dc1ed354bc80f11152af6c56b7179c761,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+845f6774be5a133179cb62f69c560586be2278b1,2013-06-26 17:10:31+01:00,2013-06-26 17:10:31+01:00,1468,1468,1468,1468,Fixed interaction bug,ModificationType.MODIFY,c6e6f7458e92941daf45cd7a3be5fa47c142f591,2,2,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+4d578fe4432ca6ac5d47ba2a41d590cd21154d44,2013-06-29 13:53:09+01:00,2013-06-29 13:53:09+01:00,1468,1468,1468,1468,Linked List update,ModificationType.MODIFY,845f6774be5a133179cb62f69c560586be2278b1,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e010142b21a6a08188e5d862154c74ece5192582,2013-06-30 10:55:36+01:00,2013-06-30 10:55:36+01:00,1468,1468,1468,1468,Last Object tupdate,ModificationType.MODIFY,4d578fe4432ca6ac5d47ba2a41d590cd21154d44,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,2013-07-01 11:53:17+01:00,2013-07-01 11:53:17+01:00,1468,1468,1468,1468,"Filter Adding functionality added
+
+single filter applying now works in canvas and webGL",ModificationType.MODIFY,e010142b21a6a08188e5d862154c74ece5192582,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+69b3be322ebb8b96c901ee9bdcbb74aafe9bc56e,2013-07-02 10:48:05+01:00,2013-07-02 10:48:05+01:00,1468,1468,1468,1468,Docs updated Builds updated,ModificationType.MODIFY,74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,2,2,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,2013-06-21 18:37:14+01:00,2013-06-21 18:37:14+01:00,1468,1468,1468,1468,"Graphics shape fill added
+
+shaders optimised - removed need for 4x4 matrix
+draw elipse added
+any shape can now be filled",ModificationType.MODIFY,,6,5,6,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.MODIFY,72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,5,5,1,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.DELETE,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,0,8395,0,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+5ce7074dc1ed354bc80f11152af6c56b7179c761,2013-06-23 12:09:18+01:00,2013-06-23 12:09:18+01:00,1468,1468,1468,1468,Example 13 updated,ModificationType.MODIFY,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+c6e6f7458e92941daf45cd7a3be5fa47c142f591,2013-06-24 15:32:52+01:00,2013-06-24 15:32:52+01:00,1468,1468,1468,1468,WebGL Render Bug Fix,ModificationType.MODIFY,5ce7074dc1ed354bc80f11152af6c56b7179c761,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+845f6774be5a133179cb62f69c560586be2278b1,2013-06-26 17:10:31+01:00,2013-06-26 17:10:31+01:00,1468,1468,1468,1468,Fixed interaction bug,ModificationType.MODIFY,c6e6f7458e92941daf45cd7a3be5fa47c142f591,2,2,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+4d578fe4432ca6ac5d47ba2a41d590cd21154d44,2013-06-29 13:53:09+01:00,2013-06-29 13:53:09+01:00,1468,1468,1468,1468,Linked List update,ModificationType.MODIFY,845f6774be5a133179cb62f69c560586be2278b1,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e010142b21a6a08188e5d862154c74ece5192582,2013-06-30 10:55:36+01:00,2013-06-30 10:55:36+01:00,1468,1468,1468,1468,Last Object tupdate,ModificationType.MODIFY,4d578fe4432ca6ac5d47ba2a41d590cd21154d44,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,2013-07-01 11:53:17+01:00,2013-07-01 11:53:17+01:00,1468,1468,1468,1468,"Filter Adding functionality added
+
+single filter applying now works in canvas and webGL",ModificationType.MODIFY,e010142b21a6a08188e5d862154c74ece5192582,5,5,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+69b3be322ebb8b96c901ee9bdcbb74aafe9bc56e,2013-07-02 10:48:05+01:00,2013-07-02 10:48:05+01:00,1468,1468,1468,1468,Docs updated Builds updated,ModificationType.MODIFY,74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,2,2,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,2013-06-21 18:37:14+01:00,2013-06-21 18:37:14+01:00,1468,1468,1468,1468,"Graphics shape fill added
+
+shaders optimised - removed need for 4x4 matrix
+draw elipse added
+any shape can now be filled",ModificationType.MODIFY,,671,293,671,293,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.MODIFY,72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,115,100,38,27,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+ee84616ebbce38822fd5c39302a269edd694953e,2013-06-22 22:25:50+01:00,2013-06-22 22:25:50+01:00,1468,1468,1468,1468,Alpha implemented in graphics Object,ModificationType.MODIFY,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,21,11,9,9,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+5ce7074dc1ed354bc80f11152af6c56b7179c761,2013-06-23 12:09:18+01:00,2013-06-23 12:09:18+01:00,1468,1468,1468,1468,Example 13 updated,ModificationType.MODIFY,ee84616ebbce38822fd5c39302a269edd694953e,24,3,2,2,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+cfe81283c0b0a3a8f6dc7f253fafc3e49f4d1d5f,2013-06-23 16:24:03+01:00,2013-06-23 16:24:03+01:00,1468,1468,1468,1468,PIxi.js File Built,ModificationType.MODIFY,5ce7074dc1ed354bc80f11152af6c56b7179c761,36,11,27,3,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+c70b525bd2f5e7126de721a4cc26ac88ba0338ae,2013-06-23 17:38:36+01:00,2013-06-23 17:38:41+01:00,1468,1468,1468,1468,"WebGLGraphics PC bug fix
+
+Fixed error with attribs on chrome / ff for pc",ModificationType.MODIFY,cfe81283c0b0a3a8f6dc7f253fafc3e49f4d1d5f,24,4,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+c6e6f7458e92941daf45cd7a3be5fa47c142f591,2013-06-24 15:32:52+01:00,2013-06-24 15:32:52+01:00,1468,1468,1468,1468,WebGL Render Bug Fix,ModificationType.MODIFY,c70b525bd2f5e7126de721a4cc26ac88ba0338ae,33,18,1,4,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+845f6774be5a133179cb62f69c560586be2278b1,2013-06-26 17:10:31+01:00,2013-06-26 17:10:31+01:00,1468,1468,1468,1468,Fixed interaction bug,ModificationType.MODIFY,c6e6f7458e92941daf45cd7a3be5fa47c142f591,2,1,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+4d578fe4432ca6ac5d47ba2a41d590cd21154d44,2013-06-29 13:53:09+01:00,2013-06-29 13:53:09+01:00,1468,1468,1468,1468,Linked List update,ModificationType.MODIFY,845f6774be5a133179cb62f69c560586be2278b1,375,265,14,58,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+edda8b451c68d37c851730707421ee23fec5285f,2013-06-29 17:47:56+01:00,2013-06-29 17:47:56+01:00,1468,1468,1468,1468,Bug Fix,ModificationType.MODIFY,4d578fe4432ca6ac5d47ba2a41d590cd21154d44,42,10,6,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+e010142b21a6a08188e5d862154c74ece5192582,2013-06-30 10:55:36+01:00,2013-06-30 10:55:36+01:00,1468,1468,1468,1468,Last Object tupdate,ModificationType.MODIFY,edda8b451c68d37c851730707421ee23fec5285f,62,24,2,2,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+d6ae6a0507c17c704fe15e63f8324c8b58ef5a24,2013-06-30 16:23:55+01:00,2013-06-30 16:23:55+01:00,1468,1468,1468,1468,First frame update fixed,ModificationType.MODIFY,e010142b21a6a08188e5d862154c74ece5192582,36,87,0,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+73bed4c468ccc374ed09a1805b728c9c879ca21d,2013-06-30 17:29:22+01:00,2013-06-30 17:29:22+01:00,1468,1468,1468,1468,DisplayObject link updated,ModificationType.MODIFY,d6ae6a0507c17c704fe15e63f8324c8b58ef5a24,3,99,0,9,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,2013-07-01 11:53:17+01:00,2013-07-01 11:53:17+01:00,1468,1468,1468,1468,"Filter Adding functionality added
+
+single filter applying now works in canvas and webGL",ModificationType.MODIFY,73bed4c468ccc374ed09a1805b728c9c879ca21d,479,69,20,14,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+3e25e8070973291f393b0d6bc2526110b9265790,2013-07-01 21:22:53+01:00,2013-07-01 21:22:53+01:00,1468,1468,1468,1468,Compiled Version of PIXI.js added,ModificationType.MODIFY,74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,253,52,41,11,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+69b3be322ebb8b96c901ee9bdcbb74aafe9bc56e,2013-07-02 10:48:05+01:00,2013-07-02 10:48:05+01:00,1468,1468,1468,1468,Docs updated Builds updated,ModificationType.MODIFY,3e25e8070973291f393b0d6bc2526110b9265790,33,25,12,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+9d32a54bb8579a3047d7691b5ddbcc34aa6ce549,2013-07-24 14:43:59+01:00,2013-07-24 14:43:59+01:00,1468,1468,1468,1468,"Minor update
+
+resize function added to render texture
+fixed bug with masking in webGL causing mask to not show
+fixed bug with incorrect target being returned with interaction event",ModificationType.MODIFY,69b3be322ebb8b96c901ee9bdcbb74aafe9bc56e,28,11,7,5,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+075e2fc2e7897fe45cf17cc020b75d0f9edda1c5,2013-08-18 19:20:06+01:00,2013-08-18 19:20:06+01:00,513,513,513,513,Rebuild the latest version,ModificationType.MODIFY,9d32a54bb8579a3047d7691b5ddbcc34aa6ce549,4762,2022,414,294,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+9eaa024ac5a0459bd3531a856598a057e78169f7,2013-08-20 16:46:50+01:00,2013-08-20 16:46:50+01:00,513,513,513,513,"Bug fix on interaction in canvas
+
+fixed issue where invisible interactive objects are still interactive
+in canvas
+Updated builds too",ModificationType.MODIFY,075e2fc2e7897fe45cf17cc020b75d0f9edda1c5,2,1,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+0530c7753e1dda1f8bb16ee244e796cf98997093,2013-08-27 11:50:57+01:00,2013-08-27 11:50:57+01:00,513,513,513,513,Rebuild of pixi files,ModificationType.MODIFY,9eaa024ac5a0459bd3531a856598a057e78169f7,4,2,3,2,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+90b16d947d7cf4b54a0f631ff9bbd43f6050251e,2013-08-28 09:55:19+01:00,2013-08-28 09:55:19+01:00,513,513,513,513,Rebuild pixi.js files,ModificationType.MODIFY,0530c7753e1dda1f8bb16ee244e796cf98997093,2,2,1,1,Jam3/pixi.js,pixi.js,1d7a5d506f0331634890cff03e5674db120a2411,.js,2172798,1,https://stackoverflow.com/q/2172798
+72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,2013-06-21 18:37:14+01:00,2013-06-21 18:37:14+01:00,1468,1468,1468,1468,"Graphics shape fill added
+
+shaders optimised - removed need for 4x4 matrix
+draw elipse added
+any shape can now be filled",ModificationType.MODIFY,,60,4,60,4,JanWerder/pixi.js,pixi.js,cdb4b8707040f97f299b39b4c8afeec7bdfe5b56,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.DELETE,72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,0,129,0,47,JanWerder/pixi.js,pixi.js,cdb4b8707040f97f299b39b4c8afeec7bdfe5b56,.js,2172798,1,https://stackoverflow.com/q/2172798
+ee84616ebbce38822fd5c39302a269edd694953e,2013-06-22 22:25:50+01:00,2013-06-22 22:25:50+01:00,1468,1468,1468,1468,Alpha implemented in graphics Object,ModificationType.MODIFY,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,9,8,8,8,JanWerder/pixi.js,pixi.js,cdb4b8707040f97f299b39b4c8afeec7bdfe5b56,.js,2172798,1,https://stackoverflow.com/q/2172798
+24a784de30baa557b8a88242c8319a542e2fbae2,2013-08-18 18:17:19+01:00,2013-08-18 18:17:19+01:00,513,513,513,513,"Code Tidy
+
+Little house cleaning on the code",ModificationType.MODIFY,ee84616ebbce38822fd5c39302a269edd694953e,0,4,0,1,JanWerder/pixi.js,pixi.js,cdb4b8707040f97f299b39b4c8afeec7bdfe5b56,.js,2172798,1,https://stackoverflow.com/q/2172798
+1f9eb7feab0af8c4b63fbeb99a1a67ffa3d5a376,2016-04-14 17:08:19-05:00,2016-07-09 14:49:38-05:00,18880,18880,18880,18880,add tablesorter,ModificationType.ADD,,2954,0,2954,0,jakebailey/PrairieLearn,PrairieLearn,3a06a78e95e93a2fbb1ad0c49ae4ae2701c86f31,.js,20892048,2,https://stackoverflow.com/a/20892048
+aa59f3a844c7a13dfe7c6cea5068458a8b9b5259,2016-11-27 10:44:55-06:00,2016-11-27 10:44:55-06:00,18880,18880,18880,18880,"add jobs table, pages/adminSync{,s}",ModificationType.ADD,,8284,0,8284,0,jakebailey/PrairieLearn,PrairieLearn,4ab69266c1404b2ff4a04b4edde03d379de4b233,.js,398120,2,https://stackoverflow.com/a/398120
+bd15e64737545ce2e9a5d4ebf62d73f5fe353548,2013-04-10 10:05:24+01:00,2013-04-10 10:05:24+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,,152,20,152,20,jajool/ractive,ractive,68442ca88d077aee90cb9ca84ed5b026b92d452b,.js,18082,1,https://stackoverflow.com/q/18082
+a10ca4bb874de2c0e75908a8ccc1ee07a415e669,2013-04-10 10:28:06+01:00,2013-04-10 10:28:06+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,bd15e64737545ce2e9a5d4ebf62d73f5fe353548,1,12,0,4,jajool/ractive,ractive,68442ca88d077aee90cb9ca84ed5b026b92d452b,.js,18082,1,https://stackoverflow.com/q/18082
+e8eb9ac799420e8dbc8517a22bd3873415cec562,2013-04-11 23:37:55+01:00,2013-04-11 23:37:55+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,a10ca4bb874de2c0e75908a8ccc1ee07a415e669,102,41,4,7,jajool/ractive,ractive,68442ca88d077aee90cb9ca84ed5b026b92d452b,.js,18082,1,https://stackoverflow.com/q/18082
+d64acd1ef774e3497f247bf7428632566704f7da,2013-04-12 07:48:57+01:00,2013-04-12 07:48:57+01:00,1032,1032,1032,1032,0.1.9 builds,ModificationType.MODIFY,e8eb9ac799420e8dbc8517a22bd3873415cec562,1,1,1,1,jajool/ractive,ractive,68442ca88d077aee90cb9ca84ed5b026b92d452b,.js,18082,1,https://stackoverflow.com/q/18082
+e6fddf1a11b9b0d0fabfd69ba2d5a033d261d0a8,2013-04-13 15:41:32+01:00,2013-04-13 15:41:32+01:00,1032,1032,1032,1032,patch 0.1.9. oops,ModificationType.MODIFY,d64acd1ef774e3497f247bf7428632566704f7da,5,7,1,2,jajool/ractive,ractive,68442ca88d077aee90cb9ca84ed5b026b92d452b,.js,18082,1,https://stackoverflow.com/q/18082
+f38947098e7039663ed3eebb2d3e0daa6106ddef,2013-12-14 15:18:05-05:00,2013-12-14 15:18:05-05:00,1032,1032,1032,1032,merge 0.3.8 -> master,ModificationType.MODIFY,e6fddf1a11b9b0d0fabfd69ba2d5a033d261d0a8,6389,6946,0,62,jajool/ractive,ractive,68442ca88d077aee90cb9ca84ed5b026b92d452b,.js,18082,1,https://stackoverflow.com/q/18082
+bd15e64737545ce2e9a5d4ebf62d73f5fe353548,2013-04-10 10:05:24+01:00,2013-04-10 10:05:24+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,,152,20,152,20,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+a10ca4bb874de2c0e75908a8ccc1ee07a415e669,2013-04-10 10:28:06+01:00,2013-04-10 10:28:06+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,bd15e64737545ce2e9a5d4ebf62d73f5fe353548,1,12,0,4,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+e8eb9ac799420e8dbc8517a22bd3873415cec562,2013-04-11 23:37:55+01:00,2013-04-11 23:37:55+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,a10ca4bb874de2c0e75908a8ccc1ee07a415e669,102,41,4,7,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+d64acd1ef774e3497f247bf7428632566704f7da,2013-04-12 07:48:57+01:00,2013-04-12 07:48:57+01:00,1032,1032,1032,1032,0.1.9 builds,ModificationType.MODIFY,e8eb9ac799420e8dbc8517a22bd3873415cec562,1,1,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+e6fddf1a11b9b0d0fabfd69ba2d5a033d261d0a8,2013-04-13 15:41:32+01:00,2013-04-13 15:41:32+01:00,1032,1032,1032,1032,patch 0.1.9. oops,ModificationType.MODIFY,d64acd1ef774e3497f247bf7428632566704f7da,5,7,1,2,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+460b10c56b3a389aafa428db452f7807b55b5302,2013-04-18 23:47:14+01:00,2013-04-18 23:47:14+01:00,1032,1032,1032,1032,Changed architecture to dramatically improve performance with complex view models,ModificationType.MODIFY,e6fddf1a11b9b0d0fabfd69ba2d5a033d261d0a8,714,815,286,210,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+4c39b3ec262e6fa81ab56867d033c46e384151b9,2013-04-18 23:49:54+01:00,2013-04-18 23:49:54+01:00,1032,1032,1032,1032,version bump 0.1.9 -> 0.2.0,ModificationType.MODIFY,460b10c56b3a389aafa428db452f7807b55b5302,1,1,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+322829d9e83b633dd1eaac38a11cfb0cf1af3ad9,2013-04-19 12:38:31+01:00,2013-04-19 12:38:31+01:00,1032,1032,1032,1032,linting,ModificationType.MODIFY,4c39b3ec262e6fa81ab56867d033c46e384151b9,94,99,8,8,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+4bbfe3d7ac7219b833bb4ee14917148d34d0c976,2013-04-19 12:39:06+01:00,2013-04-19 12:39:06+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,322829d9e83b633dd1eaac38a11cfb0cf1af3ad9,111,129,26,29,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+3226d57c5b20798315867d6d6a39d296fe508007,2013-04-20 01:11:36+01:00,2013-04-20 01:11:36+01:00,1032,1032,1032,1032,refactor,ModificationType.MODIFY,4bbfe3d7ac7219b833bb4ee14917148d34d0c976,9,5,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+29a018077061e43aead7a27dc07284cf5881537c,2013-04-20 01:17:45+01:00,2013-04-20 01:17:45+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,3226d57c5b20798315867d6d6a39d296fe508007,44,59,3,4,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+e5c0c56634f4c1b838c386c6e86c320e1527baed,2013-04-21 00:47:33+01:00,2013-04-21 00:47:33+01:00,1032,1032,1032,1032,changed some internal and external nomenclature. Formatters are now modifiers,ModificationType.MODIFY,29a018077061e43aead7a27dc07284cf5881537c,191,224,34,31,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+7b31e417bbe6a9471fe5fa9de89718297a207d14,2013-05-03 22:35:32+01:00,2013-05-03 22:35:32+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,e5c0c56634f4c1b838c386c6e86c320e1527baed,45,37,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+696cf8c68b33f433f75171d4e7e489828ae017fd,2013-05-04 18:14:15+01:00,2013-05-04 18:14:15+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,7b31e417bbe6a9471fe5fa9de89718297a207d14,182,4,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+40edbd8fc6bde9cd06f24c951951538899214cff,2013-05-07 14:54:10+01:00,2013-05-07 14:54:10+01:00,1032,1032,1032,1032,release 0.2.2,ModificationType.MODIFY,696cf8c68b33f433f75171d4e7e489828ae017fd,204,54,16,8,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+2a2fb73c4abd3e8c0825d5ae4ccb5d034de2d2ef,2013-05-14 17:30:16+01:00,2013-05-14 17:30:16+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,40edbd8fc6bde9cd06f24c951951538899214cff,198,4,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+71232fa1d4f628f7c8dd95141e01008e13988fe8,2013-05-23 12:01:34+01:00,2013-05-23 12:01:34+01:00,1032,1032,1032,1032,"damn near complete rewrite for 0.3, in order to implement dependency-tracked expressions. Duct tape and sawdust everywhere, bear with me",ModificationType.MODIFY,2a2fb73c4abd3e8c0825d5ae4ccb5d034de2d2ef,2574,2156,174,262,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+778806904ca98459cc73c7d3433d09efe95b6e5c,2013-05-23 16:27:27+01:00,2013-05-23 16:27:27+01:00,1032,1032,1032,1032,reorganising code,ModificationType.MODIFY,71232fa1d4f628f7c8dd95141e01008e13988fe8,1105,1421,29,115,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+c3e988a06b844d4ccd0534d9bd1746a0e1e54712,2013-05-24 00:00:46+01:00,2013-05-24 00:00:46+01:00,1032,1032,1032,1032,"reorganising, made built file a few kb smaller",ModificationType.MODIFY,778806904ca98459cc73c7d3433d09efe95b6e5c,39,17,0,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+c000d47c912725e85c624e7291ecbfe9033d1e2b,2013-05-24 00:29:36+01:00,2013-05-24 00:29:36+01:00,1032,1032,1032,1032,more reorganising,ModificationType.MODIFY,c3e988a06b844d4ccd0534d9bd1746a0e1e54712,3,4,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+e68a811e1399a8f9cdf606c8d779c624030d13c5,2013-05-24 11:48:18+01:00,2013-05-24 11:48:18+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,c000d47c912725e85c624e7291ecbfe9033d1e2b,174,100,32,5,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+a9c033d6890a9523e0377707c4a2c1e7fe25fd6e,2013-05-24 11:49:36+01:00,2013-05-24 11:49:36+01:00,1032,1032,1032,1032,release 0.3.0-alpha1,ModificationType.MODIFY,e68a811e1399a8f9cdf606c8d779c624030d13c5,1,1,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+9496542761c895cdd11caed17c4ca40c4a415261,2013-05-24 22:29:55+01:00,2013-05-24 22:29:55+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,a9c033d6890a9523e0377707c4a2c1e7fe25fd6e,151,72,2,28,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+70012e5f3c195ae98e6e74a88c441bcebd876583,2013-05-25 23:45:36+01:00,2013-05-25 23:45:36+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,9496542761c895cdd11caed17c4ca40c4a415261,12,7,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+1472b68d44dc4dc44a873830571cdb6a03a9e385,2013-05-27 23:05:34+01:00,2013-05-27 23:05:34+01:00,1032,1032,1032,1032,release 0.3.0,ModificationType.MODIFY,70012e5f3c195ae98e6e74a88c441bcebd876583,86,68,3,6,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+de9f972b118dbd3e8bcafa050bf7dad3eb5ce1cd,2013-05-28 10:19:05+01:00,2013-05-28 10:19:05+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,1472b68d44dc4dc44a873830571cdb6a03a9e385,1,1,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+0020182bd97d102b47f1574e4ef82ce197c996a0,2013-05-29 15:40:02+01:00,2013-05-29 15:40:02+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,de9f972b118dbd3e8bcafa050bf7dad3eb5ce1cd,133,53,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+4713e0f4bfe40877964926c9dfdeddfcd87806c0,2013-05-30 08:18:19+01:00,2013-05-30 08:18:19+01:00,1032,1032,1032,1032,patch 0.3.0,ModificationType.MODIFY,0020182bd97d102b47f1574e4ef82ce197c996a0,21,7,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+80e24cc0057dfb81fccc5809e5f697af1529f059,2013-05-30 22:45:34+01:00,2013-05-30 22:45:34+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,4713e0f4bfe40877964926c9dfdeddfcd87806c0,83,45,0,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+25509184c2e61cffd17827f3075f069d44bb879d,2013-05-31 12:23:46+01:00,2013-05-31 12:23:46+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,80e24cc0057dfb81fccc5809e5f697af1529f059,258,49,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+533e3431e8ee5a3a2ae729040dd830fe20188ae0,2013-05-31 17:31:38+01:00,2013-05-31 17:31:38+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,25509184c2e61cffd17827f3075f069d44bb879d,46,65,2,2,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+e10fcecfaee680b3a8d0cd18a2c12db654935245,2013-06-09 13:37:30+01:00,2013-06-09 13:37:30+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,533e3431e8ee5a3a2ae729040dd830fe20188ae0,960,408,2,4,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+4bfc1b03f786c4c5e3191b46d4b4f88d60554c4d,2013-06-18 22:00:32+01:00,2013-06-18 22:00:32+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,e10fcecfaee680b3a8d0cd18a2c12db654935245,464,332,8,10,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+71d82fdbc26e7f5996385993549991a8a498e22b,2013-06-19 23:50:32+01:00,2013-06-19 23:50:32+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,4bfc1b03f786c4c5e3191b46d4b4f88d60554c4d,249,115,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+e99de1505e8bee1e529898382f391eaf8ec2e45c,2013-06-24 18:46:13+01:00,2013-06-24 18:46:13+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,71d82fdbc26e7f5996385993549991a8a498e22b,897,425,22,8,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+496aa70cfd60e29b24e3318555909a2c5510e691,2013-07-04 11:58:15+01:00,2013-07-04 11:58:15+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,e99de1505e8bee1e529898382f391eaf8ec2e45c,418,211,2,2,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+438d217d4bac2a17e157c4c5a0ce40e691a56cef,2013-07-09 15:41:27+01:00,2013-07-09 15:41:27+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,496aa70cfd60e29b24e3318555909a2c5510e691,302,146,3,3,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+0676a1c9ff36cbd40f0fc0df1dd51bb6031c945a,2013-07-10 11:20:19+01:00,2013-07-10 11:20:19+01:00,1032,1032,1032,1032,refactoring,ModificationType.MODIFY,438d217d4bac2a17e157c4c5a0ce40e691a56cef,3416,3445,36,62,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+764ca2cdcc1161dfc13264526d860580a9f39f63,2013-07-10 11:56:35+01:00,2013-07-10 11:56:35+01:00,1032,1032,1032,1032,release 0.3.1,ModificationType.MODIFY,0676a1c9ff36cbd40f0fc0df1dd51bb6031c945a,1,4,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+52293186f2b1a7fd203cb04031c10794c1842f26,2013-07-11 22:52:11+01:00,2013-07-11 22:52:11+01:00,1032,1032,1032,1032,patch 0.3.1,ModificationType.MODIFY,764ca2cdcc1161dfc13264526d860580a9f39f63,12,4,1,1,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+20d7ad8c278b72000ea8e2ec6198fe9a2b770e20,2013-07-14 12:31:28+01:00,2013-07-14 12:31:28+01:00,1032,1032,1032,1032,rebuilt,ModificationType.MODIFY,52293186f2b1a7fd203cb04031c10794c1842f26,69,43,0,2,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+f38947098e7039663ed3eebb2d3e0daa6106ddef,2013-12-14 15:18:05-05:00,2013-12-14 15:18:05-05:00,1032,1032,1032,1032,merge 0.3.8 -> master,ModificationType.MODIFY,20d7ad8c278b72000ea8e2ec6198fe9a2b770e20,6473,6935,0,28,jajool/ractive,ractive,e6149a815391dce5a87c9da694cc6487c778cdf7,.js,18082,1,https://stackoverflow.com/q/18082
+bd15e64737545ce2e9a5d4ebf62d73f5fe353548,2013-04-10 10:05:24+01:00,2013-04-10 10:05:24+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,,173,31,173,31,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+a10ca4bb874de2c0e75908a8ccc1ee07a415e669,2013-04-10 10:28:06+01:00,2013-04-10 10:28:06+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,bd15e64737545ce2e9a5d4ebf62d73f5fe353548,1,12,0,4,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+e8eb9ac799420e8dbc8517a22bd3873415cec562,2013-04-11 23:37:55+01:00,2013-04-11 23:37:55+01:00,1032,1032,1032,1032,fresh build,ModificationType.MODIFY,a10ca4bb874de2c0e75908a8ccc1ee07a415e669,102,41,4,7,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+d64acd1ef774e3497f247bf7428632566704f7da,2013-04-12 07:48:57+01:00,2013-04-12 07:48:57+01:00,1032,1032,1032,1032,0.1.9 builds,ModificationType.MODIFY,e8eb9ac799420e8dbc8517a22bd3873415cec562,550,218,13,25,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+d64acd1ef774e3497f247bf7428632566704f7da,2013-04-12 07:48:57+01:00,2013-04-12 07:48:57+01:00,1032,1032,1032,1032,0.1.9 builds,ModificationType.MODIFY,d64acd1ef774e3497f247bf7428632566704f7da,1,1,1,1,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+e6fddf1a11b9b0d0fabfd69ba2d5a033d261d0a8,2013-04-13 15:41:32+01:00,2013-04-13 15:41:32+01:00,1032,1032,1032,1032,patch 0.1.9. oops,ModificationType.MODIFY,d64acd1ef774e3497f247bf7428632566704f7da,34,13,1,2,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+f38947098e7039663ed3eebb2d3e0daa6106ddef,2013-12-14 15:18:05-05:00,2013-12-14 15:18:05-05:00,1032,1032,1032,1032,merge 0.3.8 -> master,ModificationType.DELETE,e6fddf1a11b9b0d0fabfd69ba2d5a033d261d0a8,0,9627,0,50,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+f38947098e7039663ed3eebb2d3e0daa6106ddef,2013-12-14 15:18:05-05:00,2013-12-14 15:18:05-05:00,1032,1032,1032,1032,merge 0.3.8 -> master,ModificationType.MODIFY,f38947098e7039663ed3eebb2d3e0daa6106ddef,8578,9597,0,1,jajool/ractive,ractive,eac6911acc9647d2d77cac50fa4097645b30067c,.js,18082,1,https://stackoverflow.com/q/18082
+28623a8b9861486d08e35fd8c8756dad8df474ee,2014-06-20 00:39:17-06:00,2014-06-20 00:39:17-06:00,18881,18881,18881,18881,Initial start,ModificationType.ADD,,60,0,60,0,jamalomartin/ComicBook-Inventory-App,ComicBook-Inventory-App,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+28623a8b9861486d08e35fd8c8756dad8df474ee,2014-06-20 00:39:17-06:00,2014-06-20 00:39:17-06:00,18881,18881,18881,18881,Initial start,ModificationType.ADD,,60,0,60,0,jamalomartin/ComicBook-Inventory-App,ComicBook-Inventory-App,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+8c189e569b66ee63f45508569e7cefc6f6e6ad8a,2014-12-10 23:12:08-08:00,2014-12-10 23:12:08-08:00,1720,1720,1720,1720,"did something better for full dotted notation support (or normal dict notation)
+in the OutputObj dicts post-json (AttrDict class).
+removed assertion in test_GBM_basic_regress.py",ModificationType.MODIFY,,52,17,52,17,jangorecki/h2o-3,h2o-3,cbf14448d99981d8af880ecae1fc6b80113cfab9,.py,5021041,1,https://stackoverflow.com/q/5021041
+9e6e9f4d64897f6beef7d362b8dabaceeeee8c01,2014-12-12 00:51:12-08:00,2014-12-12 00:51:12-08:00,1720,1720,1720,1720,some more updates to use the new style,ModificationType.MODIFY,8c189e569b66ee63f45508569e7cefc6f6e6ad8a,10,2,0,1,jangorecki/h2o-3,h2o-3,cbf14448d99981d8af880ecae1fc6b80113cfab9,.py,5021041,1,https://stackoverflow.com/q/5021041
+dd15e2a7e92eff6a2f2cd7b4bd99df29dec937a3,2015-08-02 00:06:46-07:00,2015-08-02 00:06:46-07:00,1720,1720,1720,1720,"need inplace sort of dirs also, to get full test list determinism",ModificationType.MODIFY,,14,0,14,0,jangorecki/h2o-3,h2o-3,27e6faa9ffb19b8a759c3c82ea8b03b9460b34fb,.py,18282370,1,https://stackoverflow.com/q/18282370
+e3380fdad8afc01fd701c61ff333315eedb969ca,2017-10-31 23:16:52-04:00,2017-10-31 23:16:52-04:00,18882,18882,18882,18882,Set up credentials,ModificationType.ADD,,18,0,18,0,Jamesm4/Cognitive-Computing-P1,Cognitive-Computing-P1,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+e3380fdad8afc01fd701c61ff333315eedb969ca,2017-10-31 23:16:52-04:00,2017-10-31 23:16:52-04:00,18882,18882,18882,18882,Set up credentials,ModificationType.ADD,,2,0,2,0,Jamesm4/Cognitive-Computing-P1,Cognitive-Computing-P1,4006e080bd9b13634c550eb602e741303326d6d5,.js,11781404,2,https://stackoverflow.com/a/11781404
+52a0abc4f4cc231b849ed2bcce346dde42fd5502,2017-08-31 13:47:58+09:00,2017-08-31 13:47:58+09:00,18883,18883,18883,18883,no message,ModificationType.ADD,,185,0,185,0,jaezinpark/iotix,iotix,879aaa79ced153a685d24d552d33b34580a86a7e,.js,16459606,2,https://stackoverflow.com/a/16459606
+2c1174da34dde760cb54fb4c7fcfa3af5ab3bb97,2017-08-31 14:03:02+09:00,2017-08-31 14:03:02+09:00,18883,18883,18883,18883,모두 삭제,ModificationType.DELETE,52a0abc4f4cc231b849ed2bcce346dde42fd5502,0,185,0,185,jaezinpark/iotix,iotix,879aaa79ced153a685d24d552d33b34580a86a7e,.js,16459606,2,https://stackoverflow.com/a/16459606
+9510ff1d07c6c8ed63a31d1e74a68eca664a01d9,2016-08-31 20:17:06-05:00,2016-08-31 20:17:06-05:00,18884,18884,18884,18884,"Add package rocketchat-emoji-base: a base package for adding new sets of emoji.
+Also allows consecutive large emojis in a message where only emoji is present.",ModificationType.ADD,,25,0,25,0,JamesHGreen/Rocket_API,Rocket_API,9bd663ba5c08b9bc4d3143c04cd6f1adef599b8d,.js,26990347,2,https://stackoverflow.com/a/26990347
+0a4e2a793f5d321a44aac0aa23895820d70ed2a7,2014-08-29 20:25:07+01:00,2014-08-29 20:25:07+01:00,18885,18885,18885,18885,create repo,ModificationType.ADD,,21954,0,21954,0,jamesdraper5/angularapp,angularapp,59f7a967686aa4a59cd362026534a7f5504ce475,.js,472729,2,https://stackoverflow.com/a/472729
+e17c05e654cf86a7057f201f15eb4cd2a20774c7,2016-10-08 21:27:48+08:00,2016-10-08 21:27:48+08:00,18886,18886,18886,18886,First commit,ModificationType.ADD,,4040,0,4040,0,janicss/MOTOLITE,MOTOLITE,ed94e44a1e158e5cc5d752ac873c6de58c5baa66,.js,3561493,1,https://stackoverflow.com/q/3561493
+34466202da8a496f70bdc4796990406ae8836386,2014-09-23 19:35:48+02:00,2014-09-23 19:35:48+02:00,42,42,42,42,Update Pydev.Debugger to the latest development snapshot.,ModificationType.ADD,,1038,0,1038,0,jagguli/intellij-community,intellij-community,4a9a9842ac96e8f422cbd64b38278227294b6297,.py,7864317,2,https://stackoverflow.com/a/7864317
+baa5475d0dd70d3669c0bfa61b2956783c681bbd,2016-03-23 14:26:16+08:00,2016-03-23 14:26:16+08:00,18887,18887,18887,18887,23March2016 commit,ModificationType.ADD,,7417,0,7417,0,jamesclickap/taiwanlife_ap,taiwanlife_ap,d335b3da638438bf315401498b99e273cdd7cc38,.js,20149312,1,https://stackoverflow.com/q/20149312
+80776e387dfe212642bdcda2d1fb091d00dafbad,2014-03-07 14:07:47-08:00,2014-03-07 22:38:45+00:00,115,115,241,241,"(#1289) - Prevent WebSQL->IDB data loss
+
+If a browser is using both WebSQL and IDB,
+and if a new database is created without
+specifying the adapter, check if a DB
+with the same name exists in WebSQL before
+choosing IDB.
+
+This ensures that no data loss occurs
+if a browser upgrades from WebSQL-only
+to WebSQL+IDB (e.g. Android 4.4).
+
+This also adds some additional browser
+migration tests.",ModificationType.ADD,,7569,0,7569,0,janraasch/pouchdb,pouchdb,716e3e15a8944cd7931a8ebb7d731eb9a71b1d1d,.js,417184,2,https://stackoverflow.com/a/417184
+8afe206758f39ba1576347ac164d3cafe5206e53,2014-05-04 20:47:35-07:00,2014-05-07 16:08:52+01:00,115,115,241,241,"(#2150) - add 2.2.0 migration test for views
+
+This is a smoke test to make sure that
+views are still the same before and after
+migration, when migrating from 2.2.0 to
+the present.",ModificationType.ADD,,8733,0,8733,0,janl/pouchdb,pouchdb,b963c6c1655f9f01d08d1fca1dc664a0e5ac062a,.js,14967647,1,https://stackoverflow.com/q/14967647
+09e588177b9d38acb74c340ac4a9cb058c052c03,2014-03-13 12:21:24+00:00,2014-03-13 12:21:24+00:00,18888,18888,18888,18888,"Baker Bus Wordpress Theme & Site
+
+University work",ModificationType.ADD,,11357,0,11357,0,james-dowell/Baker-Bus,Baker-Bus,51c70407d8fc200954a71332e6bb6c522ce0a5d7,.php,2638272,2,https://stackoverflow.com/a/2638272
+90c4dd07eb023e85b1c13e8f5a57bf2523504eb6,2015-10-17 17:21:44-04:00,2015-10-17 17:21:44-04:00,18889,18889,18889,18889,Initial commit of Resume website,ModificationType.ADD,,912,0,912,0,jai-knows-how-to-code/SD2015_EDL,SD2015_EDL,7b3b922251428a6f19cb367de5fc58ec0956089b,.js,359788,1,https://stackoverflow.com/q/359788
+191b44c79a5e3f6c5a67ff1fb7d92c671588efaf,2016-05-16 17:39:05+08:00,2016-05-16 17:39:05+08:00,18890,18890,18890,18890,material and pronos-foot admin,ModificationType.ADD,,9977,0,9977,0,jairus/pronos-foot,pronos-foot,e2bc4a1216ee78c6f96f4f0810093639e269a980,.js,3561493,1,https://stackoverflow.com/q/3561493
+fd915e0d34b5421794016eb550f9ca0d517d3546,2016-03-10 20:59:09-08:00,2016-03-10 20:59:09-08:00,18891,18891,18891,18891,I added my touch,ModificationType.ADD,,282,0,282,0,jalut/jalut.github.io,jalut.github.io,46f19debe879095b0907006a65d3cfe1fc6c04e0,.js,9270488,1,https://stackoverflow.com/q/9270488
+d95f4cefca16260e70e0326b6b3e4898ca53ebdf,2017-08-14 11:31:17-04:00,2017-08-14 11:31:17-04:00,18892,18892,18892,18892,"gulp, sass, instant reload with chrome extension",ModificationType.ADD,,164,0,164,0,jakegibs617/portfolio-drupal,portfolio-drupal,2130a31b0cc59aaa9060e57f2dd96fdd90058309,.js,201323,1,https://stackoverflow.com/q/201323
+d95f4cefca16260e70e0326b6b3e4898ca53ebdf,2017-08-14 11:31:17-04:00,2017-08-14 11:31:17-04:00,18892,18892,18892,18892,"gulp, sass, instant reload with chrome extension",ModificationType.ADD,,52,0,52,0,jakegibs617/portfolio-drupal,portfolio-drupal,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+d95f4cefca16260e70e0326b6b3e4898ca53ebdf,2017-08-14 11:31:17-04:00,2017-08-14 11:31:17-04:00,18892,18892,18892,18892,"gulp, sass, instant reload with chrome extension",ModificationType.ADD,,2,0,2,0,jakegibs617/portfolio-drupal,portfolio-drupal,7106924934501fd4035efe78678281020328acc5,.js,16459606,2,https://stackoverflow.com/a/16459606
+d95f4cefca16260e70e0326b6b3e4898ca53ebdf,2017-08-14 11:31:17-04:00,2017-08-14 11:31:17-04:00,18892,18892,18892,18892,"gulp, sass, instant reload with chrome extension",ModificationType.ADD,,52,0,52,0,jakegibs617/portfolio-drupal,portfolio-drupal,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+6cabd479a479fd748cd1c60a0c03024ce6e90e49,2015-06-17 11:16:50+02:00,2015-06-17 11:47:01+02:00,1058,1058,1058,1058,Add util to quickly create a new module,ModificationType.ADD,,182,0,182,0,jacquesd/indico,indico,4e856f8b23a8376b90c1e65e5e99905e55d50535,.py,1176023,2,https://stackoverflow.com/a/1176023
+2254ddbaed861c442424bb36f8e11352f51afa9c,2015-06-19 09:17:57+02:00,2015-06-19 09:17:57+02:00,1058,1058,1058,1058,Use virtual_template_folder in create_module.py,ModificationType.MODIFY,6cabd479a479fd748cd1c60a0c03024ce6e90e49,3,5,3,5,jacquesd/indico,indico,4e856f8b23a8376b90c1e65e5e99905e55d50535,.py,1176023,2,https://stackoverflow.com/a/1176023
+03b9b1dd571229e9b9234d786a0de8a618f4c6eb,2015-06-23 18:33:55+02:00,2015-06-24 13:53:58+02:00,1058,1058,1058,1058,Fix table args generation in create_module,ModificationType.MODIFY,2254ddbaed861c442424bb36f8e11352f51afa9c,1,1,1,1,jacquesd/indico,indico,4e856f8b23a8376b90c1e65e5e99905e55d50535,.py,1176023,2,https://stackoverflow.com/a/1176023
+4236f435694f5bd9ceaa3a04618755dd041f9121,2015-07-22 11:56:47+02:00,2015-07-22 12:05:20+02:00,1058,1058,1058,1058,"create_module: Do not abort if module exists
+
+The script is useful even for existing modules if you just want to
+quickly add new models.",ModificationType.MODIFY,03b9b1dd571229e9b9234d786a0de8a618f4c6eb,24,13,24,13,jacquesd/indico,indico,4e856f8b23a8376b90c1e65e5e99905e55d50535,.py,1176023,2,https://stackoverflow.com/a/1176023
+987e470a33594cd008faa00c24008a837f9b63d7,2016-02-07 00:51:03+01:00,2016-02-07 00:51:03+01:00,18893,18893,18893,18893,Añadidas diapositivas gnulinux,ModificationType.ADD,,402,0,402,0,jamj2000/jamj2000.github.io,jamj2000.github.io,f4035e2e956dc74a133372ffdcdd882cfc00c98e,.js,5690269,1,https://stackoverflow.com/q/5690269
+586167de36ef5dc597a02df0943e312ffd920111,2016-02-07 03:18:17+01:00,2016-02-07 03:18:17+01:00,18893,18893,18893,18893,Borrado gnulinux/1,ModificationType.DELETE,987e470a33594cd008faa00c24008a837f9b63d7,0,402,0,402,jamj2000/jamj2000.github.io,jamj2000.github.io,f4035e2e956dc74a133372ffdcdd882cfc00c98e,.js,5690269,1,https://stackoverflow.com/q/5690269
+1213fe7d3c7b61119d1e26c9280871381c5ea6f7,2013-08-29 15:29:23-07:00,2013-08-29 15:29:23-07:00,5017,5017,5017,5017,Initial commit (based on LL14),ModificationType.ADD,,435,0,435,0,jamesshore/ll15_large_scale_javascript,ll15_large_scale_javascript,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+c01db323abb3c5b61a94199ca7a4f038f1b52499,2016-02-05 13:24:38+09:00,2016-02-05 13:24:38+09:00,18894,18894,18894,18894,no message,ModificationType.ADD,,1080,0,1080,0,JapanComputerServicesInc/AspnetMVC5Template,AspnetMVC5Template,33740a22ce9ad9de6de7965d75cc496d047907ec,.js,4881951,2,https://stackoverflow.com/a/4881951
+a1895c6e94708bf8559b38abceb6f457c6beafaa,2014-01-19 17:37:06+01:00,2014-01-19 17:37:06+01:00,18895,18895,18895,18895,Migration aktueller Stand Shop von privatem GIT Repository auf GitHub,ModificationType.ADD,,1728,0,1728,0,jaggr2/ch.bfh.bti7054.w2013.p.blastshop,ch.bfh.bti7054.w2013.p.blastshop,5bb60892ccb9aa71f9003738688107ef40351436,.js,11929099,1,https://stackoverflow.com/q/11929099
+851dd93023c283e91661a90a251970bd9ecd6048,2017-09-14 12:19:31+02:00,2017-09-14 12:19:31+02:00,18896,18896,18896,18896,upload latest project files,ModificationType.ADD,,35,0,35,0,jakwakwa/simple-slide-angularjs,simple-slide-angularjs,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+e9d6e86b0b7b2332c3ff8f7a1a19c58d1c37deb3,2014-07-29 11:30:58-07:00,2014-07-29 11:30:58-07:00,5017,5017,5017,5017,Updated mocha 1.16.1 --> 1.21.3,ModificationType.ADD,,147,0,147,0,jamesshore/automatopia,automatopia,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+4e11d02796b5e85431ac7d11bed4edf151de0e2b,2016-06-13 12:31:24-07:00,2016-06-13 12:31:24-07:00,5017,5017,5017,5017,Updated mocha 1.21.5 --> 2.5.3,ModificationType.MODIFY,e9d6e86b0b7b2332c3ff8f7a1a19c58d1c37deb3,28,7,7,7,jamesshore/automatopia,automatopia,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+e9d6e86b0b7b2332c3ff8f7a1a19c58d1c37deb3,2014-07-29 11:30:58-07:00,2014-07-29 11:30:58-07:00,5017,5017,5017,5017,Updated mocha 1.16.1 --> 1.21.3,ModificationType.ADD,,147,0,147,0,jamesshore/automatopia,automatopia,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+afd3a4cb94149251cf5b8d7ef0de04a30b49f127,2016-06-13 12:23:28-07:00,2016-06-13 12:23:28-07:00,5017,5017,5017,5017,Updated karma 0.12.31 --> 0.13.22,ModificationType.MODIFY,e9d6e86b0b7b2332c3ff8f7a1a19c58d1c37deb3,150,154,4,9,jamesshore/automatopia,automatopia,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+afd3a4cb94149251cf5b8d7ef0de04a30b49f127,2016-06-13 12:23:28-07:00,2016-06-13 12:23:28-07:00,5017,5017,5017,5017,Updated karma 0.12.31 --> 0.13.22,ModificationType.MODIFY,afd3a4cb94149251cf5b8d7ef0de04a30b49f127,28,7,7,7,jamesshore/automatopia,automatopia,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+afd3a4cb94149251cf5b8d7ef0de04a30b49f127,2016-06-13 12:23:28-07:00,2016-06-13 12:23:28-07:00,5017,5017,5017,5017,Updated karma 0.12.31 --> 0.13.22,ModificationType.DELETE,afd3a4cb94149251cf5b8d7ef0de04a30b49f127,0,43,0,21,jamesshore/automatopia,automatopia,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+2ca6b65f70fdcb034348dd0f4597b979c0ab3c28,2016-01-20 09:24:45-08:00,2016-01-20 09:24:45-08:00,18897,18897,18897,18897,Missing files.,ModificationType.ADD,,2223,0,2223,0,jamieps/rundeck,rundeck,c92967acdcc363ff674ccb8c98c0d646a50ddaf0,.js,1762378,2,https://stackoverflow.com/a/1762378
+bc64d7cf70ce9563cbeff98b8c19c801657cec76,2014-11-09 17:21:19+08:00,2014-11-09 17:21:19+08:00,18898,18898,18898,18898,initial version,ModificationType.ADD,,4,0,4,0,jambus/javascriptlab,javascriptlab,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+f5383def0323f1796125bc6580ec1836127083c1,2014-04-04 16:12:00+02:00,2014-04-04 16:12:29+02:00,297,297,297,297,migrate to bower and include assets files,ModificationType.ADD,,5118,0,5118,0,jakublech/SonataAdminBundle,SonataAdminBundle,6eb122799751cd5dc9770601423ed3253efff7db,.js,7602565,1,https://stackoverflow.com/q/7602565
+455d817f32746afd44113e863814dcbf82258711,2016-03-23 08:03:51+08:00,2016-03-23 08:03:51+08:00,18887,18887,18887,18887,23March2016 commit,ModificationType.ADD,,11890,0,11890,0,jamesclickap/taiwanlife_web,taiwanlife_web,bf457aa3936aee1e923962470988180ebc750c6c,.js,3653444,1,https://stackoverflow.com/q/3653444
+d9f594e4c212efe668f2c5e8735b447d2ca13eb9,2016-01-10 23:40:34+01:00,2016-01-10 23:40:34+01:00,14810,14810,14810,14810,First commit,ModificationType.ADD,,3043,0,3043,0,jalvjim/AWeb,AWeb,d6a1d9b03ad4f929940fe417697fb21960ff901f,.js,181348,1,https://stackoverflow.com/q/181348
+9a4ce371be39f8d320e47a2aeee09cc559a20504,2017-02-01 18:56:33-07:00,2017-02-01 18:56:33-07:00,9661,9661,9661,9661,initial commit with boilerplate,ModificationType.ADD,,6026,0,6026,0,jameswatkins77/React-Blogger-App,React-Blogger-App,1124377d6909f0aaa5de7024f5d9dec891550824,.js,22747272,2,https://stackoverflow.com/a/22747272
+9a4ce371be39f8d320e47a2aeee09cc559a20504,2017-02-01 18:56:33-07:00,2017-02-01 18:56:33-07:00,9661,9661,9661,9661,initial commit with boilerplate,ModificationType.ADD,,190,0,190,0,jameswatkins77/React-Blogger-App,React-Blogger-App,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+9a4ce371be39f8d320e47a2aeee09cc559a20504,2017-02-01 18:56:33-07:00,2017-02-01 18:56:33-07:00,9661,9661,9661,9661,initial commit with boilerplate,ModificationType.ADD,,5725,0,5725,0,jameswatkins77/React-Blogger-App,React-Blogger-App,f168d5f7b356ae8d8b02470057732987e868b4ad,.js,398120,2,https://stackoverflow.com/a/398120
+9a4ce371be39f8d320e47a2aeee09cc559a20504,2017-02-01 18:56:33-07:00,2017-02-01 18:56:33-07:00,9661,9661,9661,9661,initial commit with boilerplate,ModificationType.ADD,,190,0,190,0,jameswatkins77/React-Blogger-App,React-Blogger-App,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+38a8fbcb053158c83354011e2e723925a2db2a4c,2016-10-19 12:07:14+01:00,2016-10-19 12:07:14+01:00,18899,18899,18899,18899,"Add publications and presentations
+
+Some reveal.js presentations and my thesis",ModificationType.ADD,,405,0,405,0,janfreyberg/janfreyberg.github.io,janfreyberg.github.io,0e247e5826cb8ecf36037d929bca0c719fb8c383,.js,5690269,1,https://stackoverflow.com/q/5690269
+38c1fe57824b856c7a21577fb7facdc105bddb82,2018-11-25 15:51:28+00:00,2018-11-25 15:51:28+00:00,18899,18899,18899,18899,Literally replace everything with https,ModificationType.MODIFY,38a8fbcb053158c83354011e2e723925a2db2a4c,1,1,1,1,janfreyberg/janfreyberg.github.io,janfreyberg.github.io,0e247e5826cb8ecf36037d929bca0c719fb8c383,.js,5690269,1,https://stackoverflow.com/q/5690269
+91ba38bb87396882bfcb334a183416041186ad43,2015-09-01 17:50:46-03:00,2015-09-01 17:50:46-03:00,18900,18900,18900,18900,Projeto Ghost,ModificationType.ADD,,507,0,507,0,Jandersolutions/jander777-ghost,jander777-ghost,d72eebfdce5e3d419ab756e2bdbc77a81c8879c4,.js,398120,2,https://stackoverflow.com/a/398120
+91ba38bb87396882bfcb334a183416041186ad43,2015-09-01 17:50:46-03:00,2015-09-01 17:50:46-03:00,18900,18900,18900,18900,Projeto Ghost,ModificationType.ADD,,32,0,32,0,Jandersoft/jander777-ghost,jander777-ghost,e2db14900c9b4425b7031276614e6981e55e190a,.js,8458984,1,https://stackoverflow.com/q/8458984
+91ba38bb87396882bfcb334a183416041186ad43,2015-09-01 17:50:46-03:00,2015-09-01 17:50:46-03:00,18900,18900,18900,18900,Projeto Ghost,ModificationType.ADD,,56,0,56,0,Jandersoft/jander777-ghost,jander777-ghost,71fb8305b93a831d62a586fdace971632dd427e2,.js,1068308,2,https://stackoverflow.com/a/1068308
+91ba38bb87396882bfcb334a183416041186ad43,2015-09-01 17:50:46-03:00,2015-09-01 17:50:46-03:00,18900,18900,18900,18900,Projeto Ghost,ModificationType.ADD,,56,0,56,0,Jandersolutions/jander777-ghost,jander777-ghost,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+91ba38bb87396882bfcb334a183416041186ad43,2015-09-01 17:50:46-03:00,2015-09-01 17:50:46-03:00,18900,18900,18900,18900,Projeto Ghost,ModificationType.ADD,,304,0,304,0,Jandersolutions/jander777-ghost,jander777-ghost,ba8633005eee162ddd9561165ba8cc1783c9d1d5,.js,1068308,2,https://stackoverflow.com/a/1068308
+cf6bd4b134a60a4a3fd80f176023dccf56e2cbc4,2014-12-08 13:32:57+11:00,2014-12-08 13:32:57+11:00,18901,18901,18901,18901,Basic H3DAPI with some examples modified slightly.,ModificationType.ADD,,1008,0,1008,0,JakeFountain/H3DAPIwithOculusSupport,H3DAPIwithOculusSupport,131fa40acb17089be31bf0a0b06e6415cf8613ae,.py,69645,1,https://stackoverflow.com/q/69645
+615f4222bda592ffcc39ae99f6c6357da178ee57,2014-12-16 13:50:10+08:00,2015-01-04 14:58:01+08:00,14909,14909,14909,14909,V1.2.6 Spring 4.0 MyBatis 3.2 commit.,ModificationType.ADD,,13375,0,13375,0,jansonlwj/ordermanege,ordermanege,0983896f6a716141ae0420a4ff352894d5b52390,.js,6700,2,https://stackoverflow.com/a/6700
+d0e1a0542f2ad570df0720b4f3601ced85f6907c,2017-07-12 23:41:41+02:00,2017-07-12 23:41:41+02:00,18902,18902,18902,18902,Pseudo initial commit,ModificationType.ADD,,2067,0,2067,0,jaimehgb/RaiWebWallet,RaiWebWallet,036e06ae2b4c25d9d5666764cbc5973f323ceb87,.js,1019515,1,https://stackoverflow.com/q/1019515
+408168c4fb50bc20f324849e8875ba2f43849ed8,2012-10-21 13:32:11-07:00,2012-10-24 21:44:09-04:00,18903,18903,18903,18903,DRILL-11 - Literal copy.  Looks like we have a few author tags that should be removed.,ModificationType.ADD,,431,0,431,0,jaltekruse/incubator-drill,incubator-drill,bbc1b9d86fafeaa952c8c7f6608a083f854c2277,.js,2573521,1,https://stackoverflow.com/q/2573521
+dd2b9f56f8bade18c3cdbfaa0958082c40231b4c,2015-08-09 22:29:42+02:00,2015-08-09 22:29:42+02:00,18904,18904,18904,18904,pirszy komit,ModificationType.ADD,,28364,0,28364,0,jakubgondek/javascript-whatever,javascript-whatever,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,472729,2,https://stackoverflow.com/a/472729
+8642411862922456016f8cbb1e2f2664fc3c78bd,2017-02-22 17:01:00+08:00,2017-02-22 17:01:00+08:00,18905,18905,18905,18905,加入前端页面文件,ModificationType.ADD,,12051,0,12051,0,jamesiter/jimauth,jimauth,b8f0313f462140f122e1ca4b6cf6e900a81b72f1,.js,3561493,1,https://stackoverflow.com/q/3561493
+d97c96251a21b2d4b525401136ec30502b5dc79a,2017-06-19 20:06:38+03:00,2017-06-22 15:07:47+03:00,18906,18906,18906,18906,"CAMEL-11420-Add contains ignore case operator to simple language
+
+CAMEL-11420-add jmh test
+
+CAMEL-11420 - null check added for containsIgnoreCase in StringHelper
+
+CAMEL-11420 - CR fixes
+
+CAMEL-11420- update simple-language.adoc for contains ignore case",ModificationType.ADD,,85,0,85,0,jamesnetherton/camel,camel,1a29133b123e3314010bb90c50500140ca9f6d84,.java,30485856,1,https://stackoverflow.com/q/30485856
+f8b8736e9dedcc982c2956d6836a82e9ea0b7918,2014-12-22 17:22:04+00:00,2014-12-22 17:22:04+00:00,18907,18907,18907,18907,first commit,ModificationType.ADD,,18,0,18,0,jamessy/select-sc,select-sc,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+f0e4108fa6299da780f005c7199c81218602bcdd,2017-04-13 10:22:33+01:00,2017-04-13 10:22:33+01:00,18908,18908,18908,18908,Initial Github Commit,ModificationType.ADD,,242,0,242,0,JamesParkNINJA/NEXUS,NEXUS,f3241c30be668fc328444d4a48d8e2e92be4a35c,.php,4583703,1,https://stackoverflow.com/q/4583703
+ecd8acfa52c841f04418d48c00b91ae7f936e6cd,2014-10-17 01:11:41-04:00,2014-10-17 01:11:41-04:00,18909,18909,18909,18909,wrote a fake test,ModificationType.ADD,,147,0,147,0,jakeleboeuf/campaign-scraper,campaign-scraper,ce6369f1cbac700012e50bf621e26e94f3ec41a6,.js,398120,2,https://stackoverflow.com/a/398120
+d17cdb5e04f382614e1590500f3ac85de94626f0,2013-08-09 16:25:26+02:00,2013-09-26 10:27:51+02:00,18910,18910,18910,18910,"New version of category/categories input type
+
+The current version of categories input type numerous issues.
+Most critical is that you can not select any subcategories
+after opening new nodes in the tree view.
+
+This commit replaces the current input types, based on CategoryTree
+with a new javascript tree-view, utilizing the dynatree library
+(https://code.google.com/p/dynatree/) It is designed to be feature-
+compatible with the old input type, except that it doesn't include
+the ""use dropdown"" option of category input.
+
+A working example can be found here:
+http://ec2-46-137-28-172.eu-west-1.compute.amazonaws.com/wiki/index.php?title=CategoryTestPage&action=formedit
+
+Updated to give correct behavior when page contains both category and categories input, and use radio buttons for category input
+
+Revert accidental update of loading.gif
+Change-Id: I546caff26b87b9a640a778d8a129d8132c21f940",ModificationType.ADD,,3432,0,3432,0,jamesmontalvo3/SemanticForms,SemanticForms,606f3dd13f9c80d05c13f91d8ae424702054133a,.js,3037598,1,https://stackoverflow.com/q/3037598
+c4aeee102b6797f353fb84b319c6f923cb409d02,2015-02-28 13:53:26-08:00,2015-02-28 13:53:26-08:00,18911,18911,18911,18911,React and node baseplate,ModificationType.ADD,,158,0,158,0,jamiehenson/trivia,trivia,52c3d32f2e8c5517158ffd4bd5dd8d1c1460af34,.js,16459606,2,https://stackoverflow.com/a/16459606
+80b61ee691b746cc69b5f7a9184b4c0fa1a89597,2013-04-03 11:29:15-07:00,2013-04-03 11:29:15-07:00,5017,5017,5017,5017,Initial commit,ModificationType.ADD,,106,0,106,0,jamesshore/ll10_ui_testing_strategies,ll10_ui_testing_strategies,f144955d11cbf7603e3d7a84f4c078761960a988,.js,5827612,1,https://stackoverflow.com/q/5827612
+01b0189278d5facc5bf1001bd340b9b4219e2d71,2014-07-09 15:41:44+10:00,2014-07-09 15:41:44+10:00,18912,18912,18912,18912,Initial Commit,ModificationType.ADD,,1229,0,1229,0,jamesshannonwd/meesha,meesha,b8d2374bd12b242224350961b02ba206922a864a,.js,13847714,1,https://stackoverflow.com/q/13847714
+c4c65d51e17ee0532dff8edd78ef8c19978d569d,2015-07-08 09:21:49-05:00,2015-07-08 09:21:49-05:00,18913,18913,18913,18913,initialization,ModificationType.ADD,,26130,0,26130,0,james-logan/ionic-calculator,ionic-calculator,897902824419a3a0dc8917491ce4cd507b7e895e,.js,3143070,1,https://stackoverflow.com/q/3143070
+a6d54f8a929424d795a74b9edee6943b5099c3bf,2017-03-20 22:29:28-04:00,2017-03-20 22:29:28-04:00,18914,18914,18914,18914,initial empty skeleton/placeholder,ModificationType.ADD,,322,0,322,0,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+d8a90798037d7652b633b8327c2d91da95c5ab73,2017-03-21 17:33:01-04:00,2017-03-21 17:33:01-04:00,18914,18914,18914,18914,initial import of existing code,ModificationType.MODIFY,a6d54f8a929424d795a74b9edee6943b5099c3bf,18,6,14,6,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+1f4813a602ab97313b06c10f6c191f01a9f53716,2017-03-26 14:04:18-04:00,2017-03-26 14:04:18-04:00,18914,18914,18914,18914,fix docs build,ModificationType.MODIFY,d8a90798037d7652b633b8327c2d91da95c5ab73,3,2,3,2,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+f540911f8de5fda02acf719bc09c9f21bc487cb0,2017-04-02 12:11:35-04:00,2017-04-02 12:11:35-04:00,18914,18914,18914,18914,"working jsdoc but only locally, as it requires the jsdoc command",ModificationType.MODIFY,1f4813a602ab97313b06c10f6c191f01a9f53716,12,1,8,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+eac80a913bb7f38673a1ae48a1b1e42b6243f26e,2017-04-02 21:47:49-04:00,2017-04-02 21:47:49-04:00,18914,18914,18914,18914,"fixes #17 - transactions view, edit and add modal",ModificationType.MODIFY,f540911f8de5fda02acf719bc09c9f21bc487cb0,2,1,2,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+ac80c6b2a90e2bc987266da55e21a265e379742a,2017-04-03 07:24:18-04:00,2017-04-03 07:24:18-04:00,18914,18914,18914,18914,'is_rtd' in conf.py is actually logically inverted,ModificationType.MODIFY,eac80a913bb7f38673a1ae48a1b1e42b6243f26e,1,1,1,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+abe979d1b40444c3cc354defe3fd06722d9cb154,2017-04-03 16:08:40-04:00,2017-04-03 16:08:40-04:00,18914,18914,18914,18914,fixes #38 - use sqlite memory driver for docs build - we only need to be able to load the classes to run autodoc,ModificationType.MODIFY,ac80c6b2a90e2bc987266da55e21a265e379742a,2,2,0,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+42daa54d4ded80c7294a92726239d10bf2eb589a,2017-04-30 21:12:41-04:00,2017-04-30 21:12:41-04:00,18914,18914,18914,18914,fixes #13 - automatic screenshot generation for docs,ModificationType.MODIFY,abe979d1b40444c3cc354defe3fd06722d9cb154,2,1,1,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+bad376b87d330d0cfeebdd2346b055c76cff4753,2017-06-29 22:26:47-04:00,2017-06-29 22:26:47-04:00,18914,18914,18914,18914,convert budget transfer modal to FormBuilder,ModificationType.MODIFY,42daa54d4ded80c7294a92726239d10bf2eb589a,3,1,3,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+9b4c9b2ac80b9e72a06aa8b372154204be0bba14,2018-04-16 18:31:28-04:00,2018-04-16 18:31:28-04:00,18914,18914,18914,18914,sphinx conf.py - ignore github issues on my own repo from linkcheck,ModificationType.MODIFY,bad376b87d330d0cfeebdd2346b055c76cff4753,2,1,2,1,jantman/biweeklybudget,biweeklybudget,01d90497342453512a816bb7204d93a5fee3b40b,.py,18031024,2,https://stackoverflow.com/a/18031024
+1bf143ae507bc038f7d1f175c0e8c70858d542bd,2017-08-20 06:05:08+00:00,2017-08-20 06:05:08+00:00,18915,18915,18915,18915,Initial Commit: Website Base Drupal 8,ModificationType.ADD,,260,0,260,0,jagnoha/website,website,eb4df7b2c35c1efa7c508b2d75b09faef3891824,.php,22148080,1,https://stackoverflow.com/q/22148080
+61ac559071ec8c2f12ab48da1daf6c2c45fb11a4,2017-09-12 15:54:39-07:00,2017-09-12 15:54:39-07:00,18917,18917,18916,18916,Added locally served css and js resource files for easier local development.,ModificationType.ADD,,10078,0,10078,0,jakeYeager/one-page-vue2,one-page-vue2,e5071eafd3764949546e0de3052abd4500bd7ecb,.js,28210364,2,https://stackoverflow.com/a/28210364
+66e1621435416781d496c0ff95b0b29ec12c4474,2013-09-25 15:11:24-07:00,2013-09-25 15:11:24-07:00,1720,1720,1720,1720,"working good now...echoing R stdout while running (incrementally) at same time as going to the log files in sandbox
+timeout on R subprocess seems good",ModificationType.MODIFY,,135,54,135,54,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+7245d4505ee34c55989243d9a825c95c7ba0ce39,2013-09-26 12:35:15-07:00,2013-09-26 12:35:15-07:00,1720,1720,1720,1720,"add ignored_cols param to allowed GBM param list in h2o.py
+robustify exit code gathering for R subprocess stuff
+echo R stderr to the stdout when runner_sh2junit.sh (in addition to logs)",ModificationType.MODIFY,66e1621435416781d496c0ff95b0b29ec12c4474,63,43,48,35,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+095c4033261aa93da2eb01b03674b66d9ed90add,2013-10-03 12:46:18-07:00,2013-10-03 12:46:18-07:00,1720,1720,1720,1720,don't exception on timeout on R subprocess..just stop waiting and try to shut it down,ModificationType.MODIFY,7245d4505ee34c55989243d9a825c95c7ba0ce39,5,1,5,1,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+91eb2b19ab8a9a599a8a3874cd399a935ab5faae,2013-12-02 16:28:48-08:00,2013-12-02 16:28:48-08:00,910,910,910,910,"terminate R subprocess if TO, organized error dump",ModificationType.MODIFY,095c4033261aa93da2eb01b03674b66d9ed90add,31,7,5,1,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+34206ccba417440a98f5b5d48b4d86eff618e2a1,2013-12-03 14:25:43-08:00,2013-12-03 14:25:43-08:00,910,910,910,910,updates to R unit infrastructure; __unop bug fix,ModificationType.MODIFY,91eb2b19ab8a9a599a8a3874cd399a935ab5faae,3,3,0,3,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+fffbe71c967cd732ee51d1f91ffa9d2cfb1f9494,2014-02-22 10:58:03-08:00,2014-02-22 10:58:03-08:00,1720,1720,1720,1720,"add the hooks so the R process is started in the test directory since some R tests use relative path names from the test directory (the runner_Runit.sh stays in this directory though, with sandbox and the logs in sandbox)",ModificationType.MODIFY,34206ccba417440a98f5b5d48b4d86eff618e2a1,14,2,1,1,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+ac64a5e45c9c1f903fc486f89ef764f97a2a9e5e,2014-03-31 01:18:17-07:00,2014-03-31 01:18:17-07:00,1720,1720,1720,1720,R on the sm,ModificationType.MODIFY,fffbe71c967cd732ee51d1f91ffa9d2cfb1f9494,2,2,1,1,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+01b52ecc22380d47e7986d92f061a1509cc41114,2014-04-01 20:28:18-07:00,2014-04-01 20:28:18-07:00,1720,1720,1720,1720,undo the change that was trying to figure out why R centos processes weren't ending,ModificationType.MODIFY,ac64a5e45c9c1f903fc486f89ef764f97a2a9e5e,3,1,3,1,janezhango/BigDataMachineLearning,BigDataMachineLearning,0d57e7567d043a4204724b9513fa1166a303513f,.py,2804543,1,https://stackoverflow.com/q/2804543
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,38,0,38,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,46,0,46,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,016189a7b711f2480e92ff027b7d77ce12a21b4c,.js,398120,2,https://stackoverflow.com/a/398120
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,13697,0,13697,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,f78fd74ddb1b03d884d6be38c641c9ea6fa39028,.js,596467,1,https://stackoverflow.com/q/596467
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,8201,0,8201,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,d5175e14e4abbd33195ddbfb95e5ae57ae0bee32,.js,16459606,2,https://stackoverflow.com/a/16459606
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,46,0,46,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,016189a7b711f2480e92ff027b7d77ce12a21b4c,.js,16459606,2,https://stackoverflow.com/a/16459606
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,38,0,38,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,424,0,424,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,2005e5729ec4b50688f8b1bc202fc69914d34fbb,.js,13216903,1,https://stackoverflow.com/q/13216903
+eee895b323ee741ced7f9451ade657213ca8d109,2017-06-07 13:56:31-05:00,2017-06-07 13:56:31-05:00,18918,18918,18918,18918,comió,ModificationType.ADD,,182,0,182,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,db773702316185cf8785107942bdd1eaaba7fe28,.js,22177218,2,https://stackoverflow.com/a/22177218
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,46,0,46,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,46,0,46,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,e21c1e0b61e15778c266978a069de031f732630a,.js,16459606,2,https://stackoverflow.com/a/16459606
+c36151781d79f66f88124307a4a4ebcb50eb2e9b,2017-06-07 13:31:16-05:00,2017-06-07 13:31:16-05:00,18918,18918,18918,18918,Creación carpeta 01 Sails Docker Rest,ModificationType.ADD,,32,0,32,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,0fede49661d15a437ee9068bc68626f53bd34142,.js,1641507,1,https://stackoverflow.com/q/1641507
+eee895b323ee741ced7f9451ade657213ca8d109,2017-06-07 13:56:31-05:00,2017-06-07 13:56:31-05:00,18918,18918,18918,18918,comió,ModificationType.ADD,,8201,0,8201,0,jandrest2018/TWJ-2017-A,TWJ-2017-A,d5175e14e4abbd33195ddbfb95e5ae57ae0bee32,.js,398120,2,https://stackoverflow.com/a/398120
+0b862c65fd08de8e761841741d864943ff113e33,2013-12-23 16:58:47-08:00,2013-12-23 16:58:47-08:00,5017,5017,5017,5017,Started working on getting Browserify working with Testem,ModificationType.ADD,,878,0,878,0,jamesshore/lab4_testem,lab4_testem,9e00b14ecbef4454cec05b3defc20a741051245b,.js,6768474,1,https://stackoverflow.com/q/6768474
+c36e5e69041bf5831ca5359028f77937819e3709,2017-03-17 13:58:13+01:00,2017-03-17 13:58:13+01:00,18919,18919,37,37,Add files via upload,ModificationType.ADD,,5807,0,5807,0,jankoja/mmqgis-fork-v2,mmqgis-fork-v2,36df614c8ce9d24752c06312f72f77be0d74b8c5,.py,3410976,1,https://stackoverflow.com/q/3410976
+9cbe3a9a498e337aeb05c2b0742c1b507beb8ed3,2016-01-31 20:15:32+01:00,2016-01-31 20:15:32+01:00,18920,18920,18920,18920,lib modules added,ModificationType.ADD,,50,0,50,0,jailkey/MoldJS,MoldJS,08be0d2cb8c905063bc45d2b9cfe6571290adb19,.py,17199950,2,https://stackoverflow.com/a/17199950
+de77a9272679f9cd9fcfd271ef11222b385a6592,2017-10-05 15:16:44+03:00,2017-10-05 15:16:44+03:00,18921,18921,18921,18921,Install latest numpy and matplotlib,ModificationType.ADD,,554,0,554,0,Jajauma/dotfiles,dotfiles,cecebd8e0201e38cea38a313f0f3d3d90e557494,.js,24161582,2,https://stackoverflow.com/a/24161582
+6f869586e4d00cae664472371c752d6082876fb0,2016-08-09 15:24:30-07:00,2016-08-09 15:24:30-07:00,7667,7667,37,37,"Various improvements to exec (#3894)
+
+* Various improvements to exec
+
+- Handle __future__ imports
+- Fix errors from invalid references (e.g. via sentry exec bin/load-mocks)
+- Dont include configure() handler when already present in code
+
+@getsentry/infrastructure",ModificationType.MODIFY,,39,8,39,8,JamesMura/sentry,sentry,c874880a9dc0765c5ee8b60f72a8109492eb5c84,.py,2906198,2,https://stackoverflow.com/a/2906198
+585759a10d0057d28ec7ea0f885e6b9f22da7d23,2014-12-07 15:43:15-08:00,2014-12-07 15:43:15-08:00,18922,18922,18922,18922,change jshint,ModificationType.ADD,,83,0,83,0,jainshubhi/Halp,Halp,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+585759a10d0057d28ec7ea0f885e6b9f22da7d23,2014-12-07 15:43:15-08:00,2014-12-07 15:43:15-08:00,18922,18922,18922,18922,change jshint,ModificationType.ADD,,83,0,83,0,jainshubhi/Halp,Halp,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+585759a10d0057d28ec7ea0f885e6b9f22da7d23,2014-12-07 15:43:15-08:00,2014-12-07 15:43:15-08:00,18922,18922,18922,18922,change jshint,ModificationType.ADD,,276,0,276,0,jainshubhi/Halp,Halp,915a5d03d0afb308872fe92902bc6c112cac257f,.js,1068308,2,https://stackoverflow.com/a/1068308
+80e75fd1787d6f7df2fb7ccfd51e566295c891ec,2015-07-14 11:45:32+01:00,2015-07-14 11:45:32+01:00,18923,18923,18923,18923,init,ModificationType.ADD,,66,0,66,0,janacuq/Pong,Pong,8f64ef49e2a54f07f8f6a9ce97bff385d88faf3f,.js,5827612,1,https://stackoverflow.com/q/5827612
+d05dcedcb7ef9ab9d7e489e3fb05d2787edeff84,2012-12-28 14:10:58+01:00,2012-12-28 14:10:58+01:00,18924,18924,18924,18924,Changed code coverage engine to Blanket.JS.,ModificationType.ADD,,4554,0,4554,0,jamestelfer/chutzpah,chutzpah,4dadefd07c3c51a5cb4b67bd9f56f7577b1069e2,.js,2954896,2,https://stackoverflow.com/a/2954896
+ac69e2ae0dc6cb7907be4433fbe70e85580275c1,2013-01-07 08:28:36+01:00,2013-01-07 08:28:36+01:00,18924,18924,18924,18924,New Blanket + changed how instrumentation/coverage collection works. Changed qunitRunner to not start QUnit if coverage is enabled - Blanket does that.,ModificationType.MODIFY,d05dcedcb7ef9ab9d7e489e3fb05d2787edeff84,195,113,154,99,jamestelfer/chutzpah,chutzpah,4dadefd07c3c51a5cb4b67bd9f56f7577b1069e2,.js,2954896,2,https://stackoverflow.com/a/2954896
+67c3864b04bdb191f3b012d12266a6320aae9e89,2013-01-10 14:21:38+01:00,2013-01-10 14:21:38+01:00,18924,18924,18924,18924,New Blanket with increased RequireJS load timeout and some bug fixes.,ModificationType.MODIFY,ac69e2ae0dc6cb7907be4433fbe70e85580275c1,89,8,19,7,jamestelfer/chutzpah,chutzpah,4dadefd07c3c51a5cb4b67bd9f56f7577b1069e2,.js,2954896,2,https://stackoverflow.com/a/2954896
+8ab97469492c51b12d9d930197ada2f7c0b568d1,2013-07-10 17:19:38-07:00,2013-07-10 17:19:38-07:00,18925,18925,18925,18925,"Upgraded blanket to newer version which should fix some issues
+Upgraded TypeScript and embedded lib.d.ts so user doesn't need to specify
+
+--HG--
+rename : Facts.Integration/JS/Test/TypeScript/lib.d.ts => Chutzpah/Compilers/TypeScript/lib.d.ts",ModificationType.MODIFY,67c3864b04bdb191f3b012d12266a6320aae9e89,5429,4734,5429,4596,jamestelfer/chutzpah,chutzpah,4dadefd07c3c51a5cb4b67bd9f56f7577b1069e2,.js,2954896,2,https://stackoverflow.com/a/2954896
+e0295a717553641d78d43e161d708557b8816faa,2015-03-04 07:18:05-08:00,2015-03-04 07:18:05-08:00,7158,7158,7158,7158,Put blanket includes in the html file to handle requirejs coverage,ModificationType.MODIFY,8ab97469492c51b12d9d930197ada2f7c0b568d1,5429,5429,5429,5429,jamestelfer/chutzpah,chutzpah,4dadefd07c3c51a5cb4b67bd9f56f7577b1069e2,.js,2954896,2,https://stackoverflow.com/a/2954896
+5e75158f7193bbf8307a9b7c7e39bc580a3ad905,2015-01-22 12:07:18-06:00,2015-01-22 12:07:18-06:00,18926,18926,18926,18926,01/02,ModificationType.ADD,,26091,0,26091,0,jagchat/aspnet-mvc-angularjs-samples,aspnet-mvc-angularjs-samples,1091992654c4efa43a466df6de8bbb9af445e6db,.js,3143070,1,https://stackoverflow.com/q/3143070
+33da49a7528976594211c8d724c0ae8aafd63f26,2014-12-10 20:06:06-05:00,2014-12-10 20:06:06-05:00,18851,18851,18851,18851,Known Issues same session seeing events,ModificationType.ADD,,147,0,147,0,jahilliard/SocialMap,SocialMap,41d957c0fa0ecf5a5f1a7fca4da5e6923480d1e8,.js,16459606,2,https://stackoverflow.com/a/16459606
+581843fb9dff51e259443a7c29b87745b8554ed8,2012-09-22 11:46:19-04:00,2012-09-22 11:46:19-04:00,379,379,379,379,initial commit,ModificationType.ADD,,257,0,257,0,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+845d9c887eb5f58c924419bf960685693da1e50c,2012-09-22 12:42:04-04:00,2012-09-22 12:42:04-04:00,379,379,379,379,"keep cleared rect while fading out, add feature detection",ModificationType.MODIFY,581843fb9dff51e259443a7c29b87745b8554ed8,87,68,73,60,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+e2342a04a03a2afc486c8d77a1eeaaf541469979,2012-09-22 13:28:50-04:00,2012-09-22 13:28:50-04:00,379,379,379,379,fix selection of text nodes,ModificationType.MODIFY,845d9c887eb5f58c924419bf960685693da1e50c,5,4,5,4,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+bad6b6ae7286c49454af8198cf1541595963a276,2012-09-22 13:41:23-04:00,2012-09-22 13:41:23-04:00,379,379,379,379,add opacity constant,ModificationType.MODIFY,e2342a04a03a2afc486c8d77a1eeaaf541469979,4,1,1,1,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+f075325b9d997900787449399bc1f8a55ce10c33,2012-09-23 13:58:31-04:00,2012-09-23 13:58:31-04:00,379,379,379,379,"updates to demo page, minified version, favicon",ModificationType.MODIFY,bad6b6ae7286c49454af8198cf1541595963a276,5,2,4,1,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+b311462db04cd833409ad83237bc06758fb3d888,2012-09-23 19:13:28-04:00,2012-09-23 19:13:28-04:00,379,379,379,379,"support for keyboard selection, animate change in cleared area",ModificationType.MODIFY,f075325b9d997900787449399bc1f8a55ce10c33,35,12,11,12,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+1664175a8629f714dba3a2ba8ecc5d1c0c4e012d,2012-09-25 23:42:40-04:00,2012-09-25 23:42:40-04:00,379,379,379,379,exclude br nodes from selection,ModificationType.MODIFY,b311462db04cd833409ad83237bc06758fb3d888,1,1,1,1,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+a78d208e9011d85075accf4d7e86b64c10e181dd,2012-09-26 08:54:54-04:00,2012-09-26 08:54:54-04:00,379,379,379,379,don't select nodes with zero width and height,ModificationType.MODIFY,1664175a8629f714dba3a2ba8ecc5d1c0c4e012d,2,2,2,2,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+6bcfc7bb07084e90efabcf1c07744f84c963e2a2,2012-09-27 08:37:47-04:00,2012-09-27 08:37:47-04:00,379,379,379,379,don't start selection on rightclick,ModificationType.MODIFY,a78d208e9011d85075accf4d7e86b64c10e181dd,7,4,7,4,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+0a01c76a5d0f956f3329efa2a07e2128a3e4f795,2012-09-27 08:54:12-04:00,2012-09-27 08:54:12-04:00,379,379,379,379,cleanup,ModificationType.MODIFY,6bcfc7bb07084e90efabcf1c07744f84c963e2a2,19,8,9,6,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+9f57fb4578533cb2809cca190870e8cf7b1c6339,2012-09-29 15:56:17-04:00,2012-09-29 15:56:17-04:00,379,379,379,379,"update selection immediately on scroll, handle offset html element (closes #3)",ModificationType.MODIFY,0a01c76a5d0f956f3329efa2a07e2128a3e4f795,24,8,2,2,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+4b772e74bb3077ec69cfb81c3db7d82228078c6b,2013-08-20 08:31:38-04:00,2013-08-20 08:31:46-04:00,379,379,379,379,optional support for a modifier key having to be pressed down for selection to work,ModificationType.MODIFY,9f57fb4578533cb2809cca190870e8cf7b1c6339,48,30,18,15,jamesliu96/Fokus,Fokus,74e5dca6c188e31609b6933d5768bc322947d189,.js,7781963,1,https://stackoverflow.com/q/7781963
+4229aa2685df7c93a24f972d075ce659b2fd785c,2015-05-19 16:34:00+02:00,2015-05-19 16:34:00+02:00,16493,16493,16493,16493,Initial test release,ModificationType.ADD,,3043,0,3043,0,janusnic/adminlte-laravel,adminlte-laravel,c635ec0b356079d988d10ecba7db39ad4559dd97,.js,181348,1,https://stackoverflow.com/q/181348
+b7e741a9fe90cdce25934439b9391790492a8510,2016-06-26 23:46:55+05:18,2016-06-26 23:46:55+05:18,18927,18927,18927,18927,jsonwebtoken,ModificationType.ADD,,168,0,168,0,jainamritanshu/the-social,the-social,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+b7e741a9fe90cdce25934439b9391790492a8510,2016-06-26 23:46:55+05:18,2016-06-26 23:46:55+05:18,18927,18927,18927,18927,jsonwebtoken,ModificationType.ADD,,43,0,43,0,jainamritanshu/the-social,the-social,cf4e625209a7dce1548363c053d2eff5d2baf50c,.js,8458984,1,https://stackoverflow.com/q/8458984
+81767097df4a119489ae8cbd9c5d8265f54daf7b,2014-08-29 01:18:10-04:00,2014-08-29 01:18:10-04:00,18928,18928,18928,18928,started on mapping converter tool so we can update to newer Minecraft jars,ModificationType.ADD,,255,0,255,0,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+e43fac9f55cfeebacd869352bfb090b7d8d063c1,2014-08-30 11:41:17-04:00,2014-08-30 11:41:17-04:00,18928,18928,18928,18928,got a decent class matcher working,ModificationType.MODIFY,81767097df4a119489ae8cbd9c5d8265f54daf7b,226,29,63,28,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+63172120a39a315e29bc38ea6634741797b3dcab,2014-08-30 14:14:54-04:00,2014-08-30 14:14:54-04:00,18928,18928,18928,18928,"finished class matching for now, need to work on class member matching",ModificationType.MODIFY,e43fac9f55cfeebacd869352bfb090b7d8d063c1,38,2,3,2,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+59c592673635e989fd0785d41d51d7c3dd17cc0b,2014-08-30 16:31:31-04:00,2014-08-30 16:31:31-04:00,18928,18928,18928,18928,debugging class matcher... almost got it!,ModificationType.MODIFY,63172120a39a315e29bc38ea6634741797b3dcab,24,16,8,9,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+d3fc0b55515e81ae1b10fa16129f05b0241271f0,2014-08-31 14:41:24-04:00,2014-08-31 14:41:24-04:00,18928,18928,18928,18928,fixed lots of bugs in the mappings converter. It's finally ready. =),ModificationType.MODIFY,59c592673635e989fd0785d41d51d7c3dd17cc0b,7,16,2,8,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+a8d0f97c270e32653aa246d7437478885077e24d,2014-09-20 17:11:25-04:00,2014-09-20 17:11:25-04:00,18928,18928,18928,18928,"cleaned up imports. I have no idea why Eclipse likes importing jcommander classes instead of guava classes, but it's annoyong!",ModificationType.MODIFY,d3fc0b55515e81ae1b10fa16129f05b0241271f0,1,1,0,1,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+035e73fba69ab06172ae9d784b9e0e4fffeb8388,2014-10-08 23:54:08-04:00,2014-10-08 23:54:08-04:00,18928,18928,18928,18928,relicense as LGPL,ModificationType.MODIFY,a8d0f97c270e32653aa246d7437478885077e24d,3,3,3,3,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+812e2a4630ef01463ff153ba5ffae675e8ac24ac,2014-10-09 19:37:19-04:00,2014-10-09 19:37:19-04:00,18928,18928,18928,18928,reverting to GPL license,ModificationType.MODIFY,035e73fba69ab06172ae9d784b9e0e4fffeb8388,3,3,3,3,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+959cb5fd4f9586ec3bd265b452fe25fe1db82e3f,2015-01-13 23:25:04-05:00,2015-01-13 23:25:04-05:00,18928,18928,18928,18928,"source format change
+don't hate me too much if you were planning a big merge. =P",ModificationType.MODIFY,812e2a4630ef01463ff153ba5ffae675e8ac24ac,178,258,101,146,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+741e3472f76d959645ee0e025547d69a03e5b6f2,2015-02-28 18:00:25-05:00,2015-02-28 18:00:25-05:00,18928,18928,18928,18928,fix up conversion tool to handle Minecraft 1.8.3,ModificationType.MODIFY,959cb5fd4f9586ec3bd265b452fe25fe1db82e3f,72,53,43,33,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+dcc5a978cf2f616ee7ad85077f9655f312555ae8,2015-04-19 18:51:04-04:00,2015-04-19 18:51:04-04:00,18929,18929,18929,18929,relicense Enigma as LGPL,ModificationType.MODIFY,741e3472f76d959645ee0e025547d69a03e5b6f2,4,4,4,4,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+5b82a804b355b9d7e5901314a6de020205b2c99d,2015-08-02 15:47:27-04:00,2015-08-02 15:47:27-04:00,18929,18929,18929,18929,fix up class matcher a bit,ModificationType.MODIFY,dcc5a978cf2f616ee7ad85077f9655f312555ae8,8,3,1,1,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+114afc37d11bf2e513fe2fd29daf855f73f664e9,2015-11-12 16:23:23-05:00,2015-11-12 16:23:23-05:00,18930,18930,18930,18930,Initial package refactoring - still a lot of work to be done,ModificationType.MODIFY,5b82a804b355b9d7e5901314a6de020205b2c99d,9,9,0,1,jamierocks/enigma,enigma,55acafc00e27296440738b56a16257ed21f3de29,.java,9655181,1,https://stackoverflow.com/q/9655181
+10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,2012-06-01 16:35:36+03:00,2012-06-01 16:35:36+03:00,1,1,1,1,bad adware scanner,ModificationType.ADD,,148,0,148,0,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+983ad37704a42cd25475dd571a34e7c7b8d5e9cb,2014-09-04 00:40:26+02:00,2014-09-04 00:40:26+02:00,2,2,2,2,"Formatting, code cleanup",ModificationType.MODIFY,10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,5,5,5,5,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+c0243fd968ea456694f417ad0577a1d6e944768d,2014-09-13 15:38:59+03:00,2014-09-13 15:38:59+03:00,3,3,3,3,"Adware scan improvements
+
+* Adware scan does not continue in background if back button is pressed
+* Fixed scanning called twice",ModificationType.MODIFY,983ad37704a42cd25475dd571a34e7c7b8d5e9cb,3,6,3,6,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091

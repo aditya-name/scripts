@@ -1,0 +1,1123 @@
+Hash,AuthorDate,CommiterDate,AuthorEmail,AuthorName,CommiterEmail,CommiterName,Message,ChangeType,ParentCommit,AddedLinesInCommit,RemovedLinesInCommit,AddedLinesInContext,RemovedLinesInContext,Repo,RepoName,FileId,FileExt,PostId,PostTypeId,SOUrl
+036b9172a11894b7321375e675cd35ac651416af,2015-11-04 11:15:47+07:00,2015-11-04 11:15:47+07:00,10448,10448,10448,10448,Initial commit,ModificationType.ADD,,34,0,34,0,yuinakorn/refer,refer,38d0cfecfb44adbc4014954bb53fc4a379c6eda8,.php,766809,1,https://stackoverflow.com/q/766809
+fe05616d1659785709792675a1910beb275c9b27,2015-04-11 15:49:17+09:00,2015-04-11 15:49:17+09:00,10449,10449,10449,10449,initial commit.,ModificationType.ADD,,25,0,25,0,yu01/ReactNativeSample1,ReactNativeSample1,71fb8305b93a831d62a586fdace971632dd427e2,.js,1068308,2,https://stackoverflow.com/a/1068308
+fc55ac501bc56cc55c0d79bc8e18a6e9e78aa008,2014-10-25 21:33:43+08:00,2014-10-25 21:33:43+08:00,10450,10450,10450,10450,initial & add notEmpty & stringLength validator,ModificationType.ADD,,7816,0,7816,0,yuanxu/django-bootstrap3-validator,django-bootstrap3-validator,7291c1db82dae4e04bb5779f409b700e2a1f8d8b,.js,7926687,1,https://stackoverflow.com/q/7926687
+4715a67112677e9273db51d390f6177a2617372d,2014-11-17 16:37:54+08:00,2014-11-17 16:37:54+08:00,10450,10450,10450,10450,rel 0.2.2,ModificationType.MODIFY,fc55ac501bc56cc55c0d79bc8e18a6e9e78aa008,539,124,283,120,yuanxu/django-bootstrap3-validator,django-bootstrap3-validator,7291c1db82dae4e04bb5779f409b700e2a1f8d8b,.js,7926687,1,https://stackoverflow.com/q/7926687
+9a4bc857d95712446f5f71418e975e08c7b542e7,2011-07-19 17:50:33+00:00,2011-07-19 17:50:33+00:00,2623,2623,2623,2623,"make: Support spaces in filenames in bundle names.
+
+Part 1. All changes in this CL are covered by tests, leaving out any single
+thing makes one of the tests in the tests/mac directory fail.
+
+Changes:
+
+* Replace ' ' with '\ ' for some makefile rules, assert neither name nor
+  dependency contains a space in the other cases. I looked at all callers
+  of WriteDoCmd() and WriteMakeRule().
+
+* In particular, self.output and self.output_binary always have '\ ' for spaces
+
+* Quote a few things:
++ cmd_link: For app bundles with spaces (e.g. ""chromium helper"") 
++ cmd_solink: For framework bundles with spaces (e.g. ""chromium framework"") 
+
+* Schwartz transform the make ""dir"" function to handle spaces
+
+* I couldn't find a way to let the make functions ""wildcard"" et al work with
+  spaces. They're used only for .d file handling, so .d filenames have their
+  spaces replaced with a non-space character. That's true for the
+  dependencies checked by ""command_changed"" as well.
+Review URL: http://codereview.chromium.org/7410010
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@963 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,,83,12,83,12,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+7e0fce30911675f780ba6a3712b6e73b4234c4c1,2011-07-19 19:44:25+00:00,2011-07-19 19:44:25+00:00,2623,2623,2623,2623,"make: Support spaces in library names.
+
+Some files link to ""Chromium Framework"", so this needs to be supported.
+
+$^ does not support quoted spaces, so use an explicit variable instead of
+$^ for libraries on mac.
+
+Half-TBR=evan
+Review URL: http://codereview.chromium.org/7443007
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@965 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,9a4bc857d95712446f5f71418e975e08c7b542e7,14,4,2,2,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+73d2a4436feed9412fd067377d705aeb2397e354,2011-07-19 22:00:22+00:00,2011-07-19 22:00:22+00:00,2623,2623,2623,2623,"make: Support spaces in paths of ""copies"" rules.
+
+Also rm directories before copying them. Bundles contain symlinks,
+and `cp -af` doesn't handle these correcty. (It fails on the third
+run, which made incremental builds mysteriously flaky.) Add a test
+that proves this is necessary.
+Review URL: http://codereview.chromium.org/7451001
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@966 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,7e0fce30911675f780ba6a3712b6e73b4234c4c1,3,5,2,4,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+a402b25fabd2182c4c74dc3cf89c856c93ff5472,2012-01-04 01:43:37+00:00,2012-01-04 01:43:37+00:00,2623,2623,2623,2623,"Mac/ninja: Add support for prefix headers.
+
+I tried 3 approaches:
+
+1. extra_cflags on cc command, separate pch command
+   ( http://codereview.chromium.org/9065001 )
+2. override cflags per rule to add -include for source files and -x for gch files
+   ( http://codereview.chromium.org/9028003 )
+3. have a base_cflags with normal flags, set cflags to $base_cflags -include,
+   override it with $base_cflags -x for gch files
+    ( http://codereview.chromium.org/9064001/ )
+
+1 is messy but fast. 2 is cleaner but a lot slower (due to cflags per .o file). 3 is cleanish and fast.
+
+1 is what the make generator is doing. I wanted to do something like 2 but couldn't figure out
+how to convince make's variable scoping to do that.
+
+3 requires not passing cflags_cc to objcxx invocations (else it gets two -includes),
+so instead set cflags_mm to $cflags_cc.
+
+This change implements the general idea of 3., but with the extra_cflags (called cflags_pch) from 1.
+Also enable the first test in test/mac for ninja!
+
+Loosely based on a patch from Jeremy Apthorp <jeremya@chromium.org> (approach 1.)
+
+BUG=chromium:96894
+TEST=test/mac/gyptest-prefixheader.gyp
+Review URL: http://codereview.chromium.org/9015033
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@1126 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,73d2a4436feed9412fd067377d705aeb2397e354,50,109,0,15,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+defcefd76cbddf093d849932c8e22f303335900d,2012-01-05 01:37:35+00:00,2012-01-05 01:37:35+00:00,2623,2623,2623,2623,"ninja/mac: Bundle support, part 1: Add support for mac_bundle_resources.
+
+This is similar to http://codereview.chromium.org/7399010. Since many
+bundle names contain spaces, this needs
+https://github.com/martine/ninja/pull/175#issuecomment-3362765 to do
+something useful.
+
+Nothing depends on the bundle resources yet, so they only get built
+if no target is passed to ninja.
+
+Based on a patch from Jeremy Apthorp <jeremya@chromium.org>
+
+BUG=96894
+Review URL: http://codereview.chromium.org/9035017
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@1130 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,a402b25fabd2182c4c74dc3cf89c856c93ff5472,10,36,0,2,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+4143358985fabc41e9220e0ca415a1e9d858fa92,2012-01-05 19:04:40+00:00,2012-01-05 19:04:40+00:00,2623,2623,2623,2623,"ninja/mac: Bundle support, part 2: Add support for Info.plist files.
+
+Simiiar to http://codereview.chromium.org/7405001 and
+http://codereview.chromium.org/8538021 .
+
+Nothing depends on the generated plist file yet, so they only get built
+if no target is passed to ninja.
+
+Based on a patch from Jeremy Apthorp <jeremya@chromium.org>
+
+BUG=96894
+Review URL: http://codereview.chromium.org/9111001
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@1131 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,defcefd76cbddf093d849932c8e22f303335900d,16,28,0,2,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+abef36cce0f9e4361c50ca56c1c990d49f81c2eb,2012-01-10 23:21:28+00:00,2012-01-10 23:21:28+00:00,2623,2623,2623,2623,"make/mac: Delay space escaping until write time.
+
+self.output and self.output_binary used to contain escaped spaces. Instead,
+let WriteMakeRule() escape spaces, WriteDoCmd() now does so by transitivity.
+Manually escape spaces in every WriteLn() call.
+
+This gets rid of the awkward escape->unescape in WriteXcodeEnv() and allows
+sharing that code with the ninja generator.
+
+BUG=chromium:97273
+TEST=gyp tests, building chrome
+Review URL: http://codereview.chromium.org/9155016
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@1138 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,4143358985fabc41e9220e0ca415a1e9d858fa92,33,46,3,9,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+f16c37ab3da428d392ba4042766477cd92a5d1d2,2012-02-16 22:21:26+00:00,2012-02-16 22:21:26+00:00,2624,2624,2624,2624,"make: don't use .target in paths or printouts
+
+Instead, .target is considered the default, unnamed configuration,
+while .host remains printed and pathed as before.
+
+Review URL: https://chromiumcodereview.appspot.com/9418017
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@1209 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,abef36cce0f9e4361c50ca56c1c990d49f81c2eb,77,64,4,2,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+023d71b91d502f776f67c9fced435601070a4349,2012-02-17 00:46:37+00:00,2012-02-17 00:46:37+00:00,2624,2624,2624,2624,"Revert ""make: don't use .target in paths or printouts""
+
+This reverts commit r1209.
+
+This didn't quite work: we also have $(CC.target) etc.
+
+git-svn-id: http://gyp.googlecode.com/svn/trunk@1212 78cadc50-ecff-11dd-a971-7dbc132099af",ModificationType.MODIFY,f16c37ab3da428d392ba4042766477cd92a5d1d2,64,77,4,4,yinquan529/platform-external-chromium_org-tools-gyp,platform-external-chromium_org-tools-gyp,5cf67632a96293bbb667e46f14d1951c0d66b010,.py,1189781,1,https://stackoverflow.com/q/1189781
+494459bdea4a35fb6c1ff35370f4c752999f38c8,2017-03-25 22:30:08-05:00,2017-03-25 22:30:08-05:00,10451,10451,10451,10451,initial set up,ModificationType.ADD,,190,0,190,0,yumikohey/givelightCRM,givelightCRM,e21c1e0b61e15778c266978a069de031f732630a,.js,398120,2,https://stackoverflow.com/a/398120
+63a46ababbaba3533afff066ed62c9a93b3053f4,2017-03-14 17:46:04-04:00,2017-03-14 17:46:04-04:00,10452,10452,10452,10452,ionic serve,ModificationType.ADD,,130,0,130,0,yoyomo/h2ocrop,h2ocrop,128063b94b693c564d3c8b58b56c6b02efb770ef,.java,29257533,2,https://stackoverflow.com/a/29257533
+2df666dee32f86e894f3042172a8988e55c96d66,2016-07-15 16:13:28+05:18,2016-07-15 16:13:28+05:18,10453,10453,10453,10453,initial commit,ModificationType.ADD,,912,0,912,0,younus93/truckjee.com,truckjee.com,7b3b922251428a6f19cb367de5fc58ec0956089b,.js,359788,1,https://stackoverflow.com/q/359788
+6c0b8f88562a60ad8bf1378c76f7c2a42559ac3d,2017-06-29 12:26:59-05:00,2017-06-29 12:31:37-05:00,10454,10454,10454,10454,First Commit,ModificationType.ADD,,8284,0,8284,0,yukizrj/HealthCare-F,HealthCare-F,7a1c847d3b74ea9a1a4d932733d59121b65462c3,.js,13216903,1,https://stackoverflow.com/q/13216903
+6c0b8f88562a60ad8bf1378c76f7c2a42559ac3d,2017-06-29 12:26:59-05:00,2017-06-29 12:31:37-05:00,10454,10454,10454,10454,First Commit,ModificationType.ADD,,424,0,424,0,yukizrj/HealthCare-F,HealthCare-F,2005e5729ec4b50688f8b1bc202fc69914d34fbb,.js,13216903,1,https://stackoverflow.com/q/13216903
+f6d2c2b98f48d40fc7a6b0f2c5e05a0a3f319301,2016-06-12 14:07:31+08:00,2016-06-12 14:07:31+08:00,10455,10455,10455,10455,lottery,ModificationType.ADD,,912,0,912,0,YiWeiCheng-tw/YiWeiCheng-tw.github.io,YiWeiCheng-tw.github.io,29cbb083eb8a5244c0d86db8d9d4b7402676c188,.js,359788,1,https://stackoverflow.com/q/359788
+c3e4e57b531edf6a63582676e8217bf599be003a,2015-03-03 15:09:01+01:00,2015-03-03 15:09:01+01:00,10456,10456,10456,10456,initial import,ModificationType.ADD,,132,0,132,0,yukisakurai/hhana,hhana,78aab53dff64400b0b276718f0b5666fde1a4c34,.py,616645,1,https://stackoverflow.com/q/616645
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,13,0,13,0,yomolify/cs-webserver,cs-webserver,9bc5397a38aa91d8873bc9871cd89d122b928a69,.js,3516243,2,https://stackoverflow.com/a/3516243
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,5,0,5,0,yomolify/cs-webserver,cs-webserver,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,2,0,2,0,yomolify/cs-webserver,cs-webserver,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,5,0,5,0,yomolify/cs-webserver,cs-webserver,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,2,0,2,0,yomolify/cs-webserver,cs-webserver,d72eebfdce5e3d419ab756e2bdbc77a81c8879c4,.js,398120,2,https://stackoverflow.com/a/398120
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,50,0,50,0,yomolify/cs-webserver,cs-webserver,08be0d2cb8c905063bc45d2b9cfe6571290adb19,.py,17199950,2,https://stackoverflow.com/a/17199950
+ae932c7d8501a9edf5597571f6297c19924caa13,2018-01-01 16:52:00+08:00,2018-01-01 16:52:00+08:00,10458,10458,10458,10458,HTML templete,ModificationType.ADD,,978,0,978,0,yueny/cropui,cropui,17aa0c9b8f3a7b167b9192caf909ec35aa5b7934,.js,14853974,2,https://stackoverflow.com/a/14853974
+ae932c7d8501a9edf5597571f6297c19924caa13,2018-01-01 16:52:00+08:00,2018-01-01 16:52:00+08:00,10458,10458,10458,10458,HTML templete,ModificationType.ADD,,2357,0,2357,0,yueny/cropui,cropui,18c482c224be159c4df95e45f4d8b0b0a6cf5901,.js,10454560,2,https://stackoverflow.com/a/10454560
+ae932c7d8501a9edf5597571f6297c19924caa13,2018-01-01 16:52:00+08:00,2018-01-01 16:52:00+08:00,10458,10458,10458,10458,HTML templete,ModificationType.ADD,,13946,0,13946,0,yueny/cropui,cropui,6e4df2b632882fe4aee4ab58557ad3b50cc617b1,.js,8506881,1,https://stackoverflow.com/q/8506881
+471cebf327347353e4ad16ab10c78f8689825723,2012-09-24 22:11:02-04:00,2012-09-24 22:11:02-04:00,10459,10459,10459,10459,Fixed flowlayout for tags and images in the share bar.,ModificationType.MODIFY,,86,25,86,25,youprofit/NewsBlur,NewsBlur,29ab1084c69d5a77abc8cc828525b62426b47593,.java,549451,1,https://stackoverflow.com/q/549451
+74e2a93fdac35be44ecad323b6905b0a7834b362,2012-09-30 21:02:03-04:00,2012-09-30 21:02:03-04:00,10459,10459,10459,10459,Fixed various issues as per feedback,ModificationType.MODIFY,471cebf327347353e4ad16ab10c78f8689825723,13,3,3,3,youprofit/NewsBlur,NewsBlur,29ab1084c69d5a77abc8cc828525b62426b47593,.java,549451,1,https://stackoverflow.com/q/549451
+e44a0bc365827dbbb6551b384eea4d1ee75e1861,2015-09-01 04:36:42-07:00,2015-09-01 04:36:42-07:00,7300,7300,7300,7300,Fix compount drawable height on save/share buttons.,ModificationType.MODIFY,74e2a93fdac35be44ecad323b6905b0a7834b362,3,3,2,2,youprofit/NewsBlur,NewsBlur,29ab1084c69d5a77abc8cc828525b62426b47593,.java,549451,1,https://stackoverflow.com/q/549451
+2d46e21892d65eca1b84ad14e765080d074b52e1,2014-09-30 23:03:51+08:00,2014-09-30 23:03:57+08:00,10460,10460,10460,10460,Initial commit.,ModificationType.ADD,,156,0,156,0,yljhao/GAE_WiFiSwitch,GAE_WiFiSwitch,b7d62baad931faad8889a8184ddf38a426344d22,.py,20646822,1,https://stackoverflow.com/q/20646822
+fd7725584981dd16666d69b76e2bb6e2a62f0bc3,2015-02-04 17:58:11+08:00,2015-02-13 17:39:57-08:00,10461,10461,10461,10461,Changing to package systems.,ModificationType.ADD,,583,0,583,0,yifan-gu/.emacs.d,.emacs.d,2dcfd89913e320cc534881f77d7822aa5a1b324c,.py,5658622,1,https://stackoverflow.com/q/5658622
+170f533709cfad18e47e739a86430019f9ca9c6b,2015-10-08 12:35:39-07:00,2015-10-08 12:35:39-07:00,10462,10462,10462,10462,first commit,ModificationType.ADD,,2062,0,2062,0,youthradio/yr-big-read-template,yr-big-read-template,752af68a0d9708119ecc5868561ab20f1768b91d,.js,7264899,1,https://stackoverflow.com/q/7264899
+626d81b780573d2ab19a5a600168c6488a76cb32,2015-07-26 18:14:57-03:00,2015-07-26 18:14:57-03:00,10463,10463,10463,10463,"Faltando a home, topo e rodapé",ModificationType.ADD,,854,0,854,0,yujihayashi/castilla,castilla,ffce465fa2f1a4cf47d1b6d2b32980081d1e481b,.php,17061156,1,https://stackoverflow.com/q/17061156
+d7fd842d99c0f0a4da8b1b9b3cbfc3e9414b5bce,2017-07-24 07:57:48+08:00,2017-07-24 07:57:48+08:00,10464,10464,10464,10464,add rbac,ModificationType.ADD,,202,0,202,0,yiichina/yiicms,yiicms,36590edb1e4cc4bc85362136977ce56162953d8c,.php,766809,1,https://stackoverflow.com/q/766809
+39d05a923727b3429854039b8218bb2080fe36f1,2018-08-23 14:03:37+08:00,2018-08-23 14:03:37+08:00,10465,10465,10465,10465,utf8mb4,ModificationType.MODIFY,d7fd842d99c0f0a4da8b1b9b3cbfc3e9414b5bce,1,1,1,1,yiichina/yiicms,yiicms,36590edb1e4cc4bc85362136977ce56162953d8c,.php,766809,1,https://stackoverflow.com/q/766809
+0f49150dc32b14161d82f9d81e1356aaca553f99,2017-08-23 13:15:06+08:00,2017-08-23 13:15:06+08:00,10466,10466,10466,10466,project,ModificationType.ADD,,3125,0,3125,0,yjwz0428/yjwz0428.github.io,yjwz0428.github.io,7ea5aae486ba754e7b1e9ddac0a720e6aa5c06cb,.js,5661671,1,https://stackoverflow.com/q/5661671
+154e6d5b95823cfefcca1686692db7585d376f22,2015-09-25 10:28:41-05:00,2015-09-25 10:28:41-05:00,10467,10467,10467,10467,first commit,ModificationType.ADD,,149,0,149,0,youcatastrophe/wordpress,wordpress,ad9ed8b21894cb1f1fc7e0fdb4b5058ce8f4fddd,.js,1948672,1,https://stackoverflow.com/q/1948672
+91a80c181ee9afbc24e087da34d883563870795d,2016-10-17 09:38:04+08:00,2016-10-17 09:38:04+08:00,10468,10468,10468,10468,shouye code,ModificationType.ADD,,594,0,594,0,ys305751572/shouye,shouye,1438da26ccf03e5419269184a88042f7c1ad7f4d,.js,13351234,2,https://stackoverflow.com/a/13351234
+d425640b7d21841780bdabf8483c38e16ec7011e,2015-11-08 19:27:21-05:00,2015-11-08 19:27:21-05:00,10469,10469,10469,10469,WIP nav bar,ModificationType.ADD,,13,0,13,0,Yoonis/Yoonis.github.io,Yoonis.github.io,d289b9d1f77d4d79c578a158faef465742bbc0c7,.js,9739955,1,https://stackoverflow.com/q/9739955
+c197aec6d00760a382c87bbb8d92c7f53f0827d9,2017-03-02 12:58:53+02:00,2017-03-02 12:58:53+02:00,10470,10470,10470,10470,fixed ignoring node_modules,ModificationType.ADD,,77,0,77,0,yt94dev/jason-arsenault,jason-arsenault,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+4391ea149fce1197e00560e948fae883b16cbb8d,2015-06-25 06:38:08+02:00,2015-06-25 06:38:08+02:00,10471,10471,10471,10471,init,ModificationType.ADD,,90,0,90,0,yezooz/fserver,fserver,5e6f96582f18f4433844b82a64eb140cb3d48f32,.js,4361826,1,https://stackoverflow.com/q/4361826
+1a067505735bdf2388feae3a1f1a97b16cff6903,2015-06-03 01:29:16+07:00,2015-06-03 01:29:16+07:00,10472,10472,10472,10472,tambah folder assets,ModificationType.ADD,,63,0,63,0,yufieko/facebook-api,facebook-api,476b0e11108cc820e17b5bda8ec0943cad152b34,.js,27180709,1,https://stackoverflow.com/q/27180709
+ffe963078c05c722aedc73c16ee2b6fc88453fd9,2015-01-30 23:28:37+08:00,2015-01-30 23:28:37+08:00,10473,10473,10473,10473,sae,ModificationType.ADD,,68,0,68,0,younfor/django-fly-blog,django-fly-blog,f8bb97a451239ad28ce55125f926115f4ca337e2,.js,155812,2,https://stackoverflow.com/a/155812
+a4a0e54f4d208c6cf967a1e4b36b3c135bbc31f5,2015-03-02 13:35:27+07:00,2015-03-02 13:36:27+07:00,10474,10474,10474,10474,initial commit,ModificationType.ADD,,1881,0,1881,0,yudhapratama/woo_commerce_jam,woo_commerce_jam,a8f1a1e7f219be587d231be3cefb0bf31e5e71ce,.js,12866060,1,https://stackoverflow.com/q/12866060
+e670a011cc550705286b7a9cfed15057c244418a,2014-01-16 16:39:22+01:00,2014-01-16 16:39:22+01:00,10475,10475,10475,10475,initial commit,ModificationType.ADD,,912,0,912,0,ymarillet/sknife,sknife,29cbb083eb8a5244c0d86db8d9d4b7402676c188,.js,359788,1,https://stackoverflow.com/q/359788
+d5b0a681a6c9b92e05a97e7bdb4cf8ac439067e4,2014-08-13 19:57:03+02:00,2014-08-13 19:57:03+02:00,10476,10476,10476,10476,Poprawki w javascript i kontrolerach wellcome / default,ModificationType.ADD,,34,0,34,0,yorg76/test,test,4bf2acc2afc476f5ee72ded689293f8ea8c60551,.php,1308149,1,https://stackoverflow.com/q/1308149
+d5b0a681a6c9b92e05a97e7bdb4cf8ac439067e4,2014-08-13 19:57:03+02:00,2014-08-13 19:57:03+02:00,10476,10476,10476,10476,Poprawki w javascript i kontrolerach wellcome / default,ModificationType.ADD,,6831,0,6831,0,yorg76/test,test,9f523634a10ed21f28d4c2db7f2033615ff49443,.js,499126,1,https://stackoverflow.com/q/499126
+69884909800ac468b7ad7d1fc9491facec9e79b6,2013-06-24 12:24:41-07:00,2013-07-08 17:07:55-04:00,3041,3041,3041,3041,"Add a management command to create objects for newly defined permissions
+
+This script does not remove permissions that already exist.
+
+(imported from commit 15d18266a05a84b9cac6cc7d2104668b41b48f35)",ModificationType.ADD,,12,0,12,0,yocome/zulip,zulip,aa14b59193f86bd82760f5d57768576f668dd53a,.py,11914435,2,https://stackoverflow.com/a/11914435
+d8f78a5e2d3c90946b6c1d706ea9a771b7721d9b,2013-08-06 16:15:05-04:00,2013-08-07 10:00:08-04:00,3040,3040,3040,3040,"Fix some remaining references to zephyr.
+
+(imported from commit 2072d3451cc08bc32b997d7fafaafd7b6ac568df)",ModificationType.MODIFY,69884909800ac468b7ad7d1fc9491facec9e79b6,1,1,1,1,yocome/zulip,zulip,aa14b59193f86bd82760f5d57768576f668dd53a,.py,11914435,2,https://stackoverflow.com/a/11914435
+b45d123bcde84cc1133b87e39ac26547a994da33,2017-03-20 13:31:12+08:00,2017-03-20 13:31:12+08:00,10477,10477,10477,10477,resolve all graphs,ModificationType.ADD,,17,0,17,0,yoshi161/IoTGraph,IoTGraph,03e7dfc39b0408ade4a763be18a5d94325100acd,.js,13227489,1,https://stackoverflow.com/q/13227489
+ae4c815c2a878c8c8e4b287221afc2cdcddc963c,2017-03-13 17:39:36+08:00,2017-03-13 17:39:36+08:00,10478,10478,10478,10478,add node modules and bower components,ModificationType.ADD,,27,0,27,0,yoshi161/IoTGraph,IoTGraph,016189a7b711f2480e92ff027b7d77ce12a21b4c,.js,398120,2,https://stackoverflow.com/a/398120
+ae4c815c2a878c8c8e4b287221afc2cdcddc963c,2017-03-13 17:39:36+08:00,2017-03-13 17:39:36+08:00,10478,10478,10478,10478,add node modules and bower components,ModificationType.ADD,,6053,0,6053,0,yoshi161/IoTGraph,IoTGraph,5679872f539f2a00ddf2e38d1c3f3f8ff4179b11,.js,13216903,1,https://stackoverflow.com/q/13216903
+52c916a7e3c001b71bbba21deae26093a902fdcb,2016-04-28 12:59:03-07:00,2016-04-28 12:59:03-07:00,10479,10479,10479,10479,add node moudles,ModificationType.ADD,,2,0,2,0,Yueyue07/Yueyue-Qin-Website,Yueyue-Qin-Website,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+52c916a7e3c001b71bbba21deae26093a902fdcb,2016-04-28 12:59:03-07:00,2016-04-28 12:59:03-07:00,10479,10479,10479,10479,add node moudles,ModificationType.ADD,,152,0,152,0,Yueyue07/Yueyue-Qin-Website,Yueyue-Qin-Website,5e4618cb5c44b67fcbf4ffafe40eda5231431a0c,.js,1068308,2,https://stackoverflow.com/a/1068308
+b88dd797b939688c9a38bb0669ece044fb779b2c,2013-12-05 11:10:30-06:00,2013-12-05 11:10:30-06:00,10480,10480,10480,10480,Lots of niceness,ModificationType.ADD,,20282,0,20282,0,yhyuan/ionic-weather,ionic-weather,e70ad20eafe282f3ee0406ad1b3c14af1deb5845,.js,472729,2,https://stackoverflow.com/a/472729
+ca4a89516a0b5fb39b62e1a1430d02dc39747430,2013-12-06 16:56:15-06:00,2013-12-06 16:56:15-06:00,3721,3721,3721,3721,"Added text shadow, updated angular",ModificationType.MODIFY,b88dd797b939688c9a38bb0669ece044fb779b2c,145,116,94,112,yhyuan/ionic-weather,ionic-weather,e70ad20eafe282f3ee0406ad1b3c14af1deb5845,.js,472729,2,https://stackoverflow.com/a/472729
+6610e2afc54292e4369c69a7a60f508e8b08e364,2013-11-22 11:49:59+08:00,2013-11-22 11:49:59+08:00,10481,10481,10481,10481,move to yincart group,ModificationType.ADD,,104,0,104,0,yincart/advanced,advanced,d4776a170ac584d891eb69a34336f2c6337c8c43,.php,2517947,1,https://stackoverflow.com/q/2517947
+fb39dac8f20fae8af635210f5512d4cc2fc8a703,2017-01-20 15:28:04+08:00,2017-01-20 15:28:04+08:00,790,790,790,790,* [site] the new website source code.,ModificationType.ADD,,593,0,593,0,yuguitao/incubator-weex,incubator-weex,7e392bd500ec0bc7af672889368c657c705ef395,.js,26603875,2,https://stackoverflow.com/a/26603875
+fb39dac8f20fae8af635210f5512d4cc2fc8a703,2017-01-20 15:28:04+08:00,2017-01-20 15:28:04+08:00,790,790,790,790,* [site] the new website source code.,ModificationType.ADD,,586,0,586,0,yuguitao/incubator-weex,incubator-weex,9abb23915e80dd1a8389323c38d5f97936b4c61e,.js,26603875,2,https://stackoverflow.com/a/26603875
+a389ed79bfd6d67a3519dd736bfc0ce5c7e08c91,2015-02-12 17:06:31+11:00,2015-02-12 17:06:31+11:00,10482,10482,10482,10482,v1.4 init commit,ModificationType.ADD,,2321,0,2321,0,yiqunc/indicator-client,indicator-client,73bda2222fe4fdfcf34a1974de511550124e2458,.js,181348,1,https://stackoverflow.com/q/181348
+ccb011a19519cacebb534f6c85a725600b18e874,2017-05-19 05:14:40+09:00,2017-05-19 05:14:40+09:00,10483,10483,10483,10483,Add File S2,ModificationType.ADD,,81,0,81,0,Yukarumya/Yukarum-Redfoxes,Yukarum-Redfoxes,d808e56cb9f38104996a4ab3a56768822ace91d8,.js,1672349,2,https://stackoverflow.com/a/1672349
+2f3ef85a7df661318a6ec2eb6612a8cd90ea110c,2017-05-19 06:34:34+09:00,2017-05-19 06:34:34+09:00,10483,10483,10483,10483,"Add File S15
+
+memory,mfbt,mobile.",ModificationType.ADD,,237,0,237,0,Yukarumya/Yukarum-Redfoxes,Yukarum-Redfoxes,d2bd6319d8f5c1cc52be5baf397887fe4c1dfc2d,.java,7962155,1,https://stackoverflow.com/q/7962155
+08ad388db640bd21c52ed3fab0c1411cdd5d5e6e,2017-05-19 06:51:44+09:00,2017-05-19 06:51:44+09:00,10483,10483,10483,10483,"File Add S17
+
+network,nsprpub,other-licenses,parser,probes,python.",ModificationType.DELETE,2f3ef85a7df661318a6ec2eb6612a8cd90ea110c,0,237,0,237,Yukarumya/Yukarum-Redfoxes,Yukarum-Redfoxes,d2bd6319d8f5c1cc52be5baf397887fe4c1dfc2d,.java,7962155,1,https://stackoverflow.com/q/7962155
+d274c0b359fca431ca739f40bb026b2d273a2bfe,2017-05-19 06:27:00+09:00,2017-05-19 06:27:00+09:00,10483,10483,10483,10483,"Add FIle S14
+
+media.",ModificationType.ADD,,497,0,497,0,Yukarumya/Yukarum-Redfoxes,Yukarum-Redfoxes,b2b459e60c51e6c66f5fb208885744287ab24b6c,.py,3041990,2,https://stackoverflow.com/a/3041990
+08ad388db640bd21c52ed3fab0c1411cdd5d5e6e,2017-05-19 06:51:44+09:00,2017-05-19 06:51:44+09:00,10483,10483,10483,10483,"File Add S17
+
+network,nsprpub,other-licenses,parser,probes,python.",ModificationType.DELETE,d274c0b359fca431ca739f40bb026b2d273a2bfe,0,497,0,497,Yukarumya/Yukarum-Redfoxes,Yukarum-Redfoxes,b2b459e60c51e6c66f5fb208885744287ab24b6c,.py,3041990,2,https://stackoverflow.com/a/3041990
+ff4ab56c67baa7c76a210169acc05ddce87b9648,2015-03-03 00:17:57+00:00,2015-03-03 00:17:57+00:00,10484,10484,10484,10484,"Material design and refactor, network check and updated translations
+
+Squashed commit of the following:
+
+commit ea2be1d4dcd4d83a874d00f64b8767094679d6a9
+Author: mendhak <smaltaf@msn.com>
+Date:   Tue Mar 3 00:16:43 2015 +0000
+
+    Merged stream101 Network check and reused in auto send
+
+commit 45884e70daf55ee76e087d24ef6d4d88e85c0bad
+Merge: b6c2f12 a53094e
+Author: mendhak <smaltaf@msn.com>
+Date:   Tue Mar 3 00:12:19 2015 +0000
+
+    Merge branch 'stream101-master' into appcompat21
+
+    Conflicts:
+    	gpslogger/src/main/java/com/mendhak/gpslogger/GpsMainActivity.java
+
+commit b6c2f12c1ff6042d6b13c5699d70f3b9906909f8
+Author: mendhak <smaltaf@msn.com>
+Date:   Mon Mar 2 23:36:59 2015 +0000
+
+    Absolute timeout set to 120sec
+
+commit 8d100eaef42edf6461450867e000f5d7ca187e1e
+Author: mendhak <smaltaf@msn.com>
+Date:   Mon Mar 2 23:31:31 2015 +0000
+
+    Using android-process-button on detailed view
+
+commit 61c7f78c520496cf4705315b0ac316ff951b2f26
+Author: mendhak <smaltaf@msn.com>
+Date:   Mon Mar 2 23:16:46 2015 +0000
+
+    Using android-process-button on simple view
+
+commit 9bce426ab0c0814cd20101169f515c9f6a566f7a
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 23:06:37 2015 +0000
+
+    Exit menu item
+
+commit fd54101127f3b6a0e40f306f1c29c141846783ba
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 22:45:37 2015 +0000
+
+    Fixed SwitchPreference scrolling bug
+
+commit c93d09ab0a4b6f2a55f339ca8478398d5b3b31c9
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 22:31:48 2015 +0000
+
+    Updated translations from Crowdin.net
+
+commit a1336ecf5e6caecaccb92eb7ca6c776c2145257b
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 22:28:55 2015 +0000
+
+    String corrections
+
+commit ba6d7686b3e0a946a0eb531a3ee23108c44a4093
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 22:08:06 2015 +0000
+
+    Simple and detailed layout tweaks
+
+commit 19d77d3542b17b955e7ee00e673559d8eb1c561d
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 20:42:35 2015 +0000
+
+    Translucent status bar on Lollipop
+
+commit bf4988482c4c8ebb2bac4887e9246cb25d047cc0
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 19:26:56 2015 +0000
+
+    Refactoring - Moved related methods together
+
+    [skip ci]
+
+commit 5b0e574cd7ddba73df7a0d8c681884a2d9cfdab7
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 18:35:42 2015 +0000
+
+    Cleanup
+
+commit 31e4e29ce01b8d089c56509463110a4619f4abac
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 18:25:47 2015 +0000
+
+    Cleanup
+
+commit 3779e08e2c2471d6508a49a3614cbabf73e69223
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 18:09:05 2015 +0000
+
+    Moved help menu
+
+commit 2033a29e6728490878ece9e771b07ae91e46d56d
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 17:56:58 2015 +0000
+
+    Drawer icons and menu items
+
+commit c5df9bfe94f3235ff500fcd309fdd3ac0eb351a5
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 17:18:00 2015 +0000
+
+    Coloring for simple view icons
+
+commit eb6d6cfe8b9427489d2208bd79671a6446e9a3e5
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 15:03:25 2015 +0000
+
+    Added toolbar and navigation to all activities
+
+commit 3064b2705ef4dfd6a6476e10fcd784d373553357
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 13:10:03 2015 +0000
+
+    Displayed spinner in toolbar
+
+commit 924fe38396f6c51ff5186d30182bdf01d35a9d09
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 03:00:24 2015 +0000
+
+    Experimental toolbar
+
+commit a53094e28f045e105601d79add02c86d23d79212
+Author: xinxin <xinxin@cs.ucsd.edu>
+Date:   Sat Feb 28 17:31:18 2015 -0800
+
+    Check network before uploading files, and show message if there is no network.
+
+commit af6e0b4662835287f0dbe4f2aecabe4253dc48b1
+Author: mendhak <smaltaf@msn.com>
+Date:   Sun Mar 1 00:09:59 2015 +0000
+
+    Replaced satellite count icon
+
+commit 28b28b247ac09c8e69cd80cf9dbb803f3ee8a6a4
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 23:47:21 2015 +0000
+
+    Unnecessary icon, notification strings
+
+commit d6f8cddb12575932ad2273fc6962ce6911f3115f
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 23:42:29 2015 +0000
+
+    Added cardview for detail view fragment
+
+commit 6216b3ab0a0e728931ead1fdb490579e5bf66cf5
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 22:26:01 2015 +0000
+
+    Replaced simple view with lighter icons
+
+commit 3ec9f706f7c4701cb06cedaf7118973e0fbfd7fe
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 15:05:16 2015 +0000
+
+    Bitcoin link
+
+commit af0d464dc6f625e4cad96a618b51111ba492abfb
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 13:41:07 2015 +0000
+
+    Fixed progressdialog color
+
+commit c0917f6b08b4546be4420c77c76b375ef6a63fe2
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 13:37:04 2015 +0000
+
+    Removed unused resources
+
+commit 58199eb53f8e47a3cbbc073c6f24fbafb000d260
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 11:59:38 2015 +0000
+
+    Using new drawer toggle
+
+commit 8548b16eab512237c3ba2f6bf1de8529210dfc49
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 02:08:28 2015 +0000
+
+    Corrected dropbox menu link
+
+commit 142c04ae35e156eacb8e449367a5b7c4e07ccbcb
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 02:07:17 2015 +0000
+
+    Circular progressbar spinner
+
+commit e4abc8700ee00afab3786fc934374e1c3c98c50c
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 01:24:29 2015 +0000
+
+    Hide minor shadow
+
+commit e095aa34cea78a757244efc570c86fb9a06f009a
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 01:23:11 2015 +0000
+
+    Fragment names in constants
+
+commit bfce789a7135cd276ca1a6dd69e37afd79fa9e28
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 00:43:31 2015 +0000
+
+    Cleanup, copyright and renames
+
+commit 5477883986666552dd483f6f09b5746fe08a6816
+Author: mendhak <smaltaf@msn.com>
+Date:   Sat Feb 28 00:30:39 2015 +0000
+
+    Converted OSM settings activity to fragment and some cleanup
+
+commit ff3eed91f1006d62f861668000a9b6c1e22bf729
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 23:41:19 2015 +0000
+
+    Updated dropbox JAR
+
+commit f258cb010f6f0cbf93a710f07e3694bb745157fb
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 23:26:37 2015 +0000
+
+    Converted Dropbox settings activity to fragment and some cleanup
+
+commit 78950120175ff3c4f02604b3fb9f1af424695271
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 23:00:44 2015 +0000
+
+    Converted GDocs settings activity to fragment and some cleanup
+
+commit 7e3179e3ff17af652af2e13c1a650a056014a9cb
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 22:38:50 2015 +0000
+
+    Converted GTS settings activity to fragment and some cleanup
+
+commit cb31959f845437c3da26d470caa2a4ccea326099
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 22:12:38 2015 +0000
+
+    Converted email settings activity to fragment
+
+commit e5c76de8cdb4f923749f8aa67c1f38e4fad84697
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 21:56:08 2015 +0000
+
+    Converted ftp settings activity to fragment
+
+commit 8be718957cb67aae0dbf26d318da4587b12bee07
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 07:10:32 2015 +0000
+
+    Converted upload settings activity to fragment
+
+commit fb3912bcfd79406c846af5691a6053481c70c38a
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 06:55:12 2015 +0000
+
+    Converted general settings activity to fragment
+
+commit f71374e21b80138e4efc0d8270a387b7dfa3052c
+Author: mendhak <smaltaf@msn.com>
+Date:   Fri Feb 27 00:00:09 2015 +0000
+
+    Removed actionbar elevation
+
+commit e052491be347494190a958663226e39f7892fe03
+Author: mendhak <smaltaf@msn.com>
+Date:   Thu Feb 26 23:56:08 2015 +0000
+
+    Converted logging settings activity to fragment
+
+commit 25c46348c4a56af2ac2fe8785ec5bd7bbee958f4
+Author: mendhak <smaltaf@msn.com>
+Date:   Thu Feb 26 22:39:26 2015 +0000
+
+    Removed ui option unnecessary
+
+commit e7c140424fff1990c6f1ea2b0880ca1f26ac33c2
+Author: mendhak <smaltaf@msn.com>
+Date:   Thu Feb 26 22:35:10 2015 +0000
+
+    Evenly distributed toolbar
+
+commit b18fb7a0764295028bf687b4a6d3028ac2bf74ec
+Author: mendhak <smaltaf@msn.com>
+Date:   Thu Feb 26 21:59:48 2015 +0000
+
+    Toolbar menu click
+
+commit 20d731589f0aca7143d7b628051ff5a62909437c
+Author: mendhak <smaltaf@msn.com>
+Date:   Thu Feb 26 21:56:47 2015 +0000
+
+    Added toolbar at bottom
+
+commit da3b03e8961c53f18ab31bb0d31aa2a0bba198bc
+Author: mendhak <smaltaf@msn.com>
+Date:   Thu Feb 26 21:01:41 2015 +0000
+
+    AppCompat 21 Material design, basic toolbar",ModificationType.ADD,,26,0,26,0,yp25/gpslogger,gpslogger,96844929ae8fe6fd2ee0e09d1db2bfb8373e61a4,.java,15744076,2,https://stackoverflow.com/a/15744076
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,189,0,189,0,yomolify/cc-server,cc-server,515d28f3a4f94c005ae3002a2df67f6ba0c6acfa,.js,3277192,2,https://stackoverflow.com/a/3277192
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,5,0,5,0,yomolify/cc-server,cc-server,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,5,0,5,0,yomolify/cc-server,cc-server,6516f69a09c78db3604f0ec31a83824ccda10c4b,.js,11781404,2,https://stackoverflow.com/a/11781404
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,2,0,2,0,yomolify/cc-server,cc-server,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,103,0,103,0,yomolify/cc-server,cc-server,b5c7b9f7de015e141f4726a6f91d5e17b852eadf,.js,6398335,2,https://stackoverflow.com/a/6398335
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,929,0,929,0,yomolify/cc-server,cc-server,cd65fc6e4728a766bdc35a9ad4ca1a8b458b073a,.js,9678166,2,https://stackoverflow.com/a/9678166
+bb89d8cfc5446657ed53efa17e2cc11b9e250d52,2015-09-30 11:24:13-07:00,2015-09-30 11:24:13-07:00,10457,10457,10457,10457,initial project commit,ModificationType.ADD,,6988,0,6988,0,yomolify/cc-server,cc-server,67f5484fb12d9de98c05949f3c0ef221eda03add,.js,398120,2,https://stackoverflow.com/a/398120
+70335f3bf5e0cbbb7d98163360ab91d2c3f9f113,2016-03-07 22:00:57+01:00,2016-03-07 22:00:57+01:00,10485,10485,10485,10485,Add libs and basic structure,ModificationType.ADD,,2451,0,2451,0,yishn/Recall,Recall,d409ae094bd41691fdb4b082af742ccd70457632,.php,13370709,2,https://stackoverflow.com/a/13370709
+463403e3b0f965eb4525f591b822d7fbf8d91ef8,2015-10-22 18:20:08+08:00,2015-10-22 18:20:08+08:00,10486,10486,10486,10486,添加项目文件,ModificationType.ADD,,168,0,168,0,yjpgfwxf/ionic-app-news,ionic-app-news,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+45a17ea7be2f2b6d30abf9cb020044542564e12b,2014-02-03 18:44:03-08:00,2014-02-04 13:12:46-08:00,5554,5554,5554,5554,HUE-207 [beeswax] Leverage tablib to enable more flexible data export from Beeswax,ModificationType.ADD,,348,0,348,0,yongshengwang/hue,hue,670e6b1f6f66f91e672115bd057b320652d810d8,.py,3781261,1,https://stackoverflow.com/q/3781261
+45a17ea7be2f2b6d30abf9cb020044542564e12b,2014-02-03 18:44:03-08:00,2014-02-04 13:12:46-08:00,5554,5554,5554,5554,HUE-207 [beeswax] Leverage tablib to enable more flexible data export from Beeswax,ModificationType.ADD,,348,0,348,0,yongshengwang/hue,hue,670e6b1f6f66f91e672115bd057b320652d810d8,.py,3781261,1,https://stackoverflow.com/q/3781261
+61064f74c457d23c00213e4dfb23097adb3c99d4,2013-12-12 11:17:08+00:00,2013-12-12 11:17:08+00:00,10487,10487,10487,10487,bootstrap3 wip. finsished admin theme,ModificationType.ADD,,609,0,609,0,yilab/hatchjs,hatchjs,0f47e09f66c32b3240b3886ac25dbeee1df55fe8,.js,141348,1,https://stackoverflow.com/q/141348
+6cb596117d79c661d826eddd2d0855ec41ba362c,2016-01-15 19:17:45+02:00,2016-01-15 19:17:45+02:00,10488,10488,10488,10488,install,ModificationType.ADD,,92,0,92,0,YGugnin/mailer,mailer,cc92edc97aec9cfc72a9fe2ff55c9629767eed0e,.php,766809,1,https://stackoverflow.com/q/766809
+6451aefe5213ba068e80970348900f9184f2ae5c,2015-04-16 02:17:18-07:00,2015-04-16 02:17:18-07:00,10489,10489,10489,10489,login sessions added,ModificationType.ADD,,9449,0,9449,0,yhyoungyang/hapi-twitter-backend,hapi-twitter-backend,46fb822445780034208060782365fa380963b47a,.js,181348,1,https://stackoverflow.com/q/181348
+0a657bbc2c6fc9daf699942e023050536d5ec95f,2013-11-13 14:42:08-05:00,2013-11-13 14:42:08-05:00,10490,10490,10490,10490,"Snapshot from http://skia.googlecode.com/svn/trunk@12108
+
+Change-Id: Ia710b27d97e938df06014b7b61a3767bd3be1eb5",ModificationType.ADD,,447,0,447,0,yinquan529/platform-external-skia,platform-external-skia,e8dbb6be732a338ec9f83015b7d2b090ee3857e1,.py,166589,2,https://stackoverflow.com/a/166589
+910f694aefb0b671dd8522a9afe9b6be645701c1,2014-01-16 13:00:22-05:00,2014-01-16 13:00:22-05:00,10490,10490,10490,10490,"Snapshot from http://skia.googlecode.com/svn/trunk@12682
+
+Change-Id: I0470d8e53bf019f410509180b95950f20f98a5e8",ModificationType.MODIFY,0a657bbc2c6fc9daf699942e023050536d5ec95f,164,75,117,75,yinquan529/platform-external-skia,platform-external-skia,e8dbb6be732a338ec9f83015b7d2b090ee3857e1,.py,166589,2,https://stackoverflow.com/a/166589
+e8ed394acac4c09a1d3b32bdb6e66c38c21a6447,2016-08-01 19:25:08+03:00,2016-08-01 19:25:08+03:00,1423,1423,1423,1423,FindBugs: Wrap BC_IMPOSSIBLE_DOWNCAST in ToolDescriptor for empty array creation fallback,ModificationType.MODIFY,,12,2,12,2,Ykus/jenkins,jenkins,3c944d86dc31c9b326268bcf8c361ed25a27e337,.java,2927391,1,https://stackoverflow.com/q/2927391
+ca36f1105a0ca86e395db65efb8e208fa5f75526,2017-05-11 02:25:07+09:00,2017-05-11 02:25:07+09:00,10491,10491,10491,10491,wert,ModificationType.ADD,,69,0,69,0,Yoshikiti/yoshikiti.github.io,yoshikiti.github.io,9ffc261d38c87672ced7a1b06c09ec05fbe7f299,.js,3580132,2,https://stackoverflow.com/a/3580132
+baf5a7efbac714d041deab2716015c7c507f9f32,2015-12-26 14:42:32-06:00,2015-12-26 14:42:32-06:00,10492,10492,10492,10492,first,ModificationType.ADD,,2,0,2,0,YolandaYang/greenlord-dashboard,greenlord-dashboard,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+baf5a7efbac714d041deab2716015c7c507f9f32,2015-12-26 14:42:32-06:00,2015-12-26 14:42:32-06:00,10492,10492,10492,10492,first,ModificationType.ADD,,2,0,2,0,YolandaYang/greenlord-dashboard,greenlord-dashboard,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+baf5a7efbac714d041deab2716015c7c507f9f32,2015-12-26 14:42:32-06:00,2015-12-26 14:42:32-06:00,10492,10492,10492,10492,first,ModificationType.ADD,,2,0,2,0,YolandaYang/greenlord-dashboard,greenlord-dashboard,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+baf5a7efbac714d041deab2716015c7c507f9f32,2015-12-26 14:42:32-06:00,2015-12-26 14:42:32-06:00,10492,10492,10492,10492,first,ModificationType.ADD,,2,0,2,0,YolandaYang/greenlord-dashboard,greenlord-dashboard,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+52be559b14f5d71e646ca7482b591e8f1df2bfbb,2017-02-15 21:10:21+08:00,2017-02-15 21:10:21+08:00,10493,10493,10493,10493,add requirejs to joints project,ModificationType.ADD,,128,0,128,0,yongjingzheng/containerops,containerops,17a4ad4303c95113a36c3dd116563e58ba3266e8,.js,3665561,1,https://stackoverflow.com/q/3665561
+978ec4c946254b5e2e8aecb249659505b043426a,2017-02-08 15:10:41+01:00,2017-02-08 15:10:41+01:00,10494,10494,10494,10494,mm,ModificationType.ADD,,2040,0,2040,0,youcefboukersi/serveurdevoeux,serveurdevoeux,588cbbb7a4f34f93e8ff048526140090c5c5b7f6,.php,4775722,1,https://stackoverflow.com/q/4775722
+4348aef616122231bde3603e1fa03f60ed2ca0b5,2017-02-08 17:21:44+01:00,2017-02-08 17:21:44+01:00,10494,10494,10494,10494,!,ModificationType.MODIFY,978ec4c946254b5e2e8aecb249659505b043426a,24,24,24,24,youcefboukersi/serveurdevoeux,serveurdevoeux,588cbbb7a4f34f93e8ff048526140090c5c5b7f6,.php,4775722,1,https://stackoverflow.com/q/4775722
+3adc6da35b7e14b71a66f701e5238dddd35bdd3d,2017-02-08 20:47:17+01:00,2017-02-08 20:47:17+01:00,10494,10494,10494,10494,!!!!,ModificationType.MODIFY,4348aef616122231bde3603e1fa03f60ed2ca0b5,24,24,24,24,youcefboukersi/serveurdevoeux,serveurdevoeux,588cbbb7a4f34f93e8ff048526140090c5c5b7f6,.php,4775722,1,https://stackoverflow.com/q/4775722
+f3f1d51b9f85fe557636eda99ca1d5d17182be40,2013-03-29 09:12:13-07:00,2013-03-29 09:12:13-07:00,6050,6050,6050,6050,"jsonify couldn't serialize SQLAlchamy objects, so I had to add a serializer tot he World object",ModificationType.MODIFY,,10,1,10,1,youprofit/FrameworkBenchmarks,FrameworkBenchmarks,d061e6df068b6c16f12f536ef806f78176706cea,.py,7102754,1,https://stackoverflow.com/q/7102754
+2fe159d8856d7b8cfa464affe88305c9b66e26ca,2013-07-21 15:11:00+09:00,2013-07-21 15:11:00+09:00,6051,6051,6051,6051,Flask: Add update and plaintext.,ModificationType.MODIFY,f3f1d51b9f85fe557636eda99ca1d5d17182be40,82,29,0,1,youprofit/FrameworkBenchmarks,FrameworkBenchmarks,d061e6df068b6c16f12f536ef806f78176706cea,.py,7102754,1,https://stackoverflow.com/q/7102754
+4d4caa9db6391710dbb6d2a1c5152d2be80266bc,2015-05-28 01:01:08+09:00,2015-05-28 11:31:58+09:00,6052,6052,6052,6052,"flask: Make json before commit
+
+SQLAlchemy's default behavior is `expire_on_commit=True`.
+Implicit fetch is happen when touching objects after commit.",ModificationType.MODIFY,2fe159d8856d7b8cfa464affe88305c9b66e26ca,17,13,13,8,youprofit/FrameworkBenchmarks,FrameworkBenchmarks,d061e6df068b6c16f12f536ef806f78176706cea,.py,7102754,1,https://stackoverflow.com/q/7102754
+b87567463c0f7afb384f5e409c69f314a06be8ac,2013-10-01 12:26:56-07:00,2013-10-01 12:26:56-07:00,10495,10495,10495,10495,Completed code and initial testing for batch resumption,ModificationType.ADD,,322,0,322,0,youprofit/FrameworkBenchmarks,FrameworkBenchmarks,f224cb3f6d9f63da4b0d0f0b2cb53cb7e2949c87,.php,4069002,1,https://stackoverflow.com/q/4069002
+44eee2afa495d507e0547bc01795852d1368bcf2,2014-09-04 19:26:58-04:00,2014-09-04 19:26:58-04:00,10496,10496,10496,10496,MEAN.js,ModificationType.ADD,,83,0,83,0,YfLn/CEN3031FA14,CEN3031FA14,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+44eee2afa495d507e0547bc01795852d1368bcf2,2014-09-04 19:26:58-04:00,2014-09-04 19:26:58-04:00,10496,10496,10496,10496,MEAN.js,ModificationType.ADD,,49,0,49,0,YfLn/CEN3031FA14,CEN3031FA14,1e39b2dd13e9ed8d824f708cee56efa16e54b77e,.js,728694,2,https://stackoverflow.com/a/728694
+44eee2afa495d507e0547bc01795852d1368bcf2,2014-09-04 19:26:58-04:00,2014-09-04 19:26:58-04:00,10496,10496,10496,10496,MEAN.js,ModificationType.ADD,,485,0,485,0,YfLn/CEN3031FA14,CEN3031FA14,ce6369f1cbac700012e50bf621e26e94f3ec41a6,.js,16459606,2,https://stackoverflow.com/a/16459606
+8c18067c8c08defc6ca2e1e04d72189ffbaeb4f1,2016-04-23 13:59:05-07:00,2016-04-23 13:59:05-07:00,10497,10497,10497,10497,include gulp for local server hosting,ModificationType.ADD,,67,0,67,0,yjkimjunior/ShuffleMVP,ShuffleMVP,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+cff94741e1c7d9691c076b57c7db03f4654959ca,2015-01-13 18:16:41+01:00,2015-01-13 18:16:41+01:00,1192,1192,1192,1192,Fixed bug when calling close too many times. Added RealmLog class.,ModificationType.ADD,,123,0,123,0,ysnows/realm-java,realm-java,db3a9bfc4efd1cf00a2815d396c5df81478bd94f,.java,8888654,1,https://stackoverflow.com/q/8888654
+ef4584918a344fe8bd436fa7f51c4edad3442492,2014-09-05 11:33:11+09:00,2014-09-05 11:59:29+09:00,10498,10498,10498,10498,Fix for google analytics,ModificationType.MODIFY,,5,6,5,6,yonchu/vimmers-follow-status,vimmers-follow-status,2c1399eb99dd252c81bcad6bc51ec9e1f72f4280,.js,22152353,2,https://stackoverflow.com/a/22152353
+6cb31bb19dc29c841d5572edf48bd5dbeaa2ced2,2015-05-22 09:43:42-07:00,2015-05-22 09:45:41-08:00,923,923,923,923,[JS] Faster crc32,ModificationType.MODIFY,,61,45,61,45,yjyi/react-native,react-native,540d60aa832b6e147c36e79f23a73ca7afe09c19,.js,18638900,1,https://stackoverflow.com/q/18638900
+ec54804de842f8dbd79b08e092a43eb11a099b3a,2014-07-03 17:53:05-04:00,2014-07-03 17:53:05-04:00,10499,10499,10499,10499,,ModificationType.ADD,,1131,0,1131,0,yogenyogen/margbillini,margbillini,ba4f14187421ef421262494a10d447292b1eb59d,.php,11310258,2,https://stackoverflow.com/a/11310258
+e7086c4ae68b665b3442b64b716c68df6c136f72,2016-03-09 16:19:41-08:00,2016-03-09 16:19:41-08:00,10500,10500,10500,10500,make deploy description editable and rollback reason required,ModificationType.ADD,,6807,0,6807,0,yongwen/teletraan,teletraan,dd8138568e29426a6219d36a938124b5c6a4f161,.js,7602565,1,https://stackoverflow.com/q/7602565
+67d165214a6d8143f3fa7c0a5aecbf6510493c1d,2014-06-29 10:02:15+08:00,2014-06-29 10:02:15+08:00,10501,10501,10501,10501,init,ModificationType.ADD,,2610,0,2610,0,yooo/taishan,taishan,83282c6fdbab67e9362c6e7f0421333f5a000090,.js,181348,1,https://stackoverflow.com/q/181348
+a3240c9dbcc036ae8f376b7dd7577ecb2a10216b,2016-07-02 21:57:01-04:00,2016-07-02 21:57:01-04:00,10502,10502,10502,10502,Setup Node framework and express,ModificationType.ADD,,168,0,168,0,young2sd/Simulation,Simulation,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+191d77480fd5f21e335bc0fa7d6fcafa2081d1e7,2014-01-15 16:56:58+09:00,2014-01-15 16:58:44+09:00,10503,10503,10503,10503,"#312 oEmbed API를 활용해 글 본문의 URL을 embed 코드로 변환하는 애드온 추가.
+- jQuery oEmbed API Wrapper : https://github.com/starfishmod/jquery-oembed-all",ModificationType.ADD,,845,0,845,0,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+7dab4e7e65f72c2ad71b674de07ce418641be7e1,2014-01-15 17:41:13+09:00,2014-01-15 17:41:13+09:00,10503,10503,10503,10503,#312 apple-touch-icon을 가져오는 부분 제거.,ModificationType.MODIFY,191d77480fd5f21e335bc0fa7d6fcafa2081d1e7,13,13,13,13,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+c58db40b8180136151786adfe1f36063988391b0,2014-01-16 11:29:15+09:00,2014-01-16 13:05:50+09:00,10503,10503,10503,10503,"#312 jquery.oembed 코드 포맷 정리.
+- 수정을 앞둔 코드 포맷 정리.",ModificationType.MODIFY,7dab4e7e65f72c2ad71b674de07ce418641be7e1,1212,811,1093,711,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+8a880620abd0e4d3e86b95cf9f4e80e346d53758,2014-01-16 12:57:55+09:00,2014-01-16 13:05:50+09:00,10503,10503,10503,10503,#312 opengraph 데이터 가져오지 않도록 변경.,ModificationType.MODIFY,c58db40b8180136151786adfe1f36063988391b0,0,48,0,48,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+0db1e67a80794f9d4c59b1d704e9ac38e20df4ff,2014-03-10 11:22:38+09:00,2014-03-10 11:22:38+09:00,10503,10503,10503,10503,fix #433 rich type 콘텐츠 출력 시 요약하여 일부만 출력하도록 변경,ModificationType.MODIFY,8a880620abd0e4d3e86b95cf9f4e80e346d53758,3,3,3,3,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+5775f10eaa6394fe660035cad15d3497d1770009,2014-03-10 13:05:53+09:00,2014-03-10 13:05:53+09:00,10503,10503,10503,10503,oEmbed 결과물이 없을 때 빈 공간을 출력하지 않도록 수정,ModificationType.MODIFY,0db1e67a80794f9d4c59b1d704e9ac38e20df4ff,1,1,1,1,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+c174a68f58607e52192f40a98929e22b9ef8d7c2,2015-01-28 16:01:43+09:00,2015-01-28 16:06:33+09:00,10504,10504,10504,10504,#1208 remove gravatar from oembed provider,ModificationType.MODIFY,5775f10eaa6394fe660035cad15d3497d1770009,0,140,0,136,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+f36724a96f9a94485b66b6a456bfb5a72fe4f4d2,2016-03-06 18:14:25+09:00,2016-03-06 18:14:25+09:00,10505,10505,10505,10505,"버전 업데이트
+
+https://github.com/nfl/jquery-oembed-all 에서 가져옴. 코어에서 가져왔던 버전은 조금 구버전이라 2015년 8월 버전으로 가져옵니다.",ModificationType.MODIFY,c174a68f58607e52192f40a98929e22b9ef8d7c2,993,1048,990,940,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+26d4fe976e04cf365215e26c7df8312fd47db04a,2016-03-06 20:22:50+09:00,2016-03-06 20:22:50+09:00,10505,10505,10505,10505,opengraph 제거,ModificationType.MODIFY,f36724a96f9a94485b66b6a456bfb5a72fe4f4d2,0,48,0,48,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+dff2578df315785d5490ef9b5c015ca669f78e5c,2016-03-06 21:08:16+09:00,2016-03-06 21:08:16+09:00,10505,10505,10505,10505,HTTPS 페이지에서는 긴 주소를 풀지 않음,ModificationType.MODIFY,26d4fe976e04cf365215e26c7df8312fd47db04a,3,2,1,2,YJSoft/rhymix,rhymix,1bafb620ed8ead2a62875f8dcf03ebb51903c4ee,.js,1349404,1,https://stackoverflow.com/q/1349404
+17df73a63fc91e775f82f20cdc5df8951690f823,2012-09-05 18:56:54+09:00,2012-09-05 19:00:22+09:00,10506,10506,10506,10506,"utils:  Add BasicAuthAction.
+
+BasicAuthAction is an action for HTTP Basic Authentication and it will
+be used to authenticate users to access Git or SVN repository.",ModificationType.ADD,,91,0,91,0,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+489f8de0c75ba1d029aaa0b915c8410cdfdd9f3c,2012-09-06 10:48:21+09:00,2012-09-06 10:49:19+09:00,10506,10506,10506,10506,"utils: Fix BasicAuthAction's BASE64Decoder warning
+
+Use org.apache.commons.codec.binary.Base64 instead of sun.misc.BASE64Decoder.",ModificationType.MODIFY,17df73a63fc91e775f82f20cdc5df8951690f823,3,6,1,6,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+e913faeeaa592d93334fc9db868a1ec10bbc1937,2012-09-06 15:33:50+09:00,2012-09-06 15:41:11+09:00,10506,10506,10506,10506,utils: Fix basicauth which works incorrectly.,ModificationType.MODIFY,489f8de0c75ba1d029aaa0b915c8410cdfdd9f3c,3,2,3,2,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+31a1dfd5b8221c8f36a420613ef80c2d05962de8,2012-09-06 16:56:13+09:00,2012-09-06 16:56:13+09:00,10507,10507,10507,10507,refactoring by applying shiro,ModificationType.MODIFY,e913faeeaa592d93334fc9db868a1ec10bbc1937,9,8,9,8,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+4ab97e97aba7cacf4df76126659e0ed7177b3075,2012-09-07 11:28:43+09:00,2012-09-07 11:28:43+09:00,10507,10507,10507,10507,refactoring authentication method,ModificationType.MODIFY,31a1dfd5b8221c8f36a420613ef80c2d05962de8,4,4,4,4,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+bec3212c2850916b476ab4357f14198f5c50d6f1,2012-09-13 16:42:55+09:00,2012-09-14 11:41:27+09:00,10506,10506,10506,10506,"GitApp: Allow anonymous access to git repository.
+
+And refactor GitApp.java.",ModificationType.MODIFY,4ab97e97aba7cacf4df76126659e0ed7177b3075,46,25,15,15,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+834443b74d5fb3ab1e92554790adf0af6c2c93d6,2013-07-10 13:15:51+09:00,2013-07-10 14:52:32+09:00,10508,10508,10508,10508,"Fixed on #316
+
+* Method may fail to clean up stream or resource
+* Class defines field that masks a superclass field
+* Reliance on default encoding
+* Removed Unused field
+* Removed unused variable
+* Format string should use %n rather than \n
+* Compare String value with equals() rather then ==
+* Method names should start with a lower case letter
+* Field isn't final but should be
+* Suspicious reference comparison
+* Primitive value is boxed then unboxed to perform primitive coercion
+* Comparison of String parameter using == or !=
+* Possible null pointer dereference in method on exception path
+* Redundant nullcheck of value known to be non-null",ModificationType.MODIFY,bec3212c2850916b476ab4357f14198f5c50d6f1,2,4,2,4,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+d0b4de1af8d92d122d993bd0aaef080d3a1499df,2013-10-21 14:12:10+09:00,2013-10-22 09:21:10+09:00,10509,10509,10509,10509,"replace the word ""nforge"" with ""yobi""",ModificationType.MODIFY,834443b74d5fb3ab1e92554790adf0af6c2c93d6,1,1,1,1,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+37f81e8af6fbeb8ad07191059322ccd660d40e87,2013-11-08 17:28:18+09:00,2013-11-08 17:28:18+09:00,10506,10506,10506,10506,"auth: Fix authorization works incorrectly.
+
+After visiting a public repository via web browser, authorization have
+worked incorrectly because BasicAuthAction set a cookie for an anonymous
+user. This patch prevents to set a cookie for an anonymous user.",ModificationType.MODIFY,d0b4de1af8d92d122d993bd0aaef080d3a1499df,4,2,4,2,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+79c75257f38b97cd6b63731f978f6d16dfce3c88,2013-11-08 18:41:12+09:00,2013-11-08 18:41:12+09:00,10506,10506,10506,10506,auth: Remove duplication by using addUserInfoToSession.,ModificationType.MODIFY,37f81e8af6fbeb8ad07191059322ccd660d40e87,1,2,1,2,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+3da289d8e2a13e1e9bd421019fa2ff39c8b460e3,2014-01-07 17:56:01+09:00,2014-01-07 17:56:01+09:00,10510,10510,10510,10510,add accesslogger in BasicAuthAction,ModificationType.MODIFY,79c75257f38b97cd6b63731f978f6d16dfce3c88,10,3,9,3,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+eafd35ddd16c99cd5c7beb5a70fd0243ce3e5ee4,2014-03-07 11:49:08+09:00,2014-03-13 12:07:49+09:00,10511,10511,10511,10511,"user: UserApp.isRememberMe is deleted, use UserApp.currentUser
+
+- UserApp.currentUser create user object using cookie when there is no
+  session data
+- utils.BasicAuthAction is edited because
+  UserApp.authenticateWithPlainPassword does not return null anymore
+- add tests",ModificationType.MODIFY,3da289d8e2a13e1e9bd421019fa2ff39c8b460e3,6,13,5,8,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+34bb443db6209b6b908c60ee9f1141497d911d7e,2014-08-14 18:47:59+09:00,2014-08-19 11:57:37+09:00,10512,10512,10512,10512,"AccessControl: Support to refuse anonymous access
+
+If application.allowsAnonymousAccess configuration is true,
+AccessControl refues any anonymous access.
+
+Remove BasicAuthAction.isAnonymousSupported which is not necessary
+anymore because new application.allowsAnonymousAccess and AccessControl
+can cover the case of flase BasicAuthAction.isAnonymousSupported.",ModificationType.MODIFY,eafd35ddd16c99cd5c7beb5a70fd0243ce3e5ee4,1,6,1,5,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+6d8057eefde017b7cfe64f4d745bcd16a9eed1c0,2014-08-18 10:56:55+09:00,2014-08-19 12:09:19+09:00,10512,10512,10512,10512,Refactor imports,ModificationType.MODIFY,34bb443db6209b6b908c60ee9f1141497d911d7e,3,4,0,3,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+fe129a5f372bf6595365494e0951acf5cc65a101,2014-09-24 10:24:57+09:00,2014-09-24 10:54:43+09:00,10512,10512,10512,10512,"Git: Show remote message for authentication failure
+
+An example:
+
+    $ git push
+    Username for 'http://yobi.com': npcode
+    Password for 'http://npcode@yobi.com':
+    remote: Invalid username or passsword
+    fatal: Authentication failed for 'http://yobi.com/dlab/yobi'",ModificationType.MODIFY,6d8057eefde017b7cfe64f4d745bcd16a9eed1c0,1,1,1,1,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+3c7a59b62307e31645fbc006aff38ecdcc59a154,2014-11-21 11:37:25+09:00,2014-12-21 15:15:00+09:00,10512,10512,10512,10512,"Upgrade Play from 2.1.0 to 2.2.6
+
+* Upgrade play-jsmessages from 1.4.1 to 1.6.1
+* Use com.fasterxml.jackson.databind.JsonNode instead of
+  org.codehaus.jackson.JsonNode;
+* Use javassist 3.18.2-GA to fix the verify error
+* Use Promise<SimpleResult> inteadof Result
+
+I consulted docs/ko/Play2.2_Migraion.md
+
+BACKWARD COMPATIBLITY: You should modify the loggers configuration in
+conf/application.conf:
+
+    event-handlers = [""akka.event.Logging$DefaultLogger"", ""akka.event.slf4j.Slf4jEventHandler""]
+
+to:
+
+    loggers = [""akka.event.Logging$DefaultLogger"", ""akka.event.slf4j.Slf4jLogger""]",ModificationType.MODIFY,fe129a5f372bf6595365494e0951acf5cc65a101,9,7,7,7,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+5016350de928be1f44b01d0be31b80c4c123db29,2014-11-21 15:19:30+09:00,2014-12-21 15:19:22+09:00,10512,10512,10512,10512,"Upgrade Play from 2.2.6 to 2.3.6
+
+* Upgrade sbt from 0.13.0 to 0.13.5.
+* Upgrade jsmessages from 1.6.1 to 1.6.2.
+* Downgrade play-2-mail from 1.0.0 to 0.9.1.
+* Split project/Build.scala into build.sbt and
+  project/BuildConfig.scala.
+* Introduce sbt-less.
+* Introduce sbt-twirl, the new template engine for PlayFramework, and
+  fix compile errors caused by it.
+    * Import scala.collection.JavaConversions._ for conversion between
+      Java and Scala collections.
+    * Import java.lang_ and java.util._ to use java types.
+    * Use implicitJavaLang imported from play.core.j.PlayMagicForJava._
+      instead of lang.
+    * Use requestHeader imported from play.core.j.PlayMagicForJava._
+      instead of request.
+    * Specify play.data.Form in full qualified name to avoid conflict
+      with play.api.data.Form.
+    * Fix the other template errors.
+* Etc
+    * Use Result instead of deprecated SimpleResult.
+    * Use java.nio.file.NotDirectoryException instead of
+      scalax.file.NotDirectoryException.
+    * Update README to say use ""acvitator"" command instead of ""play"".
+    * Add methods to PlayServlet to support Servlet 3.1
+
+IMPORTANT NOTE: You should modify the version of h2database on which
+Play depends from 1.3.175 to 1.3.176 in
+~/.ivy2/cache/com.typesafe.play/play-jdbc_2.10/ivy-2.3.6.xml as follows:
+
+        <dependency org=""com.h2database"" name=""h2"" rev=""1.3.176"" force=""true"" conf=""compile->compile(*),master(*);runtime->runtime(*)""/>
+
+to avoid org.h2.jdbc.JdbcSQLException because of the bug that h2database
+1.3.175 cannot create or alter sequence.",ModificationType.MODIFY,3c7a59b62307e31645fbc006aff38ecdcc59a154,4,4,3,3,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+ac83c23715cd4632ed43faca3250a037bebc89ae,2015-02-15 11:39:41+09:00,2015-03-02 15:16:56+09:00,10512,10512,10512,10512,"Fix reliance on default encoding
+
+For the Yobi's default encoding, use the encoding from
+Config.getCharset(), which returns always ""UTF-8"", instead of
+Charset.defaultCharset() which depends on the platform.",ModificationType.MODIFY,5016350de928be1f44b01d0be31b80c4c123db29,1,1,1,1,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+dc4b3b7edd691da5ef0059ed9d8555edb166a6b3,2015-02-15 11:40:52+09:00,2015-03-02 15:16:56+09:00,10512,10512,10512,10512,Cleanup unnecessary code,ModificationType.MODIFY,ac83c23715cd4632ed43faca3250a037bebc89ae,2,6,1,5,yona-projects/yona,yona,3a1f0d5e6b1e38dc29e187045f9166d6ee54398d,.java,7242316,99,https://stackoverflow.com/q/7242316#comment11372987_7242316
+fbce0391a8bb31fd7613d2e2291d4122448484b5,2015-02-26 23:37:30-05:00,2015-02-26 23:45:24-05:00,10513,10513,10513,10513,"Allows multiple instance of the same clip to be played simultaneously.
+
+This might fix some issues with some sounds not being played sometimes.
+
+Also might require more memory since more clips are created.",ModificationType.ADD,,95,0,95,0,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+8512f7c3c5d1e601fed227f78152d6190c24bac8,2015-02-27 19:22:29-05:00,2015-02-27 19:32:14-05:00,10513,10513,10513,10513,Fixes loading mp3 multiclip since AudioInputStream.availble didn't work.,ModificationType.MODIFY,fbce0391a8bb31fd7613d2e2291d4122448484b5,36,17,36,15,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+955a184d2c66e1756d83638527fe5ecd73f1f220,2015-02-28 18:28:58-05:00,2015-02-28 18:28:58-05:00,10513,10513,10513,10513,"Global max clips
+reuse clips
+close extraclips in ranking",ModificationType.MODIFY,8512f7c3c5d1e601fed227f78152d6190c24bac8,49,7,17,7,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+c543ddea01c17deca43174f021088ae332e5e87b,2015-03-01 00:03:06-05:00,2015-03-01 00:03:06-05:00,7350,7350,7350,7350,"Follow-up to #25.
+- Moved all MultiClip-handling methods into the MultiClip class.
+- Destroy extra clips when starting and finishing new beatmaps.
+- Reduced maximum number of extra clips to 20.
+- Attempted fixes at multithreading issues.
+
+Signed-off-by: Jeffrey Han <itdelatrisu@gmail.com>",ModificationType.MODIFY,955a184d2c66e1756d83638527fe5ecd73f1f220,126,84,86,53,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+ec042159a8519506b56d4eaed2610c372d06af29,2015-03-19 15:58:50-04:00,2015-03-19 15:58:50-04:00,7350,7350,7350,7350,"Added track previews to the downloads menu.
+Currently uses the osu! server to load MP3 previews.
+
+Signed-off-by: Jeffrey Han <itdelatrisu@gmail.com>",ModificationType.MODIFY,c543ddea01c17deca43174f021088ae332e5e87b,34,1,1,1,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+441bb95a099cebd5dcbf451359d70072d2dd7240,2015-08-20 21:11:55-05:00,2015-08-20 21:11:55-05:00,7350,7350,7350,7350,"Added lots of 'final' modifiers to class fields where applicable.
+
+Signed-off-by: Jeffrey Han <itdelatrisu@gmail.com>",ModificationType.MODIFY,ec042159a8519506b56d4eaed2610c372d06af29,1,1,1,1,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+44c2259c2a110bf99ef518fe3dde83d88a320179,2017-02-26 02:43:03-05:00,2017-02-26 02:43:03-05:00,7350,7350,7350,7350,"Follow-up to #252.
+
+Signed-off-by: Jeffrey Han <itdelatrisu@gmail.com>",ModificationType.MODIFY,441bb95a099cebd5dcbf451359d70072d2dd7240,7,9,1,2,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+aa535903782a7c8ad26426aaf2d5f3d8a3e8f30c,2017-06-01 00:14:39-04:00,2017-06-01 00:14:39-04:00,7350,7350,7350,7350,"Follow-up to #299.
+
+Signed-off-by: Jeffrey Han <itdelatrisu@gmail.com>",ModificationType.MODIFY,44c2259c2a110bf99ef518fe3dde83d88a320179,5,8,1,1,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+212a39507d5fd3cfbc0b0a62a18d723a4a49fe70,2017-07-01 23:00:07-04:00,2017-07-01 23:00:07-04:00,7350,7350,7350,7350,"Clamp volume levels for hit sounds. (fixes #306)
+
+Signed-off-by: Jeffrey Han <itdelatrisu@gmail.com>",ModificationType.MODIFY,aa535903782a7c8ad26426aaf2d5f3d8a3e8f30c,3,2,1,1,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+2477e7f1c31d966b7af3dd93d657afdc1bbec8ce,2018-03-10 10:14:18+08:00,2018-03-10 10:14:18+08:00,10514,10514,10514,10514,"Don't reopen a line with the same format
+
+May fix Linux audio issues due to opening multiple lines with the same
+format.",ModificationType.MODIFY,212a39507d5fd3cfbc0b0a62a18d723a4a49fe70,1,1,1,1,yugecin/opsu,opsu,68472efb527fdad56467089f6fd9136da2745183,.java,1854616,1,https://stackoverflow.com/q/1854616
+7b703f12d6c39feb16e529b6638dfdf0936aee46,2015-09-09 15:02:23-04:00,2015-09-09 15:02:23-04:00,10515,10515,10515,10515,first submit,ModificationType.ADD,,660,0,660,0,yiducn/h7n9vis,h7n9vis,05dabb59e7e1705603f29e847b72f776734e2a32,.js,7390426,1,https://stackoverflow.com/q/7390426
+786b4316bd11fff5141234fe3d8a449cdd5e2f65,2015-08-12 14:09:00+02:00,2015-08-12 14:09:00+02:00,10516,10516,10516,10516,Libs for venv,ModificationType.ADD,,699,0,699,0,ygol/dotfiles,dotfiles,27b10742f7c42a6644250e3175c1e58635c93b6d,.py,1087227,1,https://stackoverflow.com/q/1087227
+005b605c24b3a319062c112c0a2ddfd8496f2820,2017-09-08 17:29:49+08:00,2017-09-08 17:29:49+08:00,10517,10517,10517,10517,add some files,ModificationType.ADD,,130,0,130,0,yomho/ferrous-framework,ferrous-framework,a21fa3e87ff81eb45807ab82d33cf36c22e1e1a9,.js,3665561,1,https://stackoverflow.com/q/3665561
+de79983b795ad722ee06f8d0a670cd33e9b332ca,2017-08-30 00:41:38+09:00,2017-08-30 00:41:38+09:00,10518,10518,10518,10518,[BASE] source initial,ModificationType.ADD,,14975,0,14975,0,yonggill/duedo,duedo,acccf91e01a80df8e9afbc8d31bc6ecadcf21e81,.js,992461,1,https://stackoverflow.com/q/992461
+d3293cbd97ba166c812f554b8896f12675fd6ae6,2015-01-29 16:20:55-08:00,2015-01-29 16:31:12-08:00,10519,10519,10519,10519,Initial Open Source Commit,ModificationType.ADD,,33,0,33,0,ypkang/Dato-Core,Dato-Core,095ffb83fcf3f466939554c5e4597705f171cf1a,.py,356722,1,https://stackoverflow.com/q/356722
+0b62db543d5e7c8a14d8829d929e611ac5c20385,2015-03-07 18:05:55+08:00,2015-03-07 18:05:55+08:00,10520,10520,10520,10520,Scaffolding the application,ModificationType.ADD,,2183,0,2183,0,yiyangyi/cc98-laravel,cc98-laravel,b3f8a2b775ca4248d30a46504b049b6cb9131597,.py,1189781,1,https://stackoverflow.com/q/1189781
+0b62db543d5e7c8a14d8829d929e611ac5c20385,2015-03-07 18:05:55+08:00,2015-03-07 18:05:55+08:00,10520,10520,10520,10520,Scaffolding the application,ModificationType.ADD,,130,0,130,0,yiyangyi/cc98-laravel,cc98-laravel,515d28f3a4f94c005ae3002a2df67f6ba0c6acfa,.js,3277192,2,https://stackoverflow.com/a/3277192
+0b62db543d5e7c8a14d8829d929e611ac5c20385,2015-03-07 18:05:55+08:00,2015-03-07 18:05:55+08:00,10520,10520,10520,10520,Scaffolding the application,ModificationType.ADD,,63,0,63,0,yiyangyi/cc98-laravel,cc98-laravel,cb0afc2e4fff50ad9a5538e49938a5943a17bfec,.js,1068308,2,https://stackoverflow.com/a/1068308
+29f1d1af6215b7be9febc2b490cee60827c9b4d8,2016-05-16 16:29:08+02:00,2016-05-16 16:29:08+02:00,10521,10521,10521,10521,"Add post-processing for the sphinx htmlhelp output before build
+
+* Copies our .hhk into the build folder
+* Removes TOC entries that just refer to anchors - it's unnecessary and
+  just clutters up the TOC.",ModificationType.ADD,,31,0,31,0,Yours3lf/renderdoc,renderdoc,463b9a731bb29323142d6b60d0f5ba61b7bb3fb8,.py,17579949,2,https://stackoverflow.com/a/17579949
+5daeefb183098964c35427688618a6ab1011d80b,2017-07-20 17:49:43-07:00,2017-08-22 15:35:21-07:00,10523,10523,10522,10522,"gpinitstandby: verify that standby has checksum
+
+The data_checksums GUC setting should be the same as the master.
+
+The existing test for gpinitstandby is modified to run on a single host.
+
+Signed-off-by: Larry Hamel <lhamel@pivotal.io>
+Signed-off-by: C.J. Jameson <cjameson@pivotal.io>",ModificationType.MODIFY,,45,23,45,23,yuanzhao/gpdb,gpdb,7443752bbbd8af9798453cf0079958b5141795e7,.py,2838309,2,https://stackoverflow.com/a/2838309
+d42e08349047270d2698c0493bb62625eab6f5ae,2014-06-19 11:55:20-04:00,2014-06-19 11:55:20-04:00,10524,10524,10524,10524,adding in swagger. fixing filtering by tags by adding an AND,ModificationType.ADD,,2269,0,2269,0,YochanaSH/openbadges-directory,openbadges-directory,7fc84a4ad60ff5369a0ea729b001fa8fece42a75,.js,5539378,2,https://stackoverflow.com/a/5539378
+db0601e4ee2c1277ae45f6a6c0eed534964cff8a,2012-07-18 16:47:11-07:00,2012-07-18 16:47:11-07:00,3886,3886,3886,3886,changes for initial code review comments,ModificationType.MODIFY,,10,7,10,7,youprofit/brackets,brackets,117547128fc74820794dafa3b4788148b3428c07,.js,10455626,1,https://stackoverflow.com/q/10455626
+d37edae47caf41ba65e499f84a37171b5b247f51,2012-07-18 21:36:44-07:00,2012-07-18 21:36:44-07:00,3886,3886,3886,3886,more code review changes,ModificationType.MODIFY,db0601e4ee2c1277ae45f6a6c0eed534964cff8a,11,5,1,1,youprofit/brackets,brackets,117547128fc74820794dafa3b4788148b3428c07,.js,10455626,1,https://stackoverflow.com/q/10455626
+5520aa105b4934beb81219642041612d2c531d53,2016-03-31 14:28:12+03:00,2016-03-31 14:28:42+03:00,10525,10525,10525,10525,Yii framework 2 Files(clear project),ModificationType.ADD,,66,0,66,0,yslepianok/analysis_site,analysis_site,4be6cbeaff41440ad24340c6a430fb7a19272e21,.php,766809,1,https://stackoverflow.com/q/766809
+bcc46a750a25dd0ba66d39ed14e6e39542e0f859,2015-08-25 00:25:39+03:00,2015-08-25 00:25:39+03:00,10526,10526,10526,10526,initial commit,ModificationType.ADD,,112,0,112,0,yozel/tureng,tureng,3a8a83e29acaf056386e7dc20678962bfa85fd3f,.py,6190500,2,https://stackoverflow.com/a/6190500
+6a3f03b080aac1118760254f93f3b7c3cb68b536,2015-04-01 01:17:17+08:00,2015-04-01 01:17:17+08:00,10527,10527,10527,10527,improve console output,ModificationType.ADD,,93,0,93,0,yhli365/HiBench,HiBench,00a8199c3e2ebe6e926e8451a5f466d7847b85b2,.py,263890,1,https://stackoverflow.com/q/263890
+63121e6cf1743bb48b1ee8aaaaac2768b5a18abe,2015-05-26 15:42:57+08:00,2015-05-26 15:42:57+08:00,10528,10528,10528,10528,set python version for all python shells,ModificationType.MODIFY,6a3f03b080aac1118760254f93f3b7c3cb68b536,1,1,1,1,yhli365/HiBench,HiBench,00a8199c3e2ebe6e926e8451a5f466d7847b85b2,.py,263890,1,https://stackoverflow.com/q/263890
+b9feb102e6ce4bd6acc8a43bef7401dfff922dbf,2015-04-29 11:57:30+03:00,2015-04-29 11:57:30+03:00,10529,10529,10529,10529,Add normalize wheel,ModificationType.MODIFY,,112,57,112,57,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+62b8ca3d6689a11fad7f7d35a52a38c27a1a25e6,2015-04-29 12:15:34+03:00,2015-04-29 12:15:34+03:00,10529,10529,10529,10529,remove normalizeWheel,ModificationType.MODIFY,b9feb102e6ce4bd6acc8a43bef7401dfff922dbf,20,18,15,13,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+43d398e3034042d1f52adea9ee94f25cc39a43cd,2015-05-04 17:16:31+03:00,2015-05-04 17:16:31+03:00,10529,10529,10529,10529,update h height to 0.1px,ModificationType.MODIFY,62b8ca3d6689a11fad7f7d35a52a38c27a1a25e6,12,16,8,14,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+b6f0e889b7fb1fddc1517c612a609a92905f618e,2015-07-02 13:53:37+03:00,2015-07-02 13:53:37+03:00,10529,10529,10529,10529,Remove refs. Build for 1.1.0,ModificationType.MODIFY,43d398e3034042d1f52adea9ee94f25cc39a43cd,323,272,94,74,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+48f400213b2fb2579c2aae6ab424f416492b7a26,2015-07-02 13:56:46+03:00,2015-07-02 13:56:46+03:00,10529,10529,10529,10529,Build for 1.1.1,ModificationType.MODIFY,b6f0e889b7fb1fddc1517c612a609a92905f618e,7,5,0,2,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+c54cb9203a70305da33716f1080ef938a9f3b8c5,2015-08-24 20:56:11+08:00,2015-08-24 20:56:11+08:00,10530,10530,10530,10530,rm shift,ModificationType.MODIFY,48f400213b2fb2579c2aae6ab424f416492b7a26,30,31,1,7,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+16522ae0c9cb00a3a1529a5e57b65b5fecff4668,2015-08-25 00:51:20+08:00,2015-08-25 00:54:03+08:00,10530,10530,10530,10530,rm shift,ModificationType.MODIFY,c54cb9203a70305da33716f1080ef938a9f3b8c5,1,1,1,1,youngerheart/react-virtual-scroller,react-virtual-scroller,2d7d83b41d440cab6938ce0a7d3ee4b4895b874f,.js,27472595,1,https://stackoverflow.com/q/27472595
+1cc3a4312b44d5f5fbe8de4ee7bf343508c1d353,2016-09-27 01:41:49+07:00,2016-09-27 01:41:49+07:00,10531,10531,10531,10531,vendor,ModificationType.ADD,,130,0,130,0,yunanhelmi/gia,gia,e715e82e73ba60f1a4a878acc43ce5f9face8903,.php,12026842,1,https://stackoverflow.com/q/12026842
+79b673c9c61119e552221108734b73e3fa23d3ef,2015-12-21 09:27:07+00:00,2015-12-21 09:27:07+00:00,10532,10532,10532,10532,update december 21st,ModificationType.ADD,,9977,0,9977,0,YMA-MDL/PLMAPI,PLMAPI,e2bc4a1216ee78c6f96f4f0810093639e269a980,.js,181348,1,https://stackoverflow.com/q/181348
+bfc8acd4cdc24c8f9007e8ecee24dd89cd414dd7,2014-10-28 18:49:33+01:00,2014-10-28 18:49:33+01:00,697,697,697,697,END,ModificationType.ADD,,912,0,912,0,yohanskii/monprojet,monprojet,7b3b922251428a6f19cb367de5fc58ec0956089b,.js,359788,1,https://stackoverflow.com/q/359788
+cfea034e030acc69a2b0fcb26f7428e303caaf43,2017-04-13 18:16:33-05:00,2017-04-13 18:30:20-05:00,3434,3434,3434,3434,"Adding another handler for unhandled exceptions, this time generic RuntimeException",ModificationType.ADD,,46,0,46,0,yma88/indy,indy,ec0eb09c3a6d636632ac875a4b7eddc093880d2f,.java,13857638,1,https://stackoverflow.com/q/13857638
+c78a7856dd3b4683f7d2d32937bb3fae4b59d0d9,2017-09-12 23:43:04-05:00,2017-09-12 23:43:04-05:00,3434,3434,3434,3434,fix license headers to use year range for copyright and github url instead of my email,ModificationType.MODIFY,cfea034e030acc69a2b0fcb26f7428e303caaf43,1,1,1,1,yma88/indy,indy,ec0eb09c3a6d636632ac875a4b7eddc093880d2f,.java,13857638,1,https://stackoverflow.com/q/13857638
+9a1d2ac78355509e858f0e29b5d084880b0a8565,2014-06-12 17:53:19-05:00,2014-06-12 17:53:19-05:00,3434,3434,3434,3434,"Improving dynamically-loaded controllers for the layover UI, and implementing rule browser for autoprox.",ModificationType.ADD,,20,0,20,0,yma88/indy,indy,d2a2eca530d0b671ee7ce3efff6063ba7684df8b,.js,5306680,1,https://stackoverflow.com/q/5306680
+e5c26937373f23611472c7c745496ababe892e9a,2016-03-04 14:17:51+01:00,2016-03-04 14:17:51+01:00,10533,10533,10533,10533,version 1,ModificationType.ADD,,930,0,930,0,younesmjl/wordpress-test,wordpress-test,fdf13c46d1083c3a84e3bf35baf543993d351d7c,.php,18185366,1,https://stackoverflow.com/q/18185366
+dccf0ec35d8f4d7acc7679a1a3857b3bc28fd7cc,2014-04-14 21:14:56+02:00,2014-04-14 21:14:56+02:00,10534,10534,10534,10534,initial commit,ModificationType.ADD,,686,0,686,0,yoman07/PhotoShoter,PhotoShoter,ad2753abec72bf409a00edc7de26a230da80fa33,.java,7818839,2,https://stackoverflow.com/a/7818839
+ec3aa3f587b994bc56c66e8d144c6a5666e740f4,2016-12-05 08:53:16-05:00,2016-12-05 08:53:16-05:00,10535,10535,10535,10535,Dec 05,ModificationType.ADD,,3583,0,3583,0,ygrinev/ygrinev,ygrinev,692d32af730c3d68a62cf202c8a42b29b752a91a,.js,5908494,1,https://stackoverflow.com/q/5908494
+baf62236945a4804a404823fa837e9b7f8dd0c12,2017-09-30 04:09:56+08:00,2017-09-30 04:09:56+08:00,10536,10536,10536,10536,Added Android file,ModificationType.ADD,,738,0,738,0,ypochien/ReturnTrue,ReturnTrue,2a9ddcc8010c35dcb84107e7ad9326382c216de0,.java,332079,1,https://stackoverflow.com/q/332079
+c562ee778c4891cc163ffb320307e3fe2a517c44,2015-05-27 03:13:46+07:00,2015-05-27 03:13:46+07:00,10537,10537,10537,10537,"## v3.0.2
+ * Add function `Scope.$safeApply()`.
+ * Fix Watch
+ * Fix Bower.json
+ * Fix any error angular 1.2.1.
+ * New feature:
+     * Filter.
+     * Add `scope.targeting` *(boolean)*: `true` - when `dragMove` targeting *(tree-dnd over)*.
+     * Add attribute `enableCollapse` to enable Mode `collapse node` when `dragStart`.
+ * Next feature:
+    * Multi select.
+    * OrderBy data.",ModificationType.ADD,,26309,0,26309,0,yukisan/angular-tree-dnd,angular-tree-dnd,c147ec52ea4126a88095c1d71db82993a9df524d,.js,3143070,1,https://stackoverflow.com/q/3143070
+f72f54ed33da838b08cf757bd587475cde689e55,2015-06-24 13:05:25+07:00,2015-06-24 13:05:25+07:00,10537,10537,10537,10537,"## v3.0.4
+ * Fixed:
+    * Indent when error dragging in list.
+    * Optimal `$watch` of tree-dnd.
+ * Added:
+    * Just only `plugin` when need *(increment speed init tree)*:
+        * Filter.
+        * Order By.
+        * Drag & Drop.
+        * Control of Tree.
+    * In Demo:
+        * Custom Options & Demo live.
+        * Order By.",ModificationType.MODIFY,c562ee778c4891cc163ffb320307e3fe2a517c44,5483,3498,4424,3498,yukisan/angular-tree-dnd,angular-tree-dnd,c147ec52ea4126a88095c1d71db82993a9df524d,.js,3143070,1,https://stackoverflow.com/q/3143070
+85fd81cc51051266d6e2f920f868b703b6e00181,2014-05-08 17:09:26+01:00,2014-05-08 17:09:26+01:00,10538,10538,10538,10538,Forgot to add new files,ModificationType.ADD,,90,0,90,0,yulchitaj/TEST1,TEST1,f076895588f8d15523bce67e4b6d48f97e1c1f59,.php,1464355,2,https://stackoverflow.com/a/1464355
+457bdd7c512ebaaa9abeb7ccb914fe0c4d68473c,2014-09-23 11:43:14-04:00,2014-09-23 11:43:14-04:00,10539,10539,10539,10539,"Add non-production files to .gitignore, remove them from repo",ModificationType.DELETE,85fd81cc51051266d6e2f920f868b703b6e00181,0,90,0,79,yulchitaj/TEST1,TEST1,f076895588f8d15523bce67e4b6d48f97e1c1f59,.php,1464355,2,https://stackoverflow.com/a/1464355
+342c94a2af498228ee4be95d17c28e84f58bc856,2014-02-19 13:28:42-03:00,2014-02-19 13:28:42-03:00,5791,5791,5791,5791,first commit,ModificationType.ADD,,7110,0,7110,0,Yify/popcorn-app,popcorn-app,a2778a23eeb16bde01493d552bd4a79d054341e7,.js,2486901,1,https://stackoverflow.com/q/2486901
+c5081200bafa5d7de64c617ef74c05b2df668f31,2014-03-07 17:42:10+01:00,2014-03-07 17:42:10+01:00,5792,5792,5792,5792,"Fixing bad video player on Windows
+
+On Windows native video player was used when user's screen was a touchscreen. I just deleted it and it solved the problem. So for everyone who had this issue, this is probably because you have a touchscreen.
+Subtitles are now working fine and showing up (native video player only supports WEBVTT subtitles).",ModificationType.MODIFY,342c94a2af498228ee4be95d17c28e84f58bc856,5,3,5,3,Yify/popcorn-app,popcorn-app,a2778a23eeb16bde01493d552bd4a79d054341e7,.js,2486901,1,https://stackoverflow.com/q/2486901
+b5e74d75693f311a11cce15ddcdbb8077891c13c,2014-03-09 14:53:59-07:00,2014-03-09 14:53:59-07:00,5793,5793,5793,5793,"Patch for video.js to prevent mousemove spam
+
+On certain platforms (including node-webkit on Windows7 64-bit it seems) mousemove events are spammed whether or not the mouse has actually moved. This prevents the video player UI from being hidden since it always thinks the user is moving the mouse.
+
+This is a patch for video.js that filter out the false mousemove events. I've already sent it as a PR to the video.js people, but until they make a decision this is a stopgap measure.
+
+I'm not sure what causes it. Someone on StackExchange said that Webkit firing phantom mousemove events might have something to do with preventing a machine going into standby. The odd thing is that it only happens when the cursor is positioned over certain content. For example, events are not fired if the cursor is positioned over the #header element when selecting a movie, but almost anywhere else will result in a constant stream of mousemoves.
+
+The point is, this seems to fix it for now. Ideally, it should be fixed in Webkit (assuming that's where the problem is from).",ModificationType.MODIFY,c5081200bafa5d7de64c617ef74c05b2df668f31,19,10,19,10,Yify/popcorn-app,popcorn-app,a2778a23eeb16bde01493d552bd4a79d054341e7,.js,2486901,1,https://stackoverflow.com/q/2486901
+7bcd7cd0b21ceca757f55ad440bbb2bc362aa09a,2017-02-27 10:43:42+01:00,2017-02-27 10:43:42+01:00,10540,10540,10540,10540,Fixed IP binding/discovery for the remote module.,ModificationType.MODIFY,,21,3,21,3,Yinameah/linux-show-player,linux-show-player,87003c35a9477affa2e6221de92450ca9e944d11,.py,5967539,2,https://stackoverflow.com/a/5967539
+ee79d5cec4c2000e84068ec199e1e45bbaea0fd2,2013-01-07 01:03:09+04:00,2013-01-07 01:03:09+04:00,1220,1220,1220,1220,"add wysi input, refactor all inputs to append $tpl to form before render()",ModificationType.ADD,,9521,0,9521,0,Youraiseme/x-editable,x-editable,939dca9734bfc6007bf4ad5b61d4f14cc4a629fc,.js,992461,1,https://stackoverflow.com/q/992461
+ad30bfa11f987ae85fc7d6a5ddd72d75fb805027,2013-06-23 16:26:34+04:00,2013-06-23 16:26:34+04:00,1220,1220,1220,1220,add bower support,ModificationType.ADD,,6192,0,6192,0,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+9136f8d34a3879b7e359e66eaf9dc1feea75295e,2013-06-23 17:40:34+04:00,2013-06-23 17:40:34+04:00,1220,1220,1220,1220,new dist,ModificationType.MODIFY,ad30bfa11f987ae85fc7d6a5ddd72d75fb805027,892,468,313,320,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+dd11d00b70a418bf4865e1518d600d965b300f2f,2013-06-23 18:51:05+04:00,2013-06-23 18:51:05+04:00,1220,1220,1220,1220,new dist,ModificationType.MODIFY,9136f8d34a3879b7e359e66eaf9dc1feea75295e,384,379,40,306,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+71c9d904a653959a979b16dead1edb8c5bbe4aee,2013-06-26 10:30:40+04:00,2013-06-26 10:30:40+04:00,1220,1220,1220,1220,dev build 1.4.6,ModificationType.MODIFY,dd11d00b70a418bf4865e1518d600d965b300f2f,25,14,11,7,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+bdd314bd67cf8605b81332914278224816068e44,2013-06-27 12:48:18+04:00,2013-06-27 12:48:18+04:00,1220,1220,1220,1220,duild dev 1.4.6,ModificationType.MODIFY,71c9d904a653959a979b16dead1edb8c5bbe4aee,36,23,22,19,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+6c247844a585996a1d9025f372ad2c088cc44252,2013-07-07 13:31:24+04:00,2013-07-07 13:31:24+04:00,1220,1220,1220,1220,dev dist,ModificationType.MODIFY,bdd314bd67cf8605b81332914278224816068e44,18,5,1,1,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+d27e43c0cf89b7f9217afc45cab43d72813e3c8d,2013-08-07 11:26:03+04:00,2013-08-07 11:26:03+04:00,1220,1220,1220,1220,dev build 1.4.6,ModificationType.MODIFY,6c247844a585996a1d9025f372ad2c088cc44252,175,16,117,16,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+3b460474337b44abb18e43527eec2b53ffa3aede,2013-08-07 12:19:57+04:00,2013-08-07 12:19:57+04:00,1220,1220,1220,1220,1.4.6-rc,ModificationType.MODIFY,d27e43c0cf89b7f9217afc45cab43d72813e3c8d,12,2,2,1,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+0abd9831ae7c1430f7a940666a76f0d61374fd13,2013-08-31 13:15:19+04:00,2013-08-31 13:15:19+04:00,1220,1220,1220,1220,migrate to grunt 0.4,ModificationType.MODIFY,3b460474337b44abb18e43527eec2b53ffa3aede,47,14,9,11,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+9678bd8c2286f7f1ad2ce61b96f510ea000bb531,2013-09-30 23:07:45+04:00,2013-09-30 23:07:45+04:00,1220,1220,1220,1220,build,ModificationType.MODIFY,0abd9831ae7c1430f7a940666a76f0d61374fd13,74,33,50,22,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+9678bd8c2286f7f1ad2ce61b96f510ea000bb531,2013-09-30 23:07:45+04:00,2013-09-30 23:07:45+04:00,1220,1220,1220,1220,build,ModificationType.MODIFY,9678bd8c2286f7f1ad2ce61b96f510ea000bb531,72,30,11,4,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+ca9c87afcdc09cdaec7668c8ce9bf2c601718c8c,2013-10-01 23:55:37+04:00,2013-10-01 23:55:37+04:00,1220,1220,1220,1220,build,ModificationType.MODIFY,9678bd8c2286f7f1ad2ce61b96f510ea000bb531,5,5,1,1,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+ee099eb0a62e94bc3aa82361344d0fa2039c033f,2013-10-02 00:25:12+04:00,2013-10-02 00:25:12+04:00,1220,1220,1220,1220,build,ModificationType.MODIFY,ca9c87afcdc09cdaec7668c8ce9bf2c601718c8c,5,5,4,4,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+b86d5f120ab83f2f2457b8fd95b8ab17627ab7e7,2013-10-07 12:54:30+04:00,2013-10-07 12:54:30+04:00,1491,1491,1491,1491,build dev,ModificationType.MODIFY,ee099eb0a62e94bc3aa82361344d0fa2039c033f,51,44,41,43,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+b86d5f120ab83f2f2457b8fd95b8ab17627ab7e7,2013-10-07 12:54:30+04:00,2013-10-07 12:54:30+04:00,1491,1491,1491,1491,build dev,ModificationType.MODIFY,b86d5f120ab83f2f2457b8fd95b8ab17627ab7e7,50,43,30,26,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+7191240c75d3a754d124c34d2d84093bde26f2f8,2013-10-10 20:42:55+04:00,2013-10-10 20:42:55+04:00,1491,1491,1491,1491,dev build,ModificationType.MODIFY,b86d5f120ab83f2f2457b8fd95b8ab17627ab7e7,13,2,11,2,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+7191240c75d3a754d124c34d2d84093bde26f2f8,2013-10-10 20:42:55+04:00,2013-10-10 20:42:55+04:00,1491,1491,1491,1491,dev build,ModificationType.MODIFY,7191240c75d3a754d124c34d2d84093bde26f2f8,42,4,0,1,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+b3a73fe08e2e8cd0dcdc34b83ba7c4277aacbf90,2013-11-04 14:58:17+04:00,2013-11-04 14:58:17+04:00,1220,1220,1220,1220,dev build 1.5.1,ModificationType.MODIFY,7191240c75d3a754d124c34d2d84093bde26f2f8,54,46,14,10,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+b3a73fe08e2e8cd0dcdc34b83ba7c4277aacbf90,2013-11-04 14:58:17+04:00,2013-11-04 14:58:17+04:00,1220,1220,1220,1220,dev build 1.5.1,ModificationType.MODIFY,b3a73fe08e2e8cd0dcdc34b83ba7c4277aacbf90,54,46,1,1,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+f32802f48a33b8a7ec9cca32eec4ca844b7d39b2,2013-11-04 19:10:07+04:00,2013-11-04 19:10:07+04:00,1220,1220,1220,1220,build dist,ModificationType.MODIFY,b3a73fe08e2e8cd0dcdc34b83ba7c4277aacbf90,192,112,137,83,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+f32802f48a33b8a7ec9cca32eec4ca844b7d39b2,2013-11-04 19:10:07+04:00,2013-11-04 19:10:07+04:00,1220,1220,1220,1220,build dist,ModificationType.MODIFY,f32802f48a33b8a7ec9cca32eec4ca844b7d39b2,192,112,42,19,Yopai/x-editable,x-editable,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,2200494,1,https://stackoverflow.com/q/2200494
+ccdff0ee513d1bd0be142341566eee726bd04f30,2012-11-09 12:58:42+04:00,2012-11-09 12:58:42+04:00,1220,1220,1220,1220,init,ModificationType.ADD,,105,0,105,0,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+00a451278aa6790719c3d4905a423112c7533d2e,2012-11-14 22:44:18+04:00,2012-11-14 22:44:18+04:00,1220,1220,1220,1220,"move dateui to folder, add jquery-ui-datepicker",ModificationType.MODIFY,ccdff0ee513d1bd0be142341566eee726bd04f30,1,1,1,1,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+0487380535ab9d7db875253638946875e56dbb5c,2012-11-25 13:22:27+04:00,2012-11-25 13:22:27+04:00,1220,1220,1220,1220,checklist test,ModificationType.MODIFY,00a451278aa6790719c3d4905a423112c7533d2e,1,1,1,1,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+396775bf8cd0e1200f122a27a50e5d8a6cbe9bb5,2012-11-27 00:37:15+04:00,2012-11-27 00:37:15+04:00,1220,1220,1220,1220,object.keys workaround,ModificationType.MODIFY,0487380535ab9d7db875253638946875e56dbb5c,100,84,90,80,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+5d3d7d8c4ca0b99b3bcd9f0ba0480979a0bdb110,2012-12-04 17:24:20+04:00,2012-12-04 17:24:20+04:00,1220,1220,1220,1220,implement requirejs loading to test,ModificationType.MODIFY,396775bf8cd0e1200f122a27a50e5d8a6cbe9bb5,3,2,3,2,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+5dfa8bb218bdcaa241ce4c31e9e4fc79d4a1e30e,2013-01-04 16:08:00+04:00,2013-01-04 16:08:00+04:00,1220,1220,1220,1220,"datefield ready, need tests",ModificationType.MODIFY,5d3d7d8c4ca0b99b3bcd9f0ba0480979a0bdb110,29,2,0,1,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+9b9bea9c5425603241849943affb725c3423d7d0,2013-01-05 00:02:40+04:00,2013-01-05 00:02:40+04:00,1220,1220,1220,1220,"date-ui-field ready, need tests",ModificationType.MODIFY,5dfa8bb218bdcaa241ce4c31e9e4fc79d4a1e30e,19,7,19,1,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+ee79d5cec4c2000e84068ec199e1e45bbaea0fd2,2013-01-07 01:03:09+04:00,2013-01-07 01:03:09+04:00,1220,1220,1220,1220,"add wysi input, refactor all inputs to append $tpl to form before render()",ModificationType.MODIFY,9b9bea9c5425603241849943affb725c3423d7d0,38,33,0,20,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+ed722595ba1333536bc6c083267e778b10971fbc,2013-01-08 23:28:11+02:00,2013-01-09 10:25:21+04:00,10541,10541,1220,1220,"Allow arrays for data attributes, fixes #68",ModificationType.MODIFY,ee79d5cec4c2000e84068ec199e1e45bbaea0fd2,1,1,1,1,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+8e2f46f01bcd23c70ae4495b672feb3e0d75c29e,2013-01-11 10:08:52+04:00,2013-01-11 10:08:52+04:00,1220,1220,1220,1220,comments,ModificationType.MODIFY,ed722595ba1333536bc6c083267e778b10971fbc,5,2,2,2,Youraiseme/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+ccdff0ee513d1bd0be142341566eee726bd04f30,2012-11-09 12:58:42+04:00,2012-11-09 12:58:42+04:00,1220,1220,1220,1220,init,ModificationType.ADD,,105,0,105,0,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+00a451278aa6790719c3d4905a423112c7533d2e,2012-11-14 22:44:18+04:00,2012-11-14 22:44:18+04:00,1220,1220,1220,1220,"move dateui to folder, add jquery-ui-datepicker",ModificationType.MODIFY,ccdff0ee513d1bd0be142341566eee726bd04f30,1,1,1,1,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+0487380535ab9d7db875253638946875e56dbb5c,2012-11-25 13:22:27+04:00,2012-11-25 13:22:27+04:00,1220,1220,1220,1220,checklist test,ModificationType.MODIFY,00a451278aa6790719c3d4905a423112c7533d2e,1,1,1,1,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+396775bf8cd0e1200f122a27a50e5d8a6cbe9bb5,2012-11-27 00:37:15+04:00,2012-11-27 00:37:15+04:00,1220,1220,1220,1220,object.keys workaround,ModificationType.MODIFY,0487380535ab9d7db875253638946875e56dbb5c,100,84,90,80,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+5d3d7d8c4ca0b99b3bcd9f0ba0480979a0bdb110,2012-12-04 17:24:20+04:00,2012-12-04 17:24:20+04:00,1220,1220,1220,1220,implement requirejs loading to test,ModificationType.MODIFY,396775bf8cd0e1200f122a27a50e5d8a6cbe9bb5,3,2,3,2,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+5dfa8bb218bdcaa241ce4c31e9e4fc79d4a1e30e,2013-01-04 16:08:00+04:00,2013-01-04 16:08:00+04:00,1220,1220,1220,1220,"datefield ready, need tests",ModificationType.MODIFY,5d3d7d8c4ca0b99b3bcd9f0ba0480979a0bdb110,29,2,0,1,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+9b9bea9c5425603241849943affb725c3423d7d0,2013-01-05 00:02:40+04:00,2013-01-05 00:02:40+04:00,1220,1220,1220,1220,"date-ui-field ready, need tests",ModificationType.MODIFY,5dfa8bb218bdcaa241ce4c31e9e4fc79d4a1e30e,19,7,19,1,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+ee79d5cec4c2000e84068ec199e1e45bbaea0fd2,2013-01-07 01:03:09+04:00,2013-01-07 01:03:09+04:00,1220,1220,1220,1220,"add wysi input, refactor all inputs to append $tpl to form before render()",ModificationType.MODIFY,9b9bea9c5425603241849943affb725c3423d7d0,38,33,0,20,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+ed722595ba1333536bc6c083267e778b10971fbc,2013-01-08 23:28:11+02:00,2013-01-09 10:25:21+04:00,10541,10541,1220,1220,"Allow arrays for data attributes, fixes #68",ModificationType.MODIFY,ee79d5cec4c2000e84068ec199e1e45bbaea0fd2,1,1,1,1,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+8e2f46f01bcd23c70ae4495b672feb3e0d75c29e,2013-01-11 10:08:52+04:00,2013-01-11 10:08:52+04:00,1220,1220,1220,1220,comments,ModificationType.MODIFY,ed722595ba1333536bc6c083267e778b10971fbc,5,2,2,2,Yopai/x-editable,x-editable,44d9162cde2e7b5eff522e651774a8d420631c0c,.js,499126,1,https://stackoverflow.com/q/499126
+ad30bfa11f987ae85fc7d6a5ddd72d75fb805027,2013-06-23 16:26:34+04:00,2013-06-23 16:26:34+04:00,1220,1220,1220,1220,add bower support,ModificationType.ADD,,4644,0,4644,0,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+9136f8d34a3879b7e359e66eaf9dc1feea75295e,2013-06-23 17:40:34+04:00,2013-06-23 17:40:34+04:00,1220,1220,1220,1220,new dist,ModificationType.MODIFY,ad30bfa11f987ae85fc7d6a5ddd72d75fb805027,352,181,102,93,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+dd11d00b70a418bf4865e1518d600d965b300f2f,2013-06-23 18:51:05+04:00,2013-06-23 18:51:05+04:00,1220,1220,1220,1220,new dist,ModificationType.MODIFY,9136f8d34a3879b7e359e66eaf9dc1feea75295e,2,2,1,1,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+71c9d904a653959a979b16dead1edb8c5bbe4aee,2013-06-26 10:30:40+04:00,2013-06-26 10:30:40+04:00,1220,1220,1220,1220,dev build 1.4.6,ModificationType.MODIFY,dd11d00b70a418bf4865e1518d600d965b300f2f,25,14,11,7,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+bdd314bd67cf8605b81332914278224816068e44,2013-06-27 12:48:18+04:00,2013-06-27 12:48:18+04:00,1220,1220,1220,1220,duild dev 1.4.6,ModificationType.MODIFY,71c9d904a653959a979b16dead1edb8c5bbe4aee,36,23,22,19,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+6c247844a585996a1d9025f372ad2c088cc44252,2013-07-07 13:31:24+04:00,2013-07-07 13:31:24+04:00,1220,1220,1220,1220,dev dist,ModificationType.MODIFY,bdd314bd67cf8605b81332914278224816068e44,18,5,1,1,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+d27e43c0cf89b7f9217afc45cab43d72813e3c8d,2013-08-07 11:26:03+04:00,2013-08-07 11:26:03+04:00,1220,1220,1220,1220,dev build 1.4.6,ModificationType.MODIFY,6c247844a585996a1d9025f372ad2c088cc44252,97,9,45,9,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+3b460474337b44abb18e43527eec2b53ffa3aede,2013-08-07 12:19:57+04:00,2013-08-07 12:19:57+04:00,1220,1220,1220,1220,1.4.6-rc,ModificationType.MODIFY,d27e43c0cf89b7f9217afc45cab43d72813e3c8d,12,2,2,1,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+0abd9831ae7c1430f7a940666a76f0d61374fd13,2013-08-31 13:15:19+04:00,2013-08-31 13:15:19+04:00,1220,1220,1220,1220,migrate to grunt 0.4,ModificationType.MODIFY,3b460474337b44abb18e43527eec2b53ffa3aede,23,10,5,8,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+9678bd8c2286f7f1ad2ce61b96f510ea000bb531,2013-09-30 23:07:45+04:00,2013-09-30 23:07:45+04:00,1220,1220,1220,1220,build,ModificationType.MODIFY,0abd9831ae7c1430f7a940666a76f0d61374fd13,70,28,46,17,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+ee099eb0a62e94bc3aa82361344d0fa2039c033f,2013-10-02 00:25:12+04:00,2013-10-02 00:25:12+04:00,1220,1220,1220,1220,build,ModificationType.MODIFY,9678bd8c2286f7f1ad2ce61b96f510ea000bb531,4,4,4,4,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+b86d5f120ab83f2f2457b8fd95b8ab17627ab7e7,2013-10-07 12:54:30+04:00,2013-10-07 12:54:30+04:00,1491,1491,1491,1491,build dev,ModificationType.MODIFY,ee099eb0a62e94bc3aa82361344d0fa2039c033f,59,45,45,44,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+7191240c75d3a754d124c34d2d84093bde26f2f8,2013-10-10 20:42:55+04:00,2013-10-10 20:42:55+04:00,1491,1491,1491,1491,dev build,ModificationType.MODIFY,b86d5f120ab83f2f2457b8fd95b8ab17627ab7e7,13,2,11,2,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+b3a73fe08e2e8cd0dcdc34b83ba7c4277aacbf90,2013-11-04 14:58:17+04:00,2013-11-04 14:58:17+04:00,1220,1220,1220,1220,dev build 1.5.1,ModificationType.MODIFY,7191240c75d3a754d124c34d2d84093bde26f2f8,53,45,16,12,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+f32802f48a33b8a7ec9cca32eec4ca844b7d39b2,2013-11-04 19:10:07+04:00,2013-11-04 19:10:07+04:00,1220,1220,1220,1220,build dist,ModificationType.MODIFY,b3a73fe08e2e8cd0dcdc34b83ba7c4277aacbf90,192,112,137,83,Yopai/x-editable,x-editable,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+071ef630bfa80fc81935db25e5b8810d4d80e392,2017-08-23 12:02:37+10:00,2017-08-23 12:02:37+10:00,10542,10542,10542,10542,Recreate app,ModificationType.DELETE,,0,8,0,8,yhx0634/foodshopfront,foodshopfront,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,2013-06-21 18:37:14+01:00,2013-06-21 18:37:14+01:00,1468,1468,1468,1468,"Graphics shape fill added
+
+shaders optimised - removed need for 4x4 matrix
+draw elipse added
+any shape can now be filled",ModificationType.MODIFY,,671,293,671,293,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,2013-06-22 11:46:57+01:00,2013-06-22 11:46:57+01:00,1468,1468,1468,1468,"Docs updated
+
+example updated
+misplaced files removed",ModificationType.MODIFY,72e38cccb0a5ed4e80c024eafe54abe2f101ccf9,115,100,38,27,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+ee84616ebbce38822fd5c39302a269edd694953e,2013-06-22 22:25:50+01:00,2013-06-22 22:25:50+01:00,1468,1468,1468,1468,Alpha implemented in graphics Object,ModificationType.MODIFY,e91be9b53a0ed0faa5fdcd6925129cfdd4c58f73,21,11,9,9,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+5ce7074dc1ed354bc80f11152af6c56b7179c761,2013-06-23 12:09:18+01:00,2013-06-23 12:09:18+01:00,1468,1468,1468,1468,Example 13 updated,ModificationType.MODIFY,ee84616ebbce38822fd5c39302a269edd694953e,24,3,2,2,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+cfe81283c0b0a3a8f6dc7f253fafc3e49f4d1d5f,2013-06-23 16:24:03+01:00,2013-06-23 16:24:03+01:00,1468,1468,1468,1468,PIxi.js File Built,ModificationType.MODIFY,5ce7074dc1ed354bc80f11152af6c56b7179c761,36,11,27,3,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+c70b525bd2f5e7126de721a4cc26ac88ba0338ae,2013-06-23 17:38:36+01:00,2013-06-23 17:38:41+01:00,1468,1468,1468,1468,"WebGLGraphics PC bug fix
+
+Fixed error with attribs on chrome / ff for pc",ModificationType.MODIFY,cfe81283c0b0a3a8f6dc7f253fafc3e49f4d1d5f,24,4,1,1,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+c6e6f7458e92941daf45cd7a3be5fa47c142f591,2013-06-24 15:32:52+01:00,2013-06-24 15:32:52+01:00,1468,1468,1468,1468,WebGL Render Bug Fix,ModificationType.MODIFY,c70b525bd2f5e7126de721a4cc26ac88ba0338ae,33,18,1,4,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+845f6774be5a133179cb62f69c560586be2278b1,2013-06-26 17:10:31+01:00,2013-06-26 17:10:31+01:00,1468,1468,1468,1468,Fixed interaction bug,ModificationType.MODIFY,c6e6f7458e92941daf45cd7a3be5fa47c142f591,2,1,1,1,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+4d578fe4432ca6ac5d47ba2a41d590cd21154d44,2013-06-29 13:53:09+01:00,2013-06-29 13:53:09+01:00,1468,1468,1468,1468,Linked List update,ModificationType.MODIFY,845f6774be5a133179cb62f69c560586be2278b1,375,265,14,58,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+edda8b451c68d37c851730707421ee23fec5285f,2013-06-29 17:47:56+01:00,2013-06-29 17:47:56+01:00,1468,1468,1468,1468,Bug Fix,ModificationType.MODIFY,4d578fe4432ca6ac5d47ba2a41d590cd21154d44,42,10,6,5,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+e010142b21a6a08188e5d862154c74ece5192582,2013-06-30 10:55:36+01:00,2013-06-30 10:55:36+01:00,1468,1468,1468,1468,Last Object tupdate,ModificationType.MODIFY,edda8b451c68d37c851730707421ee23fec5285f,62,24,2,2,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+d6ae6a0507c17c704fe15e63f8324c8b58ef5a24,2013-06-30 16:23:55+01:00,2013-06-30 16:23:55+01:00,1468,1468,1468,1468,First frame update fixed,ModificationType.MODIFY,e010142b21a6a08188e5d862154c74ece5192582,36,87,0,5,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+73bed4c468ccc374ed09a1805b728c9c879ca21d,2013-06-30 17:29:22+01:00,2013-06-30 17:29:22+01:00,1468,1468,1468,1468,DisplayObject link updated,ModificationType.MODIFY,d6ae6a0507c17c704fe15e63f8324c8b58ef5a24,3,99,0,9,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,2013-07-01 11:53:17+01:00,2013-07-01 11:53:17+01:00,1468,1468,1468,1468,"Filter Adding functionality added
+
+single filter applying now works in canvas and webGL",ModificationType.MODIFY,73bed4c468ccc374ed09a1805b728c9c879ca21d,479,69,20,14,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+3e25e8070973291f393b0d6bc2526110b9265790,2013-07-01 21:22:53+01:00,2013-07-01 21:22:53+01:00,1468,1468,1468,1468,Compiled Version of PIXI.js added,ModificationType.MODIFY,74e0ccc517b9eac60b71d5636758c7a6dcf9cc30,253,52,41,11,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+69b3be322ebb8b96c901ee9bdcbb74aafe9bc56e,2013-07-02 10:48:05+01:00,2013-07-02 10:48:05+01:00,1468,1468,1468,1468,Docs updated Builds updated,ModificationType.MODIFY,3e25e8070973291f393b0d6bc2526110b9265790,33,25,12,5,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+9d32a54bb8579a3047d7691b5ddbcc34aa6ce549,2013-07-24 14:43:59+01:00,2013-07-24 14:43:59+01:00,1468,1468,1468,1468,"Minor update
+
+resize function added to render texture
+fixed bug with masking in webGL causing mask to not show
+fixed bug with incorrect target being returned with interaction event",ModificationType.MODIFY,69b3be322ebb8b96c901ee9bdcbb74aafe9bc56e,28,11,7,5,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+075e2fc2e7897fe45cf17cc020b75d0f9edda1c5,2013-08-18 19:20:06+01:00,2013-08-18 19:20:06+01:00,513,513,513,513,Rebuild the latest version,ModificationType.MODIFY,9d32a54bb8579a3047d7691b5ddbcc34aa6ce549,4762,2022,414,294,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+9eaa024ac5a0459bd3531a856598a057e78169f7,2013-08-20 16:46:50+01:00,2013-08-20 16:46:50+01:00,513,513,513,513,"Bug fix on interaction in canvas
+
+fixed issue where invisible interactive objects are still interactive
+in canvas
+Updated builds too",ModificationType.MODIFY,075e2fc2e7897fe45cf17cc020b75d0f9edda1c5,2,1,1,1,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+0530c7753e1dda1f8bb16ee244e796cf98997093,2013-08-27 11:50:57+01:00,2013-08-27 11:50:57+01:00,513,513,513,513,Rebuild of pixi files,ModificationType.MODIFY,9eaa024ac5a0459bd3531a856598a057e78169f7,4,2,3,2,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+90b16d947d7cf4b54a0f631ff9bbd43f6050251e,2013-08-28 09:55:19+01:00,2013-08-28 09:55:19+01:00,513,513,513,513,Rebuild pixi.js files,ModificationType.MODIFY,0530c7753e1dda1f8bb16ee244e796cf98997093,2,2,1,1,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+fc80c0c602a1a5757a173592ee2d8ef0f4682e9f,2013-09-30 01:19:21+01:00,2013-09-30 01:19:21+01:00,513,513,513,513,"FIlters Added.. again!
+
+some filters added to pixi
+example 15 added too",ModificationType.MODIFY,90b16d947d7cf4b54a0f631ff9bbd43f6050251e,987,776,74,120,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+2f3cf52422b437a95721cd3d32c8aadfa7e05c8b,2013-10-17 16:21:04+01:00,2013-10-17 16:21:04+01:00,513,513,513,513,"ie 11 temp patch
+
+Fixed bug where webGL renderer is used in ie11. WebGL is not currently
+working in ie11 - but fixing issues now",ModificationType.MODIFY,fc80c0c602a1a5757a173592ee2d8ef0f4682e9f,11,5,8,2,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+429851493c3c126801f827db2e6a8dabc4497e08,2013-10-30 23:40:40+00:00,2013-10-30 23:40:40+00:00,513,513,513,513,"Tweaks to Filters runing in render Texture
+
+Added Blur Example",ModificationType.MODIFY,2f3cf52422b437a95721cd3d32c8aadfa7e05c8b,1242,293,566,71,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+a46b74f8cac31f4aed88f9b1d20b3b7ade2ec36e,2013-11-01 13:51:25+00:00,2013-11-01 13:51:25+00:00,513,513,513,513,"Filter Tweaks
+
+Displacement Map Filter tweaked
+Demos created",ModificationType.MODIFY,429851493c3c126801f827db2e6a8dabc4497e08,481,323,65,178,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+85f1bd6557af4a0fea33f4db70a571936c0b1101,2013-11-03 10:46:41+00:00,2013-11-03 10:46:41+00:00,513,513,513,513,"WebGL masking issue fixed
+
+WebGL mask objects can now be nested within masked objects",ModificationType.MODIFY,a46b74f8cac31f4aed88f9b1d20b3b7ade2ec36e,37,12,6,3,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+acc4092e21a7f3803f38f37516e53cd34c50e618,2013-11-03 12:43:17+00:00,2013-11-03 12:43:17+00:00,513,513,513,513,Removed rogue console.log,ModificationType.MODIFY,85f1bd6557af4a0fea33f4db70a571936c0b1101,12,4,0,1,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+f8094acb2b4b7aeb0f7ad96dacde9c462a6439a0,2013-11-03 17:19:35+00:00,2013-11-03 17:19:35+00:00,513,513,513,513,"Graphics Bug fixs
+
+Fixed bug where webGL graphics not working in safari
+Fixed bug where Collinear points cause lines to be draw oddly",ModificationType.MODIFY,acc4092e21a7f3803f38f37516e53cd34c50e618,41,31,13,13,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+4204ada63e6848d92f6569e3e0a78d9cfef44ca0,2013-11-05 19:51:39+00:00,2013-11-05 19:51:39+00:00,513,513,513,513,"Added 2 filters fix filter bug
+
+Fixed filter bug where filters not wotkring on transparent renderer
+Added CrossHatchFilter
+Added RGBSplitFilter
+Updated Example 15",ModificationType.MODIFY,f8094acb2b4b7aeb0f7ad96dacde9c462a6439a0,156,41,3,14,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+49fff52fc85a7a01480486dfbfbfcb8cb73da108,2013-11-20 16:19:25+00:00,2013-11-20 16:19:25+00:00,1330,1330,1330,1330,"Updated PixiShader to use standard uniform naming conventions (1f, 2f, 2fv, etc). Added support for multiple sampler2D calls, allowing multi-texture shaders. Added support for Linear, Repeat, Nearest, Audio and Keyboard textures. Updated all the examples to use the new uniform naming convention. Updated Gruntfile to use the renamed GrayFilter and fixed indexAll in Example 15 to use the GrayFilter as well.",ModificationType.MODIFY,4204ada63e6848d92f6569e3e0a78d9cfef44ca0,12541,12282,0,971,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+d56d6df260daaf3588a78b349e86448225868bf1,2013-12-27 16:21:54+00:00,2013-12-27 16:21:54+00:00,513,513,513,513,refactored webGL renderer,ModificationType.MODIFY,49fff52fc85a7a01480486dfbfbfcb8cb73da108,8974,8095,0,36,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+847eb6c48ee2dfc2655348bedc6f27a325fbfcf9,2014-01-28 00:08:50+00:00,2014-01-28 00:08:50+00:00,513,513,513,513,"Docs updated
+
+Fixed issue where alpha not being set correctly in canvas spriteBatch
+Fixed issue where previous stage events did not get removed correctly",ModificationType.MODIFY,d56d6df260daaf3588a78b349e86448225868bf1,859,238,2,4,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+df8eb5f4fb442e928cac1bb232d454afa7ba0f69,2014-02-02 10:28:08-08:00,2014-02-02 10:28:08-08:00,1469,1469,1469,1469,Remove all references to mat3 or mat4,ModificationType.MODIFY,847eb6c48ee2dfc2655348bedc6f27a325fbfcf9,90,446,0,1,YohanPeloille/pixi.js,pixi.js,086eb633060ced1a25c5db245f5fd9ea395b81a6,.js,2172798,1,https://stackoverflow.com/q/2172798
+f384cd84a9d3195679e60f609203b1b65898d5f8,2015-05-09 18:06:59+02:00,2015-05-09 18:06:59+02:00,10543,10543,10543,10543,Jasmine Tests for 'keys' and 'users' services.,ModificationType.ADD,,4841,0,4841,0,youcrypted/jasmine-tests,jasmine-tests,c5b58504a0e9f5ce631b3d49dbf22b45d787adc6,.js,16245767,1,https://stackoverflow.com/q/16245767
+e0a47d459c06f56e7e5bd4dd8c62d2cbefca200b,2017-05-28 01:19:07-04:00,2017-05-28 01:19:07-04:00,10544,10544,10544,10544,add files,ModificationType.ADD,,115,0,115,0,YSU-Data-Lab/OB-Tree,OB-Tree,8f32d4975522f748f6b2fd1b880d473c7fccd553,.java,453018,1,https://stackoverflow.com/q/453018
+12459bb9aa1ebe1790afd1e165ad98672a081fb7,2014-08-01 18:13:38+07:00,2014-08-01 18:13:38+07:00,10545,10545,10545,10545,update,ModificationType.ADD,,90,0,90,0,yogiekurniawan/JayaMekar-ChromeApp,JayaMekar-ChromeApp,9a6099a657c90576456a26aa4c113c67946c437a,.js,15606751,1,https://stackoverflow.com/q/15606751
+282ea67b115ddbec75db12e9746735fc9557ee6d,2014-08-01 20:04:50+07:00,2014-08-01 20:04:50+07:00,10545,10545,10545,10545,update,ModificationType.MODIFY,12459bb9aa1ebe1790afd1e165ad98672a081fb7,1,1,1,1,yogiekurniawan/JayaMekar-ChromeApp,JayaMekar-ChromeApp,9a6099a657c90576456a26aa4c113c67946c437a,.js,15606751,1,https://stackoverflow.com/q/15606751
+3b373bc5d943dbee989cee50dac36fd14e4b9f04,2014-12-03 17:17:33-08:00,2014-12-03 17:17:33-08:00,10546,10546,10546,10546,task 1 and 2 added. Also a sqlalchemy tutorial..,ModificationType.ADD,,109,0,109,0,YGIronMan/python,python,9eb6c7c13a5db337f6de0dcfcbaaf60f0291b424,.py,14307238,1,https://stackoverflow.com/q/14307238
+aac9f3e64dc39a66a81a9cf829db68d6ad3d49ea,2014-12-04 15:02:22-08:00,2014-12-04 15:02:22-08:00,10546,10546,10546,10546,more sophisticated change for sqlalchemy. 0002,ModificationType.MODIFY,3b373bc5d943dbee989cee50dac36fd14e4b9f04,23,10,10,10,YGIronMan/python,python,9eb6c7c13a5db337f6de0dcfcbaaf60f0291b424,.py,14307238,1,https://stackoverflow.com/q/14307238
+5d2e10825d255446c6afad24c9965fcd887eaf3a,2014-12-04 16:11:38-08:00,2014-12-04 16:38:55-08:00,10546,10546,10546,10546,preliminary solution for task 0004 added.,ModificationType.MODIFY,aac9f3e64dc39a66a81a9cf829db68d6ad3d49ea,1,1,1,1,YGIronMan/python,python,9eb6c7c13a5db337f6de0dcfcbaaf60f0291b424,.py,14307238,1,https://stackoverflow.com/q/14307238
+1f76db823e8cf2f8db46df50efd6f9b8396f9fde,2015-02-18 23:03:55+08:00,2015-02-18 23:03:55+08:00,10547,10547,10547,10547,deleted other files,ModificationType.DELETE,5d2e10825d255446c6afad24c9965fcd887eaf3a,0,118,0,99,YGIronMan/python,python,9eb6c7c13a5db337f6de0dcfcbaaf60f0291b424,.py,14307238,1,https://stackoverflow.com/q/14307238
+384e5ff39c67d6ecfa009963fd5b62f59526402d,2017-06-10 11:32:29-05:00,2017-06-10 11:32:29-05:00,10548,10548,10548,10548,first commit,ModificationType.ADD,,2049,0,2049,0,yichao0319/yichao0319.github.io,yichao0319.github.io,27fce06bbd538c3d36262c84c579f46381241bc6,.js,7264899,1,https://stackoverflow.com/q/7264899
+c31dcb433e177ece026356b05b8c01b52798c54b,2015-03-13 18:26:31-04:00,2015-03-13 18:26:31-04:00,10549,10549,10549,10549,"Angular Tutorial
+
+Code School",ModificationType.ADD,,60,0,60,0,youngfreezy/CodeSchool-Angular-Tutorial,CodeSchool-Angular-Tutorial,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+c2c8b5814767a40e163abc15cfa407f8edaa4968,2017-12-21 12:50:49+08:00,2017-12-21 12:50:49+08:00,10550,10550,10550,10550,upload,ModificationType.ADD,,185,0,185,0,yifon/nodejs-learning,nodejs-learning,7106924934501fd4035efe78678281020328acc5,.js,398120,2,https://stackoverflow.com/a/398120
+ebbd0e0067b6b9d22a80e591a1d17ae7974fbf8d,2015-08-27 17:41:53-07:00,2015-08-27 17:41:53-07:00,10551,10551,10551,10551,"making cursor position after user actions more intuitive, removing filler text when using formatting bar",ModificationType.MODIFY,,123,77,123,77,yudiutomo/chime,chime,119eda931d2269297a36e48edf5eefffeeb0dc29,.js,499126,1,https://stackoverflow.com/q/499126
+eeb1612fb7bf06d41971e136414547d6d56c07c8,2017-01-02 18:03:01+09:00,2017-01-02 18:03:01+09:00,10552,10552,10552,10552,first commit,ModificationType.ADD,,854,0,854,0,ynswon/credit_system,credit_system,46d52d4fe9e5cf0e32753ba6a8bc9c51c4456689,.js,6481612,1,https://stackoverflow.com/q/6481612
+eeb1612fb7bf06d41971e136414547d6d56c07c8,2017-01-02 18:03:01+09:00,2017-01-02 18:03:01+09:00,10552,10552,10552,10552,first commit,ModificationType.ADD,,5118,0,5118,0,ynswon/credit_system,credit_system,6eb122799751cd5dc9770601423ed3253efff7db,.js,499126,1,https://stackoverflow.com/q/499126
+82054be5e2425b518eec8a3ad195104d3655984c,2016-12-21 16:04:04+08:00,2016-12-21 16:04:04+08:00,10553,10553,10553,10553,,ModificationType.ADD,,8348,0,8348,0,ytflzq/laravel-learn-demo,laravel-learn-demo,16702e8b031a5a95fedcced4309633d00dc19306,.js,28210364,2,https://stackoverflow.com/a/28210364
+111e71705c0223c4a43d6ba286ed21861c2eb0cc,2015-10-12 12:23:16+09:00,2015-10-12 12:23:16+09:00,10554,10554,10554,10554,First Commit,ModificationType.ADD,,1304,0,1304,0,yujiandong/simpleforum,simpleforum,72ce174c8d0fee1ac84815af43e0ef6da794313d,.php,271650,2,https://stackoverflow.com/a/271650
+e00b3e1f54131d441c1d3043c58020360afe577f,2016-06-12 17:04:52+09:00,2016-06-12 17:04:52+09:00,10555,10555,10555,10555,v1.1.5,ModificationType.MODIFY,111e71705c0223c4a43d6ba286ed21861c2eb0cc,99,17,13,17,yujiandong/simpleforum,simpleforum,72ce174c8d0fee1ac84815af43e0ef6da794313d,.php,271650,2,https://stackoverflow.com/a/271650
+611c8e20d0de2ac8c40e6d2d4b0837191b381fc0,2017-01-03 17:28:30+09:00,2017-01-03 17:28:30+09:00,10555,10555,10555,10555,v1.2,ModificationType.MODIFY,e00b3e1f54131d441c1d3043c58020360afe577f,11,4,1,3,yujiandong/simpleforum,simpleforum,72ce174c8d0fee1ac84815af43e0ef6da794313d,.php,271650,2,https://stackoverflow.com/a/271650
+3b39d30c85afb640656b9717026ec9de59159cc1,2013-12-07 13:39:20+08:00,2013-12-07 13:40:01+08:00,10556,10556,10556,10556,yc 2013-12-7 13:39:17,ModificationType.ADD,,1575,0,1575,0,yuchuang0606/IndustryService,IndustryService,1506d0697fea559a7dda16c4f57c181188b02d6e,.js,10615589,2,https://stackoverflow.com/a/10615589
+a9ab8b7bf7a1f9b80e1d17bc0a9d00f5fe80f73f,2015-01-21 16:24:43-05:00,2015-01-22 10:20:09-05:00,844,844,844,844,"Remove search overlay
+- Fixes #88
+- Replace overlay with dedicated search page (see /search/index.md)
+- Replace simpleJekyllSearch.js
+- Include pages in search.json index",ModificationType.ADD,,200,0,200,0,yosinkim/yosinkim.github.io,yosinkim.github.io,aa923a671795fa641fe58e01f2b8c691b3a7443c,.js,901115,1,https://stackoverflow.com/q/901115
+c25fad72e50c4ff85d6744367e9a532fa129617e,2015-01-22 11:08:52-05:00,2015-01-22 11:08:52-05:00,844,844,844,844,"Attempt to fix search.json file not found errors
+- Add BASE_URL variable to scripts.html _include to create an absolute URL in search.js for search.json",ModificationType.MODIFY,a9ab8b7bf7a1f9b80e1d17bc0a9d00f5fe80f73f,1,1,1,1,yosinkim/yosinkim.github.io,yosinkim.github.io,aa923a671795fa641fe58e01f2b8c691b3a7443c,.js,901115,1,https://stackoverflow.com/q/901115
+d2ff4f18c35dfae10ab3e82a78831e2d93610757,2015-09-09 16:38:54-04:00,2015-09-09 16:38:54-04:00,10515,10515,10515,10515,"first update
+
+first update",ModificationType.ADD,,2987,0,2987,0,yiducn/airvis,airvis,62942b3653f043394f0046ed29dc19f83515f384,.js,5661671,1,https://stackoverflow.com/q/5661671
+9b49d5843fc8490a3ee97818b2853c28fae180e1,2013-09-09 10:29:05-04:00,2013-09-09 10:29:05-04:00,844,844,844,844,Update scripts,ModificationType.MODIFY,,299,56,299,56,yotsubasociety/yotsubasociety.github.io,yotsubasociety.github.io,bc09b3e08e4ca2ef72f34a6eafc00e21c52705a0,.js,7264899,1,https://stackoverflow.com/q/7264899
+23cb7ecaebf080a42295097c782e5d3f3b1d3fcf,2014-07-31 13:09:32-04:00,2014-07-31 14:57:13-04:00,844,844,844,844,Convert .less to .scss,ModificationType.MODIFY,9b49d5843fc8490a3ee97818b2853c28fae180e1,104,81,16,38,yotsubasociety/yotsubasociety.github.io,yotsubasociety.github.io,bc09b3e08e4ca2ef72f34a6eafc00e21c52705a0,.js,7264899,1,https://stackoverflow.com/q/7264899
+77bd4c6c62ca215f30115c3d617832ddae837334,2015-12-14 19:24:37+01:00,2015-12-14 19:24:37+01:00,10557,10557,10557,10557,Inputs,ModificationType.ADD,,28146,0,28146,0,yoann-dufresne/MaSoYo,MaSoYo,8e9f6306047d58ee0b6605344cd16712efb78fe3,.js,2172798,1,https://stackoverflow.com/q/2172798
+b53367b3150471ad6c04a6574997b2358ff85110,2016-05-27 10:57:02+08:00,2016-05-27 10:57:02+08:00,10558,10558,10558,10558,Add initial museum project,ModificationType.ADD,,5559,0,5559,0,ypandoo/sites,sites,5dd481375e1a11c7918e970dd4cd5078644c8707,.js,11929099,1,https://stackoverflow.com/q/11929099
+b53367b3150471ad6c04a6574997b2358ff85110,2016-05-27 10:57:02+08:00,2016-05-27 10:57:02+08:00,10558,10558,10558,10558,Add initial museum project,ModificationType.ADD,,7108,0,7108,0,ypandoo/sites,sites,d01ea600860b0bb258fb126b239544e6ca1cd969,.js,1444562,1,https://stackoverflow.com/q/1444562
+363fe504a8825fd9c6fdb05137d83d23dc208b07,2016-05-13 16:46:05+08:00,2016-05-13 17:20:43+08:00,10560,10560,10559,10559,项目初始化,ModificationType.ADD,,204,0,204,0,yodfz/JS,JS,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+363fe504a8825fd9c6fdb05137d83d23dc208b07,2016-05-13 16:46:05+08:00,2016-05-13 17:20:43+08:00,10560,10560,10559,10559,项目初始化,ModificationType.ADD,,7252,0,7252,0,yodfz/JS,JS,db2b85e5e627fdc1187d421062380aeca47e0e98,.js,398120,2,https://stackoverflow.com/a/398120
+363fe504a8825fd9c6fdb05137d83d23dc208b07,2016-05-13 16:46:05+08:00,2016-05-13 17:20:43+08:00,10560,10560,10559,10559,项目初始化,ModificationType.ADD,,204,0,204,0,yodfz/JS,JS,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+cadde1d076c2c7d3fe2b69a9cf2f0bf757bc396d,2014-01-03 17:31:53-08:00,2014-01-03 17:31:53-08:00,10561,10561,10561,10561,initial commit,ModificationType.ADD,,551,0,551,0,YotaCL/ghostblog,ghostblog,bf1750d5b645fd174f62041d24c39f51c27a72b3,.js,494122,2,https://stackoverflow.com/a/494122
+cadde1d076c2c7d3fe2b69a9cf2f0bf757bc396d,2014-01-03 17:31:53-08:00,2014-01-03 17:31:53-08:00,10561,10561,10561,10561,initial commit,ModificationType.ADD,,16464,0,16464,0,yoshyosh/ghostblog,ghostblog,37473bbbda493a5eb48a51552dbe7262e0049db3,.js,494122,2,https://stackoverflow.com/a/494122
+1634f56460e85b9ac70cd289f74f94e2d3c7980a,2015-06-05 23:06:56+09:00,2015-06-05 23:06:56+09:00,10562,10562,10562,10562,"1차
+
+블루투스 채팅 / 조명 ui
+test",ModificationType.ADD,,15378,0,15378,0,yunari/lightApp,lightApp,e24ac25433bae2a3390ec0ef5eab9dca64851658,.js,243945,1,https://stackoverflow.com/q/243945
+1c79b83f65519997828681d53c83040354ec7c57,2016-12-11 13:54:17+00:00,2016-12-11 13:54:17+00:00,10563,10563,10563,10563,"Portfolio Upgrade
+
+Massive Upgrade to Portfolio Website",ModificationType.ADD,,25722,0,25722,0,yonisM/scg-association,scg-association,36c17d2ff0afb4d5d0fc482ef19d2b51d6f45ede,.js,3143070,1,https://stackoverflow.com/q/3143070
+c4b654a0d0ff393d47c3f54077f0efbfb5a4cf9e,2012-12-20 23:46:46+01:00,2012-12-20 23:46:46+01:00,5397,5397,5397,5397,Added new Web API Security sample,ModificationType.ADD,,3577,0,3577,0,yonglehou/Thinktecture.IdentityModel.45,Thinktecture.IdentityModel.45,61c2a0e22df037ed7ed2cf9dc277655d16d43fbc,.js,5908494,1,https://stackoverflow.com/q/5908494
+e7fe7097b4b45a6dff2705242782b3cafcd807ee,2013-08-01 23:53:38-04:00,2013-08-01 23:53:38-04:00,10564,10564,10564,10564,Polished the video element,ModificationType.ADD,,6067,0,6067,0,yost/annex-happy,annex-happy,430631f441f291212b031a5ecb84770ca88f60cd,.js,470832,1,https://stackoverflow.com/q/470832
+3ad4af4017e4dc0269c3704222cdbdef463b13ac,2017-06-05 03:41:12+07:00,2017-06-05 03:41:12+07:00,10565,10565,10565,10565,Indohun apps v.1.0,ModificationType.ADD,,912,0,912,0,yhurikyllian/idhnapps,idhnapps,7b3b922251428a6f19cb367de5fc58ec0956089b,.js,359788,1,https://stackoverflow.com/q/359788
+1601082e7901eedeca71b901601611595c72ef4b,2017-02-20 19:37:33+08:00,2017-02-20 19:37:33+08:00,10566,10566,10566,10566,Removed blog and added old stuff back,ModificationType.ADD,,31775,0,31775,0,yu-george/yu-george.github.io,yu-george.github.io,e6c7b08363dde190fd75417c25ed7079c408c6fd,.js,25355178,2,https://stackoverflow.com/a/25355178
+d788116bbc7dd946a8b8f32a5599939abdabece3,2017-09-19 23:38:29-04:00,2017-09-19 23:38:29-04:00,10567,10567,10567,10567,first commit,ModificationType.ADD,,600,0,600,0,yuginaili/CitiBike-Feed-Parser,CitiBike-Feed-Parser,b09a110b8bf7e6e76d59d113654dcc5a329557fd,.js,5438771,2,https://stackoverflow.com/a/5438771
+5f28fd4832aaf195545c70c86b2b864970d1e3d1,2013-04-06 20:54:22+00:00,2013-04-06 20:54:22+00:00,10568,10568,10568,10568,first commit,ModificationType.ADD,,302,0,302,0,YourCyborg/Sun-RPI,Sun-RPI,494ee2f42092078aa7387746599aab344f5de82f,.js,499126,1,https://stackoverflow.com/q/499126
+89155437a53825296db86772ce742eb02b15fd48,2014-09-02 13:36:09+08:00,2014-09-02 13:36:09+08:00,10569,10569,10569,10569,add posts,ModificationType.ADD,,2815,0,2815,0,yhaoao/tushuo-server,tushuo-server,da8fb8969103a55f047e007c952431cbf73435b4,.js,3561493,1,https://stackoverflow.com/q/3561493
+2da4c3421759e6775ce53ea58b26fee173db5e4e,2015-12-19 18:35:23+07:00,2015-12-19 18:35:23+07:00,10448,10448,10448,10448,1111,ModificationType.ADD,,86,0,86,0,yuinakorn/hhj,hhj,4dc5118135a7c09a817a3a37d144ef86e3055c24,.php,8163703,1,https://stackoverflow.com/q/8163703
+2da4c3421759e6775ce53ea58b26fee173db5e4e,2015-12-19 18:35:23+07:00,2015-12-19 18:35:23+07:00,10448,10448,10448,10448,1111,ModificationType.ADD,,3043,0,3043,0,yuinakorn/hhj,hhj,c635ec0b356079d988d10ecba7db39ad4559dd97,.js,3561493,1,https://stackoverflow.com/q/3561493
+00f2d650e509f5344e16b702a73bc991c247134b,2015-01-16 20:15:55+01:00,2015-01-16 21:00:10+01:00,2584,2584,2584,2584,Bug 756533 - Merge devmo app into kuma.core.,ModificationType.DELETE,,0,15,0,15,yfdyh000/kuma,kuma,2daf9a5db694129916d6c18dc8bd03143ee066e1,.py,2095648,2,https://stackoverflow.com/a/2095648
+00f2d650e509f5344e16b702a73bc991c247134b,2015-01-16 20:15:55+01:00,2015-01-16 21:00:10+01:00,2584,2584,2584,2584,Bug 756533 - Merge devmo app into kuma.core.,ModificationType.DELETE,,0,15,0,15,YOTOV-LIMITED/kuma,kuma,7c4cdfd23ad999928d3a090d4a01658ec69e5754,.py,2068407,2,https://stackoverflow.com/a/2068407
+16b83a1be5a6382ff92c26ca8a96937e54976b66,2015-11-19 11:43:40-08:00,2015-11-19 13:01:15-08:00,10570,10570,10570,10570,"Fix Bug 1226034: Console Error from Live Samples
+
+samples.js was raising console errors that looked like this: ""Uncaught Error: Syntax error, unrecognized expression: h2[name=Usage example]"" when used on pages where the code sample title was in an h3.
+
+I tried to switch to just using $(""#""+section) but it turns out we have characters in our IDs that, while legal in HTML5, throw jQuery for a loop. Plain JS FTW.",ModificationType.MODIFY,,4,2,4,2,yfdyh000/kuma,kuma,edf774037c29a5fb945bf28df1c9af473f170773,.js,7695898,1,https://stackoverflow.com/q/7695898
+fee776e73ad9e4e25a4dcb088355057a4d250370,2016-02-08 22:30:45+11:00,2016-02-08 22:30:45+11:00,10571,10571,10571,10571,Redux youtube example init commit,ModificationType.ADD,,108,0,108,0,yongliu2001/ReduxExample,ReduxExample,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+fee776e73ad9e4e25a4dcb088355057a4d250370,2016-02-08 22:30:45+11:00,2016-02-08 22:30:45+11:00,10571,10571,10571,10571,Redux youtube example init commit,ModificationType.ADD,,108,0,108,0,yongliu2001/ReduxExample,ReduxExample,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+fee776e73ad9e4e25a4dcb088355057a4d250370,2016-02-08 22:30:45+11:00,2016-02-08 22:30:45+11:00,10571,10571,10571,10571,Redux youtube example init commit,ModificationType.ADD,,108,0,108,0,yongliu2001/ReduxExample,ReduxExample,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+fee776e73ad9e4e25a4dcb088355057a4d250370,2016-02-08 22:30:45+11:00,2016-02-08 22:30:45+11:00,10571,10571,10571,10571,Redux youtube example init commit,ModificationType.ADD,,108,0,108,0,yongliu2001/ReduxExample,ReduxExample,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+fee776e73ad9e4e25a4dcb088355057a4d250370,2016-02-08 22:30:45+11:00,2016-02-08 22:30:45+11:00,10571,10571,10571,10571,Redux youtube example init commit,ModificationType.ADD,,108,0,108,0,yongliu2001/ReduxExample,ReduxExample,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+fee776e73ad9e4e25a4dcb088355057a4d250370,2016-02-08 22:30:45+11:00,2016-02-08 22:30:45+11:00,10571,10571,10571,10571,Redux youtube example init commit,ModificationType.ADD,,108,0,108,0,yongliu2001/ReduxExample,ReduxExample,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+13e6ba80760e4692a0004203c2e4648014e3643b,2015-10-25 10:18:58-07:00,2015-10-25 10:18:58-07:00,10572,10572,10572,10572,push,ModificationType.ADD,,96,0,96,0,yumikokk/bringMe,bringMe,deb914ab7a49a3ee05c3389a51c26fce92a0f9d3,.java,7696791,2,https://stackoverflow.com/a/7696791
+13e6ba80760e4692a0004203c2e4648014e3643b,2015-10-25 10:18:58-07:00,2015-10-25 10:18:58-07:00,10572,10572,10572,10572,push,ModificationType.ADD,,28364,0,28364,0,yumikokk/bringMe,bringMe,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+6a0780e91f41f6a3570b6967648af8270d0285bb,2016-05-05 08:43:19+08:00,2016-05-05 08:43:19+08:00,10573,10573,10573,10573,init,ModificationType.ADD,,5,0,5,0,Yourbadman/my_resunes,my_resunes,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+0c1b012e4b4a5ec06d87a5a65870c803b5e030d6,2014-09-01 12:38:40+01:00,2014-09-01 12:38:40+01:00,10574,10574,10574,10574,First commit,ModificationType.ADD,,339,0,339,0,youssef-agadir/BolgSolr,BolgSolr,899da20a5a2f03ec0b3cfa06bbe19645251b934a,.php,4069002,1,https://stackoverflow.com/q/4069002
+3a50511bfafacbd758259c1ac2f3c621e39aacb5,2017-01-03 21:09:44-08:00,2017-01-03 21:09:44-08:00,10373,10373,10373,10373,ret: add babel local npm modules.,ModificationType.ADD,,190,0,190,0,yevheniyc/C,C,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+3a50511bfafacbd758259c1ac2f3c621e39aacb5,2017-01-03 21:09:44-08:00,2017-01-03 21:09:44-08:00,10373,10373,10373,10373,ret: add babel local npm modules.,ModificationType.ADD,,4,0,4,0,yevheniyc/C,C,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+68c429cf387d95cee5dfb962a6768f76cd36fc2c,2015-02-03 19:06:12+08:00,2015-02-03 19:06:12+08:00,10575,10575,10575,10575,Solves the problem cannot be run in the real devices.,ModificationType.ADD,,765,0,765,0,ytx0574/MVVMReactiveCocoa,MVVMReactiveCocoa,7c87984e2bbf9a2699ce8a3c1109717a58bae20c,.js,494122,2,https://stackoverflow.com/a/494122
+1fcfc5085e3795525542a8e3daa3b90ca47cd62b,2015-10-25 21:16:12-04:00,2015-10-25 21:16:12-04:00,10576,10576,10576,10576,inital commit,ModificationType.ADD,,168,0,168,0,Yorden/DomoProjo,DomoProjo,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+952a49d85c044b35a930b816f34becb46f528f63,2017-01-29 04:54:53-05:00,2017-01-29 04:54:53-05:00,10577,10577,10577,10577,Added homepage,ModificationType.ADD,,9,0,9,0,yjiang28/Hackers,Hackers,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+952a49d85c044b35a930b816f34becb46f528f63,2017-01-29 04:54:53-05:00,2017-01-29 04:54:53-05:00,10577,10577,10577,10577,Added homepage,ModificationType.MODIFY,952a49d85c044b35a930b816f34becb46f528f63,41,185,0,3,yjiang28/Hackers,Hackers,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+aa388e97135653bb4967e5fd324d61759064d7aa,2017-01-28 22:27:19-05:00,2017-01-28 22:27:23-05:00,10578,10578,10578,10578,added platform folder to cordova folder,ModificationType.ADD,,67,0,67,0,yjiang28/Hackers,Hackers,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+0c8cf5e2359771d6c1f11396441da853b73c348c,2011-06-17 11:47:52-04:00,2011-06-17 11:47:52-04:00,10579,10579,10579,10579,Initial Commit,ModificationType.ADD,,37,0,37,0,yichaoS/cbioportal,cbioportal,a3a410c9e082192353d01bfda56a6f6b89cdf66e,.java,356807,1,https://stackoverflow.com/q/356807
+9e89fa35905202365a896f5ac4d471b95a4b154e,2012-07-19 15:20:45-04:00,2012-07-19 15:20:45-04:00,10580,10580,10580,10580,package rename,ModificationType.MODIFY,0c8cf5e2359771d6c1f11396441da853b73c348c,1,1,1,1,yichaoS/cbioportal,cbioportal,a3a410c9e082192353d01bfda56a6f6b89cdf66e,.java,356807,1,https://stackoverflow.com/q/356807
+792e621658ca26ac252d6ace75b0f7355e7f92db,2016-04-18 21:25:33-04:00,2016-04-18 21:25:33-04:00,10581,10581,10581,10581,Initial commit.,ModificationType.ADD,,216,0,216,0,yllus/hopenotdope_site,hopenotdope_site,5957babc20d10317b1654184f2a8a21504bdf49d,.php,4049856,1,https://stackoverflow.com/q/4049856
+4176a61ac9663b71a95dae0d01a1379481a35eb6,2016-04-06 17:17:45+08:00,2016-04-06 17:18:56+08:00,10582,10582,10582,10582,"Just NFD in Android.
+Successfully transplant in the android from github:
+https://github.com/named-data-mobile/NFD-android",ModificationType.ADD,,437,0,437,0,YuanKQ/NFD_for_android,NFD_for_android,4f729650f4e78771b29f10e8e0898ba42915a576,.java,8141537,2,https://stackoverflow.com/a/8141537
+10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,2012-06-01 16:35:36+03:00,2012-06-01 16:35:36+03:00,1,1,1,1,bad adware scanner,ModificationType.ADD,,148,0,148,0,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+983ad37704a42cd25475dd571a34e7c7b8d5e9cb,2014-09-04 00:40:26+02:00,2014-09-04 00:40:26+02:00,2,2,2,2,"Formatting, code cleanup",ModificationType.MODIFY,10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,5,5,5,5,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+c0243fd968ea456694f417ad0577a1d6e944768d,2014-09-13 15:38:59+03:00,2014-09-13 15:38:59+03:00,3,3,3,3,"Adware scan improvements
+
+* Adware scan does not continue in background if back button is pressed
+* Fixed scanning called twice",ModificationType.MODIFY,983ad37704a42cd25475dd571a34e7c7b8d5e9cb,3,6,3,6,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+45e4cb8eb40567933a430b29075529dc0e3afaa9,2014-08-25 16:17:17+08:00,2014-08-25 16:17:17+08:00,10569,10569,10569,10569,add userInfo,ModificationType.ADD,,71,0,71,0,yhaoao/tushuo-client,tushuo-client,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+ccf49a27b43d77a96e3f8618fb019a3b9ed57b72,2016-10-22 13:16:59+02:00,2016-10-22 16:13:58+02:00,501,501,501,501,Initial public commit,ModificationType.ADD,,27,0,27,0,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+ccae33525f314d57e2d23e4efdda32502d542cd8,2016-10-28 12:03:37+02:00,2016-10-28 12:03:37+02:00,501,501,501,501,Release version 0.1.0,ModificationType.MODIFY,ccf49a27b43d77a96e3f8618fb019a3b9ed57b72,1,1,1,1,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+42007e0c0466b9b071bf916ed20abd05ba4435bf,2016-11-05 19:19:40+01:00,2016-11-05 19:19:40+01:00,501,501,501,501,Release version 0.1.1,ModificationType.MODIFY,ccae33525f314d57e2d23e4efdda32502d542cd8,1,1,1,1,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+0a8821d098bbcd0781dbf15c8cd8c74e044d583e,2016-11-18 22:17:37+01:00,2016-11-18 22:17:37+01:00,501,501,501,501,Release version 0.1.1,ModificationType.MODIFY,42007e0c0466b9b071bf916ed20abd05ba4435bf,1,1,1,1,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+da29ead2677bdee84e5ed015ac4765db75514bcc,2017-02-14 00:05:36+01:00,2017-02-14 00:05:36+01:00,501,501,501,501,Release version 0.1.3,ModificationType.MODIFY,0a8821d098bbcd0781dbf15c8cd8c74e044d583e,2,2,2,2,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+e529b426ec382322cf77b7db267b2c1a62ccce82,2017-02-21 19:59:30+01:00,2017-02-21 19:59:30+01:00,501,501,501,501,Release version 0.1.4,ModificationType.MODIFY,da29ead2677bdee84e5ed015ac4765db75514bcc,1,1,1,1,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+c0af680ee615868f08cbd7b58b12fdad1936fe3b,2017-03-16 20:26:07+01:00,2017-03-16 20:26:07+01:00,501,501,501,501,Release version 0.1.5,ModificationType.MODIFY,e529b426ec382322cf77b7db267b2c1a62ccce82,1,1,1,1,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+a34a56d50593c8862d4c00e1c8f6ed5e05ad8f44,2017-03-24 20:44:58+01:00,2017-03-24 20:44:58+01:00,501,501,501,501,Include copyright section in docs by including _meta.py,ModificationType.MODIFY,c0af680ee615868f08cbd7b58b12fdad1936fe3b,2,2,2,2,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+3bf00c6fd80250af33fc4250cbfe769ff4405890,2017-04-29 11:10:01+02:00,2017-04-29 11:10:01+02:00,501,501,501,501,Release version 0.1.6,ModificationType.MODIFY,a34a56d50593c8862d4c00e1c8f6ed5e05ad8f44,1,1,1,1,ypid/yaml4rst,yaml4rst,4099d606595479251e86cfb4e0fea43bc03f73f6,.py,16084844,2,https://stackoverflow.com/a/16084844
+227509031620f62e0a5e43adecc37c65190d5483,2017-01-16 01:58:44+08:00,2017-01-16 01:58:44+08:00,10583,10583,10583,10583,second commit,ModificationType.ADD,,912,0,912,0,ysabellee/ysabellee.github.io,ysabellee.github.io,29cbb083eb8a5244c0d86db8d9d4b7402676c188,.js,359788,1,https://stackoverflow.com/q/359788
+89725680ce0f88deeb78ce69c8b6bdb8f0548649,2015-01-08 17:43:06+08:00,2015-01-08 17:43:06+08:00,10584,10584,10584,10584,change frontend theme,ModificationType.ADD,,9523,0,9523,0,yincart/basic,basic,d96dc69e403ec9552c37010cdd750813ca8c36d8,.js,4361826,1,https://stackoverflow.com/q/4361826
+89725680ce0f88deeb78ce69c8b6bdb8f0548649,2015-01-08 17:43:06+08:00,2015-01-08 17:43:06+08:00,10584,10584,10584,10584,change frontend theme,ModificationType.ADD,,5573,0,5573,0,yincart/basic,basic,67f9a3ecc79406fcdd915a27c1c0b995711ca188,.js,7410348,1,https://stackoverflow.com/q/7410348
+66f201751f51996dd0241f3aabd3dc14286dfb46,2016-08-14 17:26:39+00:00,2016-08-14 17:26:39+00:00,10585,10585,10585,10585,Initial commit,ModificationType.ADD,,1045,0,1045,0,yosymfony/Blog.yosymfony.com,Blog.yosymfony.com,61569b0410733ae440a4883b71271e392bbf39ff,.js,359788,1,https://stackoverflow.com/q/359788
+2a2b16412b7c1219bf8ac6996e9909bbf55790f4,2017-03-29 12:05:35-04:00,2017-03-29 12:05:35-04:00,10586,10586,10586,10586,initial upload,ModificationType.ADD,,101,0,101,0,yuanagain/seniorthesis,seniorthesis,53216ab421f822b2c8d9f2189a16f3477f5361cb,.py,2390827,1,https://stackoverflow.com/q/2390827
+b8cb5e2a28ccbd60235eeded97838cc75063a386,2014-11-06 23:22:09+03:00,2014-11-06 23:22:26+03:00,1142,1142,1142,1142,Fixes #4263: Added migration and SQL schema files for `yii\log\DbTarget`,ModificationType.ADD,,87,0,87,0,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+42ca4bb9912b724a0c84ebaf3b9d1f9b6676534d,2014-11-12 14:06:26+03:00,2014-11-12 14:06:39+03:00,1142,1142,1142,1142,Fixed `yii\log\DbTarget` migration and SQLs to use float column for log_time,ModificationType.MODIFY,b8cb5e2a28ccbd60235eeded97838cc75063a386,1,1,1,1,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+796a0e6156dae5e3a6b22707c0ae94d3d45d93dd,2015-02-26 04:11:27+03:00,2015-02-26 04:11:27+03:00,1142,1142,1142,1142,Fixes #7383: Fix precision loss in log timestamps when using `yii\log\DBTarget`,ModificationType.MODIFY,42ca4bb9912b724a0c84ebaf3b9d1f9b6676534d,1,1,1,1,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+540883e17925a724348bdae0e145435800f8b81a,2015-10-05 06:02:11+02:00,2015-10-05 06:02:11+02:00,5044,5044,5044,5044,Update syntax migration,ModificationType.MODIFY,796a0e6156dae5e3a6b22707c0ae94d3d45d93dd,6,7,6,7,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+0a60466729661ab1f8429875f096955f88311c42,2016-05-29 20:19:13+02:00,2016-06-06 19:33:22+03:00,10587,10587,1142,1142,Fixes #11527: Fixed `bigPrimaryKey()` for SQLite,ModificationType.MODIFY,540883e17925a724348bdae0e145435800f8b81a,1,1,1,1,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+7cea46bcb4816b10a15ee945643999b7ddfd9fbe,2016-06-06 19:57:42+03:00,2016-06-06 19:57:42+03:00,1142,1142,1142,1142,Changed SQLite fix #11652 according to https://github.com/yiisoft/yii2/pull/11653#issuecomment-224016289,ModificationType.MODIFY,0a60466729661ab1f8429875f096955f88311c42,1,1,1,1,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+3ea671454c8eff030ad7f24f6b2262f28683b203,2016-12-13 12:43:45+05:00,2017-01-15 21:53:36+03:00,10588,10588,1142,1142,Fixes #12133: Fixed `getDbTargets()` function in `yii\log\migrations\m141106_185632_log_init` that would create a log table correctly,ModificationType.MODIFY,7cea46bcb4816b10a15ee945643999b7ddfd9fbe,11,2,10,2,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+1a74b3d4f8fce600aa4369b8ba26c9f9d8c8ac82,2018-03-11 23:37:19+01:00,2018-03-12 01:37:19+03:00,6401,6401,1142,1142,"[minor] SCA with Php Inspections (EA Ultimate) (#15871)
+
+* Php Inspections (EA Ultimate): use type casting where applicable
+
+* Php Inspections (EA Ultimate): use constants where applicable
+
+* Php Inspections (EA Ultimate): CS
+
+* Php Inspections (EA Ultimate): address some of one-time used variables
+
+* Php Inspections (EA Ultimate): address some of performance-related findings
+
+* Php Inspections (EA Ultimate): address some of performance-related findings
+
+* Php Inspections (EA Ultimate): revert a constant usage
+
+* Php Inspections (EA Ultimate): revert sequential assignments
+
+* Php Inspections (EA Ultimate): build is green again
+
+* Php Inspections (EA Ultimate): revert array_merge tweaks
+
+* Php Inspections (EA Ultimate): revert BC-incompatible one-time used variable tweak
+
+* Update description [skip ci]
+
+* Php Inspections (EA Ultimate): CS",ModificationType.MODIFY,3ea671454c8eff030ad7f24f6b2262f28683b203,2,4,2,4,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+83679ae5650281ac59852201804b36dcc84dd8a5,2019-01-13 11:44:58+08:00,2019-01-13 11:44:58+08:00,10589,10589,10589,10589,翻译,ModificationType.MODIFY,1a74b3d4f8fce600aa4369b8ba26c9f9d8c8ac82,6,6,6,6,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+9dc870c965c019da53b8bd2f37296a56d8e1fe24,2019-03-07 17:04:35+08:00,2019-03-07 17:04:35+08:00,10589,10589,10589,10589,撤销程序内翻译,ModificationType.MODIFY,83679ae5650281ac59852201804b36dcc84dd8a5,1,1,1,1,yiichina/yii2,yii2,4a8b5b54c13429d6df19826e115dc49f2ece1a2c,.php,766809,1,https://stackoverflow.com/q/766809
+42a6206743e78ee28200816842ef5e96d79347aa,2016-09-21 23:13:13+08:00,2016-09-21 23:13:13+08:00,10590,10590,10590,10590,getList api ok,ModificationType.ADD,,678,0,678,0,yun-ru/adminlte,adminlte,bd187f59be21c27f929597d1252d15f217d86d07,.js,181348,1,https://stackoverflow.com/q/181348
+789a8d74e86b2280dabf6dcb97c14906bf9ccfef,2016-09-21 21:51:50+02:00,2016-09-21 21:51:50+02:00,10591,10591,10591,10591,install wordpress,ModificationType.ADD,,164,0,164,0,yoanngern/iahm_2016,iahm_2016,77011672e12bbc289914c9bfe29fd4b6bfe1e6f0,.php,8736013,2,https://stackoverflow.com/a/8736013
+f61d6d4916418e3377005df66ff7c9727b5a3d05,2017-02-13 13:04:30+08:00,2017-02-13 13:04:30+08:00,10592,10592,10592,10592,final,ModificationType.ADD,,8591,0,8591,0,yucpa/yucpa.github.io,yucpa.github.io,1f57ea0b2a29b51fe4f2cfd1b6c856911e54e4c2,.js,7264899,1,https://stackoverflow.com/q/7264899
+76cfa3ab868a25c74a48054863ffb85453ce4a88,2015-10-11 10:20:14+03:00,2015-10-11 10:20:14+03:00,10593,10593,10593,10593,init commit,ModificationType.ADD,,3195,0,3195,0,ymWebComponents/moment-time,moment-time,23cd3ede14eb1e9bcc2df73b508304c604f985b4,.js,3561493,1,https://stackoverflow.com/q/3561493
+5d5dd381c7f25a5c592b28bac80364f8c68d2534,2016-01-02 15:33:36-08:00,2016-01-02 15:33:36-08:00,10479,10479,10479,10479,My first test with chai and mocha,ModificationType.ADD,,168,0,168,0,Yueyue07/chai-mocha-basics,chai-mocha-basics,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+262a1c06b84dbcf16867e88f03d1ef71a7e3aa9d,2015-05-14 13:20:05+07:00,2015-05-14 13:20:05+07:00,10594,10594,10594,10594,Yoga - Wordpress shopping cart,ModificationType.ADD,,1881,0,1881,0,yogaValdlabs/shopingchart,shopingchart,a8f1a1e7f219be587d231be3cefb0bf31e5e71ce,.js,12866060,1,https://stackoverflow.com/q/12866060
+e5b1faace60901ad89119ff72159139e7ddf3172,2013-10-02 01:16:40+01:00,2013-10-02 01:16:40+01:00,146,146,146,146,Preparing more documentation.,ModificationType.ADD,,1157,0,1157,0,youprofit/phaser,phaser,b97028cfbbe7fb9ebe5193a4e27392678590c0b3,.js,3561711,2,https://stackoverflow.com/a/3561711
+716c76fa5d63b3d4928162de663f53afb0465b58,2016-11-21 17:39:02+08:00,2016-11-21 17:39:02+08:00,10595,10595,10595,10595,initilization without any modification,ModificationType.ADD,,12674,0,12674,0,yinix/NewNetProto,NewNetProto,cbe67697d395f8f2a4e18b7eb7b527d3a3a4eb37,.js,32954565,2,https://stackoverflow.com/a/32954565
+716c76fa5d63b3d4928162de663f53afb0465b58,2016-11-21 17:39:02+08:00,2016-11-21 17:39:02+08:00,10595,10595,10595,10595,initilization without any modification,ModificationType.ADD,,1905,0,1905,0,yinix/NewNetProto,NewNetProto,dd136b921c20b646d2a6d4986da49982522735a6,.js,451486,1,https://stackoverflow.com/q/451486
+8507d11704ae890c4cabfe3b3f21406f5b072e9a,2017-08-31 12:11:58+02:00,2017-08-31 12:11:58+02:00,10596,10596,10596,10596,initialisation,ModificationType.ADD,,448,0,448,0,YingHenry/doc,doc,4a6b742ea0a9c03c03d78a58148e12354656385c,.php,4069002,1,https://stackoverflow.com/q/4069002
+3a5509eb6a8e97c7dce80754f99767e7672046c0,2011-02-19 13:15:51+03:00,2011-02-19 13:15:51+03:00,10597,10597,10597,10597,"+ Click on Widget opens the timeline, that has something new, in this order: messages, mentions, tweets
+# Maximum History time (to store tweets) is 1 year now
+# OAuth is On By Default.
+# Mentions are not ""quick Search"" any more, they are just another type of ""Timeline"".
+	  So we may search in Mentions also.
+# ""Automatic updates"" setting is not being turned off by the System.
++ Added changes.xml file to document recent changes (it's not used in code yet)",ModificationType.MODIFY,,23,59,23,59,YJSoft/yyj0006-andtweet,yyj0006-andtweet,41ca7d89ab10ab1be46d61a8e9b9fe2a54b542a3,.java,1198558,1,https://stackoverflow.com/q/1198558
+74ab366e9a52092e6c0306c4a7b8f63df0a53b82,2011-07-25 23:19:49+04:00,2011-07-25 23:19:49+04:00,10597,10597,10597,10597,"1. ""Destroy status"" and Rate limit request made asynchronous also.</change>
+2. Widget shows last time when data was successfully downloaded from the server, not when there was last attempt to do this (maybe it failed...)",ModificationType.MODIFY,3a5509eb6a8e97c7dce80754f99767e7672046c0,40,38,0,2,YJSoft/yyj0006-andtweet,yyj0006-andtweet,41ca7d89ab10ab1be46d61a8e9b9fe2a54b542a3,.java,1198558,1,https://stackoverflow.com/q/1198558
+55dd3cd6c9051cfea232d9a0d204d15a04270b5b,2017-08-20 01:14:19+07:00,2017-08-20 01:14:19+07:00,10598,10598,10598,10598,First commit with base project.,ModificationType.ADD,,390,0,390,0,yrshaikh/Issue-Tracker,Issue-Tracker,aa4621f378368de910a0bcc4b779ae19ee558948,.js,26603875,2,https://stackoverflow.com/a/26603875
+7fe01e6acdb0f58a892e67bfddd389690a5c60f9,2017-08-20 17:11:43+07:00,2017-09-02 09:54:03+05:18,10598,10598,10599,10599,Setup gulp and bower and bootstrap,ModificationType.MODIFY,55dd3cd6c9051cfea232d9a0d204d15a04270b5b,1,1,1,1,yrshaikh/Issue-Tracker,Issue-Tracker,aa4621f378368de910a0bcc4b779ae19ee558948,.js,26603875,2,https://stackoverflow.com/a/26603875

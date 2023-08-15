@@ -1,0 +1,784 @@
+Hash,AuthorDate,CommiterDate,AuthorEmail,AuthorName,CommiterEmail,CommiterName,Message,ChangeType,ParentCommit,AddedLinesInCommit,RemovedLinesInCommit,AddedLinesInContext,RemovedLinesInContext,Repo,RepoName,FileId,FileExt,PostId,PostTypeId,SOUrl
+88372a3b9443250c4840957d7b06e3fb253eaa92,2017-02-07 12:03:34-03:00,2017-02-07 12:03:34-03:00,4937,4937,4937,4937,"Updating the ELK Stack (except the logstash) to the 5.2.0 version.
+
+* Committing elasticsearch, filebeat and kibana tools without any modification.
+
+* The logstash tool could not be updated due to an error related with path with whitespaces. There is an open issue in the logstash repo related to this: https://github.com/elastic/logstash/issues/6311. When the tool is executed, the following error is exhibited:
+
+An unexpected error occurred! : Error => bad URI (is not URI?): File: // c: / Program Files / Logstash / confi g / log4j2.properties",ModificationType.DELETE,,0,94,0,94,rosberglinhares/IISLogMonitor,IISLogMonitor,6c8d160de3ff57b7de9ec75092d0085eab9168a2,.js,472729,2,https://stackoverflow.com/a/472729
+bdd6fd7cda332bc36ec7d3394d7d424c8cbe13db,2014-10-31 18:15:45-05:00,2014-10-31 18:15:45-05:00,4938,4938,4938,4938,proyecto v0,ModificationType.ADD,,22030,0,22030,0,rosero25/inscripcionFiesta,inscripcionFiesta,0b1ab1795aab73ac52b4664ad736f0eb1abddc75,.js,472729,2,https://stackoverflow.com/a/472729
+e33c7adf5d726eadd4f811c1a989990f40f4e49b,2014-10-27 11:27:09+00:00,2014-10-27 11:27:09+00:00,2755,2755,2755,2755,"59cRC3 code merge
+
+
+git-svn-id: svn+ssh://svn.cern.ch/reps/panda/pilot/trunk@20266 d4488797-78bc-619e-cc48-e4164af92aee",ModificationType.ADD,,628,0,628,0,RRCKI/pilot,pilot,94cca40f04056e134224e320969d4d2f8810e323,.py,42558,1,https://stackoverflow.com/q/42558
+53e7d4cb62d33fe4cc1cea62be103392e71d9841,2015-03-23 16:37:52+01:00,2015-03-23 16:37:52+01:00,2756,2756,2756,2756,Changed unused region variable,ModificationType.MODIFY,e33c7adf5d726eadd4f811c1a989990f40f4e49b,0,1,0,1,RRCKI/pilot,pilot,94cca40f04056e134224e320969d4d2f8810e323,.py,42558,1,https://stackoverflow.com/q/42558
+39951ca99a35122b68545d221cae0f36faaeee60,2014-11-11 14:43:10-06:00,2014-11-11 14:43:10-06:00,746,746,746,746,"refactor(): navigation improvements, Angular 1.3
+
+#### Refactor:
+
+* **Navigation:** Refactored navigation for improved performance,
+reduce DOM manipulations, increase transition FPS, cached views,
+smoother transitions, platform specific transitions with added
+configurable controls for transition animation and direction.
+* **Cached Views:** Previously as a user navigated an app, each leaving
+view’s element and scope would be destroyed. If the same view was
+accessed again then the app would have to recreate the element. Views
+can now be cached to improve performance. When a view is navigated away
+from, its element is left in the DOM, and its scope is disconnected
+from the cycle. When navigating to a view which is already cached, its
+scope is reconnected, and the existing element which was left in the
+DOM becomes the active view. This also allows for scroll position of
+previous views to be maintained (without skippy jumps). Config
+variables can be used to disable view caching (set to 0), or change the
+maximum number of views to cache.
+* **Angular v1.3:** Upgraded Ionic’s to work with Angular v1.3. In
+general Ionic just works with the upgrade, but the required change was
+that animations in v1.3 uses promise, whereas in v1.2 animations used
+callbacks.
+
+#### Features:
+
+* **Platform Specific Transitions:** Transitions between views now
+default to the transition style appropriate for each platform. For
+example, iOS will move forward by transitioning the entering view from
+right to center, and the leaving view from center to left. However,
+Android will transition with the entering view going from bottom to
+center, covering the previous view, which remains stationary. Platform
+transitions are automatically applied by default, but config variables
+and custom CSS allows these defaults to be easily overridden.
+* **Override Transition Type and Direction:** As a user navigates the
+app, Ionic automatically applies the appropriate transition type for
+the platform, and the direction the user is navigating. However, both
+can be overridden in numerous ways: config variable, view attribute,
+stateProvider property, or attribute on the button/link that initiated
+the transition.
+* **enable-menu-with-back-views:** The `enable-menu-with-back-views`
+attribute determines if the side menu is enabled when the back button
+is showing. When set to `false`, any buttons/links with the
+`menuToggle` directive will be hidden, and the user cannot swipe to
+open the menu. When going back to the root page of the side menu (the
+page without a back button visible), then any menuToggle buttons will
+show again, and menus will be enabled again.
+* **menuClose:** Closes a side menu which is currently opened.
+Additionally, the menuClose directive will now cause transitions to not
+animate between views while the menu is being closed.
+* **ionNavBackButton:** The back button icon and text will
+automatically update to platform config defaults, such as adjusting to
+the platform back icon. To take advantage of this, the
+`ionNavBackButton` directive now should be empty, such as
+`<ion-nav-back-button></ion-nav-back-button>`. The back button can
+still be fully customized like it could before, but without any inner
+content it knows to style using platform configs.
+* **navBar button primary/secondary sides:** Primary and secondary
+sides are now the recommended values for the `side` attribute, such as
+`<ion-nav-buttons side=""primary"">`. Primary buttons generally map to
+the left side of the header, and secondary buttons are generally on the
+right side. However, their exact locations are platform specific. For
+example, in iOS the primary buttons are on the far left of the header,
+and secondary buttons are on the far right, with the header title
+centered between them. For Android however, both groups of buttons are
+on the far right of the header, with the header title aligned left.
+Recommendation is to always use `primary` and `secondary` so buttons
+correctly map to the side familiar to users of a platform. However, in
+cases where buttons should always be on an exact side, both `left` and
+`right` sides are still available.
+* **navDirection:** An attribute directive that sets the direction
+which the nav view transition should animate.
+* **navTransition:** An attribute directive that sets the transition
+type which the nav view transition should use when it animates. Using
+`none` will disable an animation.
+
+#### Breaking Changes:
+
+* **Animation CSS:** The CSS for view transitions have changed. This is
+a breaking change only if Ionic apps had customized Ionic’s animation
+CSS.
+* **$ionicPlatformDefaults:** Platform config variables are no longer
+in the $ionicPlatformDefaults constant, but within `$ionicConfig`.
+* **$ionicViewService:** In the navigation refactoring,
+$ionicViewService was split up into two factories, `$ionicViewSwitcher`
+and `$ionicHistory`. The `$ionicHistory` is largely what
+`$ionicViewService`, but between the two factories there is a better
+separation of concerns for improved testing.
+* **navClear:** The navClear directive was created to do what the new
+side menu `enable-menu-with-back-views` attribute accomplishes.
+Additionally, the new `navTransition` and `navDirection` directives are
+more useful and granular than the navClear directive.
+* **scrollView.rememberScrollPosition:** This method has been removed
+since it is no longer needed with cached views.
+
+#### Deprecated:
+
+* **ionView.title:** The `ionView` directive used the `title`
+attribute, but this can cause the tooltip to show up on desktop
+browsers. The `title` attribute will still work for backwards
+compatibility, but we now recommend using `view-title`, such as
+`<ion-view view-title=”My Title”>`.
+* **ionNavView animation attribute removed:** The animation attribute
+is no longer used for nav views. Instead use `$ionicConfig`.
+* **ionNavBar animation attribute removed:** The animation attribute is
+no longer used for nav bars. Instead use `$ionicConfig`.",ModificationType.MODIFY,,7106,3408,7106,3408,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+908cc6122c868419daeb00ecd90447a27bf190d0,2014-11-18 21:31:25-06:00,2014-11-18 21:31:25-06:00,746,746,746,746,chore(update): angular v1.3.3,ModificationType.MODIFY,39951ca99a35122b68545d221cae0f36faaeee60,292,263,99,103,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+5bc7c023aba7a9e27832238bb1ca9ecf6d00a314,2014-11-25 16:25:20-06:00,2014-11-25 16:25:22-06:00,746,746,746,746,chore(update): angular v1.3.4,ModificationType.MODIFY,908cc6122c868419daeb00ecd90447a27bf190d0,354,190,127,90,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+533dcabeb587c3902f7754818ecdbebe206209ca,2014-12-02 23:56:48-06:00,2014-12-02 23:56:48-06:00,746,746,746,746,chore(update): angular v1.3.5,ModificationType.MODIFY,5bc7c023aba7a9e27832238bb1ca9ecf6d00a314,39,37,16,27,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+57cafc600548540b6fb8fa6afc94e32ae250b048,2014-12-11 08:07:58-06:00,2014-12-11 08:07:58-06:00,746,746,746,746,chore(update): upgrade to Angular v1.3.6,ModificationType.MODIFY,533dcabeb587c3902f7754818ecdbebe206209ca,280,197,29,73,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+e5135929042362b8f334fc9b7273265960c683e3,2015-02-02 21:36:22-06:00,2015-02-02 21:36:22-06:00,746,746,746,746,chore(upgrade): upgrade to angular v1.3.11,ModificationType.MODIFY,57cafc600548540b6fb8fa6afc94e32ae250b048,3650,3534,2857,2931,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+c0b0d78884517519af7eda8d91664ff9de078034,2015-02-11 15:45:59-06:00,2015-02-11 15:45:59-06:00,746,746,746,746,chore(angular): upgrade to angular v1.3.13,ModificationType.MODIFY,e5135929042362b8f334fc9b7273265960c683e3,34,20,7,9,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+1f2d900e3c3e0845a6a7a03db9e5652a29dea7bd,2015-02-12 22:05:27-06:00,2015-02-12 22:05:27-06:00,746,746,746,746,fix(angular): `.finally` syntax error in Android 2.3,ModificationType.MODIFY,c0b0d78884517519af7eda8d91664ff9de078034,2,2,0,1,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+355bf6a9912e6a0ee17eaf6cb25b643687767579,2015-07-24 09:50:56-04:00,2015-07-24 09:50:56-04:00,747,747,747,747,feat(angular): Upgrade to Angular 1.4,ModificationType.MODIFY,1f2d900e3c3e0845a6a7a03db9e5652a29dea7bd,6597,4363,3493,2902,rreinold/FitnessDashboard_IonicApp,FitnessDashboard_IonicApp,f7442c0b031cc8afab578e779f9adda096d7eb47,.js,3143070,1,https://stackoverflow.com/q/3143070
+7d31df111cd1c09f96930d1af4f4620579cdbfa0,2014-09-21 16:39:41+05:18,2014-09-21 16:39:41+05:18,4939,4939,4939,4939,V 0.0.2 Improvisations,ModificationType.ADD,,1812,0,1812,0,rshewade/laravel_angular,laravel_angular,8a3fdbbf59f0bf61d35f6a2d3c56bb838d7bf2c0,.js,2779600,1,https://stackoverflow.com/q/2779600
+ff9eb26129128443ade78aeadc04be8f02e37e90,2016-10-26 15:05:04+08:00,2016-10-26 15:05:04+08:00,4941,4941,4940,4940,"Feature/attendance (#124)
+
+* Attendance: Added Take Attendance by Course Class
+
+* Attendance: Added Absent- Excused as a valid attendance type
+
+* Attendance - Changed type 'Absent - Excused' to reason 'Unexcused'
+
+* Attendance: Updated default permissions for Attendance by Class
+
+* Attendance: Fixed a bug with Attendance by Class (processing)
+
+* Attendance: Added alert bar to Attendance by Form Group/Class page
+
+* Attendance: Added per-class information to Roll Group/Class grid view
+
+* Attendance: Added a partial (per-class) option to Future Attendance by Person
+
+* Attendance: Changed class absence terminology
+
+* Attendance: Added ""All Students"" filter to Students Not Onsite/Present
+
+* Attendance: Added sort option to Student Not Onsite/Present
+
+* Attendance: Added natural sorting to Roll Groups Not Registered
+
+* Attendance: Allow future attendance to be recorded for the same day (re: morning)
+
+* Attendance: Auto-select default reason when Absence type changed
+
+* System Admin: Attendance Settings WIP
+
+* School Admin: finished Attendance Settings page
+
+* System Admin: Added medical crossover options to Attendance Settings
+
+* Attendance: Replaced use of $_SESSION with simple global scope
+
+* Attendance: added per-class attendance toggle (similar to reportable)
+
+* Attendance: Added natural sorting to Roll Group order
+
+* Attendance: render Attendance and Reason select functions return an output string
+
+* Attendance : WIP attendance class
+
+* Attendance: Moved attendance codes from gibbonSettings to a table
+
+* School Admin: Added add/edit/delete pages for Attendance Codes
+
+* Attendance: Implemented an attendance class to handle common functions
+
+* Attendance: Added and implemented an attendance Y/N enum to Roll Groups
+
+* Attendance: Added warning for school closed with Set Future Absence
+
+* Attendance: Add class attendance to Daily Incomplete Email CLI
+
+* Attendance: Ensure classes and roll groups with attendance disabled can't be accidentally accessed
+
+* Attendance: Fixed a merge glitch with Daily Incomplete Email CLI
+
+* Attendance: Moved getLast5SchoolDays to moduleFunctions
+
+* Attendance: Added a Classes Not Registered page with mini attendance history
+
+* Attendance: Added mini history to attendance Reports and Daily Attendance page
+
+* Attendance: Check for role ID requirement on specified Attendance Codes
+
+* Attendance: Added a change all option to Attendance by Class/Roll Group
+
+* Attendance: Remove testing message from daily attendance CLI
+
+* Planner: Attendance reads & write course class attendance (planner attendance depreciated)
+
+* Planner: Update to only display participants if per-class attendance is disabled
+
+* Attendance: Changed getAttendanceCodeByType to return result set
+
+* Attendance: Fixed return variable typo in Set Future Absence
+
+* Attendance: Added edit Attendance Log by Person, with permission control
+
+* Attendance: Updated use of Attendance Codes from database
+
+* Attendance: Added a basic graphing option to view attendance trends
+
+* Attendance: Display message when no school days exist in chosen time period
+
+* Attendance: Reports list preferredName first when sorting by preferredName
+
+* Attendance: Removed previous auto-select reason (was TIS-specific)
+
+* Attendance: Improved display of future attendance logs
+
+* Attendance: Added attendance summary report and attendance trends graphing
+
+* Attendance: Added gibbonAttendanceCodeID to the attendance log table (backwards friendly)
+
+* Attendance: Updated summary to not load all student data by default
+
+* Attendance: Fixed an attendance update by same direction glitch
+
+* Attendance: Updated summary and graph queries
+
+* Attendance: reflect css changes in student_view_details page
+
+* Attendance: Fixed In/Out values for new records: read from attendance code table
+
+* Attendance: Fixed Students Not Onsite to display correctly
+
+* Attendance: Removed excused/unexcused reason separation
+
+* Attendance: Added print page to Attendance Summary
+
+* Attendance: Updated attendance summary for dynamic attendance codes",ModificationType.ADD,,10635,0,10635,0,rossdotparker/core,core,eefe1885b01b90afac0360f3bd025da329baf52f,.js,8506881,1,https://stackoverflow.com/q/8506881
+4dd710a4da5a73e9371ff03d4680b74d28c1b7db,2015-08-26 16:13:10-07:00,2015-08-26 16:13:10-07:00,4942,4942,4942,4942,Initial commit,ModificationType.ADD,,213,0,213,0,rossdlibby/motorsport-angular,motorsport-angular,852b49d111f63b36db9223a5af26fef68d9cd1a6,.js,924337,2,https://stackoverflow.com/a/924337
+10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,2012-06-01 16:35:36+03:00,2012-06-01 16:35:36+03:00,1,1,1,1,bad adware scanner,ModificationType.ADD,,148,0,148,0,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+983ad37704a42cd25475dd571a34e7c7b8d5e9cb,2014-09-04 00:40:26+02:00,2014-09-04 00:40:26+02:00,2,2,2,2,"Formatting, code cleanup",ModificationType.MODIFY,10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,5,5,5,5,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+c0243fd968ea456694f417ad0577a1d6e944768d,2014-09-13 15:38:59+03:00,2014-09-13 15:38:59+03:00,3,3,3,3,"Adware scan improvements
+
+* Adware scan does not continue in background if back button is pressed
+* Fixed scanning called twice",ModificationType.MODIFY,983ad37704a42cd25475dd571a34e7c7b8d5e9cb,3,6,3,6,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+b11a2d24986c3eca4f0acdfb25ad648b2be69947,2015-10-02 18:28:58+08:00,2015-10-02 18:28:58+08:00,4943,4943,4943,4943,add bootstrap theme,ModificationType.ADD,,51,0,51,0,roysaguid/examdp,examdp,ee1ce25b2bf909ec46bd7a0eeda47fe0d92549c4,.php,5265361,2,https://stackoverflow.com/a/5265361
+8e51b0e900d7e8cf39529c39ab2976583c638e69,2013-09-23 20:30:44+01:00,2013-09-23 20:30:44+01:00,4453,4453,4453,4453,initial commit,ModificationType.ADD,,125,0,125,0,rosvol/SuiteCRM,SuiteCRM,ccb1ff0595d70f4885515d794e0226efc091c7d7,.js,57803,1,https://stackoverflow.com/q/57803
+b69ca70c51551031649a70212386e9b0d35108ea,2014-07-03 01:47:49-05:00,2014-07-03 01:47:49-05:00,4944,4944,4944,4944,Again,ModificationType.ADD,,1160,0,1160,0,rovalxDev/panelExtjs,panelExtjs,553fa82f164b955bffb885d9e1892aeafc9b0cfe,.js,470832,1,https://stackoverflow.com/q/470832
+87e23fbc5a5c497ae889a1e338532a9815c4dc64,2016-05-23 20:20:28-10:00,2016-05-23 20:20:28-10:00,4945,4945,4945,4945,"refactored the angular app file structure to use controllers, views, servers, etc",ModificationType.ADD,,23,0,23,0,rsova/ez7gen-staged,ez7gen-staged,947a076c965eb705a1fc0cd751dc5f4fd20ba337,.js,12505760,1,https://stackoverflow.com/q/12505760
+c645db9073e8882726f82b23bfb652c225aa6c9b,2016-08-11 17:22:07-10:00,2016-08-11 17:22:07-10:00,4945,4945,4945,4945,"renamed service, new tables, fixes for coded tables, beta templates",ModificationType.MODIFY,87e23fbc5a5c497ae889a1e338532a9815c4dc64,1,1,1,1,rsova/ez7gen-staged,ez7gen-staged,947a076c965eb705a1fc0cd751dc5f4fd20ba337,.js,12505760,1,https://stackoverflow.com/q/12505760
+a3d5c691c0b559e45597cac831f9bfe8b8b619f8,2017-01-06 06:21:49-10:00,2017-01-06 06:21:49-10:00,4945,4945,4945,4945,version 0.5.1  Fix for service url,ModificationType.MODIFY,c645db9073e8882726f82b23bfb652c225aa6c9b,2,1,2,1,rsova/ez7gen-staged,ez7gen-staged,947a076c965eb705a1fc0cd751dc5f4fd20ba337,.js,12505760,1,https://stackoverflow.com/q/12505760
+6f61429c860deb58e8e4d437a0f1c3941a4ac6e5,2017-01-19 19:59:42-10:00,2017-01-19 19:59:42-10:00,4945,4945,4945,4945,"logging, cleanup and sad data type",ModificationType.MODIFY,a3d5c691c0b559e45597cac831f9bfe8b8b619f8,0,1,0,1,rsova/ez7gen-staged,ez7gen-staged,947a076c965eb705a1fc0cd751dc5f4fd20ba337,.js,12505760,1,https://stackoverflow.com/q/12505760
+b8bbe24d287791c3b1302172fd7fe81acd4ee5dd,2016-08-21 09:02:21-03:00,2016-08-21 09:02:21-03:00,4946,4946,4946,4946,Second commit,ModificationType.ADD,,2270,0,2270,0,Rovaron/adote-um-pet,adote-um-pet,c1044f8399afffd33822ed78f4872a6ebefb8472,.js,7616461,1,https://stackoverflow.com/q/7616461
+8faf0f60e9b2dd41af1a8e47d4a7f2b8d938d5ed,2016-08-21 09:08:14-03:00,2016-08-21 09:08:14-03:00,4946,4946,4946,4946,ignoring node_modules,ModificationType.DELETE,b8bbe24d287791c3b1302172fd7fe81acd4ee5dd,0,2270,0,2270,Rovaron/adote-um-pet,adote-um-pet,c1044f8399afffd33822ed78f4872a6ebefb8472,.js,7616461,1,https://stackoverflow.com/q/7616461
+30e4dc59b6ec8c31c9f5824824a3d65e560aff6d,2017-01-18 19:15:12+05:18,2017-01-18 19:15:12+05:18,4947,4947,4947,4947,theme integrations,ModificationType.ADD,,609,0,609,0,rpeerbits/demo-yii,demo-yii,3958adebe606330bf9d9a31f18901afcf4328ff6,.js,141348,1,https://stackoverflow.com/q/141348
+4cab96b08aa7696495c7238d6d97d04fb49a0d81,2016-10-10 15:05:45-06:00,2016-10-10 15:05:45-06:00,4948,4948,4948,4948,initial setup,ModificationType.ADD,,701,0,701,0,roscalabrin/bomberman,bomberman,f78fd74ddb1b03d884d6be38c641c9ea6fa39028,.js,596467,1,https://stackoverflow.com/q/596467
+1eb78b10280f7b39ba9c11a63c676568eb0d4e10,2014-04-03 09:24:10+08:00,2014-04-03 09:24:10+08:00,4949,4949,4949,4949,添加静态文件,ModificationType.ADD,,1381,0,1381,0,royalwang/writor,writor,3b5bb2f4d99781dfb969fe9b97663c77a47baef5,.js,1299069,2,https://stackoverflow.com/a/1299069
+4b11d08ccd38df8f00ea4e8dad8c5a84e5c8254e,2015-02-19 22:14:55+01:00,2015-02-19 22:14:55+01:00,4950,4950,4950,4950,Merged 'feature/layouteditor' into 1.x.,ModificationType.ADD,,25751,0,25751,0,RoyalVeterinaryCollege/Orchard,Orchard,fe44bab9304f9d5bdd14903b248b380b0a1f184f,.js,3143070,1,https://stackoverflow.com/q/3143070
+8b67aed2f3e2efcfac7a69a10e0f3947fea2b4b6,2014-11-25 22:38:13+00:00,2014-11-25 22:38:13+00:00,4951,4951,4951,4951,Initial Commit,ModificationType.ADD,,213,0,213,0,Rory80Hz/teamcity-build-status-thing,teamcity-build-status-thing,ee57f1202681cddb5cba5826ba45b1b813ba6101,.js,924337,2,https://stackoverflow.com/a/924337
+970a7b134068f1f7f7a90297c23f8d04b00c8a8f,2017-04-23 17:26:54+01:00,2017-04-23 17:26:54+01:00,4952,4952,4952,4952,"Updated the online engine-html5 demo.
+
+Signed-off-by: swordmaster2k <b00056835@gmail.com>",ModificationType.RENAME,,7630,4775,7630,4775,rpgtoolkit/rpgtoolkit.github.io,rpgtoolkit.github.io,54d1c66a450c7cf6da9142f9b6a9eeaa287253b8,.js,565282,2,https://stackoverflow.com/a/565282
+c55709f3d5aa921a2ccadebfb3c97cd6e2584089,2013-06-27 14:44:08-07:00,2013-06-27 14:44:08-07:00,4954,4954,4953,4953,Put CoreNLP on GitHub,ModificationType.ADD,,63,0,63,0,rssr25/CoreNLP,CoreNLP,baf986e37a223ccc6b074b019e0c46a9595211c3,.java,434718,1,https://stackoverflow.com/q/434718
+38c44a232c067b6b7ca9b4fbc587ac38ea90d932,2013-10-29 18:42:34-07:00,2013-10-29 18:42:34-07:00,4955,4955,4955,4955,Added painting.,ModificationType.MODIFY,,97,19,97,19,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+05e713ad5b77ccd7967351710eed1c57176a48e4,2013-10-31 16:06:05-07:00,2013-10-31 16:06:05-07:00,4955,4955,4955,4955,Added jQuery for the jQuery colorpicker plugin.,ModificationType.MODIFY,38c44a232c067b6b7ca9b4fbc587ac38ea90d932,45,8,1,5,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+6d489452ea385d488f5d94dee48939063badbbda,2013-10-31 23:06:14-07:00,2013-10-31 23:06:14-07:00,4955,4955,4955,4955,Toolbox container added; Toolbox dynamic to canvas size.,ModificationType.MODIFY,05e713ad5b77ccd7967351710eed1c57176a48e4,55,25,3,3,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+64236970082a3811ede2bb092e9e8a0e11aa1376,2013-11-01 10:12:29-07:00,2013-11-01 10:12:29-07:00,4955,4955,4955,4955,Added canvas background. Fine tuned 'toolbox' div.,ModificationType.MODIFY,6d489452ea385d488f5d94dee48939063badbbda,17,5,1,1,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+d14a6febeef113d7e1ff41d18f0c5b66aef1548e,2013-11-04 08:26:35-08:00,2013-11-04 08:26:35-08:00,4955,4955,4955,4955,Changed events to jQuery events. Eyedropper functionality added.,ModificationType.MODIFY,64236970082a3811ede2bb092e9e8a0e11aa1376,111,33,37,18,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+dd50c21cb78a7edcb02bb42f12cb8bf33deabe19,2013-11-07 15:04:42-08:00,2013-11-07 15:04:42-08:00,4955,4955,4955,4955,Functional conversions of canvas data to an array.,ModificationType.MODIFY,d14a6febeef113d7e1ff41d18f0c5b66aef1548e,68,28,6,8,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+284181136542bc60e443d9f563c6e399b2eedb18,2013-11-08 22:24:04-08:00,2013-11-08 22:24:04-08:00,4955,4955,4955,4955,Output state functionality added.,ModificationType.MODIFY,dd50c21cb78a7edcb02bb42f12cb8bf33deabe19,65,38,5,3,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+3e70c121ccb86c9f8c7eb12be942fe0e4c47f09a,2013-11-09 17:06:41-08:00,2013-11-09 17:06:41-08:00,4955,4955,4955,4955,Added custom toolbox rendering.,ModificationType.MODIFY,284181136542bc60e443d9f563c6e399b2eedb18,67,68,3,6,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+9341aa508488d029a4c25bb28c4d65cd47c7d5fb,2013-11-11 00:07:07-08:00,2013-11-11 00:07:07-08:00,4955,4955,4955,4955,refactored events to ease disabling. Increased Transparency of trans.png. Added dimensions modal.,ModificationType.MODIFY,3e70c121ccb86c9f8c7eb12be942fe0e4c47f09a,159,78,47,10,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+ee05a01daa15966b5b587c5c86838e71ee45a16d,2013-11-11 10:06:30-08:00,2013-11-11 10:06:30-08:00,4955,4955,4955,4955,Renewing canvas with new dimensions added.,ModificationType.MODIFY,9341aa508488d029a4c25bb28c4d65cd47c7d5fb,62,24,36,12,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+d366736edef26c01cb5b0f6e5aa2653c392ca497,2013-11-12 09:58:43-08:00,2013-11-12 09:58:43-08:00,4955,4955,4955,4955,Fixed possible scenario of event duplications. Added getAplhaAt method for the canvas editor.,ModificationType.MODIFY,ee05a01daa15966b5b587c5c86838e71ee45a16d,19,7,2,3,RoryDuncan/HTML5-Pixel-Painter,HTML5-Pixel-Painter,2565060cd13ac31f10d6aaa4f488b1c4b6ff1697,.js,1114465,1,https://stackoverflow.com/q/1114465
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,13401,0,13401,0,rrag/rrag.github.io,rrag.github.io,e64595792d3684308dffabf5becff0fed3ac73b7,.js,26603875,2,https://stackoverflow.com/a/26603875
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,18163,0,18163,0,rrag/rrag.github.io,rrag.github.io,c1f19967a7417d9fdaaccfd8aace2bdbb7319a42,.js,26603875,2,https://stackoverflow.com/a/26603875
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,13541,0,13541,0,rrag/rrag.github.io,rrag.github.io,8225ab6bc7f94e3e66a335f7ccf168c32040151a,.js,12310024,1,https://stackoverflow.com/q/12310024
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,18155,0,18155,0,rrag/rrag.github.io,rrag.github.io,68fadc05a913786beb0df2f95014ec0587d7f3e0,.js,26603875,2,https://stackoverflow.com/a/26603875
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,924,0,924,0,rrag/rrag.github.io,rrag.github.io,e465f52844badfa35bc35b4c1da3c342653091cb,.js,26603875,2,https://stackoverflow.com/a/26603875
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,13533,0,13533,0,rrag/rrag.github.io,rrag.github.io,fc36d7f07640012963b3c8eeeb3f09c291c2142c,.js,12310024,1,https://stackoverflow.com/q/12310024
+b6c1f1ea701ed398d28f8d6c91fd07bfe306f24d,2017-04-25 16:16:10-05:00,2017-04-25 16:16:10-05:00,4956,4956,4956,4956,commit,ModificationType.ADD,,924,0,924,0,rrag/rrag.github.io,rrag.github.io,621d05d0df993153d97fef9add4041b49ce9cc7d,.js,26603875,2,https://stackoverflow.com/a/26603875
+a106a2ab4fb7011bc1ebfa2d1e46d482b514ff1d,2017-04-01 19:13:55+08:00,2017-04-01 19:13:55+08:00,4957,4957,4957,4957,remove pyperclip dependency & import minimal version of pyautogui,ModificationType.ADD,,1037,0,1037,0,RPing/input-paste,input-paste,9ab1d735b0583fb6de252c7635168079365a5199,.py,2696107,2,https://stackoverflow.com/a/2696107
+696ccf76c9acb21dee747dbe9399ea347d8b9871,2017-02-03 18:47:11+01:00,2017-02-03 18:47:11+01:00,4958,4958,4958,4958,"Added python-based convenience wrapper scripts for phylip, drawtree and drawgram and removed the old Bash-based ones. Linked all binaries to /bin not only the phylip.py as in biobuilds reipe. Moved tests to phylip.py. Removed license file. Some inelegant solutions to phylip's problem finding its own font files and dylibs.",ModificationType.ADD,,117,0,117,0,roryk/bioconda-recipes,bioconda-recipes,f8f47697c1bf4eb6878d029234e0a494db271caa,.py,246128,2,https://stackoverflow.com/a/246128
+76fe8283ba2b6276273fa9c94adf62fe2150be9e,2017-02-07 13:08:02+01:00,2017-02-07 13:08:02+01:00,4958,4958,4958,4958,Fixed som typos in comments,ModificationType.MODIFY,696ccf76c9acb21dee747dbe9399ea347d8b9871,4,5,4,5,roryk/bioconda-recipes,bioconda-recipes,f8f47697c1bf4eb6878d029234e0a494db271caa,.py,246128,2,https://stackoverflow.com/a/246128
+ea3cb87f7a79df1db5836f804bf3b3bd68763868,2017-03-24 15:56:26+01:00,2017-03-24 15:56:26+01:00,4958,4958,4958,4958,updated version of phylip recipe,ModificationType.MODIFY,76fe8283ba2b6276273fa9c94adf62fe2150be9e,2,2,2,2,roryk/bioconda-recipes,bioconda-recipes,f8f47697c1bf4eb6878d029234e0a494db271caa,.py,246128,2,https://stackoverflow.com/a/246128
+fa1786e231699b650a533090b8824931d86ef633,2016-06-11 16:31:31+02:00,2016-06-11 16:31:31+02:00,2152,2152,37,37,"Use python for wrapping Java instead of bash
+
+This will enhance the maintainability and transparency.",ModificationType.ADD,,96,0,96,0,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+c7591cfda58b9946120d303bd9a9e9433d621b7d,2016-06-11 16:36:29+02:00,2016-06-11 16:36:29+02:00,2152,2152,37,37,"Apply modifications from @dakl
+
+Thanks @dakl to pushing me :)",ModificationType.MODIFY,fa1786e231699b650a533090b8824931d86ef633,14,23,14,23,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+d724bbf4e7547aec2b978f6de81cf340d5d3e15a,2016-09-27 14:17:35+02:00,2016-09-27 14:17:35+02:00,540,540,540,540,update PeptideShaker and SearchGUI,ModificationType.MODIFY,c7591cfda58b9946120d303bd9a9e9433d621b7d,8,5,7,5,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+0d429f5b78e053c3cb1d360363d6c33f71836a1f,2016-09-27 15:08:07+02:00,2016-09-27 15:08:07+02:00,540,540,540,540,update PS and SG,ModificationType.MODIFY,d724bbf4e7547aec2b978f6de81cf340d5d3e15a,0,1,0,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+dcf9c98869739f66a2747c29ca71818e6915a3f2,2016-11-09 16:18:41-06:00,2016-11-09 16:18:41-06:00,541,541,541,541,"Add peptide-shaker versions: 1.11.0, 1.13.3, 1.13.6",ModificationType.MODIFY,0d429f5b78e053c3cb1d360363d6c33f71836a1f,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+11e88c7e43ae5e21d50faaf80acc1889ceff8070,2016-12-15 07:16:36-06:00,2016-12-15 07:16:36-06:00,541,541,541,541,"peptide-shaker Added --exec_dir option
+
+The --exec_dir option specifies an alternate directory for the
+peptide-shaker distribution.  If the option is used and the directory
+does not exist, the script will copy the distribution to that directory.
+PeptideShaker updates files relative to the path of the jar file. Thus
+we
+need to copy the jar file, lib, and resources to the working directory
+when used in a multiuser environment such as galaxy.",ModificationType.MODIFY,dcf9c98869739f66a2747c29ca71818e6915a3f2,16,3,10,3,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+11e88c7e43ae5e21d50faaf80acc1889ceff8070,2016-12-15 07:16:36-06:00,2016-12-15 07:16:36-06:00,541,541,541,541,"peptide-shaker Added --exec_dir option
+
+The --exec_dir option specifies an alternate directory for the
+peptide-shaker distribution.  If the option is used and the directory
+does not exist, the script will copy the distribution to that directory.
+PeptideShaker updates files relative to the path of the jar file. Thus
+we
+need to copy the jar file, lib, and resources to the working directory
+when used in a multiuser environment such as galaxy.",ModificationType.MODIFY,11e88c7e43ae5e21d50faaf80acc1889ceff8070,17,4,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+44b16e0fbe68b82f70e57e5e8940b2f1e2a097b4,2017-01-11 08:52:22-06:00,2017-01-11 08:52:22-06:00,541,541,541,541,peptide-shaker - add version 1.14.6,ModificationType.MODIFY,11e88c7e43ae5e21d50faaf80acc1889ceff8070,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+7bf3da97b55d63ea408a53f747b27a20ef7209f3,2017-02-01 14:24:18-06:00,2017-02-01 14:24:18-06:00,541,541,541,541,peptide-shaker add version 1.15.0,ModificationType.MODIFY,44b16e0fbe68b82f70e57e5e8940b2f1e2a097b4,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+bb9229a329f45d2e6ba873b0ab742c704aa5f89e,2017-02-10 14:13:20-06:00,2017-02-10 14:13:20-06:00,2153,2153,2153,2153,peptide-shaker add version 1.15.1,ModificationType.MODIFY,7bf3da97b55d63ea408a53f747b27a20ef7209f3,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+c2208ec125d207eded795d951f811d23344a195f,2017-02-27 08:24:42-06:00,2017-02-27 08:24:42-06:00,2154,2154,2154,2154,peptide-shaker add version 1.16.0,ModificationType.MODIFY,bb9229a329f45d2e6ba873b0ab742c704aa5f89e,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+3b34933868bfab80186d435cd1ed1ed4ca89cd60,2017-03-22 14:18:30-05:00,2017-03-22 14:18:30-05:00,2155,2155,2155,2155,peptide-shaker update to version 1.16.3,ModificationType.MODIFY,c2208ec125d207eded795d951f811d23344a195f,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+95c84a5dcae85b40531b19e5f3c88bbe07e1b0a2,2017-04-20 17:11:10-05:00,2017-04-20 17:11:10-05:00,2155,2155,2155,2155,peptide-shaker v1.16.4 release 2017/04/01,ModificationType.MODIFY,3b34933868bfab80186d435cd1ed1ed4ca89cd60,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+b5440163e437db2f2724b602329025e7065c8daf,2017-09-18 22:59:01+02:00,2017-09-18 22:59:01+02:00,2156,2156,2152,2152,Update peptide-shaker and searchgui. (#6066),ModificationType.MODIFY,95c84a5dcae85b40531b19e5f3c88bbe07e1b0a2,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+be94b1aa04d023b9cc37d48a4f05ff56bb1903e4,2017-10-10 07:53:55+02:00,2017-10-10 07:53:55+02:00,2157,2157,37,37,"Peptide shaker 1.16.14 (#6261)
+
+* Preserve peptide-shaker 1.16.13.
+
+* Update PeptideShaker to 1.16.14.",ModificationType.MODIFY,b5440163e437db2f2724b602329025e7065c8daf,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+9af176d6eb5dbf482c084fd1143d037e8f18c481,2017-12-09 04:39:29-06:00,2017-12-09 11:39:29+01:00,2155,2155,2152,2152,"peptide-shaker update to version 1.16.15 (#7040)
+
+* peptide-shaker update to version 1.16.15
+
+* change checksum as well",ModificationType.MODIFY,be94b1aa04d023b9cc37d48a4f05ff56bb1903e4,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+9555ec8593e17ad890c4bed3d0415caf79f622c1,2018-03-13 18:09:05+01:00,2018-03-13 18:09:05+01:00,2158,2158,2152,2152,"peptide-shaker update to version 1.16.16 (#8247)
+
+peptide-shaker update to version 1.16.16
+change checksum as well",ModificationType.MODIFY,9af176d6eb5dbf482c084fd1143d037e8f18c481,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+2bfca5b14a3a2124567339e27ed44fb78f159858,2018-03-15 23:23:10+01:00,2018-03-15 23:23:10+01:00,2158,2158,2159,2159,PeptideShaker updated to 1.16.17 (#8265),ModificationType.MODIFY,9555ec8593e17ad890c4bed3d0415caf79f622c1,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+171fb7424aed14a71f64c1bace6a6be3e4101a19,2018-04-28 18:41:04+02:00,2018-04-28 18:41:04+02:00,2158,2158,2152,2152,"Updated reference to SearchGUI version 3.2.24 and PeptideShaker 1.16.20 (#8713)
+
+* Updated reference to SearchGUI version 3.2.23
+
+* Updated reference to SearchGUI version 3.2.24
+
+* Updated reference to PeptideShaker 1.16.20
+
+* PeptideShaker 1.16.20: fixed sha256",ModificationType.MODIFY,2bfca5b14a3a2124567339e27ed44fb78f159858,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+90b530d88418a3ee0664a40e58846c8ee44c0cf0,2018-05-07 19:02:45+02:00,2018-05-07 19:02:45+02:00,2158,2158,2152,2152,"PeptideShaker updated to 1.16.22 & SearchGUI updated to 3.2.26 (#8840)
+
+* Updated reference to SearchGUI version 3.2.23
+
+* Updated reference to SearchGUI version 3.2.24
+
+* Updated reference to PeptideShaker 1.16.20
+
+* PeptideShaker 1.16.20: fixed sha256
+
+* Updated SearchGUI to v3.2.26
+
+* PeptideShaker updated to v1.16.22",ModificationType.MODIFY,171fb7424aed14a71f64c1bace6a6be3e4101a19,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+1c9e9bb42272ad8b48abd7b6ad419a1f0fdec346,2018-05-13 22:53:44+02:00,2018-05-13 22:53:44+02:00,2158,2158,2159,2159,"PeptideShaker v1.16.23 & SearchGUI v3.3.1 (#8903)
+
+* Updated reference to SearchGUI version 3.2.23
+
+* Updated reference to SearchGUI version 3.2.24
+
+* Updated reference to PeptideShaker 1.16.20
+
+* PeptideShaker 1.16.20: fixed sha256
+
+* Updated SearchGUI to v3.2.26
+
+* PeptideShaker updated to v1.16.22
+
+* SearchGUI reference updated to v3.3.1
+
+* PeptideShaker reference to v1.16.23",ModificationType.MODIFY,90b530d88418a3ee0664a40e58846c8ee44c0cf0,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+c40a73407cefa4db01ab2a786df97d2344c8f98f,2018-06-27 18:44:41+02:00,2018-06-27 18:44:41+02:00,2158,2158,2152,2152,"PeptideShaker updated to version 1.16.26. SearchGUI updated to version 3.3.3. (#9621)
+
+* PeptideShaker updated to version 1.16.26.
+SearchGUI updated to version 3.3.3.
+
+* PeptideShaker and SearchGUI: removed very old versions.",ModificationType.DELETE,1c9e9bb42272ad8b48abd7b6ad419a1f0fdec346,0,102,0,94,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+c40a73407cefa4db01ab2a786df97d2344c8f98f,2018-06-27 18:44:41+02:00,2018-06-27 18:44:41+02:00,2158,2158,2152,2152,"PeptideShaker updated to version 1.16.26. SearchGUI updated to version 3.3.3. (#9621)
+
+* PeptideShaker updated to version 1.16.26.
+SearchGUI updated to version 3.3.3.
+
+* PeptideShaker and SearchGUI: removed very old versions.",ModificationType.MODIFY,c40a73407cefa4db01ab2a786df97d2344c8f98f,2,1,2,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+4484aa9d70ccd512b08ec67cdc62541e60a91c2d,2018-09-19 22:05:37+02:00,2018-09-19 22:05:37+02:00,2158,2158,2159,2159,"PeptideShaker: updated version to 1.16.29 (#11019)
+
+Internal improvements:
+- Added default protein, peptide and PSM reports that also include the non-validated hits. Note: Some of the numbers used to refer to the previous reports have changed and that you may need to update your command lines. Check PeptideShaker documentation for the new ids.
+- Updated utilities to version 4.12.8 (better management of gene-mappings).
+- Bugfixes",ModificationType.MODIFY,c40a73407cefa4db01ab2a786df97d2344c8f98f,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+699a6ae7c9c2af0f5ae36a1ae770f1e95a6e5a97,2018-10-04 23:21:23+02:00,2018-10-04 23:21:23+02:00,2158,2158,2152,2152,"PeptideShaker: updated to version 1.16.30 & SearchGUI: updated to version 3.3.5 (#11215)
+
+* PeptideShaker: updated to version 1.16.30
+
+- Bugfix: HOME was still being used when folder with customised reports was specified.
+- Bugfix: Made it possible to use the MzidCLI options directly on the PeptideShakerCLI command line.
+
+* SearchGUI: updated to version 3.3.5.
+
+- BUG FIX: Cleanup of the temp path options when used as options for the other command lines.
+- FEATURE IMPROVEMENT: Updated Comet to 2018.01 rev. 2.
+- LIBRARY UPDATE: Updated utilities to version 4.12.8.",ModificationType.MODIFY,4484aa9d70ccd512b08ec67cdc62541e60a91c2d,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+a9cf908f2d3d33e579e7c04578f26fd629216a81,2018-10-11 00:22:41+02:00,2018-10-11 00:22:41+02:00,2158,2158,2157,2157,"PeptideShaker: updated reference to version 1.16.31 (#11279)
+
+* PeptideShaker: updated to version 1.16.30
+
+- Bugfix: HOME was still being used when folder with customised reports was specified.
+- Bugfix: Made it possible to use the MzidCLI options directly on the PeptideShakerCLI command line.
+
+* SearchGUI: updated to version 3.3.5.
+
+- BUG FIX: Cleanup of the temp path options when used as options for the other command lines.
+- FEATURE IMPROVEMENT: Updated Comet to 2018.01 rev. 2.
+- LIBRARY UPDATE: Updated utilities to version 4.12.8.
+
+* PeptideShaker: updated reference to version 1.16.31.
+Bugfix: graphical environment was needed when executing PeptideShakerCLI",ModificationType.MODIFY,699a6ae7c9c2af0f5ae36a1ae770f1e95a6e5a97,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+7b11788ab996b3ec9943e9038248378a94ac4750,2018-11-07 22:03:00+01:00,2018-11-07 22:03:00+01:00,2158,2158,2152,2152,"PeptideShaker updated to v1.16.32 (#11812)
+
+SearchGUI updated to v3.3.6",ModificationType.MODIFY,a9cf908f2d3d33e579e7c04578f26fd629216a81,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+75b2b118c51354942dffb283f6b80bd7fee6b029,2018-11-19 21:09:51+01:00,2018-11-19 13:09:51-07:00,2158,2158,2160,2160,"PeptideShaker updated to v1.16.35 & SearchGUI updated to 3.3.9 (#12241)
+
+* PeptideShaker updated to v1.16.32
+SearchGUI updated to v3.3.6
+
+* PeptideShaker updated to v1.16.35
+
+* SearchGUI updated to v3.3.9",ModificationType.MODIFY,7b11788ab996b3ec9943e9038248378a94ac4750,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+13ac8cd9a8b10eb84854f56757ac85d9b8869c17,2018-12-13 19:05:00+01:00,2018-12-13 19:05:00+01:00,2158,2158,2152,2152,"PeptideShaker v1.16.36 & SearchGUI v3.3.10 (#12620)
+
+* PeptideShaker updated to v1.16.32
+SearchGUI updated to v3.3.6
+
+* PeptideShaker updated to v1.16.35
+
+* SearchGUI updated to v3.3.9
+
+* PeptideShaker version updated to 1.16.36
+SearchGUI version updated to 3.3.10",ModificationType.MODIFY,75b2b118c51354942dffb283f6b80bd7fee6b029,2,1,2,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+d3359579e32d7610d6fe2496dda2ef1ab42fae0c,2019-06-04 08:07:43+02:00,2019-06-04 08:07:43+02:00,2157,2157,37,37,Update PeptideShaker to 1.16.40 (#15646),ModificationType.MODIFY,13ac8cd9a8b10eb84854f56757ac85d9b8869c17,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+a9090ef7e7ff15215dd8a0624c7154f66259fccc,2019-07-31 20:00:49+02:00,2019-07-31 20:00:49+02:00,2158,2158,2152,2152,"PS and SG new backend (#16644)
+
+* SearchGUI 4.0.1_SNAPSHOT
+
+* Some verification fixes
+
+* Increased build number
+
+* bugfix
+
+* PeptideShaker-2.0.1-SNAPSHOT
+
+* PS bugfix: buid noarch:python
+
+* bugfix
+
+* PS bugfix
+
+* PS update
+build: {{ compiler('c') }}
+
+* SG update
+
+* PS and SG updated versions
+
+* fixed sha256
+
+* SG updated sha256
+
+* PS and SG last updates
+
+* PS and SG updated versions
+
+* PS and SG updated versions
+
+* PS and SG updated
+
+* SG updated version
+
+* reset build number
+
+* reset build number",ModificationType.MODIFY,d3359579e32d7610d6fe2496dda2ef1ab42fae0c,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,4a1c38ebdd156119670335c56f0c59ba54ff977f,.py,246128,2,https://stackoverflow.com/a/246128
+3c615d4d4a092edde9884ad7fef519bf16cb5ee2,2016-06-13 00:02:50+02:00,2016-06-13 00:02:50+02:00,540,540,540,540,use new python based wrapper script,ModificationType.MODIFY,,87,54,87,54,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+d724bbf4e7547aec2b978f6de81cf340d5d3e15a,2016-09-27 14:17:35+02:00,2016-09-27 14:17:35+02:00,540,540,540,540,update PeptideShaker and SearchGUI,ModificationType.MODIFY,3c615d4d4a092edde9884ad7fef519bf16cb5ee2,8,5,7,5,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+0d429f5b78e053c3cb1d360363d6c33f71836a1f,2016-09-27 15:08:07+02:00,2016-09-27 15:08:07+02:00,540,540,540,540,update PS and SG,ModificationType.MODIFY,d724bbf4e7547aec2b978f6de81cf340d5d3e15a,0,1,0,1,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+c22933c155c2dfbfab1620911d8f5373aeed70ae,2016-09-28 08:50:06+02:00,2016-09-28 08:50:06+02:00,2152,2152,37,37,revert until conda-build bug is fixed,ModificationType.MODIFY,0d429f5b78e053c3cb1d360363d6c33f71836a1f,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+4391bfeda0a745bf3c63ef723827dc02578a632a,2016-11-09 16:12:28-06:00,2016-11-09 16:12:28-06:00,541,541,541,541,"Add searchgui versions: 2.14, 2.9.0, 3.1.4",ModificationType.MODIFY,c22933c155c2dfbfab1620911d8f5373aeed70ae,1,1,1,1,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+a54a315a9af4e625fbec7a4b5cdfb9081c654040,2016-12-15 07:05:25-06:00,2016-12-15 07:05:25-06:00,541,541,541,541,"Added --exec_dir option
+
+The --exec_dir option specifies an alternate directory for the
+searchgui distribution.  If the option is used and the directory does
+not exist, the script will copy the distribution to that directory.
+SearchGui updates files relative to the path of the jar file. Thus we
+need to copy the jar file, lib, and resources to the working directory
+when used in a multiuser environment such as galaxy.",ModificationType.MODIFY,4391bfeda0a745bf3c63ef723827dc02578a632a,16,3,10,3,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+a54a315a9af4e625fbec7a4b5cdfb9081c654040,2016-12-15 07:05:25-06:00,2016-12-15 07:05:25-06:00,541,541,541,541,"Added --exec_dir option
+
+The --exec_dir option specifies an alternate directory for the
+searchgui distribution.  If the option is used and the directory does
+not exist, the script will copy the distribution to that directory.
+SearchGui updates files relative to the path of the jar file. Thus we
+need to copy the jar file, lib, and resources to the working directory
+when used in a multiuser environment such as galaxy.",ModificationType.MODIFY,a54a315a9af4e625fbec7a4b5cdfb9081c654040,17,4,1,1,roryk/bioconda-recipes,bioconda-recipes,f2ba142c22925c719d1a07a345414768eb60e643,.py,246128,2,https://stackoverflow.com/a/246128
+696ccf76c9acb21dee747dbe9399ea347d8b9871,2017-02-03 18:47:11+01:00,2017-02-03 18:47:11+01:00,4958,4958,4958,4958,"Added python-based convenience wrapper scripts for phylip, drawtree and drawgram and removed the old Bash-based ones. Linked all binaries to /bin not only the phylip.py as in biobuilds reipe. Moved tests to phylip.py. Removed license file. Some inelegant solutions to phylip's problem finding its own font files and dylibs.",ModificationType.ADD,,116,0,116,0,roryk/bioconda-recipes,bioconda-recipes,b105ff36e79a8e96702a9272edf94706f07eb6cf,.py,246128,2,https://stackoverflow.com/a/246128
+76fe8283ba2b6276273fa9c94adf62fe2150be9e,2017-02-07 13:08:02+01:00,2017-02-07 13:08:02+01:00,4958,4958,4958,4958,Fixed som typos in comments,ModificationType.MODIFY,696ccf76c9acb21dee747dbe9399ea347d8b9871,4,4,4,4,roryk/bioconda-recipes,bioconda-recipes,b105ff36e79a8e96702a9272edf94706f07eb6cf,.py,246128,2,https://stackoverflow.com/a/246128
+ed9c9a3b8bdd49189a364a32772db391283af0c9,2016-11-07 20:06:09-05:00,2016-11-07 20:06:09-05:00,4959,4959,4959,4959,Primer Commit,ModificationType.ADD,,1576,0,1576,0,rquispeq/sistemas_blandos,sistemas_blandos,3a0e464e74157042547a4f9f8f786d1ee7efa796,.js,10454518,1,https://stackoverflow.com/q/10454518
+b85f376d86264341c36d504586f5aed7c9855dd6,2013-08-07 12:02:46-07:00,2013-08-07 12:02:46-07:00,1720,1720,1720,1720,work in progress (see if I can create interesting exec expressions),ModificationType.ADD,,142,0,142,0,rowhit/h2o-2,h2o-2,4d17d492d9244a63f1860157a2f17ad3e140e02b,.py,6881170,1,https://stackoverflow.com/q/6881170
+6da092b8d7113207180bdf2cf01620b15d69cd43,2014-03-27 02:30:11-07:00,2014-03-27 02:30:11-07:00,1720,1720,1720,1720,update lists,ModificationType.MODIFY,b85f376d86264341c36d504586f5aed7c9855dd6,105,10,8,8,rowhit/h2o-2,h2o-2,4d17d492d9244a63f1860157a2f17ad3e140e02b,.py,6881170,1,https://stackoverflow.com/q/6881170
+3f1c175625986159849427e8522e926652f7c4e7,2014-03-27 13:57:03-07:00,2014-03-27 13:57:03-07:00,1720,1720,1720,1720,"just added quotes to the .sh
+jprobe.py got enhanced for a selection menu
+it can use the sm jenkins now, by setting a proxy server
+h2o_sandbox.py will look for h2o*logs now (the filename pattern when h2o downloaded logs are unzipped in sandbox)
+playing with random expressions to use in exec in h2o_eqns.py",ModificationType.MODIFY,6da092b8d7113207180bdf2cf01620b15d69cd43,9,8,4,4,rowhit/h2o-2,h2o-2,4d17d492d9244a63f1860157a2f17ad3e140e02b,.py,6881170,1,https://stackoverflow.com/q/6881170
+b63bf58f6e0a435b59abbf4b8b407f56b423163a,2014-03-30 22:25:21-07:00,2014-03-30 22:25:21-07:00,1720,1720,1720,1720,"don't print the jar version unless you're jenkins
+random arithmetic expressions with R and h2o",ModificationType.MODIFY,3f1c175625986159849427e8522e926652f7c4e7,21,14,0,10,rowhit/h2o-2,h2o-2,4d17d492d9244a63f1860157a2f17ad3e140e02b,.py,6881170,1,https://stackoverflow.com/q/6881170
+c52ff1267c39e468fe76b113bb37b4bd1f9c9f73,2017-02-17 19:52:53-08:00,2017-02-17 19:52:53-08:00,4960,4960,4960,4960,Update Polymer,ModificationType.MODIFY,,8,2,8,2,rschoen/fireworks-client,fireworks-client,651cf3c4e3db0b3bc39c95c38bbf643a5e9ee322,.js,17575790,1,https://stackoverflow.com/q/17575790
+c52ff1267c39e468fe76b113bb37b4bd1f9c9f73,2017-02-17 19:52:53-08:00,2017-02-17 19:52:53-08:00,4960,4960,4960,4960,Update Polymer,ModificationType.MODIFY,,33,13,33,13,rschoen/fireworks-client,fireworks-client,f78d994d34c0cbec3a2d129a48d8cf746e145c9d,.js,2008444,2,https://stackoverflow.com/a/2008444
+928fecf5fa2e4d99b406148e21bf9d45875beb9b,2017-02-17 19:52:53-08:00,2017-02-17 19:52:53-08:00,4960,4960,4960,4960,Update Polymer,ModificationType.MODIFY,c52ff1267c39e468fe76b113bb37b4bd1f9c9f73,33,13,3,1,rschoen/fireworks-client,fireworks-client,f78d994d34c0cbec3a2d129a48d8cf746e145c9d,.js,2008444,2,https://stackoverflow.com/a/2008444
+bbd3df6bf7d14e0be2685724ffcc696fd1047fc9,2016-03-02 07:59:48-03:00,2016-03-02 07:59:48-03:00,4961,4961,4961,4961,Added layout.,ModificationType.ADD,,2725,0,2725,0,rsantellan/astronomy-html-project,astronomy-html-project,ba5a6de8ba699235997d8425890f477bb43d620c,.js,181348,1,https://stackoverflow.com/q/181348
+762746532b3de15ca243159987fa52f79b7ff7a3,2016-01-26 21:53:24-02:00,2016-01-26 21:53:24-02:00,4962,4962,4962,4962,incluido bootstrap e angular,ModificationType.ADD,,26735,0,26735,0,royopa/sigcm-silex,sigcm-silex,80f2293d2dfefa938da3adfe8c8f35f450d1b979,.js,6491463,1,https://stackoverflow.com/q/6491463
+4330ac9c05ae49a415799ea8a422bd9b4b8347b4,2015-06-22 13:47:27-07:00,2015-06-22 13:47:27-07:00,4574,4574,4574,4574,initial commit,ModificationType.ADD,,231,0,231,0,rpicard/lemur,lemur,82305a18b710d1fd51fe7593f2efbb43970cf2f9,.js,1144783,1,https://stackoverflow.com/q/1144783
+5ce3f9427b4351f1d81cf882bed784b9e07f5e77,2015-07-19 19:04:42-07:00,2015-07-19 19:04:42-07:00,4575,4575,4575,4575,"Fixed issue where hardcoded localhost:port combination existed in Javascript, added another step to setup.py 'package' that removes
+such instances and creates a more agnostic javascript blob.",ModificationType.MODIFY,4330ac9c05ae49a415799ea8a422bd9b4b8347b4,11,1,1,1,rpicard/lemur,lemur,82305a18b710d1fd51fe7593f2efbb43970cf2f9,.js,1144783,1,https://stackoverflow.com/q/1144783
+43d4dbbfbdd6cdb4926adb2cf4e738479669325e,2015-08-14 10:05:30-07:00,2015-08-14 10:05:30-07:00,4575,4575,4575,4575,Fixing the paths related to javascript dependecies,ModificationType.MODIFY,5ce3f9427b4351f1d81cf882bed784b9e07f5e77,12,12,12,12,rpicard/lemur,lemur,82305a18b710d1fd51fe7593f2efbb43970cf2f9,.js,1144783,1,https://stackoverflow.com/q/1144783
+9965af9ccdeb6b410cdabb369521a815a32c2002,2015-10-05 09:48:52-07:00,2015-10-05 09:48:52-07:00,4575,4575,4575,4575,"fixing links, and adding zeroclipboard",ModificationType.MODIFY,43d4dbbfbdd6cdb4926adb2cf4e738479669325e,1,1,1,1,rpicard/lemur,lemur,82305a18b710d1fd51fe7593f2efbb43970cf2f9,.js,1144783,1,https://stackoverflow.com/q/1144783
+63b7b71b491a57941d5d18ccc40dc788b0b59bdc,2015-10-05 16:06:56-07:00,2015-10-05 16:06:56-07:00,4575,4575,4575,4575,adding clipboard functionality,ModificationType.MODIFY,9965af9ccdeb6b410cdabb369521a815a32c2002,3,3,3,3,rpicard/lemur,lemur,82305a18b710d1fd51fe7593f2efbb43970cf2f9,.js,1144783,1,https://stackoverflow.com/q/1144783
+8098b899f93c96bf62e76ad7445f35811fd1c570,2017-07-07 14:32:58+02:00,2017-07-07 14:32:58+02:00,4963,4963,37,37,"Add mobster-to-vcf command to mobster package. (#5128)
+
+* Update mobster to include mobster-to-vcf command.
+
+* Update notes.
+
+* Fixes.",ModificationType.ADD,,101,0,101,0,roryk/recipes,recipes,6cf61b3328ebfa44a95b71302209c0ae75e565c5,.py,246128,2,https://stackoverflow.com/a/246128
+fb85ee5325ad12717e00ecc89ff8f6b122f0a6c6,2017-01-29 12:08:03+01:00,2017-01-29 12:08:03+01:00,4964,4964,2152,2152,"Add recipe for RDPTools (#3629)
+
+* Add recipe for rdptools
+
+* Update .travis.yml
+
+* Update .travis.yml",ModificationType.ADD,,101,0,101,0,roryk/recipes,recipes,f95db374b3c34ad439e509999c6c50ca1baa527c,.py,246128,2,https://stackoverflow.com/a/246128
+4c3dd6cd80b94f33abb4f59cc42e874e37208a2e,2017-05-19 19:17:30-04:00,2017-05-19 16:17:30-07:00,491,491,490,490,[amp-social-share] Add SMS configuration and fix for iOS (#9365),ModificationType.MODIFY,,10,3,10,3,rsimha-amp/amphtml,amphtml,559cc172162bdcb9c8378ae8962ed79e157d354c,.js,19126326,2,https://stackoverflow.com/a/19126326
+c2be5ab1ecfde40a7337f6eeb57aad4328017b60,2018-03-13 11:05:50-04:00,2018-03-13 11:05:50-04:00,493,493,492,492,Updating the whatsapp sharing URL. (#13942),ModificationType.MODIFY,4c3dd6cd80b94f33abb4f59cc42e874e37208a2e,2,3,1,2,rsimha-amp/amphtml,amphtml,559cc172162bdcb9c8378ae8962ed79e157d354c,.js,19126326,2,https://stackoverflow.com/a/19126326
+acc1927661eec3e7bea03456971c2cb7f83ffe4d,2018-05-17 14:00:36-04:00,2018-05-17 14:00:36-04:00,494,494,37,37,"🏗Prefer destructuring objects (#15204)
+
+* Use destructuring
+
+* Cleanup
+
+* Force renaming if it'll help
+
+* Lint
+
+* Updates after rebase
+
+* Fixes
+
+* Fix lint
+
+* comment
+
+* Updates
+
+* tmp
+
+* Lint
+
+* tmp
+
+* Only consider identifiers and member expressions idempotent
+
+* Only force idempotent combined destructures",ModificationType.MODIFY,c2be5ab1ecfde40a7337f6eeb57aad4328017b60,2,2,1,1,rsimha-amp/amphtml,amphtml,559cc172162bdcb9c8378ae8962ed79e157d354c,.js,19126326,2,https://stackoverflow.com/a/19126326
+8e04b57d2d23f431025115443aa95fcd706ee278,2018-05-17 19:54:54-04:00,2018-05-17 19:54:54-04:00,494,494,37,37,"♻️Deprecate parseUrl (#15380)
+
+* Deprecate parseUrl
+
+* Fix new amp-story use",ModificationType.MODIFY,acc1927661eec3e7bea03456971c2cb7f83ffe4d,2,2,1,1,rsimha-amp/amphtml,amphtml,559cc172162bdcb9c8378ae8962ed79e157d354c,.js,19126326,2,https://stackoverflow.com/a/19126326
+abec58cc312ffd2ded4ed7215ed2c8691c0c7096,2018-05-31 11:41:54-07:00,2018-05-31 11:41:54-07:00,495,495,37,37,Remove src/url requirement from amp-social-share (#15691),ModificationType.MODIFY,8e04b57d2d23f431025115443aa95fcd706ee278,18,17,1,1,rsimha-amp/amphtml,amphtml,559cc172162bdcb9c8378ae8962ed79e157d354c,.js,19126326,2,https://stackoverflow.com/a/19126326
+c4a663d0ba13d0488c6fe73c55dc8c971ac6ec0d,2019-05-16 10:59:15-04:00,2019-05-16 10:59:15-04:00,492,492,37,37,🏗✨ Adopt `prettier` for code formatting  (#21212),ModificationType.MODIFY,abec58cc312ffd2ded4ed7215ed2c8691c0c7096,36,22,0,1,rsimha-amp/amphtml,amphtml,559cc172162bdcb9c8378ae8962ed79e157d354c,.js,19126326,2,https://stackoverflow.com/a/19126326
+15b14539bc88ae718e1571ef3f250d1074b05ecd,2015-07-14 12:57:32-04:00,2015-07-14 12:57:32-04:00,4965,4965,4965,4965,RT: initial commit,ModificationType.ADD,,2,0,2,0,rpstulk/petstore-app-git,petstore-app-git,71fb8305b93a831d62a586fdace971632dd427e2,.js,1068308,2,https://stackoverflow.com/a/1068308
+6684d962df2d24320ebdac402db99d04357d77e4,2015-02-04 15:01:18-08:00,2015-02-04 15:01:18-08:00,315,315,315,315,Updating swagger-ui code to the latest version and removing the 'Try it out' buttons,ModificationType.MODIFY,,14,37,14,37,rpothier/kubernetes,kubernetes,a3f544be6d9e873c16a1c8754cba7ecbcc4e8a2e,.js,19431552,2,https://stackoverflow.com/a/19431552
+ee7ff1ba3414efcfadec1e21b31eb42d0b46516c,2015-02-27 15:09:13+10:00,2015-02-27 15:09:13+10:00,4966,4966,4966,4966,Task #1599 - biojs package wip,ModificationType.ADD,,1032,0,1032,0,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+e0e609cb671093eb2d43c520287e78c48e6538d4,2015-02-27 16:18:20+10:00,2015-02-27 16:18:20+10:00,4966,4966,4966,4966,T#1599 - working on improving biojs,ModificationType.MODIFY,ee7ff1ba3414efcfadec1e21b31eb42d0b46516c,4,4,4,4,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+c8b9c31a015b887e971048e2278de49ea6ee6ebc,2015-02-27 16:26:18+10:00,2015-02-27 16:26:18+10:00,4966,4966,4966,4966,T#1599 - working on improving biojs,ModificationType.MODIFY,e0e609cb671093eb2d43c520287e78c48e6538d4,1,1,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+b66aceb640f0de759cef134c048b9fe1e93fdfe0,2015-02-27 16:46:49+10:00,2015-02-27 16:46:49+10:00,4966,4966,4966,4966,T#1599 - biojs working now for Rohart Score and tooltip,ModificationType.MODIFY,c8b9c31a015b887e971048e2278de49ea6ee6ebc,2,2,2,2,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+d48c46bfa8416f215376d25c02fe81dc80510a1b,2015-03-02 11:46:34+10:00,2015-03-02 11:46:34+10:00,4966,4966,4966,4966,Task #1599 - adding in more columns to handle x/y msc calls,ModificationType.MODIFY,b66aceb640f0de759cef134c048b9fe1e93fdfe0,14,1,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+6c5e865943acbcabb1fe9aaa473ee23e47067219,2015-03-02 11:48:37+10:00,2015-03-02 11:48:37+10:00,4966,4966,4966,4966,Task #1599 - adding in colour via colorbrewer Reds and RdGy,ModificationType.MODIFY,d48c46bfa8416f215376d25c02fe81dc80510a1b,2,2,2,2,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+bb80fac88868492be95546bd181ffc43aef97ca4,2015-03-02 12:04:00+10:00,2015-03-02 12:04:00+10:00,4966,4966,4966,4966,Task #1599 - adding in colour manually,ModificationType.MODIFY,6c5e865943acbcabb1fe9aaa473ee23e47067219,10,4,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+94cb7a279f1b82052ece802584b0441cafbe49f8,2015-03-02 12:25:46+10:00,2015-03-02 12:25:46+10:00,4966,4966,4966,4966,Task #1599 - adding in colour manually and readding legends,ModificationType.MODIFY,bb80fac88868492be95546bd181ffc43aef97ca4,18,8,10,7,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+1d331bc3ae49250512f7a6196047996de558d2c4,2015-03-02 12:35:55+10:00,2015-03-02 12:35:55+10:00,4966,4966,4966,4966,Task #1599 - making things more flexible,ModificationType.MODIFY,94cb7a279f1b82052ece802584b0441cafbe49f8,5,35,2,26,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+222d6534e27863982960d2c9a779c604f88a40b2,2015-03-02 12:55:14+10:00,2015-03-02 12:55:14+10:00,4966,4966,4966,4966,Task #1599 - making things more flexible,ModificationType.MODIFY,1d331bc3ae49250512f7a6196047996de558d2c4,1,1,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+ab6452a847cc6447c5ca1104853b74e8d60bd146,2015-03-03 09:29:07+10:00,2015-03-03 09:29:07+10:00,4966,4966,4966,4966,T#1599 - cleaning up title,ModificationType.MODIFY,222d6534e27863982960d2c9a779c604f88a40b2,2,2,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+5e6ab6b89be38ded9a4276a4f0a2f92f67bfef18,2015-03-03 09:50:31+10:00,2015-03-03 09:50:31+10:00,4966,4966,4966,4966,T#1599 - making default max of 1 as per Florian,ModificationType.MODIFY,ab6452a847cc6447c5ca1104853b74e8d60bd146,1,1,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+bf11b4080fb89a72e40b28a97fee84942e59ff1c,2015-03-03 16:02:23+10:00,2015-03-03 16:02:23+10:00,4966,4966,4966,4966,T#1599 - clearing up the x axis labels,ModificationType.MODIFY,5e6ab6b89be38ded9a4276a4f0a2f92f67bfef18,12,9,10,9,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+4f777dfe87c349be05ad668f69fe4a46f8fa3539,2015-03-03 17:29:16+10:00,2015-03-03 17:29:16+10:00,4966,4966,4966,4966,T#1599 - clearing up the x axis labels,ModificationType.MODIFY,bf11b4080fb89a72e40b28a97fee84942e59ff1c,1,3,1,3,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+cfddbad9064a72f163d43658ebf9a3dd9fe1a605,2015-03-03 18:10:45+10:00,2015-03-03 18:10:45+10:00,4966,4966,4966,4966,T#1599 - converting to a percentage based on MSC_calls and total_subsamplings,ModificationType.MODIFY,4f777dfe87c349be05ad668f69fe4a46f8fa3539,3,1,3,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+bf28abbf605a8b091650ffa0701b14695e8efdef,2015-03-04 10:21:14+10:00,2015-03-04 10:21:14+10:00,4966,4966,4966,4966,T#1599 - storing example of gradient legend of colour - working,ModificationType.MODIFY,cfddbad9064a72f163d43658ebf9a3dd9fe1a605,40,57,1,44,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+8cdc3eeb0632d967e07653353840f2350ff38af8,2015-03-04 12:15:59+10:00,2015-03-04 12:15:59+10:00,4966,4966,4966,4966,T#1599 - added new subtitle,ModificationType.MODIFY,bf28abbf605a8b091650ffa0701b14695e8efdef,14,5,9,2,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+2233ae85b771ba9e3873ea6c4deb4ef8f3cb13d3,2015-03-04 15:16:35+10:00,2015-03-04 15:16:35+10:00,4966,4966,4966,4966,T#1599 - added ability to change the dots size,ModificationType.MODIFY,8cdc3eeb0632d967e07653353840f2350ff38af8,1,1,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+9ba32b9117441bada0afdb0437aab4b6710549ab,2015-03-05 13:58:08+10:00,2015-03-05 13:58:08+10:00,4966,4966,4966,4966,Task #1599 - updating so that title can be set on the x axis,ModificationType.MODIFY,2233ae85b771ba9e3873ea6c4deb4ef8f3cb13d3,3,3,1,1,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+bfd2945455ab3d6bd9124839d1c5b05c3397139d,2015-03-12 11:33:10+10:00,2015-03-12 11:33:10+10:00,4966,4966,4966,4966,Adding better documentation,ModificationType.MODIFY,9ba32b9117441bada0afdb0437aab4b6710549ab,29,69,5,62,rowlandm/biojs-vis-rohart-msc-test,biojs-vis-rohart-msc-test,ec8eb7a038caf0de4a465e5f96b4d04a92d3dd7e,.js,15713955,1,https://stackoverflow.com/q/15713955
+a5631fa8d012bccafe2286ef2ed65ab893e95ee1,2015-11-20 15:51:45-05:00,2015-11-20 15:51:45-05:00,4967,4967,4967,4967,the server file for the chat app,ModificationType.ADD,,168,0,168,0,rotohun/squidchatapp,squidchatapp,41d957c0fa0ecf5a5f1a7fca4da5e6923480d1e8,.js,16459606,2,https://stackoverflow.com/a/16459606
+8ad048a726ff6485e57ced72ffafb363ab3bf939,2017-04-11 09:24:42-04:00,2017-04-11 09:24:42-04:00,4968,4968,4968,4968,add depends,ModificationType.ADD,,912,0,912,0,rp-award/symbiont-website,symbiont-website,7b3b922251428a6f19cb367de5fc58ec0956089b,.js,359788,1,https://stackoverflow.com/q/359788
+165b855d6106030d8d459a6ef2f2ee2ba49d805c,2016-02-17 06:31:58+00:00,2016-02-17 06:31:58+00:00,4969,4969,4969,4969,deploying drupal,ModificationType.ADD,,318,0,318,0,rsmccc/drupal-bootstrap,drupal-bootstrap,2be16f57c5d116da2655a6804649746a8106d916,.js,5438771,2,https://stackoverflow.com/a/5438771
+2af65eafbc3c2a9f9326a704a0d8084d565f6b7a,2013-10-16 19:18:21-07:00,2013-10-16 19:18:21-07:00,4970,4970,4970,4970,init,ModificationType.ADD,,137,0,137,0,rozap/django-tastypiedoc,django-tastypiedoc,2b8ea2665eb54c7d0c08d07060802749dc96195e,.js,4810841,1,https://stackoverflow.com/q/4810841
+e1dcad275eeed1b20f57278123406fb8e84c7772,2015-04-23 01:31:34+08:00,2015-04-23 01:31:34+08:00,1900,1900,1900,1900,first ci,ModificationType.ADD,,419,0,419,0,rreusser/react-native-swiper,react-native-swiper,71fb8305b93a831d62a586fdace971632dd427e2,.js,1068308,2,https://stackoverflow.com/a/1068308
+1aeccdb3f5f883e3bcc80a68e45d3e72579e16b2,2017-10-09 23:13:35-05:00,2017-10-09 23:13:35-05:00,4971,4971,4971,4971,more changes,ModificationType.ADD,,9,0,9,0,rootweiller/morichal,morichal,8f6730d30e032426064913b0a76199210519e88f,.js,37519828,1,https://stackoverflow.com/q/37519828
+1aeccdb3f5f883e3bcc80a68e45d3e72579e16b2,2017-10-09 23:13:35-05:00,2017-10-09 23:13:35-05:00,4971,4971,4971,4971,more changes,ModificationType.ADD,,7770,0,7770,0,rootweiller/morichal,morichal,ea6a78f162208e42ee78b5ab897e0404ef9cffcd,.js,53497,1,https://stackoverflow.com/q/53497
+5e7936123c29f466cca5c789f475b1f17fe44379,2013-12-30 13:32:07-05:00,2013-12-30 13:32:07-05:00,4972,4972,4972,4972,Add comments for optional argparse positional argument,ModificationType.MODIFY,,1,1,1,1,rouge8/moto,moto,d32c6f45eebd03b0a4d20b2efbe8b8ad1f9b2b55,.py,4480202,2,https://stackoverflow.com/a/4480202
+5bdd3d32f36bedaec38f10e12f6164856372e87c,2015-09-12 02:34:22-04:00,2015-09-12 02:34:22-04:00,4973,4973,4973,4973,flask virtual env initialize,ModificationType.ADD,,29,0,29,0,rosexu/latex-my-notes,latex-my-notes,cb977cff9545ef5d48ad7cf13f2cbe1ebc3e7cd0,.py,19622133,1,https://stackoverflow.com/q/19622133
+fbfe4bb289f1ea5b5afb7131e6f7141de31435c9,2015-05-13 23:50:12-04:00,2015-05-13 23:50:12-04:00,4974,4974,4974,4974,filter out RSSI readings of 127,ModificationType.MODIFY,,7,3,7,3,roverclay/android-beacon-library,android-beacon-library,13fefbf55f76d0699084cf8aa418447f92a63e91,.java,30118991,1,https://stackoverflow.com/q/30118991
+813b3d4ebbe1a38c1411499dc19d6e595bfaa184,2015-06-02 15:23:01-04:00,2015-06-02 15:23:01-04:00,4975,4975,4975,4975,Initial commit,ModificationType.ADD,,507,0,507,0,rquellh/thewanderingconsultant,thewanderingconsultant,55f4cf9261e8411533b93b2543e001a824b4d116,.js,16459606,2,https://stackoverflow.com/a/16459606
+e1eeb6a9f0ecece3728e8c0f9183c9c899762c43,2015-12-29 09:52:51-03:00,2015-12-29 09:52:51-03:00,4961,4961,4961,4961,First commit .,ModificationType.ADD,,237,0,237,0,rsantellan/wordpress-ecommerce,wordpress-ecommerce,d040fa7ae460656446c9f2d473add9afbeceb989,.php,709669,1,https://stackoverflow.com/q/709669
+e1eeb6a9f0ecece3728e8c0f9183c9c899762c43,2015-12-29 09:52:51-03:00,2015-12-29 09:52:51-03:00,4961,4961,4961,4961,First commit .,ModificationType.ADD,,490,0,490,0,rsantellan/wordpress-ecommerce,wordpress-ecommerce,df36efcdd32a6c139aacc65c0a88cc09fe5531b8,.js,2855865,1,https://stackoverflow.com/q/2855865
+df1e1fd689db645faf906bc3d2b08175e0fe6295,2015-03-11 11:50:09+01:00,2015-03-11 11:50:09+01:00,4976,4976,4976,4976,added recursive update functionality to picklemerge,ModificationType.MODIFY,,24,5,24,5,RRZE-HPC/kerncraft,kerncraft,e2bf290cb3a0e5961487feb2bf8ff1eaf85edd26,.py,3233356,2,https://stackoverflow.com/a/3233356
+f4176c0141c1ba54c55a9924a02eab81be4eb381,2015-11-04 16:57:59+01:00,2015-11-04 16:57:59+01:00,4977,4977,4977,4977,supporting now python 3.4 and 2.7,ModificationType.MODIFY,df1e1fd689db645faf906bc3d2b08175e0fe6295,3,1,1,1,RRZE-HPC/kerncraft,kerncraft,e2bf290cb3a0e5961487feb2bf8ff1eaf85edd26,.py,3233356,2,https://stackoverflow.com/a/3233356
+b107605b2b9a43ccb1f59e6f4838a155cf6e5634,2016-05-16 15:59:24+02:00,2016-05-16 15:59:24+02:00,4978,4978,4978,4978,"Use items() instead of iteritems()
+
+Fixes #22 - incompatible with Python 3",ModificationType.MODIFY,f4176c0141c1ba54c55a9924a02eab81be4eb381,2,4,1,2,RRZE-HPC/kerncraft,kerncraft,e2bf290cb3a0e5961487feb2bf8ff1eaf85edd26,.py,3233356,2,https://stackoverflow.com/a/3233356
+79f386d1fc0b70b70f77b35a4bebe061ecc35710,2017-10-04 11:48:35+02:00,2017-10-04 11:48:35+02:00,4977,4977,4977,4977,all multiline strings are now double quoted,ModificationType.MODIFY,b107605b2b9a43ccb1f59e6f4838a155cf6e5634,2,2,2,2,RRZE-HPC/kerncraft,kerncraft,e2bf290cb3a0e5961487feb2bf8ff1eaf85edd26,.py,3233356,2,https://stackoverflow.com/a/3233356
+68c4b149d3a4fc9041b9ee40234ece7a3c7c7aba,2017-10-10 12:57:45+02:00,2017-10-10 12:57:45+02:00,4977,4977,4977,4977,"Tidied up module, class and function documentation.",ModificationType.MODIFY,79f386d1fc0b70b70f77b35a4bebe061ecc35710,5,3,3,3,RRZE-HPC/kerncraft,kerncraft,e2bf290cb3a0e5961487feb2bf8ff1eaf85edd26,.py,3233356,2,https://stackoverflow.com/a/3233356
+afb614c13bac7532f26de72f86ffeccd46fdf645,2015-08-10 00:28:59-05:00,2015-08-10 00:28:59-05:00,4979,4979,4979,4979,"Version 0.6.0
+* Added support for RLE transfer syntax
+* Added support for jpeg baseline 12 bit transfer syntax
+* Added support for palette color photometric interpretation
+* Added support for RGB planar pixel format
+* Updated to latest library versions (dicomParser, jpx, cornerstone)
+* added support for hooking the XHR request so authentication tokens can be added
+* added a version field
+* refactored code to make it more readable and reusable for a DICOMweb image loader
+  * separate folder for transfer syntax decoders
+  * separate folder for color space converters
+  * Updated to new module format",ModificationType.ADD,,4896,0,4896,0,RowanReid/cornerstoneWADOImageLoader,cornerstoneWADOImageLoader,b6f95e52a6335ee9ac5c99268681808fb3b14785,.js,2172798,1,https://stackoverflow.com/q/2172798
+943fb79f5a650f037dbc8c8982107153952bfd01,2014-06-08 15:33:48-04:00,2014-06-08 15:33:48-04:00,4980,4980,4980,4980,Initial Commit,ModificationType.ADD,,187,0,187,0,roy-selig/the-50-states,the-50-states,71fb8305b93a831d62a586fdace971632dd427e2,.js,1068308,2,https://stackoverflow.com/a/1068308
+b3410e1d6dfc918547b3b369de5cff97b290ec32,2015-05-27 17:04:29-05:00,2015-05-27 17:10:11-05:00,4981,4981,4981,4981,clean up the file sturcture,ModificationType.ADD,,60,0,60,0,RossLitzenberger/Angular-personal_book_collection,Angular-personal_book_collection,71fb8305b93a831d62a586fdace971632dd427e2,.js,1068308,2,https://stackoverflow.com/a/1068308
+b03864acddd8611cdb82aa27776beb4042e8f7a8,2015-08-21 14:34:14+05:18,2015-08-21 14:34:14+05:18,4982,4982,4982,4982,Master added,ModificationType.ADD,,86,0,86,0,roychandrasekhar/zendadmin,zendadmin,1c77b0b5bdcbb6992f663bbbdb4b5f0a75ad9d4b,.php,738823,1,https://stackoverflow.com/q/738823
+2d4b2311ef47f24a7b0c3c52856554ec44f3f0c6,2014-03-26 16:33:41+01:00,2014-04-01 16:15:45+02:00,298,298,297,297,"Added resources locally, implemented bootstrap3 and sb-admin",ModificationType.ADD,,6807,0,6807,0,rswork/SonataAdminBundle,SonataAdminBundle,dd8138568e29426a6219d36a938124b5c6a4f161,.js,7602565,1,https://stackoverflow.com/q/7602565
+86ba658e6aca54a63f3d55f66e9156b787577a7e,2015-11-05 20:57:18+01:00,2015-11-05 20:57:18+01:00,4983,4983,4983,4983,Struttura iniziale progetto copiata dal repository di studio agenteAr4k,ModificationType.ADD,,613,0,613,0,rossonet/ConsoleAr4k,ConsoleAr4k,d4502fac04f7370129d85a030b2c58b9f84efc03,.js,4687808,1,https://stackoverflow.com/q/4687808
+3adbf4fc80af4cba8acd60d3eb26cbd1621bb90f,2015-03-02 20:11:58-08:00,2015-03-02 20:11:58-08:00,4984,4984,4984,4984,updated tap,ModificationType.ADD,,14,0,14,0,rpaterson/nodeunit,nodeunit,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+3adbf4fc80af4cba8acd60d3eb26cbd1621bb90f,2015-03-02 20:11:58-08:00,2015-03-02 20:11:58-08:00,4984,4984,4984,4984,updated tap,ModificationType.MODIFY,3adbf4fc80af4cba8acd60d3eb26cbd1621bb90f,30,20,0,1,rpaterson/nodeunit,nodeunit,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+3adbf4fc80af4cba8acd60d3eb26cbd1621bb90f,2015-03-02 20:11:58-08:00,2015-03-02 20:11:58-08:00,4984,4984,4984,4984,updated tap,ModificationType.MODIFY,3adbf4fc80af4cba8acd60d3eb26cbd1621bb90f,109,71,0,2,rpaterson/nodeunit,nodeunit,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+161b5968bddb981fad2c30889c8badde7c325328,2015-03-01 01:44:30-08:00,2015-03-01 01:44:30-08:00,4985,4985,4985,4985,Initial commit! Hold on to your butts...,ModificationType.ADD,,158,0,158,0,rsprice/starDate,starDate,52c3d32f2e8c5517158ffd4bd5dd8d1c1460af34,.js,398120,2,https://stackoverflow.com/a/398120
+161b5968bddb981fad2c30889c8badde7c325328,2015-03-01 01:44:30-08:00,2015-03-01 01:44:30-08:00,4985,4985,4985,4985,Initial commit! Hold on to your butts...,ModificationType.ADD,,158,0,158,0,rsprice/starDate,starDate,52c3d32f2e8c5517158ffd4bd5dd8d1c1460af34,.js,16459606,2,https://stackoverflow.com/a/16459606
+161b5968bddb981fad2c30889c8badde7c325328,2015-03-01 01:44:30-08:00,2015-03-01 01:44:30-08:00,4985,4985,4985,4985,Initial commit! Hold on to your butts...,ModificationType.ADD,,126,0,126,0,rsprice/starDate,starDate,f502946d70bd7cedf19cdbd3a29dd6f8793ead06,.js,13216903,1,https://stackoverflow.com/q/13216903
+2297004db01ade319cd0c43ba3aadee98c4c96f5,2016-05-20 13:47:53+02:00,2016-05-20 13:47:53+02:00,4986,4986,4986,4986,Initial commit,ModificationType.ADD,,2064,0,2064,0,rra-am1a-2015/wordpress-tutorial,wordpress-tutorial,7861c20631fc1618b6b1eaffab65e93f5fab6bf8,.js,7264899,1,https://stackoverflow.com/q/7264899
+c296ae2007471e4fc7de159ad21908f671952163,2017-07-23 19:38:10+08:00,2017-07-23 19:38:10+08:00,4987,4987,4987,4987,silverlands,ModificationType.ADD,,231,0,231,0,RosApr/RosApr.github.io,RosApr.github.io,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+c296ae2007471e4fc7de159ad21908f671952163,2017-07-23 19:38:10+08:00,2017-07-23 19:38:10+08:00,4987,4987,4987,4987,silverlands,ModificationType.ADD,,190,0,190,0,RosApr/RosApr.github.io,RosApr.github.io,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+57c9496c455f47276f7b4a2dfc0ff44bccf25d6c,2015-06-11 15:33:26+08:00,2015-06-11 15:33:26+08:00,4988,4988,4988,4988,ignore file,ModificationType.ADD,,94,0,94,0,roth1002/nodejs-practice,nodejs-practice,b30522d8d56998b7d08f1a7781dd41c30b91b960,.js,10727155,2,https://stackoverflow.com/a/10727155
+75bb272a4792f4ca8300fe2f7fe915288ef7fddc,2017-04-20 19:42:43-04:00,2017-04-20 19:42:43-04:00,4989,4989,4989,4989,- Work on adding the auth framework to zero,ModificationType.ADD,,161,0,161,0,roryl/framework-zero-dev,framework-zero-dev,7b26b2bc055ad8f94c084c4ca7a44b890e8c9cd4,.js,13046401,1,https://stackoverflow.com/q/13046401
+f7efd66667af89fbc16366454048d67018cc03ec,2015-04-21 12:06:41-05:00,2015-04-21 12:06:41-05:00,4990,4990,4990,4990,New player on manage transitions.,ModificationType.ADD,,519,0,519,0,Rosuav/appension,appension,93b7a9efbc2b95908c8863f1ea852637a0495ba6,.js,11508164,2,https://stackoverflow.com/a/11508164
+90864727674b9f8a16794063926d871d5f314b92,2018-06-22 14:31:24+07:00,2018-06-22 14:31:24+07:00,4991,4991,4991,4991,setup layout with sb admin,ModificationType.ADD,,18608,0,18608,0,rslhdyt/larapos,larapos,aa0a9cafda91d2b1f7bbf00101849a446353d160,.js,181348,1,https://stackoverflow.com/q/181348
+eea1ca20a4fbbf21f4bc813312bb25a8e42cfa34,2014-05-31 17:55:28+01:00,2014-05-31 17:55:28+01:00,873,873,873,873,Ooops.,ModificationType.ADD,,223,0,223,0,rosscdh/silk,silk,bd27cbc988b159166af53d949b54000fcc32b50d,.py,2749655,1,https://stackoverflow.com/q/2749655
+f6d99be9b39244d657680d816c63390f9c9bf48d,2015-05-21 09:24:17+02:00,2015-05-21 09:24:17+02:00,2589,2589,2589,2589,Initial commit,ModificationType.ADD,,9792,0,9792,0,RoxitBV/Buildscreen,Buildscreen,202450ae3dcce609dd955220e4132af08dbb0ad2,.js,3561493,1,https://stackoverflow.com/q/3561493
+a0f7fda80d1118b6a3e7012d49515a62c95b0eec,2015-11-05 17:37:16+01:00,2015-11-05 17:37:16+01:00,2347,2347,2347,2347,Updating bunch of javascript and compiled CSS.,ModificationType.MODIFY,,4326,24,4326,24,rossriley/bolt,bolt,0c5538197d2ed25e1f1d21982eac82822418e443,.js,1299069,2,https://stackoverflow.com/a/1299069
+dac851d314c2cd50452f26de7bf260bd70a68e09,2015-11-06 13:23:13+01:00,2015-11-06 13:23:13+01:00,2347,2347,2347,2347,Updating compiled .css and .js.,ModificationType.MODIFY,a0f7fda80d1118b6a3e7012d49515a62c95b0eec,9,1,0,1,rossriley/bolt,bolt,0c5538197d2ed25e1f1d21982eac82822418e443,.js,1299069,2,https://stackoverflow.com/a/1299069
+786ff2c08e80f693ef147a7f24658b46208ad663,2015-11-25 12:59:14+01:00,2015-11-25 12:59:14+01:00,2347,2347,2347,2347,Yolo-committing compiled CSS and JS.,ModificationType.MODIFY,dac851d314c2cd50452f26de7bf260bd70a68e09,5,13,3,6,rossriley/bolt,bolt,0c5538197d2ed25e1f1d21982eac82822418e443,.js,1299069,2,https://stackoverflow.com/a/1299069
+4a73d367de8abd299cf2c77749feb6fadacf00f9,2015-12-01 22:10:54+01:00,2015-12-01 22:10:54+01:00,4992,4992,4992,4992,Add generated js,ModificationType.MODIFY,786ff2c08e80f693ef147a7f24658b46208ad663,64,64,60,60,rossriley/bolt,bolt,0c5538197d2ed25e1f1d21982eac82822418e443,.js,1299069,2,https://stackoverflow.com/a/1299069
+77b30b8fb796ec58bd3c7d4bbb16c424677ac966,2015-02-12 16:52:45-08:00,2015-02-12 16:52:45-08:00,4993,4993,4993,4993,"Atomic Editor, copyright notice",ModificationType.ADD,,1112,0,1112,0,rsredsq/AtomicGameEngine,AtomicGameEngine,d09f4bbc59ff646dc4636ad4f5750e1c02422234,.java,7634346,1,https://stackoverflow.com/q/7634346
+96c486e38b28ab919486cad9bf7e0c57a75d6fb8,2016-08-22 23:31:49+03:00,2016-08-22 23:31:49+03:00,4994,4994,4994,4994,August 22 2016,ModificationType.ADD,,563,0,563,0,RoyImaginet/Plasson-new,Plasson-new,8eb88ea597e43a50a6320dbed55d684835f300fc,.js,2855865,1,https://stackoverflow.com/q/2855865
+f09cddbca363317edf31dd7334c99987aa8ffdf8,2015-03-02 14:31:28+00:00,2015-03-02 14:31:28+00:00,4995,4995,4995,4995,Codeschool files added,ModificationType.ADD,,26059,0,26059,0,rosterloh/StayingSharpWithAngular,StayingSharpWithAngular,1b5a02ad772366444227f05e5af51aaddd00253d,.js,472729,2,https://stackoverflow.com/a/472729
+777474eba85976fa7199f4b811ce093f3e1f6380,2016-11-04 16:20:47+05:18,2016-11-04 16:20:47+05:18,4996,4996,4996,4996,Adding org.wso2.carbon.apimgt.store feature,ModificationType.ADD,,2017,0,2017,0,rswijesena/carbon-apimgt,carbon-apimgt,b58b14675ba58f54c1ae98e3f961dd22831eecd5,.js,12866060,1,https://stackoverflow.com/q/12866060
+0bea8d35eeedbb2c842deb8f2ab9b917ff7ba520,2014-10-12 01:09:53-06:00,2014-10-12 01:09:53-06:00,4997,4997,4997,4997,,ModificationType.ADD,,1104,0,1104,0,rr12005/sistemaDeEncuestas,sistemaDeEncuestas,c5737e1a9e38c49dfed32d8145663a50d40c36cc,.php,7105433,1,https://stackoverflow.com/q/7105433
+08bb57f57bcd1c2fc1d6a86bb012680aab52e0e8,2017-05-18 15:37:39-03:00,2017-05-18 15:37:39-03:00,4998,4998,4998,4998,move to public repo,ModificationType.ADD,,1117,0,1117,0,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+26a52078cef704e56a7204fcb04b13814b4801a8,2017-08-18 12:24:37-03:00,2017-09-14 15:07:32-03:00,4999,4999,4999,4999,Fixes test that had a wrong decoded big integer,ModificationType.MODIFY,08bb57f57bcd1c2fc1d6a86bb012680aab52e0e8,2,2,2,2,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+a97c795d7008b3e55e2423fbc694978a0c9ddf59,2017-08-18 20:01:59-03:00,2017-09-14 15:07:32-03:00,5000,5000,4999,4999,remove rlp.decode method,ModificationType.MODIFY,26a52078cef704e56a7204fcb04b13814b4801a8,87,110,85,109,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+5517444d4668795f6297913fcaf524e3c1ec5f7b,2017-09-14 15:06:14-03:00,2017-09-14 15:10:00-03:00,4999,4999,4999,4999,Some refactoring in order to use ByteBuffer. This will prevent copying everything multiple times when parsing RLP.,ModificationType.MODIFY,a97c795d7008b3e55e2423fbc694978a0c9ddf59,5,12,4,12,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+4ef17b9096e7d255378d0345cb4551d2836e946e,2018-01-16 15:02:29-03:00,2018-02-02 17:33:12-03:00,4999,4999,4999,4999,Create the BlockDifficulty class and return it from BlockHeader.getDifficulty(),ModificationType.MODIFY,5517444d4668795f6297913fcaf524e3c1ec5f7b,1,1,1,1,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+b9be35ede483dcd0ed28c09e04f408a45c1fdfea,2018-02-06 17:34:46-03:00,2018-02-07 15:02:43-03:00,5001,5001,5001,5001,Rename sha3 too keccak256,ModificationType.MODIFY,4ef17b9096e7d255378d0345cb4551d2836e946e,1,1,1,1,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+a6c852b26b6a64469f590cbdd0fcd17f62ebf8be,2018-06-26 12:53:57-03:00,2018-07-20 14:32:51-03:00,4999,4999,4999,4999,Replace SpongyCastle 1.52 with BouncyCastle 1.59,ModificationType.MODIFY,b9be35ede483dcd0ed28c09e04f408a45c1fdfea,2,2,2,1,rsksmart/rskj,rskj,dc03bba8e53e24863e7ee12ccff6099c4b311d1f,.java,4785776,2,https://stackoverflow.com/a/4785776
+604a465dffd7377abaf5e98dfd8a358f1f19178b,2016-03-22 10:42:21+01:00,2016-03-22 10:42:21+01:00,5002,5002,5002,5002,notification system,ModificationType.ADD,,126,0,126,0,routetopa/spod-plugin-notification-system,spod-plugin-notification-system,165333a54e35a585329d929a6992c60d4a181481,.js,16459606,2,https://stackoverflow.com/a/16459606
+9472f7a8a7fbfadec71fc68274fad0e3b2a8bf47,2016-10-12 21:12:38+02:00,2016-10-12 21:12:38+02:00,5003,5003,37,37,Add files via upload,ModificationType.ADD,,82,0,82,0,rosadigitale/Digital-successes,Digital-successes,cb865a2d71f8e84c710bab21bcac84408219bf46,.php,23417519,1,https://stackoverflow.com/q/23417519
+524bc55b2b4bb143caf559bde12f07c331ff0ab0,2014-03-17 14:38:53-03:00,2014-03-17 14:38:53-03:00,2970,2970,2970,2970,missing node_modules in tests,ModificationType.ADD,,5892,0,5892,0,rotundasoftware/cartero,cartero,28d17231adf3a517e12230161d992d44af801ff4,.js,14967647,1,https://stackoverflow.com/q/14967647
+ef161f71e1a129a6a48794944ae87f7b2d1030f4,2016-01-04 09:58:41-08:00,2016-01-04 10:33:42-08:00,5005,5005,5004,5004,"Switch to the latest pex (1.1.1)
+
+Summary:
+The new release properly does site-packages isolation, so pexs will no longer pull in locally installed packages on newer distros. You can use PEX_INHERIT_PATH=1 to revert to the (almost) the old behavior.
+
+Other niceties include:
+ - access_zipped_assets() [just a pkg_resources crawl; has nothing to do with zips]
+ - perf improvements for extracting prebuilt packages
+ - ~/.pexrc, /etc/pexrc for local/global pex settings (like PEX_ROOT)
+ - a bunch of new env variables: PEX_SCRIPT/PEX_PATH/PEX_PYTHON. I personally don't recommend using PEX_PATH (allows combining pexs) :(.
+Closes https://github.com/facebook/buck/pull/583
+
+Reviewed By: sdwilsh
+
+fb-gh-sync-id: fe5a134",ModificationType.ADD,,323,0,323,0,rowillia/buck,buck,8de396895b60019689a425677c2100c25100e2af,.py,2572172,1,https://stackoverflow.com/q/2572172
+d82dfcc86720ab4f976fee20b598ff08b56b1f6a,2016-01-04 14:08:25-08:00,2016-01-04 14:33:40-08:00,5005,5005,5004,5004,"Fix new pex's windows handling.
+
+Summary:
+os.link doesn't exist on windows; copy instead.
+Closes https://github.com/facebook/buck/pull/597
+
+Reviewed By: sdwilsh
+
+fb-gh-sync-id: 9195d9a",ModificationType.MODIFY,ef161f71e1a129a6a48794944ae87f7b2d1030f4,16,11,16,11,rowillia/buck,buck,8de396895b60019689a425677c2100c25100e2af,.py,2572172,1,https://stackoverflow.com/q/2572172
+dd43937198001d63c9e6362b53494da80a5cf329,2016-01-13 02:25:07-08:00,2016-01-13 02:38:50-08:00,5005,5005,5006,5006,"More pex fixes for windows.
+
+Summary:
+Aside from the two issues sdwilsh found, the last bit was convincing pex to not remove sys.prefix from sys.path.
+Closes https://github.com/facebook/buck/pull/614
+
+Reviewed By: sdwilsh
+
+fb-gh-sync-id: ae060dd",ModificationType.MODIFY,d82dfcc86720ab4f976fee20b598ff08b56b1f6a,2,11,2,11,rowillia/buck,buck,8de396895b60019689a425677c2100c25100e2af,.py,2572172,1,https://stackoverflow.com/q/2572172
+cd5bf72883bc1543317e196c034c23b35fa18a8a,2016-09-10 13:56:05+00:00,2016-09-10 13:56:05+00:00,5007,5007,5007,5007,add wp files,ModificationType.ADD,,2162,0,2162,0,rsagie/caracal,caracal,fda8751c89827e46329d237c44aa78c454041771,.js,18020326,2,https://stackoverflow.com/a/18020326
+130eb4bbc104fe0c0e212bbf64e4b255ceb2063c,2015-02-19 15:47:44-05:00,2015-02-19 15:47:44-05:00,747,747,747,747,init(): initial pass at templates,ModificationType.ADD,,26000,0,26000,0,rseyferth/angular-formly-templates-uikit,angular-formly-templates-uikit,4f4f492bae46011d2be9359d1f93f1ac2b7ce371,.js,472729,2,https://stackoverflow.com/a/472729
+bec6edfe8164e5559c519d292a591fbe4e0174ac,2014-11-07 17:36:00+03:00,2014-11-07 17:36:00+03:00,5008,5008,5008,5008,add angular app,ModificationType.MODIFY,,11120,5940,11120,5940,RostovTeam/hackaton,hackaton,f594112aee8e221fc2a07e13c970832b82b1964f,.js,3143070,1,https://stackoverflow.com/q/3143070
+29ed7f100636d97aff5e7b3b0a7cb245ef4e1626,2015-12-21 09:12:14-06:00,2015-12-21 09:12:14-06:00,5009,5009,5009,5009,Validador de formato del dui hecho además con foundation,ModificationType.ADD,,7470,0,7470,0,rots87/Javascript,Javascript,a5a53b7b835c2717ab5894a3110b782dfec25569,.js,8955580,2,https://stackoverflow.com/a/8955580
+98532229f3f4db101ea3560a71e0047f18b533f3,2015-10-29 15:35:17+01:00,2015-10-29 15:35:17+01:00,5010,5010,5010,5010,add webpack lesson,ModificationType.ADD,,1508,0,1508,0,Rouksana/ecvd-js,ecvd-js,a5a806b076fea5360c2bd8a076a5c2803c81c258,.js,26603875,2,https://stackoverflow.com/a/26603875
+6a65230e1e1f6a84c936485886927f29368aaba9,2016-03-14 13:18:32+01:00,2016-03-14 13:18:32+01:00,5011,5011,5011,5011,"Web
+
+ADD WEB",ModificationType.ADD,,168,0,168,0,Royalxm/Ar-drone,Ar-drone,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+eb7edab5be6a4952d1f8693ca90cefd9a8d5c8a4,2015-08-31 01:31:24+07:00,2015-08-31 01:31:24+07:00,5012,5012,5012,5012,"Front End :
+- UnderConstruction
+- Index
+
+Back End :
+- Login
+- Dashboard
+- User Management
+- Role Management
+- Authentication",ModificationType.ADD,,438,0,438,0,rophenk/beryl-sibaku,beryl-sibaku,cd3a0b3c8a13c41daa156e2b2ece9dfd59240086,.js,2200494,1,https://stackoverflow.com/q/2200494
+372b469501fff2438ba75084bf3ce16cbb3f0a12,2016-09-23 23:46:06+04:00,2016-09-23 23:46:06+04:00,5013,5013,5013,5013,run,ModificationType.ADD,,2220,0,2220,0,Rshalika/dotnet,dotnet,64b9dd267b74926b1966d172826c41dab09e47e5,.py,35817,1,https://stackoverflow.com/q/35817
+0040633fa4f86b88b437877d832996fab8007ad1,2014-04-04 13:50:58+02:00,2014-04-04 13:50:58+02:00,5014,5014,5014,5014,Fixed test break and JSON MIME type. Fixes issue #2978.,ModificationType.MODIFY,,6,2,6,2,ropik/yii2,yii2,f07cbeb198ce7c7ffdc4a4c50d695604b4cd223c,.php,477816,1,https://stackoverflow.com/q/477816
+7295540c72dc0c439b04a1c1d103b37e7fd402ee,2014-04-17 15:33:07+04:00,2014-04-17 15:33:07+04:00,1142,1142,1142,1142,Code style and phpdoc fixes,ModificationType.MODIFY,0040633fa4f86b88b437877d832996fab8007ad1,1,1,1,1,ropik/yii2,yii2,f07cbeb198ce7c7ffdc4a4c50d695604b4cd223c,.php,477816,1,https://stackoverflow.com/q/477816
+7624a997b41689445069353eb18e58f5c711020b,2014-04-15 21:40:51+02:00,2014-04-15 21:40:51+02:00,5015,5015,5015,5015,first commit,ModificationType.ADD,,21464,0,21464,0,rrequero/racetas-frontend,racetas-frontend,2f26beed693cd067b08c1447a7576474824e0407,.js,472729,2,https://stackoverflow.com/a/472729
+3dd3d5206f1e4910c99b24c71a612b1b162cb52e,2016-04-17 21:05:26-03:00,2016-04-17 21:05:26-03:00,5016,5016,5016,5016,1st release bicimapuy,ModificationType.ADD,,147,0,147,0,rossanag/bicimapuy,bicimapuy,ce6369f1cbac700012e50bf621e26e94f3ec41a6,.js,16459606,2,https://stackoverflow.com/a/16459606
+c26e45fbae58e290e7cb38911e489530de69c785,2015-03-03 12:27:50-08:00,2015-03-03 12:27:50-08:00,5017,5017,5017,5017,Installed http-server for easier manual testing,ModificationType.ADD,,55,0,55,0,roppa/object_playground,object_playground,3f95d0635a57373572e7264e3230d4e699be1628,.js,154090,2,https://stackoverflow.com/a/154090
+1b3c39c2dd525ad10dc8f99595af39e6fcc41e83,2013-09-26 01:36:29-06:00,2013-09-26 01:36:29-06:00,5018,5018,5018,5018,Estilo de formularios + configuración entidades,ModificationType.ADD,,63,0,63,0,Roquet87/SIGESRHI,SIGESRHI,7b9e5c0c21a025d501c65e978f60a16be0f80ba1,.js,9179708,1,https://stackoverflow.com/q/9179708
+1044606468a4f713b1c610f56423e883e97b9f09,2015-10-15 03:07:13+05:18,2015-10-15 03:07:13+05:18,5019,5019,5019,5019,Adding project,ModificationType.ADD,,168,0,168,0,royalharsh/AMBER-alerts,AMBER-alerts,7c76452219939f82fe7247533dfce2dd795737c2,.js,398120,2,https://stackoverflow.com/a/398120
+b72de41c5cc9f0c46d3fa8f062c75bd273641474,2015-05-28 15:39:08-04:00,2015-05-28 16:41:54-04:00,65,65,65,65,"node-gyp@2.0.0
+
+* update to newer gyp
+* add delayed load hook to allow renaming binary at runtime
+* add license to package.json
+* support for newer Visual Studio",ModificationType.MODIFY,,201,202,201,202,rsp/npm,npm,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+25a234b4595ee3f1a2c09e2a39e3c238aa642557,2015-10-14 22:17:03-07:00,2015-10-15 15:25:33-07:00,65,65,66,66,"src: install npm@3 with npm@2
+
+Restore the ability to do one-shot upgrades from the versions of npm
+bundled with Node 0.8 to npm@3, which simplifies using Travis with old
+Node and new npm, for compatibility testing purposes. Older versions of
+npm repack packages on install, which works poorly with the way npm@3
+handles bundledDependencies with flat trees.
+
+Fixes: #9668
+
+PR-URL: https://github.com/npm/npm/pull/9981",ModificationType.DELETE,b72de41c5cc9f0c46d3fa8f062c75bd273641474,0,62,0,5,rsp/npm,npm,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+9e2a2bb5bc71a0ab3b3637e8eec212aa22d5c99f,2015-12-03 15:49:35-08:00,2015-12-03 15:49:35-08:00,65,65,65,65,"node-gyp@3.2.1
+
+Improved *BSD support.
+
+Credit: @bnoordhuis
+Reviewed-By: @othiym23
+PR-URL: https://github.com/nodejs/node-gyp/pull/831",ModificationType.DELETE,25a234b4595ee3f1a2c09e2a39e3c238aa642557,0,168,0,1,rsp/npm,npm,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+2be7be1a273a92d5e7bc98e85753051144062f78,2016-05-17 00:02:21+05:18,2016-05-17 00:02:21+05:18,5020,5020,5020,5020,first commit,ModificationType.ADD,,1576,0,1576,0,rpaneru/schools,schools,3a0e464e74157042547a4f9f8f786d1ee7efa796,.js,10454518,1,https://stackoverflow.com/q/10454518
+00e6566a580f279ae36b578477bf1e38d2b54b7d,2017-04-18 20:31:33+02:00,2017-04-18 20:31:33+02:00,5021,5021,5021,5021,versie met alle content en pug bestanden,ModificationType.ADD,,182,0,182,0,rouws/cmdmethods,cmdmethods,38d6391e3e4216c0abb2af32c39dabf63b5af167,.js,16459606,2,https://stackoverflow.com/a/16459606
+fbcf9c58038958c5b5625acf4b19a4c4065b607e,2017-10-06 15:57:38-03:00,2017-10-06 15:57:38-03:00,5022,5022,5022,5022,Alterações no trabalho antes da versão final,ModificationType.ADD,,12757,0,12757,0,rosjdr/bd20172tp1,bd20172tp1,9aa96eef05bebf6b8c073bead714389fd612a440,.js,8506881,1,https://stackoverflow.com/q/8506881
+2941fc378b510194cecce54bdf9ae41b44782eca,2015-06-05 13:09:37-07:00,2015-06-05 13:09:37-07:00,5023,5023,5023,5023,"Small tweak to error type making, link to source",ModificationType.MODIFY,,2,0,2,0,rsimmons/rindel,rindel,38a79e567a8251e65e29fb569906dd74ff746e40,.js,1382107,1,https://stackoverflow.com/q/1382107
+14b3f0dd7d8c024391b349a57ef93b08d54a1b79,2013-09-23 23:12:09-07:00,2013-09-23 23:12:09-07:00,5024,5024,5024,5024,Added in all python client libraries from the June 28 DMG,ModificationType.ADD,,153,0,153,0,rsutormin/narrative,narrative,074e4ad537030d64dde102bc08c56d4d324077a2,.py,651794,1,https://stackoverflow.com/q/651794
+8302b8502416d2278f58a61e41c18036c08241d7,2017-03-11 13:10:02-05:00,2017-03-11 13:10:02-05:00,1422,1422,1422,1422,Draft of a new CLI transport that can operate over CLIAction with the regular HTTP(S) port.,ModificationType.ADD,,191,0,191,0,rsandell/jenkins,jenkins,ebdd18a192fec4d2e29e25c85dbeb0c2679e40d6,.java,3651696,2,https://stackoverflow.com/a/3651696
+5f8f42624eb58c475d39e5b0cea9507597f42546,2017-11-28 04:28:50-05:00,2017-11-28 12:28:50+03:00,1422,1422,1423,1423,"Introducing ItemGroup.allItems and similar default methods (#3148)
+
+* Introducing ItemGroup.allItems and similar default methods.
+
+* Do not get me started.",ModificationType.MODIFY,,39,0,39,0,rsandell/jenkins,jenkins,12e4c19ee4cf2db777e3b649c5f331dc97752fa6,.java,22694884,1,https://stackoverflow.com/q/22694884
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,25,0,25,0,rootulp/exercism,exercism,99b3920f9c492b108fed3a07e87107985e2b4089,.js,62888,2,https://stackoverflow.com/a/62888
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,8023,0,8023,0,rootulp/exercism,exercism,b624d136778b74b9747df5d4afe04ed5f1199b87,.js,53497,1,https://stackoverflow.com/q/53497
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,190,0,190,0,rootulp/exercism,exercism,7106924934501fd4035efe78678281020328acc5,.js,16459606,2,https://stackoverflow.com/a/16459606
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,61,0,61,0,rootulp/exercism,exercism,967a0adb5daa98be6ae6a18a034712959536f0f0,.js,4719320,1,https://stackoverflow.com/q/4719320
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,61,0,61,0,rootulp/exercism,exercism,967a0adb5daa98be6ae6a18a034712959536f0f0,.js,4719320,1,https://stackoverflow.com/q/4719320
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,739,0,739,0,rootulp/exercism,exercism,5e4618cb5c44b67fcbf4ffafe40eda5231431a0c,.js,1068308,2,https://stackoverflow.com/a/1068308
+bdbe656760938899648fdb7d9ca70be6c29c2275,2017-08-14 23:50:47-07:00,2017-08-14 23:50:47-07:00,5025,5025,5025,5025,Solve hello-world,ModificationType.ADD,,190,0,190,0,rootulp/exercism,exercism,7106924934501fd4035efe78678281020328acc5,.js,16459606,2,https://stackoverflow.com/a/16459606
+67eae0e03baa9aa6dc7d513a262c7f6fb9896f3f,2014-08-13 21:46:46-04:00,2014-08-13 21:46:46-04:00,5026,5026,5026,5026,"restructured, added gulp",ModificationType.ADD,,49,0,49,0,rosay/mapstrap,mapstrap,6bed6e172056b55dd391264ded53b1a168296922,.js,1068308,2,https://stackoverflow.com/a/1068308
+4018bb7d77d9728ce6e2e6ec540582020dc47836,2016-03-13 18:28:47+01:00,2016-03-13 18:28:47+01:00,5027,5027,5027,5027,initial,ModificationType.ADD,,340,0,340,0,RootProgger/dartligascript,dartligascript,5fe943bdbe2a5f5d748dd5e7f9b97d84a059c667,.php,4069002,1,https://stackoverflow.com/q/4069002
+f1e78ab3460ed02d2d6d10b0f2989f7387ec24ef,2013-09-05 11:53:19+04:00,2013-09-05 11:53:19+04:00,1220,1220,1220,1220,init,ModificationType.ADD,,14847,0,14847,0,rschick/angular-xeditable,angular-xeditable,c34fc0425517a6a147bcdf8ce7ade67452a41c17,.js,472729,2,https://stackoverflow.com/a/472729

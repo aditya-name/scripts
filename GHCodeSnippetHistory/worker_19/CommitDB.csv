@@ -1,0 +1,859 @@
+Hash,AuthorDate,CommiterDate,AuthorEmail,AuthorName,CommiterEmail,CommiterName,Message,ChangeType,ParentCommit,AddedLinesInCommit,RemovedLinesInCommit,AddedLinesInContext,RemovedLinesInContext,Repo,RepoName,FileId,FileExt,PostId,PostTypeId,SOUrl
+10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,2012-06-01 16:35:36+03:00,2012-06-01 16:35:36+03:00,1,1,1,1,bad adware scanner,ModificationType.ADD,,148,0,148,0,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+983ad37704a42cd25475dd571a34e7c7b8d5e9cb,2014-09-04 00:40:26+02:00,2014-09-04 00:40:26+02:00,2,2,2,2,"Formatting, code cleanup",ModificationType.MODIFY,10fde0d0f747f0dab9e3d4615e698c7c10b0dc30,5,5,5,5,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+c0243fd968ea456694f417ad0577a1d6e944768d,2014-09-13 15:38:59+03:00,2014-09-13 15:38:59+03:00,3,3,3,3,"Adware scan improvements
+
+* Adware scan does not continue in background if back button is pressed
+* Fixed scanning called twice",ModificationType.MODIFY,983ad37704a42cd25475dd571a34e7c7b8d5e9cb,3,6,3,6,0-kaladin/ad-away,ad-away,50afcf3dd222c70b1ce54539b2176772c80637ab,.java,2356091,1,https://stackoverflow.com/q/2356091
+26d239c2cd7e7333dfeafcceac1306f80036f412,2015-02-08 18:59:39+07:00,2015-02-08 18:59:39+07:00,1417,1417,1040,1040,Close #1134 PR: Migrates Ember app to new UI :truck:. Fixes #1110,ModificationType.RENAME,,9213,8158,9213,8158,baiyaaaaa/todomvc,todomvc,3550e7105377a16d6981eb5a0632b5b4ec3e3e65,.js,417142,1,https://stackoverflow.com/q/417142
+ff084f06a12c1e314ddb960f6ffa8cd3c9d70669,2015-03-12 07:27:41+01:00,2015-03-12 07:27:41+01:00,58,58,58,58,"Migrate `mithril` example to `todomvc-app-css`
+
+Ref #1110",ModificationType.DELETE,,0,709,0,709,balintsoos/todomvc,todomvc,29082ca9647b864d3f0f254fa25a6a6bcc22b232,.js,21926083,1,https://stackoverflow.com/q/21926083
+a551a79ccd5b5068f22f7a6b52dee2b4c161a3c4,2015-01-31 19:02:58+08:00,2015-01-31 19:02:58+08:00,11309,11309,11309,11309,update,ModificationType.ADD,,203,0,203,0,baiyunping333/BurpSuite-Plugins,BurpSuite-Plugins,2b4ce4eb4a7fe5e2f3b2ff95d62152bed00ce38f,.py,190010,1,https://stackoverflow.com/q/190010
+7740e982ed12fa21e691f301710ec12d9af05c87,2015-02-14 12:03:32+03:00,2015-02-14 12:03:32+03:00,968,968,968,968,initial commit,ModificationType.ADD,,330,0,330,0,bakasajoshua/web-lims,web-lims,f946b59c12ddd775562adca278604dcfe17844a8,.js,14932395,2,https://stackoverflow.com/a/14932395
+c316b5e101b5eadd17355f0a05d36ea6dbd16426,2015-08-16 09:09:18-07:00,2015-08-16 09:09:18-07:00,11310,11310,11310,11310,"Initial Code upload
+
+Load up repository with the base source code",ModificationType.ADD,,1881,0,1881,0,Bakerpedia/Development_Site5,Development_Site5,a8f1a1e7f219be587d231be3cefb0bf31e5e71ce,.js,12866060,1,https://stackoverflow.com/q/12866060
+2c46ba7f61922251f24ab02af3b076538c2aa752,2012-05-26 17:43:28+02:00,2012-05-26 17:43:41+02:00,11311,11311,11311,11311,first commit,ModificationType.ADD,,1326,0,1326,0,BAKFR/intra-sl,intra-sl,f83839ee4882bb8784d801ea0936b50a6943da9d,.js,1762378,2,https://stackoverflow.com/a/1762378
+29048db5dcafa768cc1eb295983c0a3dd9d0cb68,2015-06-30 21:01:33+03:00,2015-06-30 21:01:33+03:00,11312,11312,11312,11312,libs,ModificationType.ADD,,2313,0,2313,0,BakuroW/BakuroW.github.io,BakuroW.github.io,ccabd5bee80d2e42fd4b37d1257ce6703a2e4b51,.js,7509831,1,https://stackoverflow.com/q/7509831
+c08686a3b850377c77e94af964612c201ad75590,2011-04-05 11:55:29+02:00,2011-04-05 11:55:29+02:00,11313,11313,11313,11313,"[ADD] Added datetimepicker addon
+
+bzr revid: fme@openerp.com-20110405095529-j7o63fs4cul3e252",ModificationType.ADD,,911,0,911,0,bala4901/odoo,odoo,84888dbaaeca8e6f292c8cdaabe9d4f49a7c5ab0,.js,1762378,2,https://stackoverflow.com/a/1762378
+1ead58101f9f6d92367f0d36f896ed4ffcfcd5c1,2012-02-14 11:51:45+01:00,2012-02-14 11:51:45+01:00,11313,11313,11313,11313,"[FIX] Datetime widget buggy since jquery.ui upgrade
+
+lp bug: https://launchpad.net/bugs/928918 fixed
+
+bzr revid: fme@openerp.com-20120214105145-pat0srumt8m7nq38",ModificationType.RENAME,c08686a3b850377c77e94af964612c201ad75590,589,174,221,155,bala4901/odoo,odoo,84888dbaaeca8e6f292c8cdaabe9d4f49a7c5ab0,.js,1762378,2,https://stackoverflow.com/a/1762378
+e01ab0ff2b4749bc948838ba05f29c9943bb194c,2013-01-28 19:30:39+05:18,2013-01-28 19:30:39+05:18,11314,11314,11314,11314,"[IMP]Update jquery datetime lib and make use of 'select' controltype.
+
+bzr revid: vme@tinyerp.com-20130128141239-l0gefk6dfhzbqpfq",ModificationType.MODIFY,1ead58101f9f6d92367f0d36f896ed4ffcfcd5c1,1773,1197,1182,878,bala4901/odoo,odoo,84888dbaaeca8e6f292c8cdaabe9d4f49a7c5ab0,.js,1762378,2,https://stackoverflow.com/a/1762378
+a195b8aafbb09cda7125e75d08bc36553442e5bf,2016-10-19 10:26:32+05:18,2016-10-19 10:26:32+05:18,11315,11315,11315,11315,my first commit,ModificationType.ADD,,600,0,600,0,balad7/d8training,d8training,b09a110b8bf7e6e76d59d113654dcc5a329557fd,.js,5438771,2,https://stackoverflow.com/a/5438771
+72173ea9f14169ec7f2e48dd7b23032dc6a1b573,2016-03-01 10:46:51+05:18,2016-03-01 10:46:51+05:18,11316,11316,11316,11316,First commit,ModificationType.ADD,,575,0,575,0,Balakiruba-J/d8,d8,a1dc33d1f0da1980940d70e1a7e3a98e137243ab,.php,11709412,2,https://stackoverflow.com/a/11709412
+8812ed17bae66eaa3aefa862a87e476072ce4311,2016-09-10 00:38:31+05:18,2016-09-10 00:38:31+05:18,11317,11317,37,37,foundation.js,ModificationType.ADD,,9069,0,9069,0,balakumartp/SlimTwigPrj,SlimTwigPrj,106c718db2eb223cdecb07f3c9937f1227f5b63f,.js,8955580,2,https://stackoverflow.com/a/8955580
+a65cf9eb1118cf72d498a94f61ed8608b60d7df9,2012-02-17 23:23:15+01:00,2012-02-17 23:23:15+01:00,11318,11318,11318,11318,Making test more reliable; random execution order on tests.,ModificationType.ADD,,24,0,24,0,balderdashy/socket.io-java-client,socket.io-java-client,a70de3f9cafdb40aec67c5a2a6f59d66f9d49349,.java,1444314,1,https://stackoverflow.com/q/1444314
+9fe245f55c0bb690ee5054af9b17651489379c62,2012-02-29 09:20:51+01:00,2012-02-29 09:20:51+01:00,11318,11318,11318,11318,Move test utilities into its own package.,ModificationType.RENAME,a65cf9eb1118cf72d498a94f61ed8608b60d7df9,1,1,1,1,balderdashy/socket.io-java-client,socket.io-java-client,a70de3f9cafdb40aec67c5a2a6f59d66f9d49349,.java,1444314,1,https://stackoverflow.com/q/1444314
+685fcfec93330d9d7b3a8c225bc876e1d92a8bcb,2012-02-29 10:55:43+01:00,2012-02-29 10:55:43+01:00,11318,11318,11318,11318,add missing @Overrides,ModificationType.MODIFY,9fe245f55c0bb690ee5054af9b17651489379c62,2,1,2,1,balderdashy/socket.io-java-client,socket.io-java-client,a70de3f9cafdb40aec67c5a2a6f59d66f9d49349,.java,1444314,1,https://stackoverflow.com/q/1444314
+d68d7fda2ba33f73d162f93bf95f3043fa29f122,2016-07-07 09:58:13+08:00,2016-07-07 09:58:13+08:00,11319,11319,11319,11319,UI and bug fixes,ModificationType.ADD,,6807,0,6807,0,baldonharris/assistone,assistone,dd8138568e29426a6219d36a938124b5c6a4f161,.js,499126,1,https://stackoverflow.com/q/499126
+aaf1359c455d5c1e413480c1e370d097b0a5c8f5,2014-07-27 05:13:32+03:00,2014-07-27 05:13:32+03:00,1432,1432,1432,1432,Initial Checkin,ModificationType.ADD,,20874,0,20874,0,baldswede/PnP,PnP,d76150b0ed6c29907d785c90767b9a3712628786,.js,3143070,1,https://stackoverflow.com/q/3143070
+647517ece8e0817d390577348a524e186aa2ab81,2013-10-09 15:35:37-07:00,2013-10-10 12:41:58-07:00,385,385,385,385,upgrade to angular 1.2.0-rc.2 barehand-atomsplitting,ModificationType.MODIFY,,6508,3335,6508,3335,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+3fb39660722a33710798b4514d4b9acdf0294b51,2013-10-14 14:29:17-07:00,2013-10-14 14:29:17-07:00,385,385,385,385,upgrade to angular 1.2.0-rc.3 ferocious-twitch,ModificationType.MODIFY,647517ece8e0817d390577348a524e186aa2ab81,2328,1207,721,532,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+294bb71ff83a8f6c9b13d98c141ff565a4c16e9a,2013-11-08 11:37:22-08:00,2013-11-08 11:37:22-08:00,386,386,386,386,update(angular): bump angular to 1.2.0,ModificationType.MODIFY,3fb39660722a33710798b4514d4b9acdf0294b51,2064,1174,820,740,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+49d5b3f60c7753b0815563178585b5ed678b20e8,2013-11-22 10:06:53-08:00,2013-11-22 10:06:53-08:00,387,387,387,387,update(angular): bump angular to 1.2.2,ModificationType.MODIFY,294bb71ff83a8f6c9b13d98c141ff565a4c16e9a,511,327,233,244,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+51398b3c902d3fc28beb7d989168f0d044872021,2013-11-27 19:42:07+00:00,2013-11-27 19:42:07+00:00,388,388,388,388,update(angular): bump angular to 1.2.3,ModificationType.MODIFY,49d5b3f60c7753b0815563178585b5ed678b20e8,149,82,19,57,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+7e2364d9baeaa6a49950c10b1427b28adf2a538c,2013-12-06 19:48:00+00:00,2013-12-06 19:55:24+00:00,389,389,389,389,bump angular to 1.2.4,ModificationType.MODIFY,51398b3c902d3fc28beb7d989168f0d044872021,145,116,38,42,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+1f4f1a3d58b8433dffd5e22946f8a39664f793c7,2013-12-13 13:24:15-08:00,2013-12-13 13:24:15-08:00,385,385,385,385,update(angular): bump angular to 1.2.5,ModificationType.MODIFY,7e2364d9baeaa6a49950c10b1427b28adf2a538c,162,104,33,29,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+3b0f85254beab4ad8b26ae37cb3de59d70da0d5f,2013-12-20 10:13:11-08:00,2013-12-20 10:15:07-08:00,390,390,390,390,update(angular): bump to 1.2.6,ModificationType.MODIFY,1f4f1a3d58b8433dffd5e22946f8a39664f793c7,350,180,66,49,ballmw/angular-examples,angular-examples,d4d7abc0b72626c0c7028c8ac013f4218df71d07,.js,472729,2,https://stackoverflow.com/a/472729
+272b6084675151b33441ce646467a8544685fd4a,2015-01-21 22:54:08-05:00,2015-01-21 22:54:08-05:00,11320,11320,11320,11320,first commit,ModificationType.ADD,,289,0,289,0,BalloonIndustries/andrewjalexander,andrewjalexander,a6b43529c3fb068cce407a627fc6332b47bdc12f,.js,518000,1,https://stackoverflow.com/q/518000
+272b6084675151b33441ce646467a8544685fd4a,2015-01-21 22:54:08-05:00,2015-01-21 22:54:08-05:00,11320,11320,11320,11320,first commit,ModificationType.ADD,,12059,0,12059,0,BalloonIndustries/andrewjalexander,andrewjalexander,a04f5fbb618cc14d91d0d444e33a881b929e914a,.js,3596141,2,https://stackoverflow.com/a/3596141
+8498013ca2bcbb4cb17af4838a1dfff4d8bf9154,2017-06-30 08:49:34+01:00,2017-06-30 08:49:34+01:00,11321,11321,11321,11321,Initial commit - copy of view record,ModificationType.ADD,,9,0,9,0,ballzy/local-demonstrators,local-demonstrators,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+f02b4e6ceb0a0f5a90d561de752afbf3cf085e83,2017-05-25 11:23:56+01:00,2017-05-25 11:23:56+01:00,11321,11321,11321,11321,Copy of View GP record - initial commit,ModificationType.ADD,,8023,0,8023,0,ballzy/prove-my-identity,prove-my-identity,7a6cdca67f7078fba83674094d4602d3f66748a2,.js,201323,1,https://stackoverflow.com/q/201323
+f02b4e6ceb0a0f5a90d561de752afbf3cf085e83,2017-05-25 11:23:56+01:00,2017-05-25 11:23:56+01:00,11321,11321,11321,11321,Copy of View GP record - initial commit,ModificationType.ADD,,9,0,9,0,ballzy/prove-my-identity,prove-my-identity,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+6cedbb39b91c7cedaf5b81479536631af38ff31b,2016-04-17 16:07:19-04:00,2016-04-17 16:07:19-04:00,11322,11322,11322,11322,Initial Test Commit,ModificationType.ADD,,77,0,77,0,balomus/Todd-s-Site,Todd-s-Site,36ba27fe8d2b0eeeeac201970b104fdbd8834831,.php,1566602,1,https://stackoverflow.com/q/1566602
+4ca28e0da81c573a9cb60c775822b39860d99f94,2015-04-15 23:26:58-07:00,2015-04-15 23:26:58-07:00,11323,11323,11323,11323,Civicrm drupal contib module,ModificationType.ADD,,595,0,595,0,balrajb/sbx_drupal_civicrm,sbx_drupal_civicrm,7d0556b47188a63c4a6a68e6a14e91c79d0df07b,.php,4848227,1,https://stackoverflow.com/q/4848227
+48e0cbad57b47fed162ab378dfc79321bf8f8492,2014-04-02 10:33:39+05:18,2014-04-02 10:33:39+05:18,11324,11324,11324,11324,"Ruby Compass, Grunt, Bower, DiffAll, HeadJs, AngularJs Added",ModificationType.ADD,,21168,0,21168,0,balramsinghindia/ScalableJavaScriptDevelopment,ScalableJavaScriptDevelopment,9433213e21945dddc7947423bc241f8a9720f6b2,.js,472729,2,https://stackoverflow.com/a/472729
+3f08d984f01999b4f0019664b771c57ead34ff83,2015-10-26 09:26:21-06:00,2015-10-26 09:28:56-06:00,11325,11325,11325,11325,Replace hard-coded months with calculation.,ModificationType.MODIFY,,16,23,16,23,BalticPinguin/libmesh,libmesh,c018ba2fd46a7a9051fe539c8b1c68fcb6b575e3,.py,27814983,1,https://stackoverflow.com/q/27814983
+13f28c931a4f0176d778216b9cea37bc556e4ddc,2017-01-05 12:52:55-07:00,2017-01-05 13:46:17-07:00,11325,11325,11325,11325,"Move GitHub traffic data into CSV files.
+
+* Remove outdated comment and fix typo.
+* No longer need separate files for PlotClones and PlotViews classes.
+* Remove formatting (spaces and tick marks) from CSV files.
+* Update CSV files with latest data.",ModificationType.MODIFY,3f08d984f01999b4f0019664b771c57ead34ff83,15,16,1,2,BalticPinguin/libmesh,libmesh,c018ba2fd46a7a9051fe539c8b1c68fcb6b575e3,.py,27814983,1,https://stackoverflow.com/q/27814983
+9fbb98471992bce3e0a16a048ebd9c9113f62be7,2014-03-12 23:56:51-04:00,2014-03-12 23:56:51-04:00,11326,11326,11326,11326,Preparing the site for design,ModificationType.ADD,,106,0,106,0,baltimorenodeschool/baltimorenodeschool.github.io,baltimorenodeschool.github.io,f144955d11cbf7603e3d7a84f4c078761960a988,.js,5827612,1,https://stackoverflow.com/q/5827612
+b1c448dec19a353011c10e87f7303b31f2c29b46,2015-06-04 23:08:13+05:18,2015-06-04 23:08:13+05:18,11327,11327,11327,11327,first,ModificationType.ADD,,6023,0,6023,0,Balu-Menon/materialSite,materialSite,76ebf5b61e9f8bce832e97000d6a7c17620e4151,.js,2684561,2,https://stackoverflow.com/a/2684561
+2a19428e7b8f5e7ea362e339a206c4ec4a5ccbb1,2010-08-19 19:38:46+08:00,2010-08-19 19:38:46+08:00,11328,11328,11328,11328,v1.4.13-final. Fixed a bunch of issues. Recommended update.,ModificationType.MODIFY,,278,80,278,80,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+9262d87f7523566e389f72d52f31128879f70d9d,2010-08-19 21:02:53+08:00,2010-08-19 21:02:53+08:00,11328,11328,11328,11328,v1.4.14-final. Added preventDefault.,ModificationType.MODIFY,2a19428e7b8f5e7ea362e339a206c4ec4a5ccbb1,18,1,1,1,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+768500dde893e106f764e8b412b50ed4512fe452,2010-08-20 06:02:44+08:00,2010-08-20 06:02:44+08:00,11328,11328,11328,11328,v1.4.15-final,ModificationType.MODIFY,9262d87f7523566e389f72d52f31128879f70d9d,1088,1005,223,173,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+ff2a8c205f8cd5f2c64ff15365f2ccf4817a5cb3,2010-08-21 00:12:45+08:00,2010-08-21 00:12:45+08:00,11328,11328,11328,11328,v1.4.16-final. Fixed some issues with errors in BalClass and Sparkle. Fixed extension adding in Sparkle.,ModificationType.MODIFY,768500dde893e106f764e8b412b50ed4512fe452,14,11,4,3,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+c954f4e99b71ac45323ced540c956cbc3b8561ff,2010-08-31 13:19:53+08:00,2010-08-31 13:19:53+08:00,11328,11328,11328,11328,Whole bunch of improvements. See changelog.,ModificationType.MODIFY,ff2a8c205f8cd5f2c64ff15365f2ccf4817a5cb3,941,685,137,43,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+6dd2b93db0121404492ac39256c6f23d6ff44649,2010-08-31 16:40:43+08:00,2010-08-31 16:40:43+08:00,11328,11328,11328,11328,v1.5.1-beta. core.console now has better support for Internet Explorer.,ModificationType.MODIFY,c954f4e99b71ac45323ced540c956cbc3b8561ff,82,35,0,2,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+6b2f234431c42ae2fa23db664963fb974b953495,2010-08-31 17:35:17+08:00,2010-08-31 17:35:17+08:00,11328,11328,11328,11328,v1.5.2-beta. preventDefault is now preventDefaultOnClick to avoid jQuery UI issues.,ModificationType.MODIFY,6dd2b93db0121404492ac39256c6f23d6ff44649,3,3,0,1,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+7fcd4de787ae41a21a2b6c5bc0adbb0871cbb166,2012-05-01 07:37:11+10:00,2012-05-01 07:37:11+10:00,11329,11329,11329,11329,Updated readme. Changed to MIT License.,ModificationType.MODIFY,6b2f234431c42ae2fa23db664963fb974b953495,669,669,37,37,balupton/jquery-sparkle,jquery-sparkle,6cca8257f24917f170db73db6d35dcfa49da71dc,.js,1544317,1,https://stackoverflow.com/q/1544317
+12d3722208b7921377215f07f23b683cd0bb3ea4,2015-04-08 11:26:13+05:18,2015-04-08 11:26:13+05:18,11330,11330,11330,11330,saved,ModificationType.ADD,,1,0,1,0,bamachrn/JS-CI-Repo2,JS-CI-Repo2,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+1c8888702781242886e5254734cc06fd24488491,2014-02-28 18:16:27+09:00,2014-02-28 18:16:27+09:00,11331,11331,11331,11331,first commit,ModificationType.ADD,,17438,0,17438,0,Bambina/ghost-0.4.1,ghost-0.4.1,be1719a3c8a5350d9cd4a5b8c066b8c2973e84cd,.js,494122,2,https://stackoverflow.com/a/494122
+1d214e1c789641e35aed276e36ac0f10a00f79d6,2016-01-29 22:22:06+01:00,2016-01-29 22:22:06+01:00,11332,11332,11332,11332,phaser upload,ModificationType.ADD,,3947,0,3947,0,Bamboo3000/krakjam,krakjam,b12fc52d3f5946f9bc64fd993a47f07edf515288,.js,785097,1,https://stackoverflow.com/q/785097
+5bc563379c7d2f9f44e3b1ff8aa918e1a2240290,2014-12-20 21:17:04+08:00,2014-12-20 21:17:04+08:00,10010,10010,10010,10010,add engine.io-client,ModificationType.ADD,,3872,0,3872,0,bammoo/static,static,7bde5e94b18270e34c2bd72b3554a3254ae90de7,.js,398120,2,https://stackoverflow.com/a/398120
+5a3b9d56618d2a014268a976ed54d89a17b39d43,2014-03-19 12:21:25+08:00,2014-03-19 12:21:25+08:00,11333,11333,11333,11333,Merge from dev branch,ModificationType.MODIFY,,58,2,58,2,banbanchs/pan-baidu-download,pan-baidu-download,fe129c8e4561088f7b33a7b47a8585f0f77b9d05,.py,287871,1,https://stackoverflow.com/q/287871
+b90b900f25998e9a92e8ee4d6d47dc950a11169f,2014-11-05 11:14:27+01:00,2014-11-05 11:14:27+01:00,11334,11334,11334,11334,Initial commit,ModificationType.ADD,,1104,0,1104,0,BanBart/LineOfWork,LineOfWork,c5737e1a9e38c49dfed32d8145663a50d40c36cc,.php,7105433,1,https://stackoverflow.com/q/7105433
+587948de4b67b41e35f3afdaad2fc57841ff739b,2014-10-17 21:46:26+02:00,2014-10-17 21:46:26+02:00,11334,11334,11334,11334,Initial commit,ModificationType.ADD,,339,0,339,0,BanBart/Symblog,Symblog,899da20a5a2f03ec0b3cfa06bbe19645251b934a,.php,4069002,1,https://stackoverflow.com/q/4069002
+20da0088cb6c0f1a05c8a746da720fcbd8262687,2014-12-02 23:38:04+01:00,2014-12-02 23:38:04+01:00,11334,11334,11334,11334,Initial Commit,ModificationType.ADD,,7007,0,7007,0,BanBart/Symfony2-Project,Symfony2-Project,44ee03d9dc1058cdc4dc4ef775b34dbcbfa24f74,.js,7410348,1,https://stackoverflow.com/q/7410348
+c1f53627a108b08a73362e2c82b9d020e93660a3,2014-05-06 16:39:16+02:00,2014-05-06 16:39:16+02:00,11335,11335,11335,11335,Symfony pelat,ModificationType.ADD,,322,0,322,0,BancDelTempsDAW/symfony,symfony,c827ca7d66591d80ad2da7a2c2e93b7debb8e46e,.php,4069002,1,https://stackoverflow.com/q/4069002
+591c0d17acacf45372763e734ddb43f3e0c02cb9,2014-05-15 11:40:45+02:00,2014-05-15 11:40:45+02:00,11335,11335,11335,11335,Carles: canvis als crud,ModificationType.MODIFY,c1f53627a108b08a73362e2c82b9d020e93660a3,5,5,5,5,BancDelTempsDAW/symfony,symfony,c827ca7d66591d80ad2da7a2c2e93b7debb8e46e,.php,4069002,1,https://stackoverflow.com/q/4069002
+395c8fa1b2ed082f274873766806e1420b6a442e,2016-04-28 00:03:17+02:00,2016-04-28 00:03:17+02:00,11336,11336,11336,11336,Metabox plugin,ModificationType.ADD,,352,0,352,0,Bancroy/jp-wordpress,jp-wordpress,c9dcad94e8901897fed2a8bdb76c2e5c035cebaa,.php,5399075,1,https://stackoverflow.com/q/5399075
+a73780ea65924d1b0d96fe3f5b31d8330ad61644,2017-05-30 16:38:47+02:00,2017-05-30 16:38:47+02:00,11337,11337,11337,11337,init,ModificationType.ADD,,2049,0,2049,0,BandaVillaSCecilia/BandaVillaSCecilia.github.io,BandaVillaSCecilia.github.io,27fce06bbd538c3d36262c84c579f46381241bc6,.js,7264899,1,https://stackoverflow.com/q/7264899
+3b52dc0fc8f6667b27553e55f99195e54bbfb71d,2016-02-18 13:02:52+03:00,2016-02-18 13:02:52+03:00,11338,11338,11338,11338,Create jquery.fullPage.js,ModificationType.ADD,,2787,0,2787,0,bandevelop/metro,metro,08b2e9280b19c3d8d23d4e8bb564376209084de4,.js,5661671,1,https://stackoverflow.com/q/5661671
+9412b77d4625a99ddb5c01f8ee82e74ea4f6a19f,2014-04-19 03:12:10-03:00,2014-04-19 03:12:10-03:00,11339,11339,11339,11339,"Dist fastgap.libs.js
+
+load all libs here",ModificationType.ADD,,2773,0,2773,0,bandud/fastgap,fastgap,f009d168d1ba9a804bb9c9d9346bd053078350ed,.js,5798681,2,https://stackoverflow.com/a/5798681
+95233fa09222a6d0e19db3ac692434f63ce90913,2014-04-19 09:33:47-03:00,2014-04-19 09:33:47-03:00,11339,11339,11339,11339,0.0.4,ModificationType.MODIFY,9412b77d4625a99ddb5c01f8ee82e74ea4f6a19f,577,1,0,1,bandud/fastgap,fastgap,f009d168d1ba9a804bb9c9d9346bd053078350ed,.js,5798681,2,https://stackoverflow.com/a/5798681
+aca18051a5680448f1e357beb6ee212e1edcbcaf,2014-04-19 23:15:21-03:00,2014-04-19 23:15:21-03:00,11339,11339,11339,11339,0.0.44,ModificationType.MODIFY,95233fa09222a6d0e19db3ac692434f63ce90913,0,8,0,2,bandud/fastgap,fastgap,f009d168d1ba9a804bb9c9d9346bd053078350ed,.js,5798681,2,https://stackoverflow.com/a/5798681
+0d4f37bd6b82c962e959c11fab6c3fee25bf2f93,2014-10-20 13:06:16+01:00,2014-10-23 19:07:38+01:00,3453,3453,3453,3453,dialect.mysql.connection-manager: handleDisconnects,ModificationType.MODIFY,,1,1,1,1,bangbang93/sequelize,sequelize,8b42156fe2793ee123e8269f095e7eb339cf40bc,.js,20210522,1,https://stackoverflow.com/q/20210522
+e2fc51215a399e02c7dee048709bedb05238afec,2015-10-09 05:22:40+00:00,2015-10-09 05:22:40+00:00,11340,11340,11340,11340,init,ModificationType.ADD,,168,0,168,0,Bango1999/gunmedown,gunmedown,7c76452219939f82fe7247533dfce2dd795737c2,.js,16459606,2,https://stackoverflow.com/a/16459606
+09820d087d2193daca103214735e0eadd8bb3647,2017-07-10 06:50:54-05:00,2017-07-10 06:50:54-05:00,11341,11341,11341,11341,Created success build called MyApp.apk; remove unused imports; removed icon from footer.,ModificationType.ADD,,130,0,130,0,Banguera/ionic_trial,ionic_trial,128063b94b693c564d3c8b58b56c6b02efb770ef,.java,7696791,2,https://stackoverflow.com/a/7696791
+f3976a62216a925f91d569a988b962806cabaa07,2013-04-08 00:29:23+04:00,2013-04-08 00:29:23+04:00,11342,11342,11342,11342,"Start over - base commit
+
+Signed-off-by: Tony G <mipt.shootnick.spam@gmail.com>",ModificationType.ADD,,1831,0,1831,0,BankNotes/Web,Web,2b83b573c5f8526d508a0a2fc17deffaff0edc91,.js,1762378,2,https://stackoverflow.com/a/1762378
+1cae3ee70dd9e389a83c494fbc95aa63c01128a1,2011-04-28 21:04:06+02:00,2011-05-24 11:22:45-07:00,1874,1874,1873,1873,"gitweb.js: Provide getElementsByClassName method (if it not exists)
+
+The code is simplified and does not support full specification of
+native getElementsByClassName method, but implements just subset that
+would be enough for gitweb, supporting only single class name.
+
+Signed-off-by: John 'Warthog9' Hawley <warthog9@eaglescrag.net>
+Signed-off-by: Jakub Narebski <jnareb@gmail.com>
+Signed-off-by: Junio C Hamano <gitster@pobox.com>",ModificationType.MODIFY,,51,0,51,0,bankonme/git,git,018bbb7d4cb72eeb786c3309ba318e7789a02b37,.js,1818865,1,https://stackoverflow.com/q/1818865
+d250ab3f5cd23272dd96aff2860fb2d839634c9e,2014-02-13 08:53:35-03:00,2014-02-13 08:53:35-03:00,11343,11343,11343,11343,angular phonecat + grunt,ModificationType.ADD,,307,0,307,0,banquito/hola-angular,hola-angular,5129c4e141e6252287bd797c842bdb6235b83661,.js,195363,1,https://stackoverflow.com/q/195363
+cf27c544184c0f58fc83c2bb7eb9788495c17fe9,2015-04-11 22:41:18+02:00,2015-04-11 22:41:18+02:00,11344,11344,11344,11344,"some missing files from git ignore
+
+denis please sync this",ModificationType.ADD,,1294,0,1294,0,banyx101/new-Kalemi,new-Kalemi,f69c5a4a2bcddca9b8fe27c83ec614eedd012f1e,.php,271650,2,https://stackoverflow.com/a/271650
+cf27c544184c0f58fc83c2bb7eb9788495c17fe9,2015-04-11 22:41:18+02:00,2015-04-11 22:41:18+02:00,11344,11344,11344,11344,"some missing files from git ignore
+
+denis please sync this",ModificationType.ADD,,87,0,87,0,banyx101/new-Kalemi,new-Kalemi,98b1ce8b2eeb2b074a78bc22eb83df40532bdd29,.php,766809,1,https://stackoverflow.com/q/766809
+8d54dfe3464e673804387ac903ee17cd8c6d8a57,2017-08-17 13:29:24-04:00,2017-08-17 13:29:24-04:00,11345,11345,11345,11345,Add,ModificationType.ADD,,2528,0,2528,0,BaoKhanhTrang/RXR_Pol_D3,RXR_Pol_D3,d9b92ec061321dfa00fe3f399b422053d02b77e4,.js,7390426,1,https://stackoverflow.com/q/7390426
+e7fa629aee36152cdc047da92f708ca5c3147255,2015-05-18 21:08:46-07:00,2015-05-18 21:08:46-07:00,11346,11346,11346,11346,Added installed modules,ModificationType.ADD,,55,0,55,0,baolocdo/angularfire-seed,angularfire-seed,5477da52b64cb89222700dd38b86e162a5ed738f,.js,154090,2,https://stackoverflow.com/a/154090
+b80504493428728ea846e7a89d456a5ba494b304,2015-03-20 11:34:54+08:00,2015-03-20 11:34:54+08:00,11347,11347,11347,11347,"mod: upgrade to es 1.4.4, logstash 1.4.2, kibana 4.0.1",ModificationType.MODIFY,,235,168,235,168,baozoumanhua/elk-rtf,elk-rtf,a24adc72a5f61c737cd9e4e1128e7c3c21aef87a,.js,2254896,2,https://stackoverflow.com/a/2254896
+b80504493428728ea846e7a89d456a5ba494b304,2015-03-20 11:34:54+08:00,2015-03-20 11:34:54+08:00,11347,11347,11347,11347,"mod: upgrade to es 1.4.4, logstash 1.4.2, kibana 4.0.1",ModificationType.MODIFY,b80504493428728ea846e7a89d456a5ba494b304,56,72,12,11,baozoumanhua/elk-rtf,elk-rtf,a24adc72a5f61c737cd9e4e1128e7c3c21aef87a,.js,2254896,2,https://stackoverflow.com/a/2254896
+5e93f74409fd42a7b3d87424fc59e4b6d4c7eac0,2016-06-20 12:32:59+02:00,2016-06-20 12:32:59+02:00,11348,11348,11348,11348,first commit,ModificationType.ADD,,52,0,52,0,BaptisteBriois/rapid_plan,rapid_plan,9549c96fbda2b075c1fea38206a236eb8f1d5b82,.js,1068308,2,https://stackoverflow.com/a/1068308
+5e93f74409fd42a7b3d87424fc59e4b6d4c7eac0,2016-06-20 12:32:59+02:00,2016-06-20 12:32:59+02:00,11348,11348,11348,11348,first commit,ModificationType.ADD,,52,0,52,0,BaptisteBriois/rapid_plan,rapid_plan,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+5e93f74409fd42a7b3d87424fc59e4b6d4c7eac0,2016-06-20 12:32:59+02:00,2016-06-20 12:32:59+02:00,11348,11348,11348,11348,first commit,ModificationType.ADD,,52,0,52,0,BaptisteBriois/rapid_plan,rapid_plan,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+5e93f74409fd42a7b3d87424fc59e4b6d4c7eac0,2016-06-20 12:32:59+02:00,2016-06-20 12:32:59+02:00,11348,11348,11348,11348,first commit,ModificationType.ADD,,52,0,52,0,BaptisteBriois/rapid_plan,rapid_plan,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+5e93f74409fd42a7b3d87424fc59e4b6d4c7eac0,2016-06-20 12:32:59+02:00,2016-06-20 12:32:59+02:00,11348,11348,11348,11348,first commit,ModificationType.ADD,,52,0,52,0,BaptisteBriois/rapid_plan,rapid_plan,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+5e93f74409fd42a7b3d87424fc59e4b6d4c7eac0,2016-06-20 12:32:59+02:00,2016-06-20 12:32:59+02:00,11348,11348,11348,11348,first commit,ModificationType.ADD,,49,0,49,0,BaptisteBriois/rapid_plan,rapid_plan,a2363fcfc68a03fa5ddefb888e4e170eab37cf96,.js,3561493,1,https://stackoverflow.com/q/3561493
+7dfb297ba2315354b1d9bff53c3eadf59514f869,2015-06-14 12:52:29-04:00,2015-06-14 12:52:29-04:00,11349,11349,11349,11349,Push msg payload updated,ModificationType.ADD,,609,0,609,0,barak-shirali/PDS,PDS,3958adebe606330bf9d9a31f18901afcf4328ff6,.js,141348,1,https://stackoverflow.com/q/141348
+9eeec9857981737718a25d2a96d57f4a44cda341,2015-12-03 00:47:53+05:00,2015-12-03 00:47:53+05:00,11350,11350,11350,11350,Translate b1,ModificationType.ADD,,149,0,149,0,baranov-nt/setyes,setyes,25c7a016982a04659f129918ff7b1e2a20431283,.js,10896749,1,https://stackoverflow.com/q/10896749
+02a9e4a7f355849c7f86276cef5482c0f53990ff,2012-10-22 00:42:44+02:00,2013-10-25 11:51:23+08:00,5091,5091,1146,1146,"MDL-31938, MDL-36138 auth_cas: upgrade phpCAS library
+
+Proxy mode changes testing still pending (we don't have such a setup).",ModificationType.ADD,,3401,0,3401,0,barbararamiro/moodle,moodle,40e77cdcc236615e58b17a91de9c0b26d0dbc7e9,.php,1842681,1,https://stackoverflow.com/q/1842681
+97531d392963edfa22abd59df47914d75fac4b34,2014-08-11 13:28:13-04:00,2014-08-18 16:39:38+08:00,619,619,5092,5092,MDL-46766 auth_cas: Upgrading to phpCAS 1.3.3,ModificationType.MODIFY,02a9e4a7f355849c7f86276cef5482c0f53990ff,571,137,348,137,barbararamiro/moodle,moodle,40e77cdcc236615e58b17a91de9c0b26d0dbc7e9,.php,1842681,1,https://stackoverflow.com/q/1842681
+3ef963619073ddcf9827151e6cbce18cb4c93829,2015-03-18 00:35:07-04:00,2015-03-18 11:44:11-04:00,619,619,619,619,"MDL-47003 atto: Make code cleanup more targeted
+
+Apply different, stricter, code cleanup when we receive HTML (WYSIWYG)
+paste events, but be more lax the rest of the time.
+
+Also, update the regexes to be more targeted for specific code patterns
+pasted from office packages.",ModificationType.MODIFY,,103,32,103,32,barrysspace/moodle,moodle,0c37c581c298c4ccd9ff211021a640518de558ee,.js,1068280,1,https://stackoverflow.com/q/1068280
+df7a9fd4ba7badfa1d2f4953a5d030f06e1ae652,2015-03-18 00:41:58-04:00,2015-03-18 12:04:31-04:00,619,619,619,619,MDL-46746 atto: Remove unnecessary filtering of unicode characters,ModificationType.MODIFY,3ef963619073ddcf9827151e6cbce18cb4c93829,1,15,1,15,barrysspace/moodle,moodle,0c37c581c298c4ccd9ff211021a640518de558ee,.js,1068280,1,https://stackoverflow.com/q/1068280
+665829ec2a035b893a77a38fb16c8b48e36ea415,2015-03-25 09:59:16-04:00,2015-03-25 10:02:43-04:00,619,619,619,619,MDL-47002 atto: Prevent removal of Rangy spans,ModificationType.MODIFY,df7a9fd4ba7badfa1d2f4953a5d030f06e1ae652,2,2,2,2,barrysspace/moodle,moodle,0c37c581c298c4ccd9ff211021a640518de558ee,.js,1068280,1,https://stackoverflow.com/q/1068280
+d784f5edc35e10e053cb81fc845d929a6c3cca8d,2015-03-26 14:37:55+08:00,2015-03-26 14:37:55+08:00,140,140,140,140,MDL-47002 editor_atto: Clean the comments separately,ModificationType.MODIFY,665829ec2a035b893a77a38fb16c8b48e36ea415,1,1,1,1,barrysspace/moodle,moodle,0c37c581c298c4ccd9ff211021a640518de558ee,.js,1068280,1,https://stackoverflow.com/q/1068280
+1b6ce030d35b85ce96ca68ebdbd92e1c208f331d,2015-03-18 00:39:54-04:00,2015-03-26 23:05:23-04:00,619,619,619,619,"MDL-49564 atto: Improve empty span removal
+
+Paste from MS word, followed by cleaning, may leave many many unused
+spans. Try to remove them.",ModificationType.MODIFY,d784f5edc35e10e053cb81fc845d929a6c3cca8d,57,3,1,3,barrysspace/moodle,moodle,0c37c581c298c4ccd9ff211021a640518de558ee,.js,1068280,1,https://stackoverflow.com/q/1068280
+8e202bd80ae82a6261f87e954df510e0aaae4db2,2015-03-27 10:25:34-04:00,2015-03-27 11:36:05-04:00,619,619,619,619,"MDL-49686 atto: Process style and class attributes in sub-functions
+
+To ensure we only clean style and classes, first we select the inside
+of those attributes and ""replace"" them with handler functions. Those
+functions scan the actual attribute values for class or styles that
+we want to exclude.
+
+The first level regex has 3 groups. group1 selects everything in the
+tag leading up to the attribute values, group2 has the attributes,
+group3 has the trailing quote mark. We work on group2 then return
+the combination of group1, group2, and group3.",ModificationType.MODIFY,1b6ce030d35b85ce96ca68ebdbd92e1c208f331d,14,6,14,6,barrysspace/moodle,moodle,0c37c581c298c4ccd9ff211021a640518de558ee,.js,1068280,1,https://stackoverflow.com/q/1068280
+90307e0f4135ef52d1cef7150d0e09a40aa0b0e9,2017-02-02 19:31:06-05:00,2017-02-02 19:31:06-05:00,11351,11351,37,37,Add files via upload,ModificationType.ADD,,912,0,912,0,barbarazhong/kuorageous,kuorageous,4e7087f4cb5490b821b3f10c086bcccb7b2a8449,.js,359788,1,https://stackoverflow.com/q/359788
+34d2b089d569ee4a1e4792686847914df15c24bf,2014-02-27 06:10:33-06:00,2014-02-27 06:10:33-06:00,45,45,45,45,browserify challenge,ModificationType.ADD,,106,0,106,0,barberboy/node-js-workshop,node-js-workshop,f144955d11cbf7603e3d7a84f4c078761960a988,.js,5827612,1,https://stackoverflow.com/q/5827612
+34d2b089d569ee4a1e4792686847914df15c24bf,2014-02-27 06:10:33-06:00,2014-02-27 06:10:33-06:00,45,45,45,45,browserify challenge,ModificationType.ADD,,5892,0,5892,0,barberboy/node-js-workshop,node-js-workshop,a8b2606db0610a0088bbca7cfa833a10dac72d03,.js,14967647,1,https://stackoverflow.com/q/14967647
+34d2b089d569ee4a1e4792686847914df15c24bf,2014-02-27 06:10:33-06:00,2014-02-27 06:10:33-06:00,45,45,45,45,browserify challenge,ModificationType.ADD,,5892,0,5892,0,barberboy/node-js-workshop,node-js-workshop,28d17231adf3a517e12230161d992d44af801ff4,.js,14967647,1,https://stackoverflow.com/q/14967647
+34d2b089d569ee4a1e4792686847914df15c24bf,2014-02-27 06:10:33-06:00,2014-02-27 06:10:33-06:00,45,45,45,45,browserify challenge,ModificationType.ADD,,49,0,49,0,barberboy/node-js-workshop,node-js-workshop,8ac67eb31737c297e11603fb7643d22751d4319b,.js,1068308,2,https://stackoverflow.com/a/1068308
+ee67c760a8d8d39939152b74f7b35bfa27f42f9f,2016-05-11 14:20:09+01:00,2016-05-11 14:20:09+01:00,11352,11352,11352,11352,initial commit,ModificationType.ADD,,325,0,325,0,bardius/deckOfCards,deckOfCards,443201f5b604fa3f2c2ab13992a7d8ddac93b121,.js,451486,1,https://stackoverflow.com/q/451486
+e3197e31e54d431ce2b99594a32ea922350fe526,2014-09-19 00:28:51+01:00,2014-09-19 00:28:51+01:00,11353,11353,11353,11353,updating dependensies and build scripts,ModificationType.ADD,,7007,0,7007,0,bardius/the-web-dev-ninja-blog,the-web-dev-ninja-blog,dd8138568e29426a6219d36a938124b5c6a4f161,.js,2200494,1,https://stackoverflow.com/q/2200494
+acc7aff4d5e2eb9bd126d95b55709754a2b05d28,2015-02-13 22:32:00+00:00,2015-02-13 22:32:00+00:00,11354,11354,11354,11354,first commit,ModificationType.ADD,,92,0,92,0,bardsmith/CraftSpotter,CraftSpotter,1cca463a89813087287ee30ccf6699c5b6e034dd,.js,9399365,1,https://stackoverflow.com/q/9399365
+d9357ea736ec3b4e35b56b70154699e9ac8eca81,2016-11-15 13:05:10+01:00,2016-11-15 13:05:10+01:00,11355,11355,11355,11355,Added Jquery for instant feedback,ModificationType.ADD,,1056,0,1056,0,Bargsteen/ADL,ADL,55efc3da11f70dfedcfd1a349943011b52cff116,.js,3446170,1,https://stackoverflow.com/q/3446170
+66a8bd7427fd0750875b03edd21a3d00a21058ac,2016-11-14 08:33:14-02:00,2016-11-14 08:33:14-02:00,11356,11356,11356,11356,adicionado dependencias,ModificationType.ADD,,14174,0,14174,0,baricio/sai-zika,sai-zika,53722efc2f84e981f11da4dcf7e8d2e5dc40fac4,.js,22758950,1,https://stackoverflow.com/q/22758950
+66a8bd7427fd0750875b03edd21a3d00a21058ac,2016-11-14 08:33:14-02:00,2016-11-14 08:33:14-02:00,11356,11356,11356,11356,adicionado dependencias,ModificationType.ADD,,31768,0,31768,0,baricio/sai-zika,sai-zika,e488352b2f5262f454214cbf8e336d11f7874f5f,.js,472729,2,https://stackoverflow.com/a/472729
+1cb7403e4e4617dae28c3586c319b0eab437971b,2017-10-24 09:29:29+07:00,2017-10-24 09:29:29+07:00,11357,11357,11357,11357,Initial commit,ModificationType.ADD,,26780,0,26780,0,baridisna/garuda2,garuda2,39a8c748602a0b5c4293815436303f2468b35aad,.js,4817029,1,https://stackoverflow.com/q/4817029
+1cb7403e4e4617dae28c3586c319b0eab437971b,2017-10-24 09:29:29+07:00,2017-10-24 09:29:29+07:00,11357,11357,11357,11357,Initial commit,ModificationType.ADD,,21,0,21,0,baridisna/garuda2,garuda2,180f55c717f5a04aff83f95c912a50e62bc01ebd,.js,181348,1,https://stackoverflow.com/q/181348
+1cb7403e4e4617dae28c3586c319b0eab437971b,2017-10-24 09:29:29+07:00,2017-10-24 09:29:29+07:00,11357,11357,11357,11357,Initial commit,ModificationType.ADD,,4040,0,4040,0,baridisna/garuda2,garuda2,ed94e44a1e158e5cc5d752ac873c6de58c5baa66,.js,3561493,1,https://stackoverflow.com/q/3561493
+b68f954cea4dd97f9abb418386838abbbafbf41a,2014-09-22 00:07:45+03:00,2014-09-22 00:07:45+03:00,11358,11358,11358,11358,Install Project,ModificationType.ADD,,6192,0,6192,0,barisariburnu/social-student,social-student,6f6ac824c4933ae9fb488ae0b0645e5652138d75,.js,499126,1,https://stackoverflow.com/q/499126
+725d3e65775c11e11ee06a0a47656b81e3e91231,2015-05-13 10:22:00-05:00,2015-05-13 10:22:00-05:00,11359,11359,11359,11359,Added GULP files,ModificationType.ADD,,101,0,101,0,barkdesignchicago/vidar,vidar,185a0455c207b739e4da401629b80ee896ef6950,.js,1068308,2,https://stackoverflow.com/a/1068308
+0666eb1be8d0949e96f6cb40622a604df4e50f36,2016-06-07 08:04:07+00:00,2016-06-07 08:04:07+00:00,11360,11360,11360,11360,My first Django commit,ModificationType.ADD,,29,0,29,0,barma1309/Kalista,Kalista,cb977cff9545ef5d48ad7cf13f2cbe1ebc3e7cd0,.py,19622133,1,https://stackoverflow.com/q/19622133
+713a3094813d3bccca09e0b6d4af3a6311000117,2015-06-26 18:43:42-04:00,2015-06-26 18:43:42-04:00,11361,11361,11361,11361,"Initial Code Set
+
+Initial codes moved to the repository.",ModificationType.ADD,,809,0,809,0,barnent1/fflcommerce,fflcommerce,1c616d157da93eb64ea1796b0b3b33dc068dfd59,.js,5623838,1,https://stackoverflow.com/q/5623838
+f10198397bcb3b8556a1978ca643c337f08acfa2,2015-10-14 19:36:05+07:00,2015-10-14 19:36:05+07:00,11362,11362,11362,11362,,ModificationType.ADD,,3043,0,3043,0,barosclub/ahr2,ahr2,c635ec0b356079d988d10ecba7db39ad4559dd97,.js,3561493,1,https://stackoverflow.com/q/3561493
+8b97d01be633fbf411ce02640881b2a3733e39f9,2017-12-05 08:13:13+00:00,2017-12-05 08:13:13+00:00,4862,4862,37,37,"Leaflet upgrade (#7855)
+
+* Squashed 'lib/Leaflet.markercluster/' changes from e96388d6c..584add242
+
+584add242 Merge pull request #846 from ghybs/spiderfyLegFix
+e8ca4e8c6 Refactor(Spiderfier): circle spiderfy clockwise like spiral
+949d88ae6 Fix(Spiderfier): min leg distance for circle and skip 1st pos for spiral
+645e3a8b3 Bump this off
+ed8e05ab5 1.2.0
+e8219ecd3 Merge pull request #838 from lucaswerkmeister/836
+17e8cb710 Support DistanceGrid with cell size 0
+cc61460fc Make DistanceGrid cells closed sets
+00a24788b Merge pull request #832 from ghybs/refactorOptions
+a256831f2 Refactor(examplePane): assign clusterPane option only if pane is provided
+61e06292d Refactor(options): move clusterPane into options field
+0a00ec3a6 Merge pull request #831 from adammertel/master
+644663697 new subplugin in readme - MarkerCluster.List
+f175a7cc3 1.1.0
+d077f4920 Merge pull request #819 from ckrahe/panes
+37bc74004 Default group clusterPane to L.Marker default
+f80ee8bce Rename option for clarity
+bd3748a89 Add testing section.
+90004e431 Change option name to avoid collision with Leaflet. Document default. Add pane unit tests.
+e8f27e469 Follow standard and fully-qualify example references.
+480c78698 Create pane example. Add second link to custom example.
+4fffa0aa5 Support optional pane
+f1b0d8fe3 Other 1.0.6
+80570d1ec Update changelog for 1.0.6
+397693fa8 Be a bit more careful with minZoom. refs #789
+eab34569c Merge pull request #794 from ghybs/readme-https
+e2d5201d8 Merge pull request #795 from ghybs/examples-https
+b5afe4fe8 Refactor(examples/debug): use HTTPS for CDN, Tiles & OSM link
+77fbc29d5 Docs(README): use https for demo links
+e387e1f48 Fix non-integer min/max zoom and add a test. Ref #789
+4062f3768 Remove mention of custom build stuff that hasn't existed for a while
+c56a60d51 Fix addressPoints2 usage in example. Fixes #781
+e9cc1e29f Bump for 1.0.5
+590cce513 Merge pull request #779 from timkelty/pass-fitBounds-options
+4a2399606 README for fitBounds options Pass undefined
+97c3bb093 Allow paddling fitBounds options to zoomToBounds
+d7288c7fe Merge pull request #776 from kent1D/patch-1
+fcf9e9dd5 Update CHANGELOG.md
+254187999 Remove unnecessary undefined check, this is set to null by default.
+f01f8b1fe Merge pull request #773 from MrCheeze/master
+ea9400017 Fixed check to match coding standards (!==)
+b97aa03af Fixed bug where disableClusteringAtZoom being 0 is treated the same as null
+80dad1839 Bump for 1.0.4
+ac052696a add subplugin Leaflet.MarkerCluster.PlacementStrategies (#766)
+162f15722 Pull minZoom fetching out to fix errors removing a MCG from a map while an animation is going on.
+31e413d28 Add a note about the JS files
+701591250 bump readme to 1.0.3 (#756)
+588765b71 Bump for 1.0.3
+c82f34252 Another test and fix for #753
+706d6f266 Test and fix for moving a marker while the MCG is off the map. Refs #753
+848a172a5 Bump version
+a44c7c402 Update CHANGELOG for 1.0.2
+cf26d0190 Update changelog for 1.0.0
+b67410966 If a marker is moved with an open popup on it, re-open the popup after moving it. Fixes #651
+16cf328a5 Support layerremove event. fixes #647
+2a88279e9 Support layeradd event. refs #647
+dbdedb93e Tidy up all these event handlers we now need to add.
+cbfdb9806 Fix a few more cases where negative minZoom wasn't handled. refs #704
+e65cb900c Fix an issue when opening a popup inside of zoomToShowLayer. If there was an existing spiderfied marker with a popup on it, the map would scroll back to the location of that marker.
+37d5143a7 Merge pull request #747 from z3ut/fix-zoom-to-show-layer
+63c648177 Add support for maps with negative minZoom. Fixes #704
+0f8b3d102 Bump version
+ee69a43f8 Add an example with draggable markers. Fix dragging markers. Fixes #685
+f6379783a Bump all examples to leaflet 1.0.3
+1e81a9aba Add an ISSUE_TEMPLATE based on the leaflet one
+8bb6278e7 Remove zoomToShowLayer moveStart event check
+9c5fe783b Add zoomToShowLayer tests
+3468278a7 Fixed zoomToShowLayer() markers disappearing bug
+7db30166f Merge pull request #746 from marcianoviereck92/patch-1
+fa20d91b0 Fixed leaflet 1.0.2 bug where clearLayers would throw an exception
+ad023e9ef Merge pull request #738 from bertyhell/patch-1
+7872b96e8 Update example map link
+a1d98d65f Add example image of the marker cluster map
+7b577c1b6 Add example image to readme
+87cd5fd2f Add example image
+e6a24dc50 Merge pull request #734 from ghybs/patch-3
+76f0b0f30 README corrected iconCreateFunction
+771b41b3e README improve plugin install instructions
+d4d93457f README correct TOC order
+29972bef5 Add install and build steps with jake (#733)
+bd8f1369a Revert ""npm instructions for 1.0.0 in readme""
+c0ac83899 npm instructions for 1.0.0 in readme
+f22d877c1 Should bump leaflet version here too
+dd55b4bcc Update bower.json for 1.0.0 too
+9ac8ee068 Bump package.json 1.0.0
+a806d5064 Bump readme for 1.0.0
+7da6fb2ad Merge pull request #656 from ghybs/recursively-simplified
+bbd5dad61 Merge pull request #703 from tyleralves/patch-2
+2c4123994 Merge pull request #708 from ghybs/addLayerFreezableCompatibility
+4fce18cfe Added missing rounding to map._zoom
+f87592144 Get zoom from internal _zoom instead of map.getZoom()
+0e5c3347f Remove leaflet from peerDependencies (Leaflet/Leaflet#4534)
+7c894bf72 Merge pull request #697 from qedsoftware/bulk-icon-performance
+53c1f94a1 Refresh icons after bulk action, not during one
+7b360f931 Merge pull request #700 from qedsoftware/travis
+49a4dc445 Fix travis build
+7269ac32a Merge pull request #690 from LukeSwart/patch-1
+d4a2d05b9 Update README.md
+05e10293d Merge pull request #672 from ghybs/patch-3
+cab42e4ee Replaced links to gh-pages by github.io
+5171f18bb Update npm install location
+c0051f0a9 Bump version number to match leaflet
+3ab1c69da Merge pull request #665 from hyperknot/rc1
+c578c76ed updated peer dep to leaflet rc1
+68ca95f79 Update README.md
+5bb70eae9 Merge pull request #657 from ghybs/spiderfyCombinedWithDisableClustering
+617b8f3f7 Merge pull request #658 from ghybs/patch-2
+cc7aea0cc Replaced `dependencies` by `peerDependencies`
+6ee9972ab Copied note for `spiderfyOnMaxZoom` option explanation.
+e4dca376f Merged conditions for zoomOrSpiderfy to avoid no action with disableClusteringAtZoom
+c78e73987 Created disableClusteringAtZoomSpec
+8bdb884c8 Simplified _recursively
+d91addd7b Add building instructions
+cb05eb292 Merge pull request #644 from ghybs/master
+44963c185 Corrected #529 in master (Leaflet 1.0.0)
+a4c3bce8b Remove built files, we only ship these in tags now. BYO otherwise.
+2d6b625d9 Merge pull request #617 from zverev/unspiderfy
+f2ea5b5db Merge pull request #624 from ghybs/addNestedLayerGroups
+33e5eec4f Clone input array at first group met
+088001092 Merge pull request #626 from isedwards/geojson_semicolons
+9d7731600 Added a couple of missing semi-colons to improve readability/best practice.
+9b451926f Manage nested groups in removeLayer and removeLayers as well
+01467aa41 Missing final blank line in AddLayersSpec
+7cf8152dd Manage adding nested Layer Groups
+bfc877c8a Use the new travis infrastructure hopefully
+2faaba2cb Add unspiderfy test
+37fce91f2 Merge branch 'master' into unspiderfy
+54976bf69 fix a typo
+f61cfafc0 Public unspiderfy method
+ba3c95b27 Update CHANGELOG
+5f88d2428 Update leaflet version in package.json and format
+43b094824 Grab leaflet from https always. Fixes #614
+57cf04cdc Don't return markers that need to be removed in eachLayer/getLayers.
+a44af7231 Update readme for 1.0.0
+1b68284d8 Add test from calvinmetcalf in #397
+e18deb3a2 Add missing tests to spec/index.html runner
+9f6125501 Fix spiderfySpec tests
+97e27e173 Merge branch 'master' into leaflet-master-merge
+8ecc49410 Merge pull request #603 from ghybs/leaflet-master-merge
+822131832 Documentation for unspiderfied event
+de4d3321c Test for unspiderfied event
+e3017c5e4 Merge remote-tracking branch 'newmanw/master'
+6a93ee3a1 Add and fix tests from #421
+e5ab67d26 Merge commit 'ac8c7063af5ea8e9cce4ce595c7d8303dc595c17'
+d9c131036 Merge pull request #609 from OriginalSin/OriginalSin-patch-1
+58480310d Merge pull request #607 from ghybs/removeAnimClassOnMapRemovedButSpiderfied
+ad78e3c02 Merge pull request #610 from ghybs/patch-1
+c1b79349e Added sub-plugin MCG.Freezable
+ed9f02e6a Update MarkerClusterGroup.js
+fd59fa494 Added missing blank line end of file spiderfySpec
+e894b31fc Added listener de-binding on remove
+4360bf546 Added test in spiderfySpec for class add/remove
+c4bc5759a Corrected _spiderfierOnRemove to use no animation
+a0ccbe062 Merge pull request #604 from ghybs/correctUnspiderfyVector
+9a212d189 Merge pull request #606 from ghybs/spiderfyOnAllChildrenInBottomMostCluster
+f18b7f9da Improved methods existence checks
+4bb81fda0 Correct smart tab issue
+cf2f310d2 Added spiderfy test for current zoom
+8bb5e64a6 Simplified spiderfy at current zoom trigger
+8e2e653ac Improved _zoomOrSpiderfy
+6084aa7bb Removed useless comment
+c338c7777 Removed useless comment
+a4ec12ceb Replaced instanceof L.Marker by .setOpacity check
+088b6ae7d Replaced instanceof L.Marker by .setOpacity check
+f1ec8c5e0 Correct unspiderfy L.Circle and removeOutsideVisibleBoundsSpec
+6328db92f Added magic-string devDependency
+d37d0ed80 Updated examples script src to v1.0.0-beta.2 (leaflet-src.js)
+b0e2acf27 Merged new commits and corrected all test suites
+c69219fa4 Merge pull request #602 from tomchadwin/master
+79abfe1bd Formatting typo
+1a7d012cd Merge remote-tracking branch 'upstream/leaflet-master-merge' into leaflet-master-merge
+5fcd073a8 Merge pull request #600 from ghybs/readmeToc
+1226ecb43 Corrected sub-levels indentation
+6c7da0549 Added TOC into README
+b348916ca Merge pull request #599 from ghybs/master
+d30f3aec8 README new sub-plugins section added links
+e80c1e0cd README added sub-plugins section
+050145c29 Merge pull request #587 from ghybs/maxLatitude
+eb71a8f84 Merge pull request #588 from ghybs/patch-1
+3e21068b3 Merge pull request #585 from ghybs/animationSpiderfyNoSMIL
+ab451fc3f Added reference to chunked addLayers explanation
+183cb4686 Removed no longer needed code
+d76e9a467 Improved naming of _checkBoundsMaxLat
+aa1ba5207 Corrected test suite for max latitude check
+95dbec9ec Added bounds expansion to Infinity
+cd4f76dec Merge pull request #584 from ghybs/addLayers-Optimization
+71ce1a184 Corrected legOptions class assignment
+d6d4e7f89 Corrected spiderfy leg anim and leg opacity option
+984c632ab Replaced spiderfy legs animation from SMIL to CSS transition
+bf228d5f7 Removed class extension
+1c4a5f62c Replaced bounds reset method extension by cluster private method
+d55e21919 Merge pull request #583 from ghybs/refreshClusters
+8a9f126b5 Added test for refresh singleMarkerMode reject alien markers
+54c642c13 Added hasLayer check for singleMarkerMode refresh
+127d367c2 Converted singleMarkerMode and animateOption specs
+d9441c78c Reset bounds rather than re-create
+7bbf70e47 Externalized bound and wLatLng computations
+0df95323b Merge pull request #579 from ghybs/patch-1
+e09833063 Refactored RefreshSpec to use before/afterEach
+845f70236 Separated code for singleMarkerMode refresh
+e6f36e0da Made refreshClusters to re-draw markers in singleMarkerMode
+37e923719 Added getChildCount and getAllChildMarkers
+3d08cb1a8 Typos
+f56c4fa56 Typo and re-organized methods
+7fd26abea Small punctuation improvements
+4b3931f38 Corrected chunk* options description
+0aaa590e4 Merge remote-tracking branch 'upstream/master' into patch-1
+88233ae36 Merge branch 'patch-1' of https://github.com/ghybs/Leaflet.markercluster into patch-1
+c24555196 Parse id to an int, fixes #531
+29d7c6e0a Merge pull request #565 from Cyrille37/patch-1
+e97134b5e Merge pull request #578 from ghybs/animateOption
+739c6f10a Added spiderLegPolylineOptions in section All options
+d6966aa17 Added description of chunk* options for addLayers
+52d238af5 Added animate option
+4aeb0dff6 Merge pull request #575 from ghybs/removeOutsideVisibleBounds
+134d0a8bd Merge pull request #574 from ghybs/patch-1
+60746cc16 Merge pull request #577 from ghybs/refreshClusters
+69e142d65 Converted removeOutsideVisibleBoundsSpec test suite
+e5fabbe0e Improved reliability of RefreshSpec test suite
+957151362 Clean remote
+e7efb8d76 Merge branch 'removeOutsideVisibleBounds' of https://github.com/ghybs/Leaflet.markercluster into removeOutsideVisibleBounds
+f8a1ff926 Corrected effect of removeOutsideVisibleBounds option
+feb518cc3 Corrected example for refreshIconOptions
+cc8de424b Improved example for refreshIconOptions
+603b85788 Corrected typo
+43dda33b6 Don't need to keep track of the issues this was added for
+63ed8842e Merge pull request #564 from ghybs/master
+5b4dc71c1 Merge pull request #572 from ghybs/patch-2
+50bb1a383 Merge pull request #571 from ghybs/patch-1
+60360b13b Improved zoomToShowLayer with callback check
+d5c7c9460 Replaced constructors by factories
+61d24ffdd typo corrected
+67fec60ce Added Refresh src in spec/index, newline at end of spec/suites/refresh
+dea22170d Updated README
+be3cacca5 Added license in package.json, trying to revert dist files
+d1b11d9e6 Sync NPM dependencies so test suites are run against Leaflet 1.0.0-beta1
+ac71269a4 Merge branch 'leaflet-master' into leaflet-master-merge
+306ef6b62 Re-built dist files to include Refresh methods
+d56061f87 Disabled animation in test suite and added new src file in spec index
+3fb556586 Modified method names, added new file to build script, build dist files, added license to package.josn, created test spec suite and added it to spec index.
+fe8949348 in section ""Events"" added ""clustermouseout"" event
+a12254c67 Corrected compatibility with MCG and added direct refresh of MCG when refreshing Marker
+a06712053 Additional methods to facilitate marker icons update and propagate to parent clusters in real-time. For issues #561, #555, #535 and #498.
+49c92f8f4 placed new file in src
+b91a135e5 Merge branch 'master' of https://github.com/ghybs/Leaflet.markercluster-1
+afc132d21 first commit
+10d440ba4 Rough contributing file, stolen from leaflet version
+64a2d5711 Merge pull request #556 from Intermaps/remove-layers-fix
+879aa2897 corrected explanation text
+3c3a9aad9 Moved files to sub-folder and added explanation text and page formatting
+2fe03885f first commit of gh-pages for leaflet marker cluster test of hierarchical tree
+da64e04a1 add spec for removing layers when the group is not on the map
+a6a897670 remove duplicate _arraySplice
+801f6443f fix removeLayers when cluster is not on the map
+a415818d4 Merge pull request #553 from cyrilchaponeverysens/master
+cfb91e1c5 Revert ""Added ""main"" property to bower.json to make it compatible with wiredep"" (there was already a valid main section)
+44bd117de Merge pull request #533 from olive380/patch-2
+84da57e41 Update QuickHullSpec.js
+3fd3e0d65 Delete showCoverageOnHover-vertically-aligned-markers.html
+9a29fd0b6 Delete showCoverageOnHover-horizontally-aligned-markers.html
+e2be3564b Merge pull request #532 from olive380/patch-1
+8d2ae0b73 Create remove-geoJSON-when-spiderfied.html
+468241db1 Create showCoverageOnHover-horizontally-aligned-markers.html
+368076a14 Create showCoverageOnHover-vertically-aligned-markers.html
+e6aa0b253 Update MarkerClusterGroup.js
+502d8ac2c Update MarkerClusterGroup.js
+a2f509ce4 Update MarkerCluster.QuickHull.js
+0fe481dab Update MarkerCluster.QuickHull.js
+79e65560d Update MarkerCluster.QuickHull.js
+e9889719d Update MarkerCluster.QuickHull.js
+59a934408 Update MarkerClusterGroup.js
+102f14718 Merge pull request #472 from Eschon/leaflet-master
+6e35cf74b rounded zoom to work with fractional zoom levels
+53997cd3e Fire unspiderfied event
+ac8c7063a Fix indention from spaces to tabs
+90fbaca19 Provide more detailed context information on the spiderfied event
+a1e06288d Fix for the latest leaflet master changes. fixes #289
+517ba04fc We weren't using the chunked option, fixed.
+920c58f09 Small bug still using old variable
+530ccaf1a Specifically ignore out setLatLng calls. Should fix using this with Leaflet.Label (which out don't setLatLng hack broke)
+f86404e84 Revert ""Cludge around setLatLng so we don't cause 'move' events when we hack-move markers. This wants doing better.""
+db142ea67 Working animated spiderfying I think...
+4e3b8252f Some of animated stuff works. The lines don't animate as we aren't adding the vector layer initially any more and some other bits are broken too
+542892d6e get non-animated spiderfying working.
+27827b5d6 Rough marker move tracking. refs #57
+51014578d Cludge around setLatLng so we don't cause 'move' events when we hack-move markers. This wants doing better.
+bc463e42c Change event propagation overrides to work with leaflet master code.
+
+git-subtree-dir: lib/Leaflet.markercluster
+git-subtree-split: 584add242e2a190bc30bf86e9d2bae44bd362722
+
+* Squashed 'lib/Leaflet.awesome-markers/' changes from 4dfeef694..734042aef
+
+734042aef Merge pull request #90 from fraulyoner/2.0/develop
+23a8efa22 Fix typos in README
+
+git-subtree-dir: lib/Leaflet.awesome-markers
+git-subtree-split: 734042aef260eb3d9b72bbac5db00dfc07dbc602
+
+* webui: Updated leaflet version",ModificationType.ADD,,97,0,97,0,barryodonovan/librenms,librenms,f3728a1eba902d031a0db75b7b8fa4ea3c8423ac,.js,27239708,1,https://stackoverflow.com/q/27239708
+8b97d01be633fbf411ce02640881b2a3733e39f9,2017-12-05 08:13:13+00:00,2017-12-05 08:13:13+00:00,4862,4862,37,37,"Leaflet upgrade (#7855)
+
+* Squashed 'lib/Leaflet.markercluster/' changes from e96388d6c..584add242
+
+584add242 Merge pull request #846 from ghybs/spiderfyLegFix
+e8ca4e8c6 Refactor(Spiderfier): circle spiderfy clockwise like spiral
+949d88ae6 Fix(Spiderfier): min leg distance for circle and skip 1st pos for spiral
+645e3a8b3 Bump this off
+ed8e05ab5 1.2.0
+e8219ecd3 Merge pull request #838 from lucaswerkmeister/836
+17e8cb710 Support DistanceGrid with cell size 0
+cc61460fc Make DistanceGrid cells closed sets
+00a24788b Merge pull request #832 from ghybs/refactorOptions
+a256831f2 Refactor(examplePane): assign clusterPane option only if pane is provided
+61e06292d Refactor(options): move clusterPane into options field
+0a00ec3a6 Merge pull request #831 from adammertel/master
+644663697 new subplugin in readme - MarkerCluster.List
+f175a7cc3 1.1.0
+d077f4920 Merge pull request #819 from ckrahe/panes
+37bc74004 Default group clusterPane to L.Marker default
+f80ee8bce Rename option for clarity
+bd3748a89 Add testing section.
+90004e431 Change option name to avoid collision with Leaflet. Document default. Add pane unit tests.
+e8f27e469 Follow standard and fully-qualify example references.
+480c78698 Create pane example. Add second link to custom example.
+4fffa0aa5 Support optional pane
+f1b0d8fe3 Other 1.0.6
+80570d1ec Update changelog for 1.0.6
+397693fa8 Be a bit more careful with minZoom. refs #789
+eab34569c Merge pull request #794 from ghybs/readme-https
+e2d5201d8 Merge pull request #795 from ghybs/examples-https
+b5afe4fe8 Refactor(examples/debug): use HTTPS for CDN, Tiles & OSM link
+77fbc29d5 Docs(README): use https for demo links
+e387e1f48 Fix non-integer min/max zoom and add a test. Ref #789
+4062f3768 Remove mention of custom build stuff that hasn't existed for a while
+c56a60d51 Fix addressPoints2 usage in example. Fixes #781
+e9cc1e29f Bump for 1.0.5
+590cce513 Merge pull request #779 from timkelty/pass-fitBounds-options
+4a2399606 README for fitBounds options Pass undefined
+97c3bb093 Allow paddling fitBounds options to zoomToBounds
+d7288c7fe Merge pull request #776 from kent1D/patch-1
+fcf9e9dd5 Update CHANGELOG.md
+254187999 Remove unnecessary undefined check, this is set to null by default.
+f01f8b1fe Merge pull request #773 from MrCheeze/master
+ea9400017 Fixed check to match coding standards (!==)
+b97aa03af Fixed bug where disableClusteringAtZoom being 0 is treated the same as null
+80dad1839 Bump for 1.0.4
+ac052696a add subplugin Leaflet.MarkerCluster.PlacementStrategies (#766)
+162f15722 Pull minZoom fetching out to fix errors removing a MCG from a map while an animation is going on.
+31e413d28 Add a note about the JS files
+701591250 bump readme to 1.0.3 (#756)
+588765b71 Bump for 1.0.3
+c82f34252 Another test and fix for #753
+706d6f266 Test and fix for moving a marker while the MCG is off the map. Refs #753
+848a172a5 Bump version
+a44c7c402 Update CHANGELOG for 1.0.2
+cf26d0190 Update changelog for 1.0.0
+b67410966 If a marker is moved with an open popup on it, re-open the popup after moving it. Fixes #651
+16cf328a5 Support layerremove event. fixes #647
+2a88279e9 Support layeradd event. refs #647
+dbdedb93e Tidy up all these event handlers we now need to add.
+cbfdb9806 Fix a few more cases where negative minZoom wasn't handled. refs #704
+e65cb900c Fix an issue when opening a popup inside of zoomToShowLayer. If there was an existing spiderfied marker with a popup on it, the map would scroll back to the location of that marker.
+37d5143a7 Merge pull request #747 from z3ut/fix-zoom-to-show-layer
+63c648177 Add support for maps with negative minZoom. Fixes #704
+0f8b3d102 Bump version
+ee69a43f8 Add an example with draggable markers. Fix dragging markers. Fixes #685
+f6379783a Bump all examples to leaflet 1.0.3
+1e81a9aba Add an ISSUE_TEMPLATE based on the leaflet one
+8bb6278e7 Remove zoomToShowLayer moveStart event check
+9c5fe783b Add zoomToShowLayer tests
+3468278a7 Fixed zoomToShowLayer() markers disappearing bug
+7db30166f Merge pull request #746 from marcianoviereck92/patch-1
+fa20d91b0 Fixed leaflet 1.0.2 bug where clearLayers would throw an exception
+ad023e9ef Merge pull request #738 from bertyhell/patch-1
+7872b96e8 Update example map link
+a1d98d65f Add example image of the marker cluster map
+7b577c1b6 Add example image to readme
+87cd5fd2f Add example image
+e6a24dc50 Merge pull request #734 from ghybs/patch-3
+76f0b0f30 README corrected iconCreateFunction
+771b41b3e README improve plugin install instructions
+d4d93457f README correct TOC order
+29972bef5 Add install and build steps with jake (#733)
+bd8f1369a Revert ""npm instructions for 1.0.0 in readme""
+c0ac83899 npm instructions for 1.0.0 in readme
+f22d877c1 Should bump leaflet version here too
+dd55b4bcc Update bower.json for 1.0.0 too
+9ac8ee068 Bump package.json 1.0.0
+a806d5064 Bump readme for 1.0.0
+7da6fb2ad Merge pull request #656 from ghybs/recursively-simplified
+bbd5dad61 Merge pull request #703 from tyleralves/patch-2
+2c4123994 Merge pull request #708 from ghybs/addLayerFreezableCompatibility
+4fce18cfe Added missing rounding to map._zoom
+f87592144 Get zoom from internal _zoom instead of map.getZoom()
+0e5c3347f Remove leaflet from peerDependencies (Leaflet/Leaflet#4534)
+7c894bf72 Merge pull request #697 from qedsoftware/bulk-icon-performance
+53c1f94a1 Refresh icons after bulk action, not during one
+7b360f931 Merge pull request #700 from qedsoftware/travis
+49a4dc445 Fix travis build
+7269ac32a Merge pull request #690 from LukeSwart/patch-1
+d4a2d05b9 Update README.md
+05e10293d Merge pull request #672 from ghybs/patch-3
+cab42e4ee Replaced links to gh-pages by github.io
+5171f18bb Update npm install location
+c0051f0a9 Bump version number to match leaflet
+3ab1c69da Merge pull request #665 from hyperknot/rc1
+c578c76ed updated peer dep to leaflet rc1
+68ca95f79 Update README.md
+5bb70eae9 Merge pull request #657 from ghybs/spiderfyCombinedWithDisableClustering
+617b8f3f7 Merge pull request #658 from ghybs/patch-2
+cc7aea0cc Replaced `dependencies` by `peerDependencies`
+6ee9972ab Copied note for `spiderfyOnMaxZoom` option explanation.
+e4dca376f Merged conditions for zoomOrSpiderfy to avoid no action with disableClusteringAtZoom
+c78e73987 Created disableClusteringAtZoomSpec
+8bdb884c8 Simplified _recursively
+d91addd7b Add building instructions
+cb05eb292 Merge pull request #644 from ghybs/master
+44963c185 Corrected #529 in master (Leaflet 1.0.0)
+a4c3bce8b Remove built files, we only ship these in tags now. BYO otherwise.
+2d6b625d9 Merge pull request #617 from zverev/unspiderfy
+f2ea5b5db Merge pull request #624 from ghybs/addNestedLayerGroups
+33e5eec4f Clone input array at first group met
+088001092 Merge pull request #626 from isedwards/geojson_semicolons
+9d7731600 Added a couple of missing semi-colons to improve readability/best practice.
+9b451926f Manage nested groups in removeLayer and removeLayers as well
+01467aa41 Missing final blank line in AddLayersSpec
+7cf8152dd Manage adding nested Layer Groups
+bfc877c8a Use the new travis infrastructure hopefully
+2faaba2cb Add unspiderfy test
+37fce91f2 Merge branch 'master' into unspiderfy
+54976bf69 fix a typo
+f61cfafc0 Public unspiderfy method
+ba3c95b27 Update CHANGELOG
+5f88d2428 Update leaflet version in package.json and format
+43b094824 Grab leaflet from https always. Fixes #614
+57cf04cdc Don't return markers that need to be removed in eachLayer/getLayers.
+a44af7231 Update readme for 1.0.0
+1b68284d8 Add test from calvinmetcalf in #397
+e18deb3a2 Add missing tests to spec/index.html runner
+9f6125501 Fix spiderfySpec tests
+97e27e173 Merge branch 'master' into leaflet-master-merge
+8ecc49410 Merge pull request #603 from ghybs/leaflet-master-merge
+822131832 Documentation for unspiderfied event
+de4d3321c Test for unspiderfied event
+e3017c5e4 Merge remote-tracking branch 'newmanw/master'
+6a93ee3a1 Add and fix tests from #421
+e5ab67d26 Merge commit 'ac8c7063af5ea8e9cce4ce595c7d8303dc595c17'
+d9c131036 Merge pull request #609 from OriginalSin/OriginalSin-patch-1
+58480310d Merge pull request #607 from ghybs/removeAnimClassOnMapRemovedButSpiderfied
+ad78e3c02 Merge pull request #610 from ghybs/patch-1
+c1b79349e Added sub-plugin MCG.Freezable
+ed9f02e6a Update MarkerClusterGroup.js
+fd59fa494 Added missing blank line end of file spiderfySpec
+e894b31fc Added listener de-binding on remove
+4360bf546 Added test in spiderfySpec for class add/remove
+c4bc5759a Corrected _spiderfierOnRemove to use no animation
+a0ccbe062 Merge pull request #604 from ghybs/correctUnspiderfyVector
+9a212d189 Merge pull request #606 from ghybs/spiderfyOnAllChildrenInBottomMostCluster
+f18b7f9da Improved methods existence checks
+4bb81fda0 Correct smart tab issue
+cf2f310d2 Added spiderfy test for current zoom
+8bb5e64a6 Simplified spiderfy at current zoom trigger
+8e2e653ac Improved _zoomOrSpiderfy
+6084aa7bb Removed useless comment
+c338c7777 Removed useless comment
+a4ec12ceb Replaced instanceof L.Marker by .setOpacity check
+088b6ae7d Replaced instanceof L.Marker by .setOpacity check
+f1ec8c5e0 Correct unspiderfy L.Circle and removeOutsideVisibleBoundsSpec
+6328db92f Added magic-string devDependency
+d37d0ed80 Updated examples script src to v1.0.0-beta.2 (leaflet-src.js)
+b0e2acf27 Merged new commits and corrected all test suites
+c69219fa4 Merge pull request #602 from tomchadwin/master
+79abfe1bd Formatting typo
+1a7d012cd Merge remote-tracking branch 'upstream/leaflet-master-merge' into leaflet-master-merge
+5fcd073a8 Merge pull request #600 from ghybs/readmeToc
+1226ecb43 Corrected sub-levels indentation
+6c7da0549 Added TOC into README
+b348916ca Merge pull request #599 from ghybs/master
+d30f3aec8 README new sub-plugins section added links
+e80c1e0cd README added sub-plugins section
+050145c29 Merge pull request #587 from ghybs/maxLatitude
+eb71a8f84 Merge pull request #588 from ghybs/patch-1
+3e21068b3 Merge pull request #585 from ghybs/animationSpiderfyNoSMIL
+ab451fc3f Added reference to chunked addLayers explanation
+183cb4686 Removed no longer needed code
+d76e9a467 Improved naming of _checkBoundsMaxLat
+aa1ba5207 Corrected test suite for max latitude check
+95dbec9ec Added bounds expansion to Infinity
+cd4f76dec Merge pull request #584 from ghybs/addLayers-Optimization
+71ce1a184 Corrected legOptions class assignment
+d6d4e7f89 Corrected spiderfy leg anim and leg opacity option
+984c632ab Replaced spiderfy legs animation from SMIL to CSS transition
+bf228d5f7 Removed class extension
+1c4a5f62c Replaced bounds reset method extension by cluster private method
+d55e21919 Merge pull request #583 from ghybs/refreshClusters
+8a9f126b5 Added test for refresh singleMarkerMode reject alien markers
+54c642c13 Added hasLayer check for singleMarkerMode refresh
+127d367c2 Converted singleMarkerMode and animateOption specs
+d9441c78c Reset bounds rather than re-create
+7bbf70e47 Externalized bound and wLatLng computations
+0df95323b Merge pull request #579 from ghybs/patch-1
+e09833063 Refactored RefreshSpec to use before/afterEach
+845f70236 Separated code for singleMarkerMode refresh
+e6f36e0da Made refreshClusters to re-draw markers in singleMarkerMode
+37e923719 Added getChildCount and getAllChildMarkers
+3d08cb1a8 Typos
+f56c4fa56 Typo and re-organized methods
+7fd26abea Small punctuation improvements
+4b3931f38 Corrected chunk* options description
+0aaa590e4 Merge remote-tracking branch 'upstream/master' into patch-1
+88233ae36 Merge branch 'patch-1' of https://github.com/ghybs/Leaflet.markercluster into patch-1
+c24555196 Parse id to an int, fixes #531
+29d7c6e0a Merge pull request #565 from Cyrille37/patch-1
+e97134b5e Merge pull request #578 from ghybs/animateOption
+739c6f10a Added spiderLegPolylineOptions in section All options
+d6966aa17 Added description of chunk* options for addLayers
+52d238af5 Added animate option
+4aeb0dff6 Merge pull request #575 from ghybs/removeOutsideVisibleBounds
+134d0a8bd Merge pull request #574 from ghybs/patch-1
+60746cc16 Merge pull request #577 from ghybs/refreshClusters
+69e142d65 Converted removeOutsideVisibleBoundsSpec test suite
+e5fabbe0e Improved reliability of RefreshSpec test suite
+957151362 Clean remote
+e7efb8d76 Merge branch 'removeOutsideVisibleBounds' of https://github.com/ghybs/Leaflet.markercluster into removeOutsideVisibleBounds
+f8a1ff926 Corrected effect of removeOutsideVisibleBounds option
+feb518cc3 Corrected example for refreshIconOptions
+cc8de424b Improved example for refreshIconOptions
+603b85788 Corrected typo
+43dda33b6 Don't need to keep track of the issues this was added for
+63ed8842e Merge pull request #564 from ghybs/master
+5b4dc71c1 Merge pull request #572 from ghybs/patch-2
+50bb1a383 Merge pull request #571 from ghybs/patch-1
+60360b13b Improved zoomToShowLayer with callback check
+d5c7c9460 Replaced constructors by factories
+61d24ffdd typo corrected
+67fec60ce Added Refresh src in spec/index, newline at end of spec/suites/refresh
+dea22170d Updated README
+be3cacca5 Added license in package.json, trying to revert dist files
+d1b11d9e6 Sync NPM dependencies so test suites are run against Leaflet 1.0.0-beta1
+ac71269a4 Merge branch 'leaflet-master' into leaflet-master-merge
+306ef6b62 Re-built dist files to include Refresh methods
+d56061f87 Disabled animation in test suite and added new src file in spec index
+3fb556586 Modified method names, added new file to build script, build dist files, added license to package.josn, created test spec suite and added it to spec index.
+fe8949348 in section ""Events"" added ""clustermouseout"" event
+a12254c67 Corrected compatibility with MCG and added direct refresh of MCG when refreshing Marker
+a06712053 Additional methods to facilitate marker icons update and propagate to parent clusters in real-time. For issues #561, #555, #535 and #498.
+49c92f8f4 placed new file in src
+b91a135e5 Merge branch 'master' of https://github.com/ghybs/Leaflet.markercluster-1
+afc132d21 first commit
+10d440ba4 Rough contributing file, stolen from leaflet version
+64a2d5711 Merge pull request #556 from Intermaps/remove-layers-fix
+879aa2897 corrected explanation text
+3c3a9aad9 Moved files to sub-folder and added explanation text and page formatting
+2fe03885f first commit of gh-pages for leaflet marker cluster test of hierarchical tree
+da64e04a1 add spec for removing layers when the group is not on the map
+a6a897670 remove duplicate _arraySplice
+801f6443f fix removeLayers when cluster is not on the map
+a415818d4 Merge pull request #553 from cyrilchaponeverysens/master
+cfb91e1c5 Revert ""Added ""main"" property to bower.json to make it compatible with wiredep"" (there was already a valid main section)
+44bd117de Merge pull request #533 from olive380/patch-2
+84da57e41 Update QuickHullSpec.js
+3fd3e0d65 Delete showCoverageOnHover-vertically-aligned-markers.html
+9a29fd0b6 Delete showCoverageOnHover-horizontally-aligned-markers.html
+e2be3564b Merge pull request #532 from olive380/patch-1
+8d2ae0b73 Create remove-geoJSON-when-spiderfied.html
+468241db1 Create showCoverageOnHover-horizontally-aligned-markers.html
+368076a14 Create showCoverageOnHover-vertically-aligned-markers.html
+e6aa0b253 Update MarkerClusterGroup.js
+502d8ac2c Update MarkerClusterGroup.js
+a2f509ce4 Update MarkerCluster.QuickHull.js
+0fe481dab Update MarkerCluster.QuickHull.js
+79e65560d Update MarkerCluster.QuickHull.js
+e9889719d Update MarkerCluster.QuickHull.js
+59a934408 Update MarkerClusterGroup.js
+102f14718 Merge pull request #472 from Eschon/leaflet-master
+6e35cf74b rounded zoom to work with fractional zoom levels
+53997cd3e Fire unspiderfied event
+ac8c7063a Fix indention from spaces to tabs
+90fbaca19 Provide more detailed context information on the spiderfied event
+a1e06288d Fix for the latest leaflet master changes. fixes #289
+517ba04fc We weren't using the chunked option, fixed.
+920c58f09 Small bug still using old variable
+530ccaf1a Specifically ignore out setLatLng calls. Should fix using this with Leaflet.Label (which out don't setLatLng hack broke)
+f86404e84 Revert ""Cludge around setLatLng so we don't cause 'move' events when we hack-move markers. This wants doing better.""
+db142ea67 Working animated spiderfying I think...
+4e3b8252f Some of animated stuff works. The lines don't animate as we aren't adding the vector layer initially any more and some other bits are broken too
+542892d6e get non-animated spiderfying working.
+27827b5d6 Rough marker move tracking. refs #57
+51014578d Cludge around setLatLng so we don't cause 'move' events when we hack-move markers. This wants doing better.
+bc463e42c Change event propagation overrides to work with leaflet master code.
+
+git-subtree-dir: lib/Leaflet.markercluster
+git-subtree-split: 584add242e2a190bc30bf86e9d2bae44bd362722
+
+* Squashed 'lib/Leaflet.awesome-markers/' changes from 4dfeef694..734042aef
+
+734042aef Merge pull request #90 from fraulyoner/2.0/develop
+23a8efa22 Fix typos in README
+
+git-subtree-dir: lib/Leaflet.awesome-markers
+git-subtree-split: 734042aef260eb3d9b72bbac5db00dfc07dbc602
+
+* webui: Updated leaflet version",ModificationType.MODIFY,,93,17,93,17,barryodonovan/librenms,librenms,521ac1511f2d053ed31094b6f19b244edbf0bd14,.js,27239708,1,https://stackoverflow.com/q/27239708
+bc342fd60584ae36e8b0718932ba63d8398395bc,2013-06-17 21:00:12-04:00,2013-06-17 21:00:12-04:00,11363,11363,11363,11363,lots and lots of comments,ModificationType.RENAME,,38,19,38,19,barryoneill/WolframCA,WolframCA,e65cf8ed8cfffc3c86e4b40a1bfcaac7d12f0245,.java,10377934,2,https://stackoverflow.com/a/10377934
+99cf1fd61466e17bf8952cf89d3b6db959642c39,2014-12-21 11:55:17-08:00,2014-12-21 11:55:17-08:00,11364,11364,11364,11364,Initial commit,ModificationType.ADD,,501,0,501,0,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+92473c5927954e5a85322783cc4783a8446dc622,2014-12-21 13:20:38-08:00,2014-12-21 13:20:38-08:00,11364,11364,11364,11364,rename bard.injector as bard.inject,ModificationType.MODIFY,99cf1fd61466e17bf8952cf89d3b6db959642c39,78,68,2,68,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+92473c5927954e5a85322783cc4783a8446dc622,2014-12-21 13:20:38-08:00,2014-12-21 13:20:38-08:00,11364,11364,11364,11364,rename bard.injector as bard.inject,ModificationType.MODIFY,92473c5927954e5a85322783cc4783a8446dc622,78,68,0,21,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+f6ffedef0f0977b4d3255d5b966f5f833f281d56,2014-12-21 19:47:38-05:00,2014-12-21 19:47:38-05:00,11365,11365,11365,11365,added gulpfile and config. can now type gulp build,ModificationType.MODIFY,92473c5927954e5a85322783cc4783a8446dc622,7,2,7,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+89751de2f3de838b11ad5d29a6399beb0c50c98e,2014-12-21 21:31:40-05:00,2014-12-21 21:31:40-05:00,11365,11365,11365,11365,0.0.3,ModificationType.MODIFY,f6ffedef0f0977b4d3255d5b966f5f833f281d56,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+a61401f4bfbc627f1c23fca17bc463429f53172b,2015-01-03 00:21:45-08:00,2015-01-03 00:21:45-08:00,11364,11364,11364,11364,Added bard-ngRouteTester,ModificationType.MODIFY,89751de2f3de838b11ad5d29a6399beb0c50c98e,3,16,2,15,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+a61401f4bfbc627f1c23fca17bc463429f53172b,2015-01-03 00:21:45-08:00,2015-01-03 00:21:45-08:00,11364,11364,11364,11364,Added bard-ngRouteTester,ModificationType.MODIFY,a61401f4bfbc627f1c23fca17bc463429f53172b,4,17,1,8,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+a1ae4ab693e25ac18ec56cbba4fb04c310870fc7,2015-01-03 01:02:59-08:00,2015-01-03 01:02:59-08:00,11364,11364,11364,11364,Fix bard.js typo,ModificationType.MODIFY,a61401f4bfbc627f1c23fca17bc463429f53172b,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+0add416cd5d20f7df8043e38ff6e4aa4fa590000,2015-01-22 15:57:24-08:00,2015-01-22 15:57:24-08:00,11364,11364,11364,11364,release 0.0.5 (forgot to build last time),ModificationType.MODIFY,a1ae4ab693e25ac18ec56cbba4fb04c310870fc7,18,4,2,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+47fe34f328a127686661cedb52e80dde4eaf7f31,2015-02-08 16:11:05-08:00,2015-02-08 16:11:05-08:00,11364,11364,11364,11364,0.0.6,ModificationType.MODIFY,0add416cd5d20f7df8043e38ff6e4aa4fa590000,93,26,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+54aebaff6414aa70010833b01379705482cd18d1,2015-02-08 16:16:17-08:00,2015-02-08 16:16:17-08:00,11364,11364,11364,11364,0.0.6 ... after building with updated version number,ModificationType.MODIFY,47fe34f328a127686661cedb52e80dde4eaf7f31,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+062d8913ab70e1b420e330197467db4eef976895,2015-02-09 14:44:20-08:00,2015-02-09 14:44:20-08:00,11364,11364,11364,11364,"0.0.7
+bard.inject no longer uses evil Function; added addGlobals, mochaRunnerListener",ModificationType.MODIFY,54aebaff6414aa70010833b01379705482cd18d1,100,70,4,11,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+062d8913ab70e1b420e330197467db4eef976895,2015-02-09 14:44:20-08:00,2015-02-09 14:44:20-08:00,11364,11364,11364,11364,"0.0.7
+bard.inject no longer uses evil Function; added addGlobals, mochaRunnerListener",ModificationType.MODIFY,062d8913ab70e1b420e330197467db4eef976895,101,71,3,5,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+1ada7680a9bbdfc141eb48bbaa1e64f71d4bbcd1,2015-02-09 16:47:10-08:00,2015-02-09 16:47:10-08:00,11364,11364,11364,11364,"0.0.8 - remove limitation to mocha/jasmine
+Should work for QUnit too. QUnit testing needed.",ModificationType.MODIFY,062d8913ab70e1b420e330197467db4eef976895,18,17,3,3,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+1ada7680a9bbdfc141eb48bbaa1e64f71d4bbcd1,2015-02-09 16:47:10-08:00,2015-02-09 16:47:10-08:00,11364,11364,11364,11364,"0.0.8 - remove limitation to mocha/jasmine
+Should work for QUnit too. QUnit testing needed.",ModificationType.MODIFY,1ada7680a9bbdfc141eb48bbaa1e64f71d4bbcd1,19,18,4,3,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+2f6552bb26d449a2942bea6e4b6db55748b6fd8c,2015-03-01 22:28:06-08:00,2015-03-01 22:28:06-08:00,11364,11364,11364,11364,v.0.0.9 - adds comments and markers to warn against bard.appModule if need the real router services,ModificationType.MODIFY,1ada7680a9bbdfc141eb48bbaa1e64f71d4bbcd1,13,4,10,4,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+2f6552bb26d449a2942bea6e4b6db55748b6fd8c,2015-03-01 22:28:06-08:00,2015-03-01 22:28:06-08:00,11364,11364,11364,11364,v.0.0.9 - adds comments and markers to warn against bard.appModule if need the real router services,ModificationType.MODIFY,2f6552bb26d449a2942bea6e4b6db55748b6fd8c,14,5,5,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+fd986048f2504fb7cef9d74794a02fad00256ee5,2015-03-12 12:23:16-07:00,2015-03-12 12:23:16-07:00,11364,11364,11364,11364,release v.0.1.0 ... with documentation,ModificationType.MODIFY,2f6552bb26d449a2942bea6e4b6db55748b6fd8c,2,2,2,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+fa5b515ba14b6c9b3bc3ac3bb4b3a6b7384ad5ef,2015-05-04 14:26:55-07:00,2015-05-04 14:26:55-07:00,11364,11364,11364,11364,"Incorporate `Function.bind` polyfill for phantom.js testing
+See https://github.com/wardbell/bardjs/issues/2",ModificationType.MODIFY,fd986048f2504fb7cef9d74794a02fad00256ee5,41,2,2,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+2cf4da87b7b8f3e75f7f1101f6c6379d6483321a,2015-05-05 20:38:44-06:00,2015-05-05 20:38:44-06:00,11366,11366,11366,11366,Fixing the handling of services that have prototype methods/attributes,ModificationType.MODIFY,fa5b515ba14b6c9b3bc3ac3bb4b3a6b7384ad5ef,9,2,9,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+ba562dfd800eff8ecacf46e369235e9911179ed5,2015-05-05 22:59:50-07:00,2015-05-05 22:59:50-07:00,11364,11364,11364,11364,release 0.1.2,ModificationType.MODIFY,2cf4da87b7b8f3e75f7f1101f6c6379d6483321a,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+ba562dfd800eff8ecacf46e369235e9911179ed5,2015-05-05 22:59:50-07:00,2015-05-05 22:59:50-07:00,11364,11364,11364,11364,release 0.1.2,ModificationType.MODIFY,ba562dfd800eff8ecacf46e369235e9911179ed5,2,2,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+459cf2359d0ec88473c0ca55ad068dd4dceacc97,2015-05-13 03:45:02-07:00,2015-05-13 03:45:02-07:00,11364,11364,11364,11364,:arrow_up: v.0.1.3,ModificationType.MODIFY,ba562dfd800eff8ecacf46e369235e9911179ed5,17,8,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+e128bc1de3d50eda211bd96d724c52f5ad53a8ad,2015-06-11 09:33:43-07:00,2015-06-11 09:33:43-07:00,11364,11364,11364,11364,"v.0.1.4
+updated dependency versions; some space cleaning to pass ""gulp vet""",ModificationType.MODIFY,459cf2359d0ec88473c0ca55ad068dd4dceacc97,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+1c7fb309a2416d9c0ed06a25e152f9a2457dd699,2015-08-04 12:11:11-07:00,2015-08-04 12:11:11-07:00,11364,11364,11364,11364,0.1.5 release (comments added; no fnc change),ModificationType.MODIFY,e128bc1de3d50eda211bd96d724c52f5ad53a8ad,26,2,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+7814333a6768464a87730d8d2fa8b292f2ac9380,2015-08-13 20:14:11-07:00,2015-08-13 20:14:11-07:00,11364,11364,11364,11364,0.1.6 - no functional changes; see CHANGELOG.md,ModificationType.MODIFY,1c7fb309a2416d9c0ed06a25e152f9a2457dd699,2,2,2,2,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+0bae48a806c3a26600bc4193a575266496cb6842,2015-08-13 20:28:28-07:00,2015-08-13 20:28:28-07:00,11364,11364,11364,11364,0.1.7 made sinon a peerDependency of npm package.json,ModificationType.MODIFY,7814333a6768464a87730d8d2fa8b292f2ac9380,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+83f680f7b944c8d8c87ddaf8ceb52b9e87443e79,2015-08-13 20:39:24-07:00,2015-08-13 20:39:24-07:00,11364,11364,11364,11364,0.1.8 reverses 0.1.7,ModificationType.MODIFY,0bae48a806c3a26600bc4193a575266496cb6842,1,1,1,1,Barryrowe/bardjs,bardjs,558addf7bf0c6eb033b7138546c81d9247b4d372,.js,26992327,2,https://stackoverflow.com/a/26992327
+3c0e45968ab2128668e680edc41be8555246ed5c,2014-07-09 00:31:42-07:00,2014-07-09 00:31:42-07:00,2938,2938,2938,2938,Run components in strict mode. Closes #675.,ModificationType.MODIFY,,101,97,101,97,barseghyanartur/typeahead.js,typeahead.js,96faede8a9884d83fe41bcb719b5efd23a4c1af3,.js,6969486,2,https://stackoverflow.com/a/6969486
+7f0d14e57d7eb5480f636967afea368ff524d2a4,2014-08-23 16:46:01-07:00,2014-08-23 16:46:01-07:00,2938,2938,2938,2938,Add identify option.,ModificationType.MODIFY,3c0e45968ab2128668e680edc41be8555246ed5c,2,2,2,2,barseghyanartur/typeahead.js,typeahead.js,96faede8a9884d83fe41bcb719b5efd23a4c1af3,.js,6969486,2,https://stackoverflow.com/a/6969486
+6441538cc096b808fc6a620df17f397fc33dd77e,2017-08-18 17:09:13-03:00,2017-08-18 17:09:13-03:00,11367,11367,11367,11367,initial commit,ModificationType.ADD,,1079,0,1079,0,barthisrael/gridJS,gridJS,94bd42a66f7c5cdcbe510fced7248508712d2311,.js,4881951,2,https://stackoverflow.com/a/4881951
+ff5bb7b13fd16d5e5296963716302fca95939c01,2016-08-27 02:13:59-05:00,2016-08-27 02:13:59-05:00,11368,11368,11368,11368,Initial Commit,ModificationType.ADD,,130,0,130,0,bartholomew91/socialboard-client,socialboard-client,9a5c1488ac20f4e4cbfacf6475c4a379dd91fcaf,.js,6903762,1,https://stackoverflow.com/q/6903762
+a22ca3dda2b4b32fc14d7020fbcfb0224649b6c5,2016-09-29 11:35:21-04:00,2016-09-29 11:35:21-04:00,11369,11369,11369,11369,'node_modules',ModificationType.ADD,,50,0,50,0,bartholomewbischoff/Sp-Sk,Sp-Sk,08be0d2cb8c905063bc45d2b9cfe6571290adb19,.py,13436167,2,https://stackoverflow.com/a/13436167
+a22ca3dda2b4b32fc14d7020fbcfb0224649b6c5,2016-09-29 11:35:21-04:00,2016-09-29 11:35:21-04:00,11369,11369,11369,11369,'node_modules',ModificationType.ADD,,202,0,202,0,bartholomewbischoff/Sp-Sk,Sp-Sk,9baa23a46be508981395f427d4a5bdd861c26cd8,.js,5661671,1,https://stackoverflow.com/q/5661671
+a22ca3dda2b4b32fc14d7020fbcfb0224649b6c5,2016-09-29 11:35:21-04:00,2016-09-29 11:35:21-04:00,11369,11369,11369,11369,'node_modules',ModificationType.ADD,,216,0,216,0,bartholomewbischoff/Sp-Sk,Sp-Sk,6a0559d58133a8ad26660c333fd458ebe5ebbccf,.js,1068308,2,https://stackoverflow.com/a/1068308
+84d14c6dd167a8f60548f1816cb7df8735c1c6d8,2015-10-14 16:24:16+02:00,2015-10-14 16:28:35+02:00,11370,11370,11370,11370,Add join functionality,ModificationType.MODIFY,,10,0,10,0,bartoldeman/easybuild-framework,easybuild-framework,54f987ccad0794beb24e4881fd0502b7c1cd2929,.py,23212524,2,https://stackoverflow.com/a/23212524
+90e5d9526158c0e6deb33aac3444349ad724eefd,2015-10-21 10:07:54+02:00,2015-10-21 10:07:54+02:00,11370,11370,11370,11370,fix remarks,ModificationType.MODIFY,84d14c6dd167a8f60548f1816cb7df8735c1c6d8,14,9,0,9,bartoldeman/easybuild-framework,easybuild-framework,54f987ccad0794beb24e4881fd0502b7c1cd2929,.py,23212524,2,https://stackoverflow.com/a/23212524
+8f107e63fa35de3a86ae419f35e1294c8b04002a,2017-02-20 13:45:31+01:00,2017-02-20 13:45:31+01:00,11371,11371,11371,11371,Added back & front assets,ModificationType.ADD,,14591,0,14591,0,bartolije/gutenbook,gutenbook,ed9a6ce3def9868b9448526948bda8017ccb4877,.js,8506881,1,https://stackoverflow.com/q/8506881
+8f107e63fa35de3a86ae419f35e1294c8b04002a,2017-02-20 13:45:31+01:00,2017-02-20 13:45:31+01:00,11371,11371,11371,11371,Added back & front assets,ModificationType.ADD,,7468,0,7468,0,bartolije/gutenbook,gutenbook,d7d07da3beb505bbf4683db84f43bc15f2dedf86,.js,2684561,2,https://stackoverflow.com/a/2684561
+10d8abebb47447391635d7eb7cab3f8bb5d276e4,2014-05-12 11:24:12-07:00,2014-05-12 11:24:12-07:00,264,264,264,264,"Update Closure library to head (5a4878ece3dd35230a21d745411ab0985cf99e15)
+Update Closure compiler to v20140407",ModificationType.MODIFY,,12,4,12,4,bartolkaruza/selenium,selenium,9448f6ccde254dd32a3fc86a5d057c3f9e43876f,.js,18389732,1,https://stackoverflow.com/q/18389732
+d8a36a4af6010ff5e08760795160f85aa616451a,2014-05-12 12:49:05-07:00,2014-05-12 12:49:05-07:00,264,264,264,264,"Revert ""Update Closure library to head (5a4878ece3dd35230a21d745411ab0985cf99e15)""
+
+This reverts commit 10d8abebb47447391635d7eb7cab3f8bb5d276e4.
+
+Compiler update requires Java 7, which is not on CI
+Library update requires compiler update",ModificationType.MODIFY,10d8abebb47447391635d7eb7cab3f8bb5d276e4,4,12,4,12,bartolkaruza/selenium,selenium,9448f6ccde254dd32a3fc86a5d057c3f9e43876f,.js,18389732,1,https://stackoverflow.com/q/18389732
+70083e84c49e002151b14249ef872fac469dc67a,2014-05-14 14:43:24-07:00,2014-05-14 14:43:24-07:00,264,264,264,264,"Revert ""Revert ""Update Closure library to head (5a4878ece3dd35230a21d745411ab0985cf99e15)""""
+
+This reverts commit d8a36a4af6010ff5e08760795160f85aa616451a.
+
+Originally reverted because the CI was not using Java 7. That has been fixed,
+so this should work now.",ModificationType.MODIFY,d8a36a4af6010ff5e08760795160f85aa616451a,12,4,4,4,bartolkaruza/selenium,selenium,9448f6ccde254dd32a3fc86a5d057c3f9e43876f,.js,18389732,1,https://stackoverflow.com/q/18389732
+2f4b6524a7b5fa85cb81ae0ff9f660e9751b5666,2014-05-15 14:15:37-07:00,2014-05-15 14:16:05-07:00,264,264,264,264,"Still breaking things on CI.
+
+Revert ""Revert ""Revert ""Update Closure library to head (5a4878ece3dd35230a21d745411ab0985cf99e15)""""""
+
+This reverts commit 70083e84c49e002151b14249ef872fac469dc67a.",ModificationType.MODIFY,70083e84c49e002151b14249ef872fac469dc67a,4,12,4,4,bartolkaruza/selenium,selenium,9448f6ccde254dd32a3fc86a5d057c3f9e43876f,.js,18389732,1,https://stackoverflow.com/q/18389732
+0e428d78d15e55b8c36b0fa5cf1c181be6b1cfdd,2014-05-19 13:26:36-07:00,2014-05-19 13:26:36-07:00,264,264,264,264,"I don't often revert my changes, but when I do, I do it 4 times.
+
+Revert ""Still breaking things on CI.""
+
+This reverts commit 2f4b6524a7b5fa85cb81ae0ff9f660e9751b5666.",ModificationType.MODIFY,2f4b6524a7b5fa85cb81ae0ff9f660e9751b5666,12,4,4,4,bartolkaruza/selenium,selenium,9448f6ccde254dd32a3fc86a5d057c3f9e43876f,.js,18389732,1,https://stackoverflow.com/q/18389732
+d7f29df72c2f4353abb29f5368a6059e1ea007ab,2014-11-26 11:07:13-08:00,2014-11-26 11:07:13-08:00,264,264,264,264,"Update Closure library and compiler.
+
+Library to 5fbc334ce7f86018da9fb5e673d2518143aa999e
+Compiler to release v20141120",ModificationType.MODIFY,0e428d78d15e55b8c36b0fa5cf1c181be6b1cfdd,2,2,1,1,bartolkaruza/selenium,selenium,9448f6ccde254dd32a3fc86a5d057c3f9e43876f,.js,18389732,1,https://stackoverflow.com/q/18389732
+768687c34fba85b416d16eaffc95d5f921f07943,2014-11-07 00:01:59+01:00,2014-11-07 00:01:59+01:00,11372,11372,11372,11372,routes,ModificationType.ADD,,71,0,71,0,bartosmarcin/angularGUI,angularGUI,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+93009a7c0066d008be58e4e996b6e63e58de426a,2014-11-07 00:04:25+01:00,2014-11-07 00:04:25+01:00,11372,11372,11372,11372,"Revert ""routes""
+
+This reverts commit 768687c34fba85b416d16eaffc95d5f921f07943.",ModificationType.DELETE,768687c34fba85b416d16eaffc95d5f921f07943,0,71,0,71,bartosmarcin/angularGUI,angularGUI,584f551a6da7343249fbb9bd2fe9082298e7c119,.js,1068308,2,https://stackoverflow.com/a/1068308
+67f81afe8c5ad4deb7ad978b02145a84456ddaed,2017-02-14 22:15:16+01:00,2017-02-14 22:15:16+01:00,11373,11373,11373,11373,Initial commit,ModificationType.ADD,,1069,0,1069,0,bartosz-wozniak/StockExchangeInvestor,StockExchangeInvestor,d886f3bbaa8dd6e8d213652c19d89d066ad4ef56,.js,3446170,1,https://stackoverflow.com/q/3446170
